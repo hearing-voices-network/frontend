@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Kayak Sans";
+  src: url("../assets/fonts/kayak_sans_regular.woff2") format("woff2"),
+    url("../assets/fonts/kayak_sans_regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kayak Sans Bold";
+  src: url("../assets/fonts/kayak_sans_bold.woff2") format("woff2"),
+    url("../assets/fonts/kayak_sans_bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Skippy Sharpie";
+  src: url("../assets/fonts/skippy_sharpie_regular.woff2") format("woff2"),
+    url("../assets/fonts/skippy_sharpie_regular.woff") format("woff");
+}
+
+$font-primary: "Kayak Sans", sans-serif;
+$font-secondary: "Kayak Sans Bold", sans-serif;
+$font-tertiary: "Skippy Sharpie";
