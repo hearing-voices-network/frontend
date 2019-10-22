@@ -1,0 +1,81 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.accordian {
+  &--icon {
+    margin-right: space(8);
+    font-size: pxtorem(24px);
+    color: $medium-grey;
+
+    @include for-phone-only {
+      font-size: pxtorem(18px);
+      margin-right: 0;
+    }
+
+    &--open {
+      transform: rotate(180deg);
+    }
+
+    &--green {
+      color: $tradewind;
+    }
+  }
+
+  &--content {
+    padding: space(16) 0;
+    opacity: 0;
+
+    animation: fadeIn 200ms ease-in-out 0s forwards;
+  }
+
+  &--container {
+    button {
+      cursor: pointer;
+      padding: space(16);
+
+      @include for-phone-only {
+        padding: 0 space(16);
+      }
+    }
+  }
+
+  &--header {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: $light-grey;
+
+    &--green {
+      background-color: $light-turqoise;
+    }
+  }
+
+  &--title {
+    @include heading-xs;
+    color: $grey;
+    line-height: pxtorem(36px);
+    display: inline;
+  }
+
+  &--subtitle {
+    @include body-xs;
+    display: inline;
+    font-family: $kayak-sans-bold;
+    color: $tradewind-light;
+    margin-left: space(16);
+
+    @include for-phone-only {
+      margin-left: space(8);
+    }
+  }
+}
