@@ -1,0 +1,37 @@
+@import "./grid.scss";
+
+@mixin for-small-phone {
+  @media ($break_mobile_small) {
+    @content;
+  }
+}
+
+@mixin for-phone-only {
+  @media ($break_mobile) {
+    @content;
+  }
+}
+
+@mixin for-tablet-down {
+  @media ($break_tablet) {
+    @content;
+  }
+}
+
+@mixin for-tablet-large-down {
+  @media ($break_tablet_large) {
+    @content;
+  }
+}
+
+@mixin for-desktop-down {
+  @media ($break_standard) {
+    @content;
+  }
+}
+
+@mixin for-large-desktop-only {
+  @media ($break_container) {
+    @content;
+  }
+}
