@@ -1,15 +1,7 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/colors.scss";
 @import "../../styles/fonts.scss";
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+@import "../../styles/animations.scss";
 
 .accordian {
   &--icon {
