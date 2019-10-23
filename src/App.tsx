@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-import "./styles/grid.scss";
+import "./styles/main.scss";
 
 library.add(fas);
 
