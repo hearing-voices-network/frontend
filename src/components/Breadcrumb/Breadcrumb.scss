@@ -5,9 +5,6 @@
 
 .breadcrumb {
   list-style-type: none;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 
   &--crumb {
     @include heading-l;

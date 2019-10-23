@@ -1,4 +1,4 @@
-import React, { FunctionComponent, Fragment } from "react";
+import React, { FunctionComponent } from "react";
 
 import "./Breadcrumb.scss";
 
@@ -13,7 +13,7 @@ interface IProps {
 
 const Breadcrumb: FunctionComponent<IProps> = ({ crumbs }) => (
   <div className="flex-container flex-container--no-padding">
-    <ul className="breadcrumb">
+    <ul className="breadcrumb flex-container flex-container--no-padding flex-container--no-space">
       {crumbs.map((crumb: ICrumb, i: number) => (
         <div key={crumb.text} className="breadcrumb--crumb">
           {crumb.url ? (
