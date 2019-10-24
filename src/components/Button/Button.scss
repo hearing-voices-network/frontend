@@ -1,0 +1,48 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/breakpoints.scss";
+
+$shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.5);
+
+@mixin purpleHover {
+  background-color: $ribienna-dark;
+}
+
+.button {
+  @include button-text;
+  background-color: $turqoise;
+  color: $white;
+  padding: space(16) space(40);
+  border-radius: 6px;
+
+  @include for-phone-only {
+    padding: space(24) space(32);
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $dark-green;
+  }
+
+  &:focus {
+    box-shadow: $shadow;
+    outline: 0;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $medium-grey;
+    opacity: 0.2;
+  }
+
+  &--two-col {
+    max-width: pxtorem(300px);
+    background-color: $ribienna;
+    white-space: normal;
+
+    &:hover {
+      @include purpleHover;
+    }
+  }
+}
