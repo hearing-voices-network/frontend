@@ -27,7 +27,7 @@ const PaginationControl: FunctionComponent<IProps> = ({
     paginationCount.className = "pagination--label--current";
 
     input[0].replaceWith(paginationCount);
-  }, []);
+  }, [currentPage]);
 
   return (
     // the package does not recognise simple as a prop type so have to ts-ignore
