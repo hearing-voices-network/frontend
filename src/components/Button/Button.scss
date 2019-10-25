@@ -34,12 +34,38 @@ $shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.5);
     cursor: not-allowed;
     background-color: $medium-grey;
     opacity: 0.2;
+
+    &:hover {
+      background-color: $medium-grey;
+    }
   }
 
   &--two-col {
     max-width: pxtorem(300px);
     background-color: $ribienna;
     white-space: normal;
+
+    &:hover {
+      @include purpleHover;
+    }
+  }
+
+  &--small {
+    @include for-phone-only {
+      height: pxtorem(50px);
+      padding: 0 space(24);
+      border-radius: 4px;
+    }
+  }
+
+  &--filter {
+    background-color: $ribienna;
+    border-radius: 0 2px 2px 0;
+    padding: space(12) space(32);
+
+    @include for-phone-only {
+      padding: space(12) space(24);
+    }
 
     &:hover {
       @include purpleHover;
