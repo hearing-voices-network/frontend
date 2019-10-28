@@ -14,4 +14,14 @@
   @include for-phone-only {
     padding: space(8);
   }
+
+  &--search {
+    color: $ribienna;
+    border-color: $ribienna;
+  }
+
+  &--remove {
+    vertical-align: middle;
+    margin-left: space(12);
+  }
 }
