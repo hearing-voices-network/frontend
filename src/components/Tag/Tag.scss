@@ -1,0 +1,36 @@
+@import "../../styles/fonts.scss";
+@import "../../styles/colors.scss";
+@import "../../styles/breakpoints.scss";
+
+.tag {
+  @include tag-text;
+  color: $turqoise;
+
+  border: 1px solid $turqoise;
+  border-radius: 1.44;
+  width: fit-content;
+  padding: space(12);
+
+  @include for-phone-only {
+    padding: space(8);
+  }
+
+  &--search {
+    color: $ribienna;
+    border-color: $ribienna;
+  }
+
+  &--remove {
+    vertical-align: middle;
+    margin-left: space(12);
+  }
+
+  &--story {
+    @include button-text-alt;
+    padding: space(12) space(20);
+
+    @include for-phone-only {
+      padding: space(8) space(20);
+    }
+  }
+}
