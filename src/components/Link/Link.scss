@@ -1,0 +1,23 @@
+@import "../../styles/fonts.scss";
+@import "../../styles/colors.scss";
+
+.link {
+  color: $ribienna;
+  display: block;
+
+  &--large {
+    @include heading-m;
+  }
+
+  &--medium {
+    @include heading-s;
+  }
+
+  &--small {
+    @include body-l;
+  }
+
+  &--grey {
+    color: $grey;
+  }
+}
