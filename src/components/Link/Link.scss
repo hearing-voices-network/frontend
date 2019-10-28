@@ -16,4 +16,8 @@
   &--small {
     @include body-l;
   }
+
+  &--grey {
+    color: $grey;
+  }
 }
