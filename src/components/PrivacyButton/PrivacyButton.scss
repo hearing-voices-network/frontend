@@ -11,15 +11,28 @@
 
   @include for-phone-only {
     padding: pxtorem(4px) space(10);
+    border: 1px solid $ribienna-dark;
   }
 
   &--open {
-    padding: pxtorem(8px) space(8);
+    padding: space(8) space(8);
+    border-radius: 19px;
+
+    @include for-phone-only {
+      border-radius: 11px;
+      padding: space(8) 4px;
+    }
 
     &--title {
       background-color: $light-ribienna;
       border-radius: 19px;
       padding: pxtorem(4px) space(16);
+
+      @include for-phone-only {
+        border-radius: 8px;
+
+        padding: pxtorem(4px) pxtorem(6px);
+      }
     }
   }
 
@@ -34,5 +47,10 @@
     text-align: left;
     padding-left: space(16);
     cursor: pointer;
+
+    @include for-phone-only {
+      padding-left: pxtorem(7px);
+      margin-top: pxtorem(6px);
+    }
   }
 }

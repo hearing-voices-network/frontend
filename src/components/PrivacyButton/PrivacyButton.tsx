@@ -36,6 +36,9 @@ const PrivacyButton: FunctionComponent<IProps> = ({ text }) => {
             <span
               role="button"
               onClick={() => changePrivacy(!privacy)}
+              onKeyDown={e =>
+                e.key === "Enter" ? changePrivacy(!privacy) : null
+              }
               tabIndex={0}
             >
               {privacy ? "public" : "private"}
