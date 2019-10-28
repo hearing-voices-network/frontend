@@ -7,12 +7,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 interface IProps {
   text: string;
   search?: boolean;
+  story?: boolean;
 }
 
-const Tag: FunctionComponent<IProps> = ({ text, search }) => (
+const Tag: FunctionComponent<IProps> = ({ text, search, story }) => (
   <div
     className={cx("tag", {
-      "tag--search": search
+      "tag--search": search,
+      "tag--story": story
     })}
   >
     <span>

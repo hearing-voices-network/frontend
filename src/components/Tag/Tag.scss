@@ -24,4 +24,13 @@
     vertical-align: middle;
     margin-left: space(12);
   }
+
+  &--story {
+    @include button-text-alt;
+    padding: space(12) space(20);
+
+    @include for-phone-only {
+      padding: space(8) space(20);
+    }
+  }
 }
