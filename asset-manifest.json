@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/frontend/static/css/main.5ef567ff.chunk.css",
+    "main.css": "/frontend/static/css/main.f4f4f042.chunk.css",
     "main.js": "/frontend/static/js/main.ee17b83f.chunk.js",
     "main.js.map": "/frontend/static/js/main.ee17b83f.chunk.js.map",
     "runtime-main.js": "/frontend/static/js/runtime-main.b10f87e5.js",
@@ -8,15 +8,15 @@
     "static/js/2.7949f0b5.chunk.js": "/frontend/static/js/2.7949f0b5.chunk.js",
     "static/js/2.7949f0b5.chunk.js.map": "/frontend/static/js/2.7949f0b5.chunk.js.map",
     "index.html": "/frontend/index.html",
-    "precache-manifest.ae5be46e48f103c6328a8a564aa17f9d.js": "/frontend/precache-manifest.ae5be46e48f103c6328a8a564aa17f9d.js",
+    "precache-manifest.a6ade36215c672628bae116c8324d0b8.js": "/frontend/precache-manifest.a6ade36215c672628bae116c8324d0b8.js",
     "service-worker.js": "/frontend/service-worker.js",
-    "static/css/main.5ef567ff.chunk.css.map": "/frontend/static/css/main.5ef567ff.chunk.css.map",
-    "static/media/PatternLibrary.scss": "/frontend/static/media/skippy_sharp.fd993785.woff2"
+    "static/css/main.f4f4f042.chunk.css.map": "/frontend/static/css/main.f4f4f042.chunk.css.map",
+    "static/media/PatternLibrary.scss": "/frontend/static/media/kayak_sans_regular.55bd6730.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.b10f87e5.js",
     "static/js/2.7949f0b5.chunk.js",
-    "static/css/main.5ef567ff.chunk.css",
+    "static/css/main.f4f4f042.chunk.css",
     "static/js/main.ee17b83f.chunk.js"
   ]
 }
