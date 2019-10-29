@@ -1,0 +1,59 @@
+@import "./../../styles/colors.scss";
+@import "./../../styles/fonts.scss";
+
+select {
+  @include body-m-alt;
+  border: 1px solid $ribienna-dark;
+  color: $ribienna;
+  padding: space(20);
+  position: relative;
+  padding-right: space(40);
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.select {
+  &--wrapper {
+    position: relative;
+    width: 400px;
+    overflow: hidden;
+
+    @include for-phone-only {
+      width: 200px;
+    }
+
+    &:after {
+      position: absolute;
+      background-color: $ribienna;
+      background-image: url("../../assets/icons/chevron.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+
+      background-size: 24px;
+      padding: 0 space(20);
+      content: "";
+      width: 20px;
+      height: 100%;
+      right: 0;
+      top: 0;
+      z-index: 98;
+    }
+
+    select {
+      width: 100%;
+      border: 0;
+      position: relative;
+      z-index: 99;
+      background: none;
+      border: 1px solid $ribienna-dark;
+      border-radius: 0;
+    }
+  }
+}
+select::-ms-expand {
+  display: none;
+}
