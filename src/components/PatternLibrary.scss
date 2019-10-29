@@ -65,3 +65,15 @@
     color: $medium-grey;
   }
 }
+
+.title {
+  &--alt {
+    @include title-alt;
+    color: $grey;
+  }
+}
+
+.story {
+  @include story-text;
+  color: $grey;
+}

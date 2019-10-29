@@ -8,6 +8,9 @@ const PatternLibrary = () => (
       <h1 className="heading--xl">Welcome</h1>
       <p className="description">XL Heading</p>
 
+      <h1 className="title--alt">Welcome</h1>
+      <p className="description">Alt title</p>
+
       <h2 className="heading--l">Read other peoples experiences</h2>
       <p className="description">L Heading</p>
 
@@ -46,6 +49,12 @@ const PatternLibrary = () => (
         always…
       </p>
       <p className="description">XS Body</p>
+
+      <p className="story">
+        I was terrorized by three male voices who talked about me, narrating my
+        movements and…
+      </p>
+      <p className="description">Story</p>
     </div>
   </div>
 );
