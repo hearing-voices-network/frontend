@@ -1,6 +1,11 @@
 import React from "react";
 
 import "./PatternLibrary.scss";
+import Accordian from "./Accordian";
+import AboutAccordian from "./AboutAccordian";
+import Breadcrumb from "./Breadcrumb";
+import PaginationControl from "./Pagination";
+import Button from "./Button";
 
 const PatternLibrary = () => (
   <div className="flex-container flex-container--no-padding">
@@ -55,6 +60,69 @@ const PatternLibrary = () => (
         movements and…
       </p>
       <p className="description">Story</p>
+    </div>
+
+    <div className="section flex-col--12">
+      <Accordian
+        title="11 Jan 2019"
+        green={true}
+        subtitle="1 private, 1 in public"
+      >
+        <p>Accordian content</p>
+      </Accordian>
+    </div>
+    <div className="section flex-col--12">
+      <Accordian title="28 Dec 2018">
+        <p>Accordian content</p>
+      </Accordian>
+    </div>
+
+    <div className="section flex-col--12">
+      <AboutAccordian text="Collecting first-person accounts of voices, from people who hear voices. This is a place where you can explore and share your experiences anonymously."></AboutAccordian>
+    </div>
+    <div className="section flex-col--12">
+      <Breadcrumb
+        crumbs={[
+          { text: "Home", url: "/" },
+          { text: "Experiences", url: "/" },
+          { text: "Selected Experience", url: "" }
+        ]}
+      />
+    </div>
+    <div className="section flex-col--12">
+      <PaginationControl totalItems={20} itemsPerPage={5} currentPage={1} />
+    </div>
+
+    <div className="section flex-col--12">
+      <Button text="Browse experiences" onClick={() => console.log("Click!")} />
+    </div>
+    <div className="section flex-col--12">
+      <Button
+        text="Browse experiences"
+        onClick={() => console.log("Click!")}
+        disabled={true}
+      />
+      <div className="section flex-col--12">
+        <Button
+          twoCol={true}
+          text="Sign up and share"
+          onClick={() => console.log("Click!")}
+        />
+      </div>
+      <div className="section flex-col--12">
+        <Button
+          text="New story"
+          small={true}
+          onClick={() => console.log("Click!")}
+        />
+      </div>
+      <div className="section flex-col--12">
+        <Button
+          text="Filter by"
+          filter={true}
+          onClick={() => console.log("Click!")}
+        />
+      </div>
     </div>
   </div>
 );
