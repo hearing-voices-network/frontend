@@ -1,0 +1,11 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/mixins.scss";
+
+.review-button {
+  @include button-text-alt;
+  color: $ribienna-dark;
+  background-color: $light-ribienna;
+  border-radius: 30px;
+  padding: pxtorem(2px) space(24);
+}

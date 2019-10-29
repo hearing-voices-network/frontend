@@ -1,0 +1,42 @@
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/animations.scss";
+
+.about-accordian {
+  &--content {
+    @include body-m;
+    color: $grey;
+    background-color: $light-turqoise;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: space(10) space(20);
+
+    animation: fadeIn 300ms ease-in-out 0s forwards;
+  }
+
+  &--button {
+    @include button-text-alt;
+    width: 100%;
+    background-color: $tradewind;
+    color: $white;
+    border-radius: 5px;
+
+    &--open {
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+    }
+
+    p {
+      padding: space(12);
+    }
+  }
+
+  &--icon {
+    margin-right: space(10);
+
+    &--open {
+      transform: rotate(180deg);
+    }
+  }
+}

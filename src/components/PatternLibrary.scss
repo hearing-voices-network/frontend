@@ -1,0 +1,67 @@
+@import "../styles/fonts.scss";
+@import "../styles/colors.scss";
+
+.heading {
+  &--xl {
+    @include heading-xl;
+    color: $grey;
+  }
+
+  &--l {
+    @include heading-l;
+    color: $turqoise;
+  }
+
+  &--m {
+    @include heading-m;
+    color: $ribienna;
+  }
+
+  &--s {
+    @include heading-s;
+    color: $ribienna;
+  }
+
+  &--xs {
+    @include heading-xs;
+    color: $turqoise;
+  }
+}
+
+.description {
+  @include body-xs;
+  color: $grey;
+  margin-bottom: space(20);
+}
+
+.body {
+  &--l {
+    @include body-l;
+    color: $grey;
+  }
+
+  &--m {
+    @include body-m;
+    color: $ribienna;
+  }
+
+  &--m-alt {
+    @include body-m-alt;
+    color: $grey;
+  }
+
+  &--s {
+    @include body-s;
+    color: $turqoise;
+  }
+
+  &--s-alt {
+    @include body-s-alt;
+    color: $medium-grey;
+  }
+
+  &--xs {
+    @include body-xs;
+    color: $medium-grey;
+  }
+}
