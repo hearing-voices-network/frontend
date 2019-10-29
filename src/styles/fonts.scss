@@ -13,20 +13,15 @@
     url("../assets/fonts/kayak_sans_bold.woff") format("woff");
 }
 
-@font-face {
-  font-family: "Skippy Sharp";
-  src: url("../assets/fonts/skippy_sharp.woff2") format("woff2"),
-    url("../assets/fonts/skippy_sharp.woff") format("woff");
-}
-
 $kayak-sans: "Kayak Sans", sans-serif;
 $kayak-sans-bold: "Kayak Sans Bold", sans-serif;
-$skippy-sharp: "Skippy Sharp";
+$skippy-sharp: skippy-sharp, sans-serif;
 
 // Headings
 
 @mixin heading-xl {
   font-family: $skippy-sharp;
+  font-weight: 400;
   font-size: pxtorem(88px);
   line-height: 1.1;
 
@@ -38,6 +33,7 @@ $skippy-sharp: "Skippy Sharp";
 
 @mixin heading-l {
   font-family: $skippy-sharp;
+  font-weight: 400;
   font-size: pxtorem(64px);
   line-height: 1.32;
 
@@ -49,6 +45,7 @@ $skippy-sharp: "Skippy Sharp";
 
 @mixin heading-m {
   font-family: $skippy-sharp;
+  font-weight: 400;
   font-size: pxtorem(56px);
   line-height: 1.32;
 
@@ -59,6 +56,7 @@ $skippy-sharp: "Skippy Sharp";
 
 @mixin heading-s {
   font-family: $skippy-sharp;
+  font-weight: 400;
   font-size: pxtorem(48px);
   line-height: 1.3;
 
@@ -69,6 +67,7 @@ $skippy-sharp: "Skippy Sharp";
 
 @mixin heading-xs {
   font-family: $skippy-sharp;
+  font-weight: 400;
   font-size: pxtorem(36px);
   line-height: 1.3;
 
@@ -147,6 +146,7 @@ $skippy-sharp: "Skippy Sharp";
 
 @mixin title-alt {
   font-family: $skippy-sharp;
+  font-weight: 400;
   font-size: pxtorem(88px);
   line-height: 1.32;
 
@@ -212,6 +212,7 @@ $skippy-sharp: "Skippy Sharp";
 
 @mixin pagination {
   font-family: $skippy-sharp;
+  font-weight: 400;
   font-size: pxtorem(32px);
   line-height: 1.25;
 
