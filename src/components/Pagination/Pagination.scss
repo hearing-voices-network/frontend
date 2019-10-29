@@ -59,4 +59,12 @@
       }
     }
   }
+
+  .rc-pagination-prev {
+    a {
+      &:after {
+        content: "";
+      }
+    }
+  }
 }
