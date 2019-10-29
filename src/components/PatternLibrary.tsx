@@ -6,6 +6,9 @@ import AboutAccordian from "./AboutAccordian";
 import Breadcrumb from "./Breadcrumb";
 import PaginationControl from "./Pagination";
 import Button from "./Button";
+import ReviewButton from "./ReviewButton";
+import PrivacyButton from "./PrivacyButton";
+import Link from "./Link";
 
 const PatternLibrary = () => (
   <div className="flex-container flex-container--no-padding">
@@ -123,6 +126,18 @@ const PatternLibrary = () => (
           onClick={() => console.log("Click!")}
         />
       </div>
+    </div>
+    <div className="section flex-col--12">
+      <ReviewButton text="in review" onClick={() => console.log("Click!")} />
+    </div>
+    <div className="section flex-col--12">
+      <PrivacyButton text="Private" />
+    </div>
+    <div className="section flex-col--12">
+      <Link href="/" text="View other's stories" size="large" />
+      <Link href="/" text="View other's stories" size="medium" />
+      <Link href="/" text="info@hearing-voices.org" size="small" />
+      <Link href="/" text="Privacy policy" size="small" grey={true} />
     </div>
   </div>
 );
