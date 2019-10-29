@@ -9,6 +9,7 @@ import Button from "./Button";
 import ReviewButton from "./ReviewButton";
 import PrivacyButton from "./PrivacyButton";
 import Link from "./Link";
+import Tag from "./Tag";
 
 const PatternLibrary = () => (
   <div className="flex-container flex-container--no-padding">
@@ -138,6 +139,15 @@ const PatternLibrary = () => (
       <Link href="/" text="View other's stories" size="medium" />
       <Link href="/" text="info@hearing-voices.org" size="small" />
       <Link href="/" text="Privacy policy" size="small" grey={true} />
+    </div>
+    <div className="section flex-col--12">
+      <Tag text="Talking" />
+    </div>
+    <div className="section flex-col--12">
+      <Tag text="Can't say" search={true} />
+    </div>
+    <div className="section flex-col--12">
+      <Tag text="Male" story={true} />
     </div>
   </div>
 );
