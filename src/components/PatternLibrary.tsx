@@ -10,6 +10,7 @@ import ReviewButton from "./ReviewButton";
 import PrivacyButton from "./PrivacyButton";
 import Link from "./Link";
 import Tag from "./Tag";
+import Select from "./Select";
 
 const PatternLibrary = () => (
   <div className="flex-container flex-container--no-padding">
@@ -148,6 +149,16 @@ const PatternLibrary = () => (
     </div>
     <div className="section flex-col--12">
       <Tag text="Male" story={true} />
+    </div>
+    <div className="section flex-col--12">
+      <Select
+        options={[
+          { value: "1", text: "Example 1" },
+          { value: "2", text: "Example 2" }
+        ]}
+        placeholder="See all"
+        id="example"
+      />
     </div>
   </div>
 );
