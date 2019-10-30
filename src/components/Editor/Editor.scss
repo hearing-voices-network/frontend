@@ -21,14 +21,9 @@
   }
 
   &--content {
-    @include body-m;
-    color: $medium-grey;
-    font-size: pxtorem(32px) !important;
-    line-height: 1.25;
-
-    @include for-phone-only {
-      font-size: pxtorem(16px) !important;
-      line-height: 1.12;
+    div {
+      @include body-m;
+      color: $medium-grey;
     }
   }
 }
