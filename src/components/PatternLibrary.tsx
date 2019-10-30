@@ -11,6 +11,7 @@ import PrivacyButton from "./PrivacyButton";
 import Link from "./Link";
 import Tag from "./Tag";
 import Select from "./Select";
+import Editor from "./Editor";
 
 const PatternLibrary = () => (
   <div className="flex-container flex-container--no-padding">
@@ -159,6 +160,9 @@ const PatternLibrary = () => (
         placeholder="See all"
         id="example"
       />
+    </div>
+    <div className="section flex-col--12">
+      <Editor />
     </div>
   </div>
 );
