@@ -5,8 +5,8 @@
 .editor {
   &--toolbar {
     background-color: $light-grey;
-    margin: 0;
-    padding: space(10) space(8) pxtorem(5px) space(8);
+    margin: 0 !important;
+    padding: space(10) space(8) pxtorem(5px) space(8) !important;
   }
 
   &--button {
