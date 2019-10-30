@@ -1,0 +1,25 @@
+@import "../../styles/fonts.scss";
+@import "../../styles/colors.scss";
+@import "../../styles/animations.scss";
+
+.loading {
+  background-color: $light-turqoise;
+  padding: space(64);
+  text-align: center;
+  max-width: 450px;
+
+  @include for-phone-only {
+    padding: space(48);
+  }
+
+  &--text {
+    @include heading-m;
+    color: $turqoise;
+    margin-top: space(24);
+  }
+
+  &--spinner {
+    animation: rotation 2s infinite linear;
+    width: pxtorem(60px);
+  }
+}
