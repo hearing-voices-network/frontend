@@ -33,6 +33,7 @@ import Submitted from "../assets/icons/submitted.svg";
 import TryAgainLarge from "../assets/icons/try-later-large.svg";
 import TryAgain from "../assets/icons/try-later.svg";
 import WritingGuidance from "../assets/icons/writing-guidance.svg";
+import Loading from "./Loading";
 
 const PatternLibrary = () => (
   <div className="flex-container flex-container--no-padding">
@@ -207,6 +208,9 @@ const PatternLibrary = () => (
     </div>
     <div className="section flex-col--12">
       <Editor />
+    </div>
+    <div className="section flex-col--12">
+      <Loading input="selection" />
     </div>
   </div>
 );
