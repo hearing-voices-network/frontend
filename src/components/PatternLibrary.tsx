@@ -1,4 +1,5 @@
 import React from "react";
+import ReactSVG from "react-svg";
 
 import "./PatternLibrary.scss";
 import Accordian from "./Accordian";
@@ -12,6 +13,26 @@ import Link from "./Link";
 import Tag from "./Tag";
 import Select from "./Select";
 import Editor from "./Editor";
+
+import AccountCreated from "../assets/icons/account-created.svg";
+import AccountLight from "../assets/icons/account-light.svg";
+import Community from "../assets/icons/community.svg";
+import Contribute from "../assets/icons/contribute.svg";
+import MyExperiences from "../assets/icons/my-experiences.svg";
+import NoResults from "../assets/icons/no-results.svg";
+import Page404 from "../assets/icons/page-404.svg";
+import Page404Large from "../assets/icons/page-404-large.svg";
+import Pencil from "../assets/icons/pencil.svg";
+import PencilLarge from "../assets/icons/pencil-large.svg";
+import Public from "../assets/icons/public.svg";
+import QuestionCircleLight from "../assets/icons/question-circle-light.svg";
+import QuestionCircle from "../assets/icons/question-circle.svg";
+import Resubmitted from "../assets/icons/resubmitted.svg";
+import Security from "../assets/icons/security.svg";
+import Submitted from "../assets/icons/submitted.svg";
+import TryAgainLarge from "../assets/icons/try-later-large.svg";
+import TryAgain from "../assets/icons/try-later.svg";
+import WritingGuidance from "../assets/icons/writing-guidance.svg";
 
 const PatternLibrary = () => (
   <div className="flex-container flex-container--no-padding">
@@ -66,6 +87,29 @@ const PatternLibrary = () => (
         movements and…
       </p>
       <p className="description">Story</p>
+    </div>
+
+    <div className="section flex-col--12">
+      <ReactSVG src={AccountCreated} className="svg" wrapper="span" />
+      <ReactSVG src={AccountLight} className="svg" wrapper="span" />
+      <ReactSVG src={MyExperiences} className="svg" wrapper="span" />
+      <ReactSVG src={NoResults} className="svg" wrapper="span" />
+      <ReactSVG src={Page404} className="svg" wrapper="span" />
+      <ReactSVG src={Page404Large} className="svg" wrapper="span" />
+      <ReactSVG src={PencilLarge} className="svg" wrapper="span" />
+      <ReactSVG src={Public} className="svg" wrapper="span" />
+      <ReactSVG src={Resubmitted} className="svg" wrapper="span" />
+      <ReactSVG src={Submitted} className="svg" wrapper="span" />
+      <ReactSVG src={TryAgainLarge} className="svg" wrapper="span" />
+      <ReactSVG src={WritingGuidance} className="svg" wrapper="span" />
+
+      <ReactSVG src={TryAgain} className="svg" wrapper="span" />
+      <ReactSVG src={Security} className="svg" wrapper="span" />
+      <ReactSVG src={Community} className="svg" wrapper="span" />
+      <ReactSVG src={Contribute} className="svg" wrapper="span" />
+      <ReactSVG src={Pencil} className="svg" wrapper="span" />
+      <ReactSVG src={QuestionCircleLight} className="svg" wrapper="span" />
+      <ReactSVG src={QuestionCircle} className="svg" wrapper="span" />
     </div>
 
     <div className="section flex-col--12">
