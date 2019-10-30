@@ -5,7 +5,7 @@
 
 .about-accordian {
   &--content {
-    @include body-m;
+    @include body-xs;
     color: $grey;
     background-color: $light-turqoise;
     border-top-left-radius: 5px;

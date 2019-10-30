@@ -42,13 +42,15 @@ const PaginationControl: FunctionComponent<IProps> = ({
       pageSize={itemsPerPage}
       locale={localeInfo}
       prevIcon={
-        <div className="pagination--label">
-          <FontAwesomeIcon
-            icon="chevron-left"
-            className="pagination--label--icon-left"
-          />{" "}
-          <span>Last page</span>
-        </div>
+        currentPage !== 1 && (
+          <div className="pagination--label">
+            <FontAwesomeIcon
+              icon="chevron-left"
+              className="pagination--label--icon-left"
+            />{" "}
+            <span>Last page</span>
+          </div>
+        )
       }
       nextIcon={
         <div className="pagination--label">

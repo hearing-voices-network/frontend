@@ -1,0 +1,27 @@
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/fonts.scss";
+
+.editor {
+  &--toolbar {
+    background-color: $light-grey;
+    margin: 0;
+    padding: space(10) space(8) pxtorem(5px) space(8);
+  }
+
+  &--button {
+    border: none;
+    background: none;
+    background-color: $light-grey;
+
+    &:hover {
+      background-color: $medium-grey;
+      border-radius: 2px;
+    }
+  }
+
+  &--content {
+    @include body-m;
+    color: $medium-grey;
+  }
+}
