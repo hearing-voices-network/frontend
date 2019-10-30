@@ -12,7 +12,10 @@
     border-top-right-radius: 5px;
     padding: space(10) space(20);
 
-    animation: fadeIn 300ms ease-in-out 0s forwards;
+    animation-duration: 350ms;
+    animation-fill-mode: backwards;
+    animation-name: fadeInUp;
+    z-index: -1;
   }
 
   &--button {
@@ -21,6 +24,7 @@
     background-color: $tradewind;
     color: $white;
     border-radius: 5px;
+    z-index: 1;
 
     &--open {
       border-top-left-radius: 0px;
