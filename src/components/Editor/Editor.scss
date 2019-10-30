@@ -9,8 +9,9 @@
     padding: space(10) space(8) pxtorem(5px) space(8) !important;
   }
 
+  button,
   &--button {
-    border: none;
+    border: none !important;
     background: none;
     background-color: $light-grey;
 
