@@ -33,6 +33,7 @@ import Submitted from "../assets/icons/submitted.svg";
 import TryAgainLarge from "../assets/icons/try-later-large.svg";
 import TryAgain from "../assets/icons/try-later.svg";
 import WritingGuidance from "../assets/icons/writing-guidance.svg";
+import DashboardLight from "../assets/icons/dashboard-light.svg";
 import Loading from "./Loading";
 import Cookies from "./Cookies";
 
@@ -112,6 +113,7 @@ const PatternLibrary = () => (
       <ReactSVG src={Pencil} className="svg" wrapper="span" />
       <ReactSVG src={QuestionCircleLight} className="svg" wrapper="span" />
       <ReactSVG src={QuestionCircle} className="svg" wrapper="span" />
+      <ReactSVG src={DashboardLight} className="svg" wrapper="span" />
     </div>
 
     <div className="section flex-col--12">
