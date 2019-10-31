@@ -1,18 +1,19 @@
 @import "../../styles/colors.scss";
 @import "../../styles/fonts.scss";
+@import "../../styles/mixins.scss";
 
 .cookies-banner {
   @include body-s;
   background-color: $turqoise;
   color: $white;
-  padding: space(24) space(40);
+  padding: space(24) space(40) !important;
 
   &--grey {
     background-color: $dark-grey;
   }
 
   @include for-phone-only {
-    padding: space(24);
+    padding: space(24) !important;
   }
 
   &--header {
