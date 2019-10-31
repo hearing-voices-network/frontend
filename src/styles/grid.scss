@@ -52,6 +52,10 @@ body {
   padding: 0 $base-margin * 2.5;
   flex: 1;
 
+  &--center {
+    margin: 0 auto
+  }
+  
   // Mobile no padding
   &--mobile-no-padding {
     @include breakpoint($break_mobile) {
