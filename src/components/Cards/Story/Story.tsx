@@ -22,12 +22,14 @@ const Story: FunctionComponent<IProps> = ({ story, tags }) => (
     <div className="story-card--read-more">
       <a href="/">Read whole story</a>
     </div>
-    <div className="story-card--tags" ref={(divElement) => divElement ? console.log(divElement.clientWidth) : null } >
+    <div className="story-card--tags">
       <span className="story-card--tags--title">Tags:</span>
       {take(tags, 3).map(tag => (
         <Tag text={tag} className="story-card--tags--tag" />
       ))}
-      {tags.length > 3 && <Tag text={`${tags.length - 3}+`}className="story-card--tags--tag" />}
+      {tags.length > 3 && (
+        <Tag text={`${tags.length - 3}+`} className="story-card--tags--tag" />
+      )}
     </div>
   </section>
 );
