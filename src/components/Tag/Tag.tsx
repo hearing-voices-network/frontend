@@ -8,13 +8,15 @@ interface IProps {
   text: string;
   search?: boolean;
   story?: boolean;
+  className?: string;
 }
 
-const Tag: FunctionComponent<IProps> = ({ text, search, story }) => (
+const Tag: FunctionComponent<IProps> = ({ text, search, story, className }) => (
   <div
     className={cx("tag", {
       "tag--search": search,
-      "tag--story": story
+      "tag--story": story,
+      [`${className}`]: className
     })}
   >
     <span>
