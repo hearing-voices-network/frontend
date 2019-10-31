@@ -8,7 +8,7 @@ import PatternLibrary from "./components/PatternLibrary";
 library.add(fas);
 
 const App: FunctionComponent = () => (
-  <div className="flex-container">
+  <div className="flex-container flex-container--center" style={{ padding: '0 20px'}}>
     <div className="flex-col--12" style={{ marginTop: "20px" }}>
       <PatternLibrary />
     </div>

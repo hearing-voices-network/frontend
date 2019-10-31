@@ -36,6 +36,7 @@ import WritingGuidance from "../assets/icons/writing-guidance.svg";
 import DashboardLight from "../assets/icons/dashboard-light.svg";
 import Loading from "./Loading";
 import Cookies from "./Cookies";
+import Story from "./Cards/Story";
 
 const PatternLibrary = () => (
   <div className="flex-container flex-container--no-padding">
@@ -220,6 +221,14 @@ const PatternLibrary = () => (
     </div>
     <div className="section flex-col--12">
       <Cookies loggedIn={true} />
+    </div>
+
+    <div className="section flex-col--12">
+      <div className="flex-container flex-container--no-padding flex-container--justify">
+        <Story story="I was terrorized by three male voices who talked about me, narrating my movements and picking fault in everything I do and say" tags={["talking", "critical", "male", "text", "test", "test"]}/>
+        <Story story="I was terrorized by three male voices who talked about me, narrating my movements and picking fault in everything I do and say" tags={["talking", "critical", "male"]} />
+        <Story story="I was terrorized by three male voices who talked about me, narrating my movements and picking fault in everything I do and say" tags={["talking", "critical", "male"]}/>
+      </div>
     </div>
   </div>
 );
