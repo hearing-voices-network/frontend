@@ -3,16 +3,20 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import "./styles/main.scss";
 
-import PatternLibrary from "./components/PatternLibrary";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import Home from "./views/Home";
+import NotFound from "./views/NotFound";
 
 library.add(fas);
 
 const App: FunctionComponent = () => (
-  <div className="flex-container flex-container--center" style={{ padding: '0 20px'}}>
-    <div className="flex-col--12" style={{ marginTop: "20px" }}>
-      <PatternLibrary />
-    </div>
-  </div>
+  <Router>
+    <Switch>
+      <Route path="/" component={Home} exact={true} />
+      <Route component={NotFound} />
+    </Switch>
+  </Router>
 );
 
 export default App;
