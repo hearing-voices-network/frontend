@@ -1,0 +1,51 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/breakpoints.scss";
+@import "../../styles/fonts.scss";
+
+.header {
+  padding: space(24);
+
+  @include for-tablet-down {
+    justify-content: center;
+  }
+
+  &--logo {
+    display: inline;
+
+    svg {
+      height: 53px;
+      width: 156px;
+    }
+
+    &--square {
+      height: 50px;
+      width: 50px;
+      margin-right: 20px;
+    }
+  }
+
+  &--links {
+    @include body-m-alt;
+    color: $grey;
+    margin-top: space(48);
+
+    @include for-tablet-down {
+      margin-top: space(32);
+    }
+  }
+
+  &--icon {
+    svg {
+      color: $grey;
+      height: 30px;
+      margin-left: space(16);
+      width: auto;
+      vertical-align: middle;
+
+      @include for-tablet-down {
+        height: 20px;
+        margin-left: space(8);
+      }
+    }
+  }
+}
