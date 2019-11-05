@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/frontend/static/css/main.bb02a534.chunk.css",
-    "main.js": "/frontend/static/js/main.2d6e90fc.chunk.js",
-    "main.js.map": "/frontend/static/js/main.2d6e90fc.chunk.js.map",
+    "main.css": "/frontend/static/css/main.b9f7360b.chunk.css",
+    "main.js": "/frontend/static/js/main.949f45ac.chunk.js",
+    "main.js.map": "/frontend/static/js/main.949f45ac.chunk.js.map",
     "runtime-main.js": "/frontend/static/js/runtime-main.b10f87e5.js",
     "runtime-main.js.map": "/frontend/static/js/runtime-main.b10f87e5.js.map",
     "static/css/2.7fe71732.chunk.css": "/frontend/static/css/2.7fe71732.chunk.css",
     "static/js/2.d72c3021.chunk.js": "/frontend/static/js/2.d72c3021.chunk.js",
     "static/js/2.d72c3021.chunk.js.map": "/frontend/static/js/2.d72c3021.chunk.js.map",
     "index.html": "/frontend/index.html",
-    "precache-manifest.aa8c82f476e241838feab8521ee7807a.js": "/frontend/precache-manifest.aa8c82f476e241838feab8521ee7807a.js",
+    "precache-manifest.a944cd39d4f9cf5d01fb9fc5e1ba19e0.js": "/frontend/precache-manifest.a944cd39d4f9cf5d01fb9fc5e1ba19e0.js",
     "service-worker.js": "/frontend/service-worker.js",
     "static/css/2.7fe71732.chunk.css.map": "/frontend/static/css/2.7fe71732.chunk.css.map",
-    "static/css/main.bb02a534.chunk.css.map": "/frontend/static/css/main.bb02a534.chunk.css.map",
+    "static/css/main.b9f7360b.chunk.css.map": "/frontend/static/css/main.b9f7360b.chunk.css.map",
     "static/media/account-created.svg": "/frontend/static/media/account-created.e5d63cf3.svg",
     "static/media/account-light.svg": "/frontend/static/media/account-light.da49d63b.svg",
     "static/media/Select.scss": "/frontend/static/media/chevron.be311bfb.svg",
     "static/media/community.svg": "/frontend/static/media/community.d355da98.svg",
     "static/media/contribute.svg": "/frontend/static/media/contribute.de375067.svg",
     "static/media/dashboard-light.svg": "/frontend/static/media/dashboard-light.596ea74c.svg",
-    "static/media/Story.scss": "/frontend/static/media/kayak_sans_regular.55bd6730.woff",
+    "static/media/Privacy.scss": "/frontend/static/media/kayak_sans_regular.55bd6730.woff",
     "static/media/load-icon.svg": "/frontend/static/media/load-icon.ce94b584.svg",
     "static/media/my-experiences.svg": "/frontend/static/media/my-experiences.7ca03a68.svg",
     "static/media/no-results.svg": "/frontend/static/media/no-results.de860de2.svg",
@@ -41,7 +41,7 @@
     "static/js/runtime-main.b10f87e5.js",
     "static/css/2.7fe71732.chunk.css",
     "static/js/2.d72c3021.chunk.js",
-    "static/css/main.bb02a534.chunk.css",
-    "static/js/main.2d6e90fc.chunk.js"
+    "static/css/main.b9f7360b.chunk.css",
+    "static/js/main.949f45ac.chunk.js"
   ]
 }
