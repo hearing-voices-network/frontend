@@ -13,6 +13,7 @@
 
   @include for-tablet-large-up {
     margin-top: space(24);
+    padding-bottom: space(40);
   }
 
   @include for-phone-only {
@@ -23,7 +24,7 @@
       height: 100%;
       background-image: url("../../assets/lines/Line1-grey-mobile.svg");
       background-repeat: no-repeat;
-      background-position: 100% 86%;
+      background-position: 80% 88%;
       background-size: 110%;
     }
   }
