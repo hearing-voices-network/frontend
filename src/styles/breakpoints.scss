@@ -24,6 +24,12 @@
   }
 }
 
+@mixin for-tablet-large-up {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
 @mixin for-desktop-down {
   @media (max-width: 1320px) {
     @content;
