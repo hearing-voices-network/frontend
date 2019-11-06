@@ -18,8 +18,9 @@
   @include for-phone-only {
     &:after {
       position: absolute;
-      content: url("../../assets/lines/Line2-grey-mobile.svg");
-      bottom: -25px;
+      content: url("../../assets/lines/Line1-grey-mobile.svg");
+      bottom: -12px;
+      transform: scale(0.5);
     }
   }
 
