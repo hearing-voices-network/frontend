@@ -49,7 +49,11 @@ const Cookies: FunctionComponent<IProps> = ({ loggedIn, cookieStore }) => {
         {cms("header.cookies")}
       </div>
       <div className="flex-col--2 flex-col--tablet--3 flex-col--mobile--5 mobile-hide cookies-banner--close">
-        <span role="button" onClick={() => cookieStore.acceptCookies()}>
+        <span
+          role="button"
+          tabIndex={1}
+          onClick={() => cookieStore.acceptCookies()}
+        >
           Close
           <FontAwesomeIcon
             icon="times"
