@@ -1,5 +1,10 @@
 {
   "header": {
     "cookies": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue. Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue."
+  },
+  "home": {
+    "title": "Welcome",
+    "subtitle": "Created by Hearing Voices Network England",
+    "about": "Collecting first-person accounts of voices, from people who hear voices. This is a place where you can explore and share your experiences anonymously."
   }
 }
