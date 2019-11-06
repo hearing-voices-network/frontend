@@ -3,6 +3,7 @@ import cx from "classnames";
 import { inject, observer } from "mobx-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import { cms } from "../../utils/cms";
 import CookiesStore from "../../stores/cookiesStore";
 
 import "./Cookies.scss";
@@ -45,9 +46,7 @@ const Cookies: FunctionComponent<IProps> = ({ loggedIn, cookieStore }) => {
       </div>
 
       <div className="flex-col--8 flex-col--tablet--6 flex-col--mobile--12 cookies-banner--content">
-        Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt
-        congue. Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies
-        tincidunt congue.
+        {cms("header.cookies")}
       </div>
       <div className="flex-col--2 flex-col--tablet--3 flex-col--mobile--5 mobile-hide cookies-banner--close">
         <span role="button" onClick={() => cookieStore.acceptCookies()}>
