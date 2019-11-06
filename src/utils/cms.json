@@ -5,6 +5,10 @@
   "home": {
     "title": "Welcome",
     "subtitle": "Created by Hearing Voices Network England",
-    "about": "Collecting first-person accounts of voices, from people who hear voices. This is a place where you can explore and share your experiences anonymously."
+    "about": "Collecting first-person accounts of voices, from people who hear voices. This is a place where you can explore and share your experiences anonymously.",
+    "experiences": {
+      "title": "Read other people’s experiences",
+      "content": "Discover other people’s experiences of hearing voices…"
+    }
   }
 }
