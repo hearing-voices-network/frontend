@@ -11,6 +11,10 @@
     background-color: $light-grey;
   }
 
+  @include for-tablet-large-up {
+    margin-top: space(24);
+  }
+
   @include for-phone-only {
     &:after {
       position: absolute;
