@@ -24,6 +24,10 @@
   &--close {
     text-align: end;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     &--icon {
       margin-left: space(16);
       @include for-phone-only {
