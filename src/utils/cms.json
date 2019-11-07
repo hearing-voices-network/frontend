@@ -9,6 +9,13 @@
     "experiences": {
       "title": "Read other people’s experiences",
       "content": "Discover other people’s experiences of hearing voices…"
+    },
+    "share": {
+      "title": "Share your experience",
+      "content": "Signing up is secure and how much you share is up to you, you can always withdraw at any time.",
+      "experiences": "Post your experiences",
+      "community": "Be part of a community",
+      "contributions": "Contributions are anonymous"
     }
   }
 }

@@ -1,8 +1,14 @@
 import React, { Fragment } from "react";
+import ReactSVG from "react-svg";
 import { cms } from "../../utils/cms";
 
 import "./Home.scss";
+
 import Button from "../../components/Button";
+
+import Pencil from "../../assets/icons/pencil.svg";
+import Community from "../../assets/icons/community.svg";
+import Security from "../../assets/icons/security.svg";
 
 const Home = () => (
   <Fragment>
@@ -29,6 +35,34 @@ const Home = () => (
             />
           </div>
         </div>
+      </div>
+    </div>
+    <div className="flex-container flex-container--center flex-container--align-center home--share">
+      <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--6">
+        <h4 className="home--share--title">{cms("home.share.title")}</h4>
+
+        <div className="home--share--description">
+          <ReactSVG src={Pencil} />
+          <p> {cms("home.share.experiences")}</p>
+        </div>
+
+        <div className="home--share--description">
+          <ReactSVG src={Community} />
+          <p>{cms("home.share.community")}</p>
+        </div>
+
+        <div className="home--share--description">
+          <ReactSVG src={Security} />
+          <p>{cms("home.share.contributions")}</p>
+        </div>
+      </div>
+      <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--5 home--share--button-container">
+        <Button
+          text="Sign up and share"
+          onClick={() => console.log("sign up and share")}
+          twoCol={true}
+        />
+        <p className="home--share--content">{cms("home.share.content")}</p>
       </div>
     </div>
   </Fragment>
