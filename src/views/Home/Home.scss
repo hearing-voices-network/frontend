@@ -97,4 +97,43 @@
       margin-bottom: space(80);
     }
   }
+
+  &--share {
+    padding-top: space(112) !important;
+    padding-bottom: space(112) !important;
+
+    &--title {
+      @include heading-m;
+      color: $ribienna;
+    }
+
+    &--description {
+      @include body-l;
+      color: $grey;
+      margin: space(56) 0;
+
+      p {
+        display: inline;
+      }
+
+      div {
+        svg {
+          width: 52px;
+          color: grey;
+          margin-right: space(24);
+          float: left;
+        }
+      }
+    }
+
+    &--content {
+      @include body-s-alt;
+      color: $grey;
+      margin-top: space(40);
+    }
+
+    &--button-container {
+      text-align: center;
+    }
+  }
 }
