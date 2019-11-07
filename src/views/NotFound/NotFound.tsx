@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import ReactSVG from "react-svg";
+import { Helmet } from "react-helmet";
 
 import { cms } from "../../utils/cms";
 
@@ -15,6 +16,9 @@ import Page404 from "../../assets/icons/page-404.svg";
 
 const NotFound = () => (
   <Fragment>
+    <Helmet>
+      <title>Connecting Voices | Not Found</title>
+    </Helmet>
     <div className="flex-container flex-container--no-padding flex-container--center home--welcome not-found">
       <div className="flex-col--8 flex-col--tablet-large--12">
         <ReactSVG
