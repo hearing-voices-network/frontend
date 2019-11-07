@@ -16,6 +16,14 @@
       "experiences": "Post your experiences",
       "community": "Be part of a community",
       "contributions": "Contributions are anonymous"
+    },
+    "footer": {
+      "title": "Contact us",
+      "content": "Need help with anything, or noticed something that doesn’t look right, contact the Hearing Voices Network admin.",
+      "contact": "Email us at"
     }
+  },
+  "global": {
+    "email": "info@hearing-voices.org"
   }
 }
