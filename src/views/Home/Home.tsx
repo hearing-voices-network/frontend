@@ -9,6 +9,7 @@ import Button from "../../components/Button";
 import Pencil from "../../assets/icons/pencil.svg";
 import Community from "../../assets/icons/community.svg";
 import Security from "../../assets/icons/security.svg";
+import Footer from "../../components/Footer";
 
 const Home = () => (
   <Fragment>
@@ -65,6 +66,20 @@ const Home = () => (
         <p className="home--share--content">{cms("home.share.content")}</p>
       </div>
     </div>
+    <Footer purple={true}>
+      <div className="flex-container flex-container--center home--footer">
+        <div className="flex-col--8 flex-col--tablet-large--12">
+          <h5 className="home--footer--title">{cms("home.footer.title")}</h5>
+          <p className="home--footer--content">{cms("home.footer.content")}</p>
+        </div>
+        <div className="flex-col--8 flex-col--tablet-large--12">
+          <p className="home--footer--contact">
+            {cms("home.footer.contact")}{" "}
+            <a href={`mailto:${cms("global.email")}`}>{cms("global.email")}</a>
+          </p>
+        </div>
+      </div>
+    </Footer>
   </Fragment>
 );
 
