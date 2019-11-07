@@ -25,5 +25,9 @@
   },
   "global": {
     "email": "info@hearing-voices.org"
+  },
+  "not-found": {
+    "title": "Page 404",
+    "content": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue."
   }
 }

@@ -1,0 +1,17 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/breakpoints.scss";
+
+.not-found {
+  @include for-phone-only {
+    text-align: center;
+  }
+
+  &--icon {
+    margin-left: space(8);
+    &--mobile {
+      svg {
+        width: 115px;
+      }
+    }
+  }
+}
