@@ -41,20 +41,21 @@ const Home = () => (
     <div className="flex-container flex-container--center flex-container--align-center home--share">
       <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--6">
         <h4 className="home--share--title">{cms("home.share.title")}</h4>
+        <div className="flex-col--tablet--10 flex-col--mobile-small--12 home--share--description--container">
+          <div className="home--share--description">
+            <ReactSVG src={Pencil} />
+            <p> {cms("home.share.experiences")}</p>
+          </div>
 
-        <div className="home--share--description">
-          <ReactSVG src={Pencil} />
-          <p> {cms("home.share.experiences")}</p>
-        </div>
+          <div className="home--share--description">
+            <ReactSVG src={Community} />
+            <p>{cms("home.share.community")}</p>
+          </div>
 
-        <div className="home--share--description">
-          <ReactSVG src={Community} />
-          <p>{cms("home.share.community")}</p>
-        </div>
-
-        <div className="home--share--description">
-          <ReactSVG src={Security} />
-          <p>{cms("home.share.contributions")}</p>
+          <div className="home--share--description">
+            <ReactSVG src={Security} />
+            <p>{cms("home.share.contributions")}</p>
+          </div>
         </div>
       </div>
       <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--5 home--share--button-container">
