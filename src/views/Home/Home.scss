@@ -127,9 +127,6 @@
     padding-bottom: space(112) !important;
 
     @include for-phone-only {
-      // padding-top: space(40) !important;
-      // padding-bottom: space(40) !important;
-
       padding: space(112) space(40) !important;
 
       button {
