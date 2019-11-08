@@ -5,12 +5,16 @@
 
 .home {
   &--welcome {
-    padding: space(24) !important;
+    padding: space(40) space(24) !important;
     position: relative;
     overflow: hidden;
 
+    @include for-small-phone {
+      padding: space(32) !important;
+    }
+
     @include for-phone-only {
-      padding: space(72) !important;
+      padding: space(40) !important;
     }
 
     @include for-tablet-large-up {
@@ -32,7 +36,7 @@
     }
 
     &--subtitle {
-      @include body-s;
+      @include subtitle;
       color: $turqoise;
     }
 
@@ -40,10 +44,25 @@
       @include body-l;
       color: $grey;
       margin-top: space(88);
+
+      @include for-phone-only {
+        margin-top: space(72);
+      }
     }
   }
 
   &--experiences {
+    position: relative;
+    padding: pxtorem(169px) 0;
+    background-color: $light-turqoise;
+    text-align: center;
+    margin-top: space(120);
+
+    @include for-phone-only {
+      margin-top: space(72);
+      padding: space(48) 0 space(64);
+    }
+
     &--container {
       position: relative;
 
@@ -61,6 +80,7 @@
 
         @include for-phone-only {
           background-image: url("../../assets/lines/Line2-green-mobile.svg");
+          background-position: 80% 67px;
         }
       }
 
@@ -80,15 +100,14 @@
         }
       }
     }
-    position: relative;
-    padding: pxtorem(169px) 0;
-    background-color: $light-turqoise;
-    text-align: center;
-    margin-top: space(120);
 
     &--title {
       @include heading-l;
       color: $turqoise;
+
+      @include for-phone-only {
+        line-height: 1;
+      }
     }
 
     &--content {
@@ -96,6 +115,10 @@
       color: $grey;
       margin-top: space(32);
       margin-bottom: space(80);
+
+      @include for-phone-only {
+        margin-bottom: space(64);
+      }
     }
   }
 
@@ -103,15 +126,35 @@
     padding-top: space(112) !important;
     padding-bottom: space(112) !important;
 
+    @include for-phone-only {
+      // padding-top: space(40) !important;
+      // padding-bottom: space(40) !important;
+
+      padding: space(112) space(40) !important;
+
+      button {
+        margin-top: space(16);
+      }
+    }
+
     &--title {
-      @include heading-m;
+      @include heading-l;
       color: $ribienna;
+
+      @include for-tablet-down {
+        line-height: 1;
+        text-align: center;
+      }
     }
 
     &--description {
       @include body-l;
       color: $grey;
       margin: space(56) 0;
+
+      @include for-phone-only {
+        margin: space(40) 0;
+      }
 
       p {
         display: inline;
@@ -125,12 +168,20 @@
           float: left;
         }
       }
+
+      &--container {
+        margin: 0 auto;
+      }
     }
 
     &--content {
       @include body-s-alt;
       color: $grey;
       margin-top: space(40);
+
+      @include for-phone-only {
+        margin-top: space(32);
+      }
     }
 
     &--button-container {
@@ -142,6 +193,11 @@
     padding-top: space(120) !important;
     padding-bottom: space(120) !important;
 
+    @include for-phone-only {
+      padding-top: space(40) !important;
+      padding-bottom: space(56) !important;
+    }
+
     &--title {
       @include heading-m;
       color: $ribienna;
@@ -149,22 +205,23 @@
     }
 
     &--content {
-      @include body-s;
+      @include body-l;
       color: $grey;
-      margin-bottom: space(104);
+      margin-bottom: space(80);
 
       @include for-phone-only {
-        margin-bottom: space(64);
+        margin-bottom: space(16);
       }
     }
 
     &--contact {
-      @include heading-s;
+      @include heading-xs;
       color: $ribienna;
 
       a {
         @include body-l;
         color: $ribienna;
+        display: block;
       }
     }
   }
