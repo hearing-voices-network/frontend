@@ -26,7 +26,7 @@ $skippy-sharp: skippy-sharp, sans-serif;
   line-height: 1.1;
 
   @include for-phone-only {
-    font-size: pxtorem(40px);
+    font-size: pxtorem(56px);
     line-height: 1.35;
   }
 }
@@ -84,7 +84,7 @@ $skippy-sharp: skippy-sharp, sans-serif;
   line-height: 1.25;
 
   @include for-phone-only {
-    font-size: pxtorem(24px);
+    font-size: pxtorem(20px);
     line-height: 1.16;
   }
 }
@@ -218,5 +218,14 @@ $skippy-sharp: skippy-sharp, sans-serif;
 
   @include for-phone-only {
     font-size: pxtorem(24px);
+  }
+}
+
+@mixin subtitle {
+  font-family: $kayak-sans-bold;
+  font-size: pxtorem(24px);
+
+  @include for-phone-only {
+    font-size: pxtorem(20px);
   }
 }
