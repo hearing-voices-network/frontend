@@ -1,0 +1,53 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/breakpoints.scss";
+
+.about {
+  padding: space(24) space(24) space(40) !important;
+
+  &--container {
+    margin-top: space(88);
+
+    @include for-phone-only {
+      margin-top: space(40);
+    }
+  }
+
+  &--title {
+    @include heading-s;
+    color: $grey;
+    margin-bottom: space(32);
+  }
+
+  &--content {
+    @include body-s-alt;
+    color: $medium-grey;
+    margin-bottom: space(56);
+
+    @include for-phone-only {
+      @include for-phone-only {
+        margin-bottom: space(32);
+      }
+    }
+  }
+
+  &--footer {
+    padding: space(120) space(24) space(120) !important;
+    justify-content: center !important;
+
+    &--title {
+      @include heading-m;
+      color: $ribienna;
+      margin-bottom: space(40);
+    }
+
+    &--content {
+      @include body-l;
+      color: $grey;
+    }
+
+    &--button {
+      text-align: center;
+    }
+  }
+}
