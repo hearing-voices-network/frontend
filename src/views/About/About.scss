@@ -35,6 +35,11 @@
     padding: space(120) space(24) space(120) !important;
     justify-content: center !important;
 
+    @include for-phone-only {
+      padding-top: space(40) !important;
+      padding-bottom: space(56) !important;
+    }
+
     &--title {
       @include heading-m;
       color: $ribienna;
@@ -48,6 +53,10 @@
 
     &--button {
       text-align: center;
+
+      @include for-tablet-down {
+        margin-top: space(40);
+      }
     }
   }
 }
