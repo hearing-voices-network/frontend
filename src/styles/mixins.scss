@@ -57,3 +57,7 @@
 
   @return map-get($spaceamounts, $pixels);
 }
+
+@mixin container {
+  padding: space(24) space(24) space(40) !important;
+}
