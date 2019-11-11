@@ -6,6 +6,10 @@
   padding: space(24);
   position: relative;
 
+  &--link {
+    text-decoration: none;
+  }
+
   @include for-tablet-down {
     justify-content: center;
     background-color: $light-grey;
