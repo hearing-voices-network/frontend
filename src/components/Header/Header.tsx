@@ -31,8 +31,10 @@ const Header: FunctionComponent = () => (
           <ReactSVG src={Question} wrapper="span" className="header--icon" />
         </Link>
         <span>
-          Contribute
-          <ReactSVG src={Pencil} wrapper="span" className="header--icon" />
+          <Link className="header--link" to="/contribute">
+            Contribute
+            <ReactSVG src={Pencil} wrapper="span" className="header--icon" />
+          </Link>
         </span>
       </div>
     </div>
