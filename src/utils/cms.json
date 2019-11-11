@@ -29,5 +29,14 @@
   "not-found": {
     "title": "Page 404",
     "content": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue."
+  },
+  "about": {
+    "who": "If you hear voices, HVN can help- we are committed to helping people who hear voices. We offer information, support and understanding to people who hear voices and those who support them.",
+    "what": "The project is about collecting first person accounts of voice hearing. You can write, tag and submit your own experience, and you can read about other experiences. It's all anonymous.",
+    "why": "Most research about hearing voices is done by people who don't hear voices, about people who do. We want to change this. We want people who hear voices to be able to use their own words to describe their experience, and to categorise it themselves. We want research that reflects the immense diversity in voice hearing. We also want to create research that voices hearers find useful, and can access. These are some of the ideas behind this project.",
+    "footer": {
+      "title": "Contribute to the project",
+      "content": "Sign up with an email and password to submit your own stories, this link will take you to the sign up page."
+    }
   }
 }
