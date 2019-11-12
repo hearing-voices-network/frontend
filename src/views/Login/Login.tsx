@@ -12,8 +12,8 @@ const Login: FunctionComponent = () => (
       <p className="login--description">{cms("login.description")}</p>
     </div>
     <form className="flex-col--8 flex-col--mobile--10">
-      <Input id="email" label="Enter email" />
-      <Input id="password" label="Enter password" />
+      <Input id="email" label="Enter email" placeholder="Type here" />
+      <Input id="password" label="Enter password" placeholder="Type here" />
       <div className="login--button-container">
         <Button
           text="Submit"
