@@ -28,6 +28,12 @@ const Contribute = () => (
           onClick={() => console.log("login")}
         />
       }
+      mobileLeftButton={
+        <Button
+          text={cms("contribute.login-cta")}
+          onClick={() => console.log("login")}
+        />
+      }
       leftTitle={cms("contribute.login")}
       leftDescription={cms("contribute.disclaimer")}
       rightButton={
@@ -37,8 +43,15 @@ const Contribute = () => (
           onClick={() => console.log("login")}
         />
       }
+      mobileRightButton={
+        <Button
+          text={cms("contribute.share-cta")}
+          onClick={() => console.log("login")}
+        />
+      }
       rightTitle={cms("contribute.share")}
       rightDescription={cms("contribute.disclaimer")}
+      mobileDescription={cms("contribute.disclaimer")}
     />
   </Fragment>
 );

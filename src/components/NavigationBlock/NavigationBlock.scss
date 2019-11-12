@@ -6,8 +6,36 @@
 .navigation-block {
   margin-top: space(120) !important;
 
-  @include for-phone-only {
-    margin-top: space(72) !important;
+  @include for-tablet-down {
+    margin-top: 0 !important;
+  }
+
+  &--mobile {
+    background-color: $light-grey;
+
+    padding: space(24) space(24) space(40);
+    text-align: center;
+
+    &--outer {
+      padding: space(16) !important;
+    }
+
+    &--buttons {
+      button {
+        width: 100%;
+
+        &:nth-child(1) {
+          margin-bottom: space(24);
+          background-color: $turqoise;
+        }
+      }
+    }
+
+    &--description {
+      @include heading-xs;
+      color: $grey;
+      margin-bottom: space(32);
+    }
   }
 
   &__column {
