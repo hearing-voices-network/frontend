@@ -1,0 +1,44 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/breakpoints.scss";
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.navigation-block {
+  margin-top: space(120) !important;
+
+  @include for-phone-only {
+    margin-top: space(72) !important;
+  }
+
+  &__column {
+    background-color: $light-ribienna;
+    text-align: center;
+    padding: space(32);
+
+    &:nth-child(2) {
+      background-color: $aqua-haze;
+
+      button {
+        background-color: $turqoise;
+      }
+    }
+
+    &--title {
+      @include heading-m;
+      color: $turqoise;
+      margin-bottom: space(56);
+
+      &--purple {
+        @include heading-m;
+        color: $ribienna;
+        margin-bottom: space(56);
+      }
+    }
+
+    &--disclaimer {
+      @include body-l;
+      color: $grey;
+      margin-top: space(32);
+    }
+  }
+}
