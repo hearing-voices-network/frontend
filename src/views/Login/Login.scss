@@ -1,0 +1,23 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/fonts.scss";
+
+.login {
+  @include container;
+
+  &--inner {
+    @include for-phone-only {
+      text-align: center;
+    }
+  }
+
+  &--title {
+    @include heading-l;
+    color: $grey;
+    margin-bottom: space(32);
+  }
+
+  &--description {
+    @include body-l;
+    color: $medium-grey;
+  }
+}

@@ -45,5 +45,9 @@
     "share": "Share your experience",
     "share-cta": "Sign up and share",
     "disclaimer": "Signing up is secure and how much you share is up to you, you can always withdraw at any time."
+  },
+  "login": {
+    "title": "Log in",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies tincidunt congue."
   }
 }
