@@ -5,9 +5,11 @@
 
 .navigation-block {
   margin-top: space(120) !important;
+  margin-bottom: space(120) !important;
 
   @include for-tablet-down {
     margin-top: 0 !important;
+    margin-bottom: space(56) !important;
   }
 
   &--mobile {

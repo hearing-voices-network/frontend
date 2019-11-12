@@ -1,10 +1,13 @@
 import React, { Fragment } from "react";
 
-import "./Contribute.scss";
-import Breadcrumb from "../../components/Breadcrumb";
 import { cms } from "../../utils/cms";
+
+import "./Contribute.scss";
+
+import Breadcrumb from "../../components/Breadcrumb";
 import Button from "../../components/Button";
 import NavigationBlock from "../../components/NavigationBlock";
+import Footer from "../../components/Footer";
 
 const Contribute = () => (
   <Fragment>
@@ -53,6 +56,23 @@ const Contribute = () => (
       rightDescription={cms("contribute.disclaimer")}
       mobileDescription={cms("contribute.disclaimer")}
     />
+    <Footer purple={true}>
+      <div className="flex-container flex-container--center flex-container--no-padding flex-container--align-center about--footer">
+        <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--8">
+          <h5 className="about--footer--title">{cms("about.footer.title")}</h5>
+          <p className="about--footer--content">
+            {cms("about.footer.content")}
+          </p>
+        </div>
+        <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--4 about--footer--button">
+          <Button
+            text="Sign up and share"
+            onClick={() => console.log("sign up and share")}
+            twoCol={true}
+          />
+        </div>
+      </div>
+    </Footer>
   </Fragment>
 );
 
