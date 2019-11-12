@@ -20,4 +20,9 @@
     @include body-l;
     color: $medium-grey;
   }
+
+  &--button-container {
+    margin-top: space(32);
+    text-align: center;
+  }
 }
