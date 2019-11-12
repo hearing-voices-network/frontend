@@ -1,0 +1,79 @@
+import React, { Fragment } from "react";
+
+import { cms } from "../../utils/cms";
+
+import "./Contribute.scss";
+
+import Breadcrumb from "../../components/Breadcrumb";
+import Button from "../../components/Button";
+import NavigationBlock from "../../components/NavigationBlock";
+import Footer from "../../components/Footer";
+
+const Contribute = () => (
+  <Fragment>
+    <div className="flex-container flex-container--no-padding flex-container--center contribute">
+      <Breadcrumb
+        crumbs={[{ text: "Home", url: "/" }, { text: "Contribute", url: "" }]}
+      />
+      <div className="flex-col--12">
+        <h1 className="contribute--subtitle">{cms("global.tagline")}</h1>
+      </div>
+
+      <div className="flex-col--8 flex-col--tablet-large--12">
+        <p className="contribute--about">{cms("global.about")}</p>
+      </div>
+    </div>
+    <NavigationBlock
+      leftButton={
+        <Button
+          text={cms("contribute.login-cta")}
+          twoCol={true}
+          onClick={() => console.log("login")}
+        />
+      }
+      mobileLeftButton={
+        <Button
+          text={cms("contribute.login-cta")}
+          onClick={() => console.log("login")}
+        />
+      }
+      leftTitle={cms("contribute.login")}
+      leftDescription={cms("contribute.disclaimer")}
+      rightButton={
+        <Button
+          text={cms("contribute.share-cta")}
+          twoCol={true}
+          onClick={() => console.log("login")}
+        />
+      }
+      mobileRightButton={
+        <Button
+          text={cms("contribute.share-cta")}
+          onClick={() => console.log("login")}
+        />
+      }
+      rightTitle={cms("contribute.share")}
+      rightDescription={cms("contribute.disclaimer")}
+      mobileDescription={cms("contribute.disclaimer")}
+    />
+    <Footer purple={true}>
+      <div className="flex-container flex-container--center flex-container--no-padding flex-container--align-center about--footer">
+        <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--8">
+          <h5 className="about--footer--title">{cms("about.footer.title")}</h5>
+          <p className="about--footer--content">
+            {cms("about.footer.content")}
+          </p>
+        </div>
+        <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--4 about--footer--button">
+          <Button
+            text="Sign up and share"
+            onClick={() => console.log("sign up and share")}
+            twoCol={true}
+          />
+        </div>
+      </div>
+    </Footer>
+  </Fragment>
+);
+
+export default Contribute;

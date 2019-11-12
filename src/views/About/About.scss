@@ -3,7 +3,7 @@
 @import "../../styles/breakpoints.scss";
 
 .about {
-  padding: space(24) space(24) space(40) !important;
+  @include container;
 
   &--container {
     margin-top: space(88);

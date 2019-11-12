@@ -1,0 +1,24 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/fonts.scss";
+
+.contribute {
+  @include container;
+
+  position: relative;
+
+  @include for-tablet-large-up {
+    &:after {
+      @include faded-background;
+    }
+  }
+
+  &--subtitle {
+    @include subtitle;
+    color: $turqoise;
+    margin-top: space(16);
+  }
+
+  &--about {
+    @include about;
+  }
+}

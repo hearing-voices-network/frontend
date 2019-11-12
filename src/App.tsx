@@ -10,6 +10,7 @@ import "./styles/main.scss";
 import Home from "./views/Home";
 import NotFound from "./views/NotFound";
 import About from "./views/About";
+import Contribute from "./views/Contribute";
 
 import Header from "./components/Header";
 
@@ -25,7 +26,8 @@ const App: FunctionComponent = () => (
       <Header />
       <Switch>
         <Route path="/" component={Home} exact={true} />
-        <Route path="/about" component={About} true={true} />
+        <Route path="/about" component={About} exact={true} />
+        <Route path="/contribute" component={Contribute} exact={true} />
         <Route component={NotFound} />
       </Switch>
     </Router>

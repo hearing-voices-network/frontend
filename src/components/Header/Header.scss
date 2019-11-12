@@ -25,11 +25,11 @@
       position: absolute;
       content: "";
       width: 100%;
-      height: 100%;
+      height: 10px;
       background-image: url("../../assets/lines/Line1-grey-mobile.svg");
       background-repeat: no-repeat;
-      background-position: 80% 88%;
-      background-size: 110%;
+      background-size: 100%;
+      bottom: -3px;
     }
   }
 

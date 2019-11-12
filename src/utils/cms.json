@@ -4,8 +4,6 @@
   },
   "home": {
     "title": "Welcome",
-    "subtitle": "Created by Hearing Voices Network England",
-    "about": "Collecting first-person accounts of voices, from people who hear voices. This is a place where you can explore and share your experiences anonymously.",
     "experiences": {
       "title": "Read other people’s experiences",
       "content": "Discover other people’s experiences of hearing voices…"
@@ -24,7 +22,9 @@
     }
   },
   "global": {
-    "email": "info@hearing-voices.org"
+    "email": "info@hearing-voices.org",
+    "tagline": "Created by Hearing Voices Network England",
+    "about": "Collecting first-person accounts of voices, from people who hear voices. This is a place where you can explore and share your experiences anonymously."
   },
   "not-found": {
     "title": "Page 404",
@@ -38,5 +38,12 @@
       "title": "Contribute to the project",
       "content": "Sign up with an email and password to submit your own stories, this link will take you to the sign up page."
     }
+  },
+  "contribute": {
+    "login": "Log in",
+    "login-cta": "Log in to app",
+    "share": "Share your experience",
+    "share-cta": "Sign up and share",
+    "disclaimer": "Signing up is secure and how much you share is up to you, you can always withdraw at any time."
   }
 }
