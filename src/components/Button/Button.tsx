@@ -11,6 +11,7 @@ interface IProps {
   twoCol?: boolean;
   small?: boolean;
   filter?: boolean;
+  purple?: boolean;
 }
 
 const Button: FunctionComponent<IProps> = ({
@@ -20,7 +21,8 @@ const Button: FunctionComponent<IProps> = ({
   onClick,
   twoCol,
   small,
-  filter
+  filter,
+  purple
 }) => (
   <button
     disabled={disabled}
@@ -29,7 +31,8 @@ const Button: FunctionComponent<IProps> = ({
     className={cx("button", {
       "button--two-col": twoCol,
       "button--small": small,
-      "button--filter": filter
+      "button--filter": filter,
+      "button--purple": purple
     })}
   >
     {text}
