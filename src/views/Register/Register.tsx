@@ -6,6 +6,7 @@ import "./Register.scss";
 import { cms } from "../../utils/cms";
 
 import Intro from "./Intro";
+import StepOne from "./StepOne";
 import RegisterStore from "../../stores/registerStore";
 import Footer from "../../components/Footer";
 import Button from "../../components/Button";
@@ -25,7 +26,8 @@ class Register extends Component<IProps> {
     switch (registerStore.step) {
       case 0:
         return <Intro />;
-
+      case 1:
+        return <StepOne />;
       default:
         break;
     }
@@ -48,7 +50,10 @@ class Register extends Component<IProps> {
               <p className="register--footer--description">
                 {cms(`register.footer.step-${registerStore.step}-description`)}
               </p>
-              <Button text="Continue" onClick={() => console.log("continue")} />
+              <Button
+                text="Continue"
+                onClick={() => registerStore.nextStep()}
+              />
             </div>
           </div>
         </Footer>
