@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment, RefObject } from "react";
 import { observer, inject } from "mobx-react";
 
 import "./Register.scss";
@@ -20,8 +20,22 @@ interface IProps {
 }
 
 class Register extends Component<IProps> {
+  private buttonRef: RefObject<HTMLButtonElement>;
+
+  public constructor(props: IProps) {
+    super(props);
+
+    this.buttonRef = React.createRef();
+  }
+
   componentDidMount() {
     if (!this.props.registerStore) return null;
+  }
+
+  componentDidUpdate() {
+    if (this.buttonRef.current) {
+      this.buttonRef.current.blur();
+    }
   }
 
   displayStep() {
@@ -68,6 +82,7 @@ class Register extends Component<IProps> {
                     ? registerStore.confirm()
                     : registerStore.nextStep()
                 }
+                ref={this.buttonRef}
               />
             </div>
           </div>
