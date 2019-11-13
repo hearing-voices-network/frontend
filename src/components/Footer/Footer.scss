@@ -3,6 +3,7 @@
 
 .footer {
   position: relative;
+
   &--purple {
     background-color: $light-ribienna;
 
@@ -18,6 +19,25 @@
 
       @include for-phone-only {
         background-image: url("../../assets/lines/Line3-purple-mobile.svg");
+      }
+    }
+  }
+
+  &--grey {
+    background-color: $light-grey;
+
+    &:before {
+      position: absolute;
+      content: "";
+      background-image: url("../../assets/lines/Line3-grey.svg");
+      width: 100%;
+      height: 150px;
+      background-repeat: no-repeat;
+      top: -12px;
+      background-size: contain;
+
+      @include for-phone-only {
+        background-image: url("../../assets/lines/Line3-grey-mobile.svg");
       }
     }
   }

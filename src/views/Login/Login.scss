@@ -1,0 +1,45 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/fonts.scss";
+
+.login {
+  @include container;
+
+  &--inner {
+    @include for-phone-only {
+      text-align: center;
+    }
+  }
+
+  &--title {
+    @include heading-l;
+    color: $grey;
+    margin-bottom: space(32);
+  }
+
+  &--description {
+    @include body-l;
+    color: $medium-grey;
+  }
+
+  &--button-container {
+    margin-top: space(32);
+    text-align: center;
+  }
+
+  &--footer {
+    padding: space(120) space(24) space(120) !important;
+    justify-content: center !important;
+    text-align: center;
+
+    @include for-phone-only {
+      padding-top: space(40) !important;
+      padding-bottom: space(56) !important;
+    }
+
+    &--description {
+      @include body-s-alt;
+      color: $grey;
+      margin-top: space(24);
+    }
+  }
+}

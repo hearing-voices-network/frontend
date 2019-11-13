@@ -1,0 +1,31 @@
+@import "../../styles/fonts.scss";
+@import "../../styles/colors.scss";
+
+.input {
+  @include body-m-alt;
+  border: 1px solid #b7bbc0;
+  width: 100%;
+  margin-top: space(32);
+  height: pxtorem(64px);
+  padding: 0 space(24);
+  color: $grey;
+
+  &::placeholder {
+    color: #b7bbc0;
+  }
+
+  @include for-phone-only {
+    margin-top: space(24);
+    height: pxtorem(50px);
+  }
+
+  &--container {
+    margin-top: space(24);
+  }
+}
+
+.label {
+  @include heading-s;
+  color: $grey;
+  display: block;
+}
