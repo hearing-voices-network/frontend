@@ -9,6 +9,8 @@ import Intro from "./Intro";
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
+import Confirmation from "./Confirmation";
+
 import RegisterStore from "../../stores/registerStore";
 import Footer from "../../components/Footer";
 import Button from "../../components/Button";
@@ -41,6 +43,9 @@ class Register extends Component<IProps> {
 
   render() {
     const { registerStore } = this.props;
+
+    if (registerStore.showConfirmation) return <Confirmation />;
+
     return (
       <Fragment>
         <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify register">
@@ -58,7 +63,11 @@ class Register extends Component<IProps> {
               </p>
               <Button
                 text="Continue"
-                onClick={() => registerStore.nextStep()}
+                onClick={() =>
+                  registerStore.step === 3
+                    ? registerStore.confirm()
+                    : registerStore.nextStep()
+                }
               />
             </div>
           </div>

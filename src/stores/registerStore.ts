@@ -1,8 +1,9 @@
 import { observable, action } from "mobx";
 
 export default class RegisterStore {
-  @observable step: number = 3;
+  @observable step: number = 0;
   @observable consent = false;
+  @observable showConfirmation = false;
 
   @action
   nextStep() {
@@ -12,5 +13,10 @@ export default class RegisterStore {
   @action
   toggleConsent() {
     this.consent = !this.consent;
+  }
+
+  @action
+  confirm() {
+    this.showConfirmation = true;
   }
 }
