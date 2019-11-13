@@ -16,6 +16,10 @@
     color: $medium-grey;
     margin-bottom: space(32);
 
+    p {
+      margin: space(8) 0;
+    }
+
     &--tight {
       margin-bottom: 0;
     }
@@ -49,6 +53,14 @@
       height: 30px;
       width: auto;
       margin-right: space(16);
+    }
+  }
+
+  &--checkbox {
+    margin-top: space(32);
+
+    @include for-phone-only {
+      margin-top: space(20);
     }
   }
 

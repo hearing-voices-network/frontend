@@ -7,10 +7,11 @@ import { cms } from "../../utils/cms";
 
 import Intro from "./Intro";
 import StepOne from "./StepOne";
+import StepTwo from "./StepTwo";
+import StepThree from "./StepThree";
 import RegisterStore from "../../stores/registerStore";
 import Footer from "../../components/Footer";
 import Button from "../../components/Button";
-import StepTwo from "./StepTwo";
 
 interface IProps {
   registerStore: RegisterStore;
@@ -31,6 +32,8 @@ class Register extends Component<IProps> {
         return <StepOne />;
       case 2:
         return <StepTwo />;
+      case 3:
+        return <StepThree />;
       default:
         break;
     }
