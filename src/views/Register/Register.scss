@@ -1,0 +1,30 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/colors.scss";
+
+.register {
+  @include container;
+
+  &--title {
+    @include heading-l;
+    color: $grey;
+    margin-bottom: space(32);
+  }
+
+  &--description {
+    @include body-l;
+    color: $medium-grey;
+    margin-bottom: space(32);
+  }
+
+  &--subtitle {
+    @include subtitle;
+    color: $grey;
+    margin-bottom: space(24);
+  }
+
+  &--step-description {
+    @include body-l;
+    color: $medium-grey;
+  }
+}

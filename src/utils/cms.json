@@ -50,5 +50,11 @@
     "title": "Log in",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies tincidunt congue.",
     "footer": "Need help logging in or need to reset  your password."
+  },
+  "register": {
+    "title": "Hi there",
+    "description": "At the Hearing Voices Network were collecting first-person accounts of stories, from people who experience voices, visions and other unusual sensory perceptions.",
+    "step-title": "Create account steps",
+    "step-description": "Email, password, consent to sharing experiences."
   }
 }
