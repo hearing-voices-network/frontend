@@ -59,11 +59,16 @@
     "step-1-title": "Set up your account",
     "step-1-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies tincidunt congue.",
     "step-1-hint": "Your email will be used to log in",
+    "step-2-title": "Choose your password",
+    "step-2-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies tincidunt congue.",
+    "step-2-hint": "Your password will be encrypted",
     "footer": {
       "step-0-title": "First step",
       "step-0-description": "Create account, you will need to enter your email to do this.",
       "step-1-title": "Next step",
-      "step-1-description": "Set your password to keep your account secure."
+      "step-1-description": "Set your password to keep your account secure.",
+      "step-2-title": "Next step",
+      "step-2-description": "Consent to sharing your stories and information with the app."
     }
   }
 }

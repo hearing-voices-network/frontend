@@ -10,6 +10,7 @@ import StepOne from "./StepOne";
 import RegisterStore from "../../stores/registerStore";
 import Footer from "../../components/Footer";
 import Button from "../../components/Button";
+import StepTwo from "./StepTwo";
 
 interface IProps {
   registerStore: RegisterStore;
@@ -28,6 +29,8 @@ class Register extends Component<IProps> {
         return <Intro />;
       case 1:
         return <StepOne />;
+      case 2:
+        return <StepTwo />;
       default:
         break;
     }
