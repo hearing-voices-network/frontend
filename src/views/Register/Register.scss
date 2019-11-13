@@ -18,7 +18,7 @@
   }
 
   &--subtitle {
-    @include subtitle;
+    @include body-l;
     color: $grey;
     margin-bottom: space(24);
   }
@@ -26,5 +26,33 @@
   &--step-description {
     @include body-l;
     color: $medium-grey;
+    margin-bottom: space(56);
+
+    @include for-phone-only {
+      margin-bottom: space(32);
+    }
+  }
+
+  &--footer {
+    padding-top: space(120) !important;
+    padding-bottom: space(120) !important;
+    text-align: center;
+
+    @include for-phone-only {
+      padding-top: space(40) !important;
+      padding-bottom: space(56) !important;
+    }
+
+    &--title {
+      @include heading-m;
+      color: $turqoise;
+      margin-bottom: space(24);
+    }
+
+    &--description {
+      @include body-l;
+      color: $medium-grey;
+      margin-bottom: space(32);
+    }
   }
 }

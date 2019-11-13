@@ -17,13 +17,15 @@ import Register from "./views/Register";
 import Header from "./components/Header";
 
 import CookiesStore from "./stores/cookiesStore";
+import RegisterStore from "./stores/registerStore";
 
 library.add(fas);
 
 const cookieStore = new CookiesStore();
+const registerStore = new RegisterStore();
 
 const App: FunctionComponent = () => (
-  <Provider cookieStore={cookieStore}>
+  <Provider cookieStore={cookieStore} registerStore={registerStore}>
     <Router>
       <Header />
       <Switch>

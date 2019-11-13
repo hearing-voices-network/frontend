@@ -55,6 +55,10 @@
     "title": "Hi there",
     "description": "At the Hearing Voices Network were collecting first-person accounts of stories, from people who experience voices, visions and other unusual sensory perceptions.",
     "step-title": "Create account steps",
-    "step-description": "Email, password, consent to sharing experiences."
+    "step-description": "Email, password, consent to sharing experiences.",
+    "footer": {
+      "step-0-title": "First step",
+      "step-0-description": " Create account, you will need to enter your email to do this."
+    }
   }
 }
