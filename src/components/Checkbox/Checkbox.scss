@@ -1,0 +1,51 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.checkbox {
+  input[type="checkbox"] {
+    position: absolute;
+    left: -99999px;
+  }
+
+  input[type="checkbox"] + label {
+    @include body-m;
+    cursor: pointer;
+    margin-bottom: 0;
+    color: $grey;
+
+    svg {
+      display: none;
+    }
+  }
+
+  input[type="checkbox"]:checked + label {
+    display: inline-block;
+    vertical-align: middle;
+
+    svg {
+      display: inline-block;
+      font-size: 1.4rem;
+      top: 7px;
+      position: absolute;
+      left: 7px;
+      color: $turqoise;
+    }
+  }
+
+  input[type="checkbox"] + label > span {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin-right: 8px;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: $light-grey;
+    position: relative;
+  }
+
+  input[type="checkbox"] + label span:before,
+  input[type="checkbox"] + label:hover > span:before,
+  input[type="checkbox"]:checked + label span:before {
+    display: block;
+  }
+}

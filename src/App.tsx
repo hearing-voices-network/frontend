@@ -12,17 +12,20 @@ import NotFound from "./views/NotFound";
 import About from "./views/About";
 import Contribute from "./views/Contribute";
 import Login from "./views/Login";
+import Register from "./views/Register";
 
 import Header from "./components/Header";
 
 import CookiesStore from "./stores/cookiesStore";
+import RegisterStore from "./stores/registerStore";
 
 library.add(fas);
 
 const cookieStore = new CookiesStore();
+const registerStore = new RegisterStore();
 
 const App: FunctionComponent = () => (
-  <Provider cookieStore={cookieStore}>
+  <Provider cookieStore={cookieStore} registerStore={registerStore}>
     <Router>
       <Header />
       <Switch>
@@ -30,6 +33,7 @@ const App: FunctionComponent = () => (
         <Route path="/about" component={About} exact={true} />
         <Route path="/contribute" component={Contribute} exact={true} />
         <Route path="/login" component={Login} exact={true} />
+        <Route path="/register" component={Register} exact={true} />
         <Route component={NotFound} />
       </Switch>
     </Router>

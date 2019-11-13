@@ -8,13 +8,15 @@ interface IProps {
   href: string;
   size: "small" | "medium" | "large";
   grey?: boolean;
+  green?: boolean;
 }
 
-const Link: FunctionComponent<IProps> = ({ text, href, size, grey }) => (
+const Link: FunctionComponent<IProps> = ({ text, href, size, grey, green }) => (
   <a
     href={href}
     className={cx(`link link--${size}`, {
-      "link--grey": grey
+      "link--grey": grey,
+      "link--green": green
     })}
   >
     {text}
