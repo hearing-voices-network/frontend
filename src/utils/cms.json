@@ -48,6 +48,7 @@
   },
   "login": {
     "title": "Log in",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies tincidunt congue."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies tincidunt congue.",
+    "footer": "Need help logging in or need to reset  your password."
   }
 }
