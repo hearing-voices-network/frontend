@@ -40,5 +40,5 @@ This project is intended to be deployed onto AWS to a S3 bucket.
 
 - [Ayup Digital](https://ayup.agency/)
 
-See also the list of [contributors](https://github.com/RoyalBoroughKingston/ck-frontend/contributors) who
+See also the list of [contributors](https://github.com/hearing-voices-network/frontend/graphs/contributors) who
 participated in this project.
