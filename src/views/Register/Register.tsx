@@ -67,7 +67,7 @@ class Register extends Component<IProps> {
         </div>
 
         <Footer green={true}>
-          <div className="flex-container flex-container--center register--footer">
+          <div className="flex-container flex-container--center flex-container--justify register--footer">
             <div className="flex-col--8 flex-col--tablet-large--12">
               <h3 className="register--footer--title">
                 {cms(`register.footer.step-${registerStore.step}-title`)}
