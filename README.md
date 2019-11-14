@@ -9,7 +9,7 @@ development and testing purposes.
 
 ### Prerequisites
 
-- [Connected Kingston - API](https://github.com/hearing-voices-network/api)
+- [Hearing Voices Network - API](https://github.com/hearing-voices-network/api)
 - [Docker](https://www.docker.com)
 - [Yarn](https://yarnpkg.com/en/docs/install)
 
