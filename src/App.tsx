@@ -7,6 +7,7 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 
 import "./styles/main.scss";
 
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Home from "./views/Home";
 import NotFound from "./views/NotFound";
 import About from "./views/About";
@@ -28,17 +29,23 @@ const registerStore = new RegisterStore();
 const App: FunctionComponent = () => (
   <Provider cookieStore={cookieStore} registerStore={registerStore}>
     <Router>
-      <Header />
-      <Switch>
-        <Route path="/" component={Home} exact={true} />
-        <Route path="/about" component={About} exact={true} />
-        <Route path="/contribute" component={Contribute} exact={true} />
-        <Route path="/login" component={Login} exact={true} />
-        <Route path="/register" component={Register} exact={true} />
-        <Route path="/privacy-policy" component={PrivacyPolicy} exact={true} />
+      <ScrollToTop>
+        <Header />
+        <Switch>
+          <Route path="/" component={Home} exact={true} />
+          <Route path="/about" component={About} exact={true} />
+          <Route path="/contribute" component={Contribute} exact={true} />
+          <Route path="/login" component={Login} exact={true} />
+          <Route path="/register" component={Register} exact={true} />
+          <Route
+            path="/privacy-policy"
+            component={PrivacyPolicy}
+            exact={true}
+          />
 
-        <Route component={NotFound} />
-      </Switch>
+          <Route component={NotFound} />
+        </Switch>
+      </ScrollToTop>
     </Router>
   </Provider>
 );
