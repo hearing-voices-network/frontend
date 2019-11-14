@@ -1,0 +1,26 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/breakpoints.scss";
+
+.privacy {
+  @include container;
+
+  &--content {
+    @include about;
+    color: $medium-grey;
+
+    margin-top: space(88);
+
+    @include for-phone-only {
+      margin-top: space(40);
+    }
+
+    p {
+      margin: space(16) 0;
+
+      @include for-phone-only {
+        margin: space(8) 0;
+      }
+    }
+  }
+}
