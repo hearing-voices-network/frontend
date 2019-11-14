@@ -8,6 +8,7 @@ export default class RegisterStore {
   @action
   nextStep() {
     this.step = this.step + 1;
+    window.scrollTo(0, 0);
   }
 
   @action
