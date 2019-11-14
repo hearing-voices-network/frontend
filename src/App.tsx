@@ -13,6 +13,7 @@ import About from "./views/About";
 import Contribute from "./views/Contribute";
 import Login from "./views/Login";
 import Register from "./views/Register";
+import PrivacyPolicy from "./views/PrivacyPolicy";
 
 import Header from "./components/Header";
 
@@ -34,6 +35,8 @@ const App: FunctionComponent = () => (
         <Route path="/contribute" component={Contribute} exact={true} />
         <Route path="/login" component={Login} exact={true} />
         <Route path="/register" component={Register} exact={true} />
+        <Route path="/privacy-policy" component={PrivacyPolicy} exact={true} />
+
         <Route component={NotFound} />
       </Switch>
     </Router>

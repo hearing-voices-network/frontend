@@ -84,5 +84,8 @@
       "step-3-description": "Click continue to confirm finish creating your account.",
       "confirmation": "Browse through the experiences of others."
     }
+  },
+  "privacy": {
+    "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies tincidunt congue.</p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum sem vel elit vehicula, vitae accumsan turpis scelerisque.</p>"
   }
 }
