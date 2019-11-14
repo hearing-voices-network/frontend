@@ -1,6 +1,7 @@
-import React, { Fragment } from "react";
+import React, { Fragment, FunctionComponent } from "react";
 import ReactSVG from "react-svg";
 import { Helmet } from "react-helmet";
+import { withRouter, RouteComponentProps } from "react-router";
 
 import { cms } from "../../utils/cms";
 
@@ -14,7 +15,7 @@ import Security from "../../assets/icons/security.svg";
 import Page404Large from "../../assets/icons/page-404-large.svg";
 import Page404 from "../../assets/icons/page-404.svg";
 
-const NotFound = () => (
+const NotFound: FunctionComponent<RouteComponentProps> = ({ history }) => (
   <Fragment>
     <Helmet>
       <title>Connecting Voices | Not Found</title>
@@ -77,7 +78,11 @@ const NotFound = () => (
       <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--5 home--share--button-container">
         <Button
           text="Sign up and share"
-          onClick={() => console.log("sign up and share")}
+          onClick={() =>
+            history.push({
+              pathname: "/register"
+            })
+          }
           twoCol={true}
         />
         <p className="home--share--content">{cms("home.share.content")}</p>
@@ -100,4 +105,4 @@ const NotFound = () => (
   </Fragment>
 );
 
-export default NotFound;
+export default withRouter(NotFound);

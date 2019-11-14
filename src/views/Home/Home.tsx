@@ -1,5 +1,7 @@
-import React, { Fragment } from "react";
+import React, { Fragment, FunctionComponent } from "react";
 import ReactSVG from "react-svg";
+import { withRouter, RouteComponentProps } from "react-router";
+
 import { cms } from "../../utils/cms";
 
 import "./Home.scss";
@@ -11,7 +13,7 @@ import Community from "../../assets/icons/community.svg";
 import Security from "../../assets/icons/security.svg";
 import Footer from "../../components/Footer";
 
-const Home = () => (
+const Home: FunctionComponent<RouteComponentProps> = ({ history }) => (
   <Fragment>
     <div className="flex-container flex-container--no-padding flex-container--center home--welcome">
       <div className="flex-col--8 flex-col--tablet-large--12">
@@ -61,7 +63,11 @@ const Home = () => (
       <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--5 home--share--button-container">
         <Button
           text="Sign up and share"
-          onClick={() => console.log("sign up and share")}
+          onClick={() =>
+            history.push({
+              pathname: "/register"
+            })
+          }
           twoCol={true}
         />
         <p className="home--share--content">{cms("home.share.content")}</p>
@@ -84,4 +90,4 @@ const Home = () => (
   </Fragment>
 );
 
-export default Home;
+export default withRouter(Home);

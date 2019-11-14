@@ -1,4 +1,5 @@
-import React, { Fragment } from "react";
+import React, { Fragment, FunctionComponent } from "react";
+import { withRouter, RouteComponentProps } from "react-router";
 
 import "./About.scss";
 import Breadcrumb from "../../components/Breadcrumb";
@@ -7,7 +8,7 @@ import { cms } from "../../utils/cms";
 import Footer from "../../components/Footer";
 import Button from "../../components/Button";
 
-const About = () => (
+const About: FunctionComponent<RouteComponentProps> = ({ history }) => (
   <Fragment>
     <div className="flex-container flex-container--no-padding flex-container--center about">
       <Breadcrumb
@@ -39,7 +40,11 @@ const About = () => (
         <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--4 about--footer--button">
           <Button
             text="Sign up and share"
-            onClick={() => console.log("sign up and share")}
+            onClick={() =>
+              history.push({
+                pathname: "/register"
+              })
+            }
             twoCol={true}
           />
         </div>
@@ -48,4 +53,4 @@ const About = () => (
   </Fragment>
 );
 
-export default About;
+export default withRouter(About);

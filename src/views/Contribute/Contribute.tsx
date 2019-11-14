@@ -14,7 +14,10 @@ const Contribute: FunctionComponent<RouteComponentProps> = ({ history }) => (
   <Fragment>
     <div className="flex-container flex-container--no-padding flex-container--center contribute">
       <Breadcrumb
-        crumbs={[{ text: "Home", url: "/" }, { text: "Contribute", url: "" }]}
+        crumbs={[
+          { text: "Home", url: "/" },
+          { text: "Contribute", url: "" }
+        ]}
       />
       <div className="flex-col--12">
         <h1 className="contribute--subtitle">{cms("global.tagline")}</h1>
@@ -39,7 +42,11 @@ const Contribute: FunctionComponent<RouteComponentProps> = ({ history }) => (
       mobileLeftButton={
         <Button
           text={cms("contribute.login-cta")}
-          onClick={() => console.log("login")}
+          onClick={() =>
+            history.push({
+              pathname: "/login"
+            })
+          }
         />
       }
       leftTitle={cms("contribute.login")}
@@ -48,13 +55,21 @@ const Contribute: FunctionComponent<RouteComponentProps> = ({ history }) => (
         <Button
           text={cms("contribute.share-cta")}
           twoCol={true}
-          onClick={() => console.log("login")}
+          onClick={() =>
+            history.push({
+              pathname: "/register"
+            })
+          }
         />
       }
       mobileRightButton={
         <Button
           text={cms("contribute.share-cta")}
-          onClick={() => console.log("login")}
+          onClick={() =>
+            history.push({
+              pathname: "/register"
+            })
+          }
         />
       }
       rightTitle={cms("contribute.share")}
@@ -72,7 +87,11 @@ const Contribute: FunctionComponent<RouteComponentProps> = ({ history }) => (
         <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--4 about--footer--button">
           <Button
             text="Sign up and share"
-            onClick={() => console.log("sign up and share")}
+            onClick={() =>
+              history.push({
+                pathname: "/register"
+              })
+            }
             twoCol={true}
           />
         </div>
