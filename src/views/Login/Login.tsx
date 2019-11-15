@@ -1,4 +1,4 @@
-import React, { FunctionComponent, Fragment } from "react";
+import React, { FunctionComponent } from "react";
 
 import { cms } from "../../utils/cms";
 
@@ -6,11 +6,12 @@ import Input from "../../components/Input";
 import Button from "../../components/Button";
 import Footer from "../../components/Footer";
 import Link from "../../components/Link";
+import Layout from "../../components/Layout";
 
 import "./Login.scss";
 
 const Login: FunctionComponent = () => (
-  <Fragment>
+  <Layout>
     <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify login">
       <div className="flex-col--12 login--inner">
         <h1 className="login--title">{cms("login.title")}</h1>
@@ -41,7 +42,7 @@ const Login: FunctionComponent = () => (
         </div>
       </div>
     </Footer>
-  </Fragment>
+  </Layout>
 );
 
 export default Login;

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, Fragment } from "react";
+import React, { FunctionComponent } from "react";
 import ReactSVG from "react-svg";
 
 import AccountCreated from "../../assets/icons/account-created.svg";
@@ -9,9 +9,10 @@ import NavigationBlock from "../../components/NavigationBlock";
 import Button from "../../components/Button";
 import Footer from "../../components/Footer";
 import Link from "../../components/Link";
+import Layout from "../../components/Layout";
 
 const Confirmation: FunctionComponent = () => (
-  <Fragment>
+  <Layout>
     <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify register confirmation">
       <div className="flex-col--12">
         <ReactSVG src={AccountCreated} />
@@ -68,7 +69,7 @@ const Confirmation: FunctionComponent = () => (
         </div>
       </div>
     </Footer>
-  </Fragment>
+  </Layout>
 );
 
 export default Confirmation;

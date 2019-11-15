@@ -1,4 +1,4 @@
-import React, { Fragment, FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 import { withRouter, RouteComponentProps } from "react-router-dom";
 
 import { cms } from "../../utils/cms";
@@ -9,9 +9,10 @@ import Breadcrumb from "../../components/Breadcrumb";
 import Button from "../../components/Button";
 import NavigationBlock from "../../components/NavigationBlock";
 import Footer from "../../components/Footer";
+import Layout from "../../components/Layout";
 
 const Contribute: FunctionComponent<RouteComponentProps> = ({ history }) => (
-  <Fragment>
+  <Layout>
     <div className="flex-container flex-container--no-padding flex-container--center contribute">
       <Breadcrumb
         crumbs={[
@@ -97,7 +98,7 @@ const Contribute: FunctionComponent<RouteComponentProps> = ({ history }) => (
         </div>
       </div>
     </Footer>
-  </Fragment>
+  </Layout>
 );
 
 export default withRouter(Contribute);

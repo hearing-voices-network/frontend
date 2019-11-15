@@ -1,4 +1,4 @@
-import React, { Fragment, FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 import ReactSVG from "react-svg";
 import { Helmet } from "react-helmet";
 import { withRouter, RouteComponentProps } from "react-router";
@@ -14,9 +14,10 @@ import Community from "../../assets/icons/community.svg";
 import Security from "../../assets/icons/security.svg";
 import Page404Large from "../../assets/icons/page-404-large.svg";
 import Page404 from "../../assets/icons/page-404.svg";
+import Layout from "../../components/Layout";
 
 const NotFound: FunctionComponent<RouteComponentProps> = ({ history }) => (
-  <Fragment>
+  <Layout>
     <Helmet>
       <title>Connecting Voices | Not Found</title>
     </Helmet>
@@ -102,7 +103,7 @@ const NotFound: FunctionComponent<RouteComponentProps> = ({ history }) => (
         </div>
       </div>
     </Footer>
-  </Fragment>
+  </Layout>
 );
 
 export default withRouter(NotFound);

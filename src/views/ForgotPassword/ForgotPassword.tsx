@@ -1,13 +1,14 @@
-import React, { FunctionComponent, Fragment } from "react";
+import React, { FunctionComponent } from "react";
 
 import "./ForgotPassword.scss";
 import { cms } from "../../utils/cms";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import Footer from "../../components/Footer";
+import Layout from "../../components/Layout";
 
 const ForgotPassword: FunctionComponent = () => (
-  <Fragment>
+  <Layout>
     <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify forgot-password">
       <div className="flex-col--12 forgot-password--inner">
         <h1 className="forgot-password--title">
@@ -43,7 +44,7 @@ const ForgotPassword: FunctionComponent = () => (
         </div>
       </div>
     </Footer>
-  </Fragment>
+  </Layout>
 );
 
 export default ForgotPassword;

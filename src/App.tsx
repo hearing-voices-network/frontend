@@ -18,8 +18,6 @@ import PrivacyPolicy from "./views/PrivacyPolicy";
 import ForgotPassword from "./views/ForgotPassword";
 import ResetPassword from "./views/ResetPassword";
 
-import Header from "./components/Header";
-
 import CookiesStore from "./stores/cookiesStore";
 import RegisterStore from "./stores/registerStore";
 import UserStore from "./stores/userStore";
@@ -40,7 +38,6 @@ const App: FunctionComponent = () => (
   >
     <Router>
       <ScrollToTop>
-        <Header />
         <Switch>
           <Route path="/" component={Home} exact={true} />
           <Route path="/about" component={About} exact={true} />

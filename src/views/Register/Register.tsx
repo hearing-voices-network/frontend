@@ -1,4 +1,4 @@
-import React, { Component, Fragment, RefObject } from "react";
+import React, { Component, RefObject } from "react";
 import { observer, inject } from "mobx-react";
 
 import "./Register.scss";
@@ -14,6 +14,7 @@ import Confirmation from "./Confirmation";
 import RegisterStore from "../../stores/registerStore";
 import Footer from "../../components/Footer";
 import Button from "../../components/Button";
+import Layout from "../../components/Layout";
 
 interface IProps {
   registerStore: RegisterStore;
@@ -61,7 +62,7 @@ class Register extends Component<IProps> {
     if (registerStore.showConfirmation) return <Confirmation />;
 
     return (
-      <Fragment>
+      <Layout>
         <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify register">
           {this.displayStep()}
         </div>
@@ -87,7 +88,7 @@ class Register extends Component<IProps> {
             </div>
           </div>
         </Footer>
-      </Fragment>
+      </Layout>
     );
   }
 }
