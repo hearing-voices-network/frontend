@@ -15,7 +15,7 @@ import Contribute from "./views/Contribute";
 import Login from "./views/Login";
 import Register from "./views/Register";
 import PrivacyPolicy from "./views/PrivacyPolicy";
-import ForgotPassowrd from "./views/ForgotPassword/ForgotPassword";
+import ForgotPassword from "./views/ForgotPassword/ForgotPassword";
 
 import Header from "./components/Header";
 
@@ -46,7 +46,7 @@ const App: FunctionComponent = () => (
           />
           <Route
             path="/forgot-password"
-            component={ForgotPassowrd}
+            component={ForgotPassword}
             exact={true}
           />
           <Route
