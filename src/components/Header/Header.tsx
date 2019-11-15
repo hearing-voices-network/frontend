@@ -14,7 +14,7 @@ const Header: FunctionComponent = () => (
   <header>
     <Cookies />
     <div className="flex-container flex-container--no-padding flex-container--center header">
-      <div className="flex-col--12">
+      <div className="flex-col--12 header--logo-container">
         <Link to="/" className="header--link">
           <img
             src={HVN}

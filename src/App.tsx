@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Provider } from "mobx-react";
+import { Provider, observer } from "mobx-react";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -15,24 +15,29 @@ import Contribute from "./views/Contribute";
 import Login from "./views/Login";
 import Register from "./views/Register";
 import PrivacyPolicy from "./views/PrivacyPolicy";
-import ForgotPassowrd from "./views/ForgotPassword/ForgotPassword";
-
-import Header from "./components/Header";
+import ForgotPassword from "./views/ForgotPassword";
+import ResetPassword from "./views/ResetPassword";
 
 import CookiesStore from "./stores/cookiesStore";
 import RegisterStore from "./stores/registerStore";
-import ResetPassword from "./views/ResetPassword";
+import UserStore from "./stores/userStore";
+import PrivateRoute from "./components/PrivateRoute";
+import Dashboard from "./views/Dashboard";
 
 library.add(fas);
 
 const cookieStore = new CookiesStore();
 const registerStore = new RegisterStore();
+const userStore = new UserStore();
 
 const App: FunctionComponent = () => (
-  <Provider cookieStore={cookieStore} registerStore={registerStore}>
+  <Provider
+    cookieStore={cookieStore}
+    registerStore={registerStore}
+    userStore={userStore}
+  >
     <Router>
       <ScrollToTop>
-        <Header />
         <Switch>
           <Route path="/" component={Home} exact={true} />
           <Route path="/about" component={About} exact={true} />
@@ -46,7 +51,7 @@ const App: FunctionComponent = () => (
           />
           <Route
             path="/forgot-password"
-            component={ForgotPassowrd}
+            component={ForgotPassword}
             exact={true}
           />
           <Route
@@ -54,6 +59,11 @@ const App: FunctionComponent = () => (
             component={ResetPassword}
             exact={true}
           />
+
+          {/* User Routes */}
+
+          <PrivateRoute path="/dashboard" component={Dashboard} exact={true} />
+
           <Route component={NotFound} />
         </Switch>
       </ScrollToTop>
@@ -61,4 +71,4 @@ const App: FunctionComponent = () => (
   </Provider>
 );
 
-export default App;
+export default observer(App);

@@ -1,4 +1,4 @@
-import React, { Fragment, FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 import { withRouter, RouteComponentProps } from "react-router";
 
 import "./About.scss";
@@ -7,9 +7,10 @@ import Breadcrumb from "../../components/Breadcrumb";
 import { cms } from "../../utils/cms";
 import Footer from "../../components/Footer";
 import Button from "../../components/Button";
+import Layout from "../../components/Layout";
 
 const About: FunctionComponent<RouteComponentProps> = ({ history }) => (
-  <Fragment>
+  <Layout>
     <div className="flex-container flex-container--no-padding flex-container--center about">
       <Breadcrumb
         crumbs={[
@@ -50,7 +51,7 @@ const About: FunctionComponent<RouteComponentProps> = ({ history }) => (
         </div>
       </div>
     </Footer>
-  </Fragment>
+  </Layout>
 );
 
 export default withRouter(About);

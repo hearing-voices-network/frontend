@@ -1,14 +1,15 @@
-import React, { FunctionComponent, Fragment } from "react";
+import React, { FunctionComponent } from "react";
 
 import { cms } from "../../utils/cms";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import Footer from "../../components/Footer";
+import Layout from "../../components/Layout";
 
 import "./ResetPassword.scss";
 
 const ResetPassword: FunctionComponent = () => (
-  <Fragment>
+  <Layout>
     <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify reset-password">
       <div className="flex-col--12 reset-password--inner">
         <h1 className="reset-password--title">{cms("reset-password.title")}</h1>
@@ -39,7 +40,7 @@ const ResetPassword: FunctionComponent = () => (
         </div>
       </div>
     </Footer>
-  </Fragment>
+  </Layout>
 );
 
 export default ResetPassword;

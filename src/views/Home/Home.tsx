@@ -1,4 +1,4 @@
-import React, { Fragment, FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 import ReactSVG from "react-svg";
 import { withRouter, RouteComponentProps } from "react-router";
 
@@ -12,9 +12,10 @@ import Pencil from "../../assets/icons/pencil.svg";
 import Community from "../../assets/icons/community.svg";
 import Security from "../../assets/icons/security.svg";
 import Footer from "../../components/Footer";
+import Layout from "../../components/Layout";
 
 const Home: FunctionComponent<RouteComponentProps> = ({ history }) => (
-  <Fragment>
+  <Layout>
     <div className="flex-container flex-container--no-padding flex-container--center home--welcome">
       <div className="flex-col--8 flex-col--tablet-large--12">
         <h1 className="home--welcome--title">{cms("home.title")}</h1>
@@ -87,7 +88,7 @@ const Home: FunctionComponent<RouteComponentProps> = ({ history }) => (
         </div>
       </div>
     </Footer>
-  </Fragment>
+  </Layout>
 );
 
 export default withRouter(Home);
