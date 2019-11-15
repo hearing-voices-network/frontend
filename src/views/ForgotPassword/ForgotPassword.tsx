@@ -6,7 +6,7 @@ import Input from "../../components/Input";
 import Button from "../../components/Button";
 import Footer from "../../components/Footer";
 
-const ForgotPassowrd: FunctionComponent = () => (
+const ForgotPassword: FunctionComponent = () => (
   <Fragment>
     <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify forgot-password">
       <div className="flex-col--12 forgot-password--inner">
@@ -46,4 +46,4 @@ const ForgotPassowrd: FunctionComponent = () => (
   </Fragment>
 );
 
-export default ForgotPassowrd;
+export default ForgotPassword;

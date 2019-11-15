@@ -15,7 +15,7 @@ import Contribute from "./views/Contribute";
 import Login from "./views/Login";
 import Register from "./views/Register";
 import PrivacyPolicy from "./views/PrivacyPolicy";
-import ForgotPassword from "./views/ForgotPassword/ForgotPassword";
+import ForgotPassword from "./views/ForgotPassword";
 
 import Header from "./components/Header";
 
