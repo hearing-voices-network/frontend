@@ -87,5 +87,13 @@
   },
   "privacy": {
     "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies tincidunt congue.</p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum sem vel elit vehicula, vitae accumsan turpis scelerisque.</p>"
+  },
+  "forgot-password": {
+    "title": "Forgotten password",
+    "description": "Need to reset your password? You can do so by entering your email and having a reset link sent to you.",
+    "footer": {
+      "title": "Help?",
+      "description": "You will need to fill in your email so that we can make sure it’s you."
+    }
   }
 }
