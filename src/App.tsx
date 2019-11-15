@@ -21,6 +21,7 @@ import Header from "./components/Header";
 
 import CookiesStore from "./stores/cookiesStore";
 import RegisterStore from "./stores/registerStore";
+import ResetPassword from "./views/ResetPassword";
 
 library.add(fas);
 
@@ -46,6 +47,11 @@ const App: FunctionComponent = () => (
           <Route
             path="/forgot-password"
             component={ForgotPassowrd}
+            exact={true}
+          />
+          <Route
+            path="/reset-password"
+            component={ResetPassword}
             exact={true}
           />
           <Route component={NotFound} />
