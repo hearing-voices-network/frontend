@@ -31,7 +31,12 @@ const Login: FunctionComponent = () => (
     <Footer grey={true}>
       <div className="flex-container flex-container--center login--footer">
         <div className="flex-col--8 flex-col--tablet-large--12">
-          <Link grey={true} size="medium" text="Forgotten password" href="/" />
+          <Link
+            grey={true}
+            size="medium"
+            text="Forgotten password"
+            href="/forgot-password"
+          />
           <p className="login--footer--description">{cms("login.footer")}</p>
         </div>
       </div>

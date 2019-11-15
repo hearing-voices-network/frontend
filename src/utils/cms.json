@@ -95,5 +95,12 @@
       "title": "Help?",
       "description": "You will need to fill in your email so that we can make sure it’s you."
     }
+  },
+  "reset-password": {
+    "title": "Enter new password",
+    "footer": {
+      "title": "Help?",
+      "description": "Make sure to use a secure password and keep it safe."
+    }
   }
 }
