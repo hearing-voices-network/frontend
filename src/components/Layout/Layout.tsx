@@ -1,16 +1,25 @@
 import React, { FunctionComponent, Fragment } from "react";
+import { observer, inject } from "mobx-react";
+
+import UserStore from "../../stores/userStore";
+import UserHeader from "../Header/UserHeader";
 import Header from "../Header";
 
 interface IProps {
-  accountPage?: boolean;
   children: JSX.Element | JSX.Element[];
+  userStore?: UserStore;
 }
 
-const Layout: FunctionComponent<IProps> = ({ accountPage, children }) => (
-  <Fragment>
-    <Header />
-    {children}
-  </Fragment>
-);
+const Layout: FunctionComponent<IProps> = ({ children, userStore }) => {
+  if (!userStore) return null;
 
-export default Layout;
+  return (
+    <Fragment>
+      {userStore.loggedIn ? <UserHeader /> : <Header />}
+
+      {children}
+    </Fragment>
+  );
+};
+
+export default inject("userStore")(observer(Layout));
