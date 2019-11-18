@@ -102,5 +102,21 @@
       "title": "Help?",
       "description": "Make sure to use a secure password and keep it safe."
     }
+  },
+  "dashboard": {
+    "about": "We’re trying to collect first-person accounts of stories, share your experiences anonymously.",
+    "experiences": "Go to my experiences",
+    "submit": "Write now",
+    "description": "Write now, or read about other’s experiences",
+    "footer": {
+      "title": "Logout",
+      "description": "If you would like to log out of the app click here."
+    }
+  },
+  "privacy-notice": {
+    "title": "Privacy and withdrawl",
+    "about": "Your account is secure and how much you share is up to you, you can always withdraw at any time.",
+    "policy": "Privacy policy",
+    "withdraw": "I would like to withdraw"
   }
 }
