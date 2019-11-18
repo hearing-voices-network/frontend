@@ -62,6 +62,10 @@
     @include for-tablet-down {
       margin-top: space(32);
     }
+
+    &--outer {
+      width: 100%;
+    }
   }
 
   &--icon {
@@ -107,5 +111,9 @@
     svg {
       color: $white;
     }
+  }
+
+  &--chevron {
+    margin-right: space(16);
   }
 }

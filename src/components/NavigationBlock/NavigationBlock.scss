@@ -8,8 +8,12 @@
   margin-bottom: space(120) !important;
 
   @include for-tablet-down {
-    margin-top: 0 !important;
+    margin-top: space(56) !important;
     margin-bottom: space(56) !important;
+  }
+
+  @include for-phone-only {
+    margin-top: 0 !important;
   }
 
   &--mobile {
