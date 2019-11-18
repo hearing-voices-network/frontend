@@ -10,6 +10,7 @@ import Account from "../../assets/icons/account-light.svg";
 import Dashboard from "../../assets/icons/dashboard-light.svg";
 
 import "./Header.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const UserHeader: FunctionComponent = () => (
   <header>
@@ -27,31 +28,67 @@ const UserHeader: FunctionComponent = () => (
           </Link>
         </div>
 
-        <div className="flex-container flex-container--no-padding header--links">
+        {/* Mobile Links  */}
+        <div className="mobile-show header--links--outer">
+          <div className="flex-container flex-container--no-padding header--links">
+            <span className="user-header--link">
+              <Link className="header--link user-header--link" to="/about">
+                About
+                <ReactSVG
+                  src={Question}
+                  wrapper="span"
+                  className="header--icon"
+                />
+              </Link>
+            </span>
+            <span className="user-header--link">
+              <Link className="header--link" to="/dashboard">
+                Dashboard
+                <ReactSVG
+                  src={Dashboard}
+                  wrapper="span"
+                  className="header--icon"
+                />
+              </Link>
+            </span>
+            <span className="user-header--link">
+              <Link className="header--link" to="/account">
+                My account
+                <ReactSVG
+                  src={Account}
+                  wrapper="span"
+                  className="header--icon"
+                />
+              </Link>
+            </span>
+          </div>
+        </div>
+
+        {/* Desktop Links */}
+
+        <div className="flex-container flex-container--no-padding header--links mobile-hide">
           <span className="user-header--link">
-            <Link className="header--link user-header--link" to="/about">
-              About
-              <ReactSVG
-                src={Question}
-                wrapper="span"
-                className="header--icon"
-              />
+            <FontAwesomeIcon
+              icon="chevron-left"
+              className="user-header--chevron"
+            />
+            <Link className="header--link user-header--link" to="/">
+              Go back to Connecting Voices
+            </Link>
+          </span>
+          <span className="user-header--link">
+            <Link className="header--link user-header--link" to="/browse">
+              View other's stories
             </Link>
           </span>
           <span className="user-header--link">
             <Link className="header--link" to="/dashboard">
-              Dashboard
-              <ReactSVG
-                src={Dashboard}
-                wrapper="span"
-                className="header--icon"
-              />
+              My account
             </Link>
           </span>
           <span className="user-header--link">
-            <Link className="header--link" to="/account">
-              My account
-              <ReactSVG src={Account} wrapper="span" className="header--icon" />
+            <Link className="header--link" to="/logout">
+              Log out
             </Link>
           </span>
         </div>
