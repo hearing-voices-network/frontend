@@ -23,6 +23,7 @@ import RegisterStore from "./stores/registerStore";
 import UserStore from "./stores/userStore";
 import PrivateRoute from "./components/PrivateRoute";
 import Dashboard from "./views/Dashboard";
+import MyExperiences from "./views/Experiences/MyExperiences";
 
 library.add(fas);
 
@@ -63,6 +64,11 @@ const App: FunctionComponent = () => (
           {/* User Routes */}
 
           <PrivateRoute path="/dashboard" component={Dashboard} exact={true} />
+          <PrivateRoute
+            path="/my-experiences"
+            component={MyExperiences}
+            exact={true}
+          />
 
           <Route component={NotFound} />
         </Switch>
