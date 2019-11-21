@@ -1375,6 +1375,13 @@
     "@types/draft-js" "*"
     "@types/react" "*"
 
+"@types/react-tag-autocomplete@^5.6.1":
+  version "5.6.1"
+  resolved "https://registry.yarnpkg.com/@types/react-tag-autocomplete/-/react-tag-autocomplete-5.6.1.tgz#02a40add1b67b92b434d7617c05183d5de361054"
+  integrity sha512-hhNDK03o1TZQ/CD7I0U4kSNyGQfblty+a9PZ3LjXYq5x8Y2Eu6l192UZ60kyiFUxGV3rlHlmFVf6cN7/6NJpPg==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^16.9.9":
   version "16.9.9"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.9.tgz#a62c6f40f04bc7681be5e20975503a64fe783c3a"
@@ -8784,6 +8791,11 @@ react-svg@^10.0.23:
     "@babel/runtime" "^7.6.3"
     "@tanem/svg-injector" "^8.0.34"
     prop-types "^15.7.2"
+
+react-tag-autocomplete@^5.11.2:
+  version "5.11.2"
+  resolved "https://registry.yarnpkg.com/react-tag-autocomplete/-/react-tag-autocomplete-5.11.2.tgz#6a547015dca591f8936e07609ce3d20d53077717"
+  integrity sha512-kuxCI/CtMyeu4QLDc/iuPJHikl0Ti6rvpatFHi8Y8V5iUqwvchKD9X0P26nIzp+QdagkggXc5gJzTaTRYiPFCw==
 
 react@^16.10.2:
   version "16.10.2"
