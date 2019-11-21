@@ -107,13 +107,6 @@
   max-width: 100%;
 }
 
-@include for-tablet-large-up {
-  .react-tags__search {
-    /* this will become the offsetParent for suggestions */
-    position: relative;
-  }
-}
-
 .react-tags__search input {
   /* prevent autoresize overflowing the container */
   max-width: 100%;
@@ -147,11 +140,11 @@
   background: $white;
 }
 
-@include for-tablet-large-up {
-  .react-tags__suggestions {
-    width: 240px;
-  }
-}
+// @include for-tablet-large-up {
+//   .react-tags__suggestions {
+//     width: 500px;
+//   }
+// }
 
 .react-tags__suggestions ul {
   list-style: none;
