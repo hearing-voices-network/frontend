@@ -4,6 +4,26 @@
 
 .browse {
   @include container;
+  position: relative;
+
+  @include for-tablet-large-up {
+    &:after {
+      @include faded-background;
+    }
+  }
+
+  &--subtitle {
+    @include subtitle;
+    color: $turqoise;
+  }
+
+  &--about {
+    @include about;
+
+    &--mobile {
+      margin-top: space(32);
+    }
+  }
 
   &--filter {
     background-color: $light-ribienna;
@@ -24,12 +44,18 @@
       }
     }
 
+    @include for-tablet-large-up {
+      margin-top: space(120) !important;
+      padding: space(32) space(6) !important;
+    }
+
     &--title {
       @include heading-s;
       color: $ribienna;
       margin-bottom: space(32);
 
       @include for-phone-only {
+        text-align: center;
         margin-bottom: space(16);
       }
     }
@@ -139,12 +165,6 @@
   border: 1px solid $ribienna;
   background: $white;
 }
-
-// @include for-tablet-large-up {
-//   .react-tags__suggestions {
-//     width: 500px;
-//   }
-// }
 
 .react-tags__suggestions ul {
   list-style: none;

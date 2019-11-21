@@ -9,6 +9,9 @@ import ExperienceStore from "../../stores/experienceStore";
 
 import Button from "../../components/Button";
 import Layout from "../../components/Layout";
+import Breadcrumb from "../../components/Breadcrumb";
+import AboutAccordian from "../../components/AboutAccordian";
+
 interface IProps {
   experienceStore: ExperienceStore;
 }
@@ -31,6 +34,25 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
 
   return (
     <Layout>
+      <div className="flex-container flex-container--no-padding flex-container--center browse">
+        <div className="flex-col--12">
+          <Breadcrumb
+            crumbs={[
+              { url: "/", text: "Home" },
+              { url: "", text: "Stories" }
+            ]}
+          />
+          <p className="browse--subtitle">{cms("global.tagline")}</p>
+        </div>
+        <div className="flex-col--8 flex-col--tablet-large--12">
+          <p className="browse--about mobile-hide">{cms("global.about")}</p>
+          <AboutAccordian
+            text={cms("global.about")}
+            className="browse--about--mobile mobile-show"
+          />
+        </div>
+      </div>
+
       <div className="flex-container flex-container--no-padding flex-container--center browse--filter">
         <div className="flex-col--12">
           <h1 className="browse--filter--title">
@@ -45,7 +67,7 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
               suggestions={tags}
               handleDelete={(index: number) => removeTag(index)}
               handleAddition={(tag: any) => handleAddition(tag)}
-              placeholder={selectedTags.length ? "" : "e.g. angel"}
+              placeholder={selectedTags.length ? "" : "e.g. angel, whispering"}
             />
             <Button
               onClick={() => console.log("hey")}
@@ -55,7 +77,7 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
           </div>
         </div>
 
-        <div className="flex-col--12">
+        <div className="flex-col--12 mobile-show">
           <div className="flex-container flex-container--no-padding flex-container--justify browse--filter--options">
             <button
               aria-expanded={filterOptionsVisible}
