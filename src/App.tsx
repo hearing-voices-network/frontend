@@ -17,29 +17,35 @@ import Register from "./views/Register";
 import PrivacyPolicy from "./views/PrivacyPolicy";
 import ForgotPassword from "./views/ForgotPassword";
 import ResetPassword from "./views/ResetPassword";
+import Dashboard from "./views/Dashboard";
+import Browse from "./views/Browse";
+
+import PrivateRoute from "./components/PrivateRoute";
 
 import CookiesStore from "./stores/cookiesStore";
 import RegisterStore from "./stores/registerStore";
 import UserStore from "./stores/userStore";
-import PrivateRoute from "./components/PrivateRoute";
-import Dashboard from "./views/Dashboard";
+import ExperienceStore from "./stores/experienceStore";
 
 library.add(fas);
 
 const cookieStore = new CookiesStore();
 const registerStore = new RegisterStore();
 const userStore = new UserStore();
+const experienceStore = new ExperienceStore();
 
 const App: FunctionComponent = () => (
   <Provider
     cookieStore={cookieStore}
     registerStore={registerStore}
     userStore={userStore}
+    experienceStore={experienceStore}
   >
     <Router>
       <ScrollToTop>
         <Switch>
           <Route path="/" component={Home} exact={true} />
+          <Route path="/browse" component={Browse} exact={true} />
           <Route path="/about" component={About} exact={true} />
           <Route path="/contribute" component={Contribute} exact={true} />
           <Route path="/login" component={Login} exact={true} />
