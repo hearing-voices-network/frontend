@@ -6,13 +6,18 @@ import "./AboutAccordian.scss";
 
 interface IProps {
   text: string;
+  className?: string;
 }
 
-const AboutAccordian: FunctionComponent<IProps> = ({ text }) => {
-  const [open, toggleAccordian] = useState(false);
+const AboutAccordian: FunctionComponent<IProps> = ({ text, className }) => {
+  const [open, toggleAccordian] = useState(true);
 
   return (
-    <div className="about-accordian">
+    <div
+      className={cx("about-accordian", {
+        [`${className}`]: className
+      })}
+    >
       {open && (
         <div
           className="about-accordian--content"
