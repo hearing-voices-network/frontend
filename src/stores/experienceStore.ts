@@ -1,4 +1,4 @@
-import { observable, action } from "mobx";
+import { observable, action, computed } from "mobx";
 import api from "../service/api";
 import get from "lodash/get";
 import remove from "lodash/remove";
@@ -50,6 +50,7 @@ export default class ExperienceStore {
 
   getCategoryTags = (id: string) =>
     this.tags.filter(tag => tag.parent_tag_id === id);
+
   handleTagSelect = (tag: ITag) => {
     if (this.selectedTags.includes(tag)) {
       const indexOfTag = this.selectedTags.indexOf(tag);
@@ -59,4 +60,8 @@ export default class ExperienceStore {
     }
   };
 
+  @computed
+  get availableTags() {
+    return this.tags.filter((tag: ITag) => !this.selectedTags.includes(tag));
+  }
 }

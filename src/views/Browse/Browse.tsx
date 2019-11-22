@@ -30,7 +30,8 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
     handleAddition,
     removeTag,
     filterOptionsVisible,
-    toggleFilterOptions
+    toggleFilterOptions,
+    availableTags
   } = experienceStore;
 
   return (
@@ -65,7 +66,7 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
           <div className="flex-col--12 browse--filter--input">
             <ReactTags
               tags={selectedTags}
-              suggestions={tags}
+              suggestions={availableTags}
               handleDelete={(index: number) => removeTag(index)}
               handleAddition={(tag: any) => handleAddition(tag)}
               placeholder={selectedTags.length ? "" : "e.g. angel, whispering"}
