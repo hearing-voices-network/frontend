@@ -73,6 +73,12 @@
         margin: space(16) 0;
       }
     }
+
+    &--about {
+      @include body-m;
+      text-align: center;
+      color: $grey;
+    }
   }
 }
 

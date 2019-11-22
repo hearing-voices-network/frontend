@@ -121,7 +121,8 @@
   },
   "browse": {
     "filter": {
-      "title": "You can browse experiences by choosing tags."
+      "title": "You can browse experiences by choosing tags.",
+      "about": "Select by category to explore more tags"
     }
   }
 }

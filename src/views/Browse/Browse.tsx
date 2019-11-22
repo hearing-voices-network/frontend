@@ -11,6 +11,7 @@ import Button from "../../components/Button";
 import Layout from "../../components/Layout";
 import Breadcrumb from "../../components/Breadcrumb";
 import AboutAccordian from "../../components/AboutAccordian";
+import Filters from "./Filters";
 
 interface IProps {
   experienceStore: ExperienceStore;
@@ -98,7 +99,11 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
               id="filter-content"
               aria-labelledby="filter-header"
             >
-              filters
+              <p className="browse--filter--about">
+                {cms("browse.filter.about")}
+              </p>
+
+              <Filters />
             </div>
           )}
         </div>
