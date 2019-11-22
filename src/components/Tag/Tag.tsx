@@ -2,7 +2,6 @@ import React, { FunctionComponent } from "react";
 import cx from "classnames";
 
 import "./Tag.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface IProps {
   text: string;
