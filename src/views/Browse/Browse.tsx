@@ -25,7 +25,6 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
   if (!experienceStore) return null;
 
   const {
-    tags,
     selectedTags,
     handleAddition,
     removeTag,
