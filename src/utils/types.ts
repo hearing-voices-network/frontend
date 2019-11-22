@@ -7,9 +7,3 @@ export interface ITag {
   updated_at: string;
   deleted_at: string;
 }
-
-export interface IOrderedTags {
-  id: string;
-  name: string;
-  tags: ITag[];
-}
