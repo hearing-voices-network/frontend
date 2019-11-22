@@ -35,4 +35,9 @@
       padding: space(8) space(20);
     }
   }
+
+  &--selected {
+    background-color: $ribienna;
+    color: $white;
+  }
 }
