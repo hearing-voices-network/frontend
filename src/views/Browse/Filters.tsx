@@ -16,6 +16,8 @@ interface IProps {
 interface IFilterProps {
   title: string;
   tags: ITag[];
+  handleTagSelect: (tag: ITag) => void;
+  selectedTags: ITag[];
 }
 
 const Filters: FunctionComponent<IProps> = ({ experienceStore }) => {
@@ -25,35 +27,47 @@ const Filters: FunctionComponent<IProps> = ({ experienceStore }) => {
     <div className="flex-container flex-container--no-padding flex-container--justify">
       {experienceStore.categories.map((category: ITag) => (
         <Filter
+          key={category.id}
           title={category.name}
           tags={experienceStore.getCategoryTags(category.id)}
+          handleTagSelect={experienceStore.handleTagSelect}
+          selectedTags={experienceStore.selectedTags}
         />
       ))}
     </div>
   );
 };
 
-const Filter: FunctionComponent<IFilterProps> = ({ title, tags }) => {
-  const [open, toggleTagList] = useState(false);
+const Filter: FunctionComponent<IFilterProps> = observer(
+  ({ title, tags, handleTagSelect, selectedTags }) => {
+    const [open, toggleTagList] = useState(false);
 
-  return (
-    <Fragment>
-      <div
-        className="flex-col--12 filters--category"
-        onClick={() => toggleTagList(!open)}
-      >
-        {title}
-        <FontAwesomeIcon icon="chevron-down" />
-      </div>
-
-      {open && (
-        <div className="flex-container flex-container--no-padding flex-container--no-space">
-          {tags.map((tag: ITag) => (
-            <Tag text={tag.name} search={true} />
-          ))}
+    return (
+      <Fragment>
+        <div
+          className="flex-col--12 filters--category"
+          onClick={() => toggleTagList(!open)}
+        >
+          {title}
+          <FontAwesomeIcon icon="chevron-down" />
         </div>
-      )}
-    </Fragment>
-  );
-};
+
+        {open && (
+          <div className="flex-container flex-container--no-padding flex-container--no-space">
+            {tags.map((tag: ITag) => (
+              <Tag
+                key={tag.id}
+                text={tag.name}
+                search={true}
+                onClick={() => handleTagSelect(tag)}
+                selected={selectedTags.includes(tag)}
+              />
+            ))}
+          </div>
+        )}
+      </Fragment>
+    );
+  }
+);
+
 export default inject("experienceStore")(observer(Filters));
