@@ -50,4 +50,13 @@ export default class ExperienceStore {
 
   getCategoryTags = (id: string) =>
     this.tags.filter(tag => tag.parent_tag_id === id);
+  handleTagSelect = (tag: ITag) => {
+    if (this.selectedTags.includes(tag)) {
+      const indexOfTag = this.selectedTags.indexOf(tag);
+      this.removeTag(indexOfTag);
+    } else {
+      this.handleAddition(tag);
+    }
+  };
+
 }
