@@ -18,6 +18,8 @@
   &--search {
     color: $ribienna;
     border-color: $ribienna;
+    margin: pxtorem(2px) space(8) pxtorem(2px) 0;
+    height: fit-content;
   }
 
   &--remove {

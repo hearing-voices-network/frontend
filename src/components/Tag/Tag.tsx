@@ -19,10 +19,7 @@ const Tag: FunctionComponent<IProps> = ({ text, search, story, className }) => (
       [`${className}`]: className
     })}
   >
-    <span>
-      {text}
-      {search && <FontAwesomeIcon icon="times" className="tag--remove" />}
-    </span>
+    <span>{text}</span>
   </div>
 );
 
