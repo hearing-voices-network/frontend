@@ -1,0 +1,17 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.filters {
+  &--category {
+    @include subtitle;
+    display: flex;
+    justify-content: space-between;
+    color: #62717a;
+    background-color: $white;
+    border: 1px solid #979797;
+    border-radius: 8px;
+    padding: space(12) space(24);
+    position: relative;
+    margin: space(8) 0;
+  }
+}

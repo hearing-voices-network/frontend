@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect } from "react";
+import React, { FunctionComponent, useEffect, Fragment } from "react";
 import { inject, observer } from "mobx-react";
 import ReactTags from "react-tag-autocomplete";
 
@@ -11,6 +11,8 @@ import Button from "../../components/Button";
 import Layout from "../../components/Layout";
 import Breadcrumb from "../../components/Breadcrumb";
 import AboutAccordian from "../../components/AboutAccordian";
+import Filters from "./Filters";
+import Tag from "../../components/Tag";
 
 interface IProps {
   experienceStore: ExperienceStore;
@@ -24,12 +26,15 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
   if (!experienceStore) return null;
 
   const {
-    tags,
     selectedTags,
     handleAddition,
     removeTag,
     filterOptionsVisible,
-    toggleFilterOptions
+    toggleFilterOptions,
+    availableTags,
+    handleTagSelect,
+    isTagSelected,
+    showFilters
   } = experienceStore;
 
   return (
@@ -64,17 +69,46 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
           <div className="flex-col--12 browse--filter--input">
             <ReactTags
               tags={selectedTags}
-              suggestions={tags}
+              suggestions={availableTags}
               handleDelete={(index: number) => removeTag(index)}
               handleAddition={(tag: any) => handleAddition(tag)}
               placeholder={selectedTags.length ? "" : "e.g. angel, whispering"}
             />
             <Button
-              onClick={() => console.log("hey")}
+              onClick={() => console.log("filter")}
               text="Filter"
               filter={true}
             />
           </div>
+          {showFilters && (
+            <Fragment>
+              <div className="flex-col--12 mobile-hide browse--filter--categories">
+                <Filters />
+              </div>
+              <div className="flex-col--12 mobile-hide browse--filter-no-tag--container">
+                <span className="browse--filter-no-tag--title">
+                  {cms("browse.filter.no-tag")}
+                </span>
+                <Tag
+                  text="No tag"
+                  search={true}
+                  tabIndex={0}
+                  selected={isTagSelected({
+                    id: "untagged",
+                    name: "No tag"
+                  })}
+                  onKeyPress={(e: any) =>
+                    e.key === "Enter"
+                      ? handleTagSelect({ id: "untagged", name: "No tag" })
+                      : null
+                  }
+                  onClick={() =>
+                    handleTagSelect({ id: "untagged", name: "No tag" })
+                  }
+                />
+              </div>
+            </Fragment>
+          )}
         </div>
 
         <div className="flex-col--12 mobile-show">
@@ -98,7 +132,55 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
               id="filter-content"
               aria-labelledby="filter-header"
             >
-              filters
+              <p className="browse--filter--about">
+                {cms("browse.filter.about")}
+              </p>
+              {showFilters && (
+                <Fragment>
+                  <Filters />
+
+                  <div className="flex-container flex-container--no-padding flex-container--justify">
+                    <div className="flex-col--12">
+                      <p className="browse--filter-no-tag--title">
+                        {cms("browse.filter.no-tag")}
+                      </p>
+                      <Tag
+                        text="No tag"
+                        search={true}
+                        tabIndex={0}
+                        className="browse--filter-no-tag"
+                        onClick={() =>
+                          handleTagSelect({ id: "untagged", name: "No tag" })
+                        }
+                        selected={isTagSelected({
+                          id: "untagged",
+                          name: "No tag"
+                        })}
+                        onKeyPress={(e: any) =>
+                          e.key === "Enter"
+                            ? handleTagSelect({
+                                id: "untagged",
+                                name: "No tag"
+                              })
+                            : null
+                        }
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex-container flex-container--no-padding flex-container--justify browse--filter--options">
+                    <button
+                      aria-expanded={filterOptionsVisible}
+                      aria-controls="filter-content"
+                      id="filter-header"
+                      onClick={() => toggleFilterOptions()}
+                      className="browse--filter--options-toggle"
+                    >
+                      Hide filter options
+                    </button>
+                  </div>
+                </Fragment>
+              )}
             </div>
           )}
         </div>

@@ -1,13 +1,15 @@
-import { observable, action } from "mobx";
+import { observable, action, computed } from "mobx";
 import api from "../service/api";
 import get from "lodash/get";
+import remove from "lodash/remove";
 
 import { ITag } from "../utils/types";
 
 export default class ExperienceStore {
   @observable tags: ITag[] = [];
-  @observable selectedTags = [];
-  @observable filterOptionsVisible: boolean = false;
+  @observable selectedTags: ITag[] = [];
+  @observable filterOptionsVisible: boolean = true;
+  @observable categories: ITag[] = [];
 
   @action
   getTags() {
@@ -16,36 +18,13 @@ export default class ExperienceStore {
       .then(resp => {
         const unsortedTags = get(resp, "data.data", []);
 
+        const categories = remove(
+          unsortedTags,
+          (tag: ITag) => tag.parent_tag_id === null
+        );
+
+        this.categories = categories;
         this.tags = unsortedTags;
-
-        // const sortedTags: IOrderedTags[] = [];
-
-        // // find all parent tags
-        // unsortedTags.forEach((tag: ITag, i: number) => {
-        //   if (tag.parent_tag_id === null) {
-        //     sortedTags.push({
-        //       id: tag.id,
-        //       name: tag.name,
-        //       tags: []
-        //     });
-        //   }
-        // });
-
-        // // remove parent tags
-        // remove(unsortedTags, (tag: ITag) => tag.parent_tag_id === null);
-
-        // // add children tags to parent tags array
-        // unsortedTags.forEach((tag: ITag, i: number) => {
-        //   const parent = sortedTags.find(
-        //     (parent: IOrderedTags) => parent.id === tag.parent_tag_id
-        //   );
-
-        //   if (parent) {
-        //     parent.tags.push(tag);
-        //   }
-        // });
-
-        // this.tags = sortedTags;
       })
       .catch(err => console.log("redirect to 500 page"));
   }
@@ -59,13 +38,39 @@ export default class ExperienceStore {
   };
 
   @action
-  handleAddition = (tag: any) => {
-    const tags = [].concat(this.selectedTags, tag);
+  handleAddition = (tag: ITag) => {
+    const tags = ([] as ITag[]).concat(this.selectedTags, tag);
     this.selectedTags = tags;
   };
 
   @action
   toggleFilterOptions = () => {
     this.filterOptionsVisible = !this.filterOptionsVisible;
+  };
+
+  getCategoryTags = (id: string) =>
+    this.tags.filter(tag => tag.parent_tag_id === id);
+
+  handleTagSelect = (tag: ITag) => {
+    if (this.selectedTags.some(tags => tags.id === tag.id)) {
+      const indexOfTag = this.selectedTags.indexOf(tag);
+      this.removeTag(indexOfTag);
+    } else {
+      this.handleAddition(tag);
+    }
+  };
+
+  @computed
+  get availableTags() {
+    return this.tags.filter((tag: ITag) => !this.selectedTags.includes(tag));
+  }
+
+  @computed
+  get showFilters() {
+    return !!this.tags.length;
+  }
+
+  isTagSelected = (tag: ITag) => {
+    return this.selectedTags.some(tags => tags.id === tag.id);
   };
 }

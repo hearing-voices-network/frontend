@@ -73,6 +73,35 @@
         margin: space(16) 0;
       }
     }
+
+    &--about {
+      @include body-m;
+      text-align: center;
+      color: $grey;
+    }
+
+    &-no-tag {
+      display: inline-block !important;
+      margin-top: space(12) !important;
+
+      &--title {
+        @include body-m;
+        color: $grey;
+        margin-top: space(20);
+
+        @include for-tablet-large-up {
+          margin-right: space(16);
+        }
+      }
+
+      &--container {
+        margin-top: space(20);
+      }
+    }
+
+    &--categories {
+      margin-top: space(32);
+    }
   }
 }
 
