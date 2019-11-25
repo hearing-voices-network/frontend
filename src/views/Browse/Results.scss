@@ -17,4 +17,10 @@
       color: $grey;
     }
   }
+
+  &--count {
+    @include body-m;
+    color: $medium-grey;
+    text-align: center;
+  }
 }
