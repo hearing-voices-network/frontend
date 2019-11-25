@@ -42,6 +42,10 @@ const Story: FunctionComponent = () => {
             </div>
           </div>
         </div>
+
+        <div className="flex-col--12">
+          <p className="story--content">{story.content}</p>
+        </div>
       </div>
     </Layout>
   );

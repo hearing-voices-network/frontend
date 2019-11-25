@@ -27,4 +27,14 @@
       text-decoration: none;
     }
   }
+
+  &--content {
+    @include body-l;
+    color: $grey;
+    margin-top: space(32);
+
+    @include for-tablet-large-up {
+      margin-top: space(56);
+    }
+  }
 }
