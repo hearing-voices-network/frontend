@@ -8,8 +8,9 @@ import { ITag } from "../utils/types";
 export default class ExperienceStore {
   @observable tags: ITag[] = [];
   @observable selectedTags: ITag[] = [];
-  @observable filterOptionsVisible: boolean = true;
+  @observable filterOptionsVisible: boolean = false;
   @observable categories: ITag[] = [];
+  @observable experiences = [];
 
   @action
   getTags() {
@@ -26,6 +27,14 @@ export default class ExperienceStore {
         this.categories = categories;
         this.tags = unsortedTags;
       })
+      .catch(err => console.log("redirect to 500 page"));
+  }
+
+  @action
+  getExperiences() {
+    api
+      .get("/contributions")
+      .then(resp => (this.experiences = get(resp, "data.data")))
       .catch(err => console.log("redirect to 500 page"));
   }
 

@@ -4,6 +4,7 @@ import { observer, inject } from "mobx-react";
 import "./Results.scss";
 
 import ExperienceStore from "../../stores/experienceStore";
+import NoExperiences from "./NoExperiences";
 
 interface IProps {
   experienceStore?: ExperienceStore;
@@ -12,9 +13,11 @@ interface IProps {
 const Results: FunctionComponent<IProps> = ({ experienceStore }) => {
   if (!experienceStore) return null;
 
+  const { experiences } = experienceStore;
+
   return (
     <div className="flex-container flex-container--no-padding flex-container--center results">
-      <div className="flex-col--12">Results</div>
+      {!experiences.length && <NoExperiences />}
     </div>
   );
 };
