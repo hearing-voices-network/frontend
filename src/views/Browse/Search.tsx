@@ -26,7 +26,8 @@ const Search: FunctionComponent<IProps> = ({ experienceStore }) => {
     isTagSelected,
     handleTagSelect,
     filterOptionsVisible,
-    toggleFilterOptions
+    toggleFilterOptions,
+    filterResults
   } = experienceStore;
 
   return (
@@ -44,11 +45,7 @@ const Search: FunctionComponent<IProps> = ({ experienceStore }) => {
             handleAddition={(tag: any) => handleAddition(tag)}
             placeholder={selectedTags.length ? "" : "e.g. angel, whispering"}
           />
-          <Button
-            onClick={() => console.log("filter")}
-            text="Filter"
-            filter={true}
-          />
+          <Button onClick={() => filterResults()} text="Filter" filter={true} />
         </div>
         {showFilters && (
           <Fragment>

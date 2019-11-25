@@ -5,34 +5,48 @@ import take from "lodash/take";
 import "./Story.scss";
 import Tag from "../../Tag";
 import { ITag } from "../../../utils/types";
+import { inject, observer } from "mobx-react";
+import ExperienceStore from "../../../stores/experienceStore";
 
 interface IProps {
+  experienceStore?: ExperienceStore;
   story: string;
   tags: ITag[];
 }
 
-const Story: FunctionComponent<IProps> = ({ story, tags }) => (
-  <section className="flex-col--mobile--12 flex-col--tablet--12 flex-col--tablet-large--5 story-card">
-    <ClampLines
-      text={story}
-      lines={4}
-      ellipsis="..."
-      id="story"
-      buttons={false}
-    />
-    <div className="story-card--read-more">
-      <a href="/">Read whole story</a>
-    </div>
-    <div className="story-card--tags">
-      <span className="story-card--tags--title">Tags:</span>
-      {take(tags, 3).map((tag: ITag) => (
-        <Tag text={tag.name} className="story-card--tags--tag" key={tag.id} />
-      ))}
-      {tags.length > 3 && (
-        <Tag text={`${tags.length - 3}+`} className="story-card--tags--tag" />
-      )}
-    </div>
-  </section>
-);
+const Story: FunctionComponent<IProps> = ({ story, tags, experienceStore }) => {
+  if (!experienceStore) return null;
 
-export default Story;
+  const { isTagSelected, filteredResultsShowing } = experienceStore;
+
+  return (
+    <section className="flex-col--mobile--12 flex-col--tablet--12 flex-col--tablet-large--5 story-card">
+      <ClampLines
+        text={story}
+        lines={4}
+        ellipsis="..."
+        id="story"
+        buttons={false}
+      />
+      <div className="story-card--read-more">
+        <a href="/">Read whole story</a>
+      </div>
+      <div className="story-card--tags">
+        <span className="story-card--tags--title">Tags:</span>
+        {take(tags, 3).map((tag: ITag) => (
+          <Tag
+            text={tag.name}
+            className="story-card--tags--tag"
+            key={tag.id}
+            selected={filteredResultsShowing ? isTagSelected(tag) : false}
+          />
+        ))}
+        {tags.length > 3 && (
+          <Tag text={`${tags.length - 3}+`} className="story-card--tags--tag" />
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default inject("experienceStore")(observer(Story));

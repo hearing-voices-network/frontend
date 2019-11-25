@@ -5,7 +5,7 @@ export interface ITag {
   public_contributions_count?: number;
   created_at?: string;
   updated_at?: string;
-  deleted_at?: string;
+  deleted_at?: string | null;
 }
 
 export interface IStory {
@@ -13,7 +13,7 @@ export interface IStory {
   end_user_id: string;
   content: string;
   excerpt: string;
-  status: "public" | "private";
+  status: string;
   changes_requested: string;
   status_last_updated_at: string;
   created_at: string;

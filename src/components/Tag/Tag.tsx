@@ -26,9 +26,10 @@ const Tag: FunctionComponent<IProps> = ({
 }) => (
   <div
     className={cx("tag", {
+      "tag--selected": selected,
       "tag--search": search,
       "tag--story": story,
-      "tag--selected": selected,
+      "tag--search--selected": selected && search,
       [`${className}`]: className
     })}
     onClick={onClick}

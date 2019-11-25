@@ -11,6 +11,11 @@
   display: inline;
   background-color: $white;
 
+  &--selected {
+    background-color: $turqoise;
+    color: $white;
+  }
+
   @include for-phone-only {
     padding: space(8);
   }
@@ -20,6 +25,12 @@
     border-color: $ribienna;
     margin: pxtorem(2px) space(8) pxtorem(2px) 0;
     height: fit-content;
+    cursor: pointer;
+
+    &--selected {
+      background-color: $ribienna;
+      color: $white;
+    }
   }
 
   &--remove {
@@ -34,10 +45,5 @@
     @include for-phone-only {
       padding: space(8) space(20);
     }
-  }
-
-  &--selected {
-    background-color: $ribienna;
-    color: $white;
   }
 }
