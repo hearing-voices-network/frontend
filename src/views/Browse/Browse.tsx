@@ -12,6 +12,7 @@ import Layout from "../../components/Layout";
 import Breadcrumb from "../../components/Breadcrumb";
 import AboutAccordian from "../../components/AboutAccordian";
 import Filters from "./Filters";
+import Tag from "../../components/Tag";
 
 interface IProps {
   experienceStore: ExperienceStore;
@@ -76,6 +77,19 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
               filter={true}
             />
           </div>
+          <div className="flex-col--12 mobile-hide browse--filter--categories">
+            <Filters />
+          </div>
+          <div className="flex-col--12 browse--filter-no-tag--container">
+            <span className="browse--filter-no-tag--title">
+              {cms("browse.filter.no-tag")}
+            </span>
+            <Tag
+              text="No tag"
+              search={true}
+              onClick={() => handleAddition({ id: "untagged", name: "No tag" })}
+            />
+          </div>
         </div>
 
         <div className="flex-col--12 mobile-show">
@@ -104,6 +118,34 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
               </p>
 
               <Filters />
+
+              <div className="flex-container flex-container--no-padding flex-container--justify">
+                <div className="flex-col--12">
+                  <p className="browse--filter-no-tag--title">
+                    {cms("browse.filter.no-tag")}
+                  </p>
+                  <Tag
+                    text="No tag"
+                    search={true}
+                    className="browse--filter-no-tag"
+                    onClick={() =>
+                      handleAddition({ id: "untagged", name: "No tag" })
+                    }
+                  />
+                </div>
+              </div>
+
+              <div className="flex-container flex-container--no-padding flex-container--justify browse--filter--options">
+                <button
+                  aria-expanded={filterOptionsVisible}
+                  aria-controls="filter-content"
+                  id="filter-header"
+                  onClick={() => toggleFilterOptions()}
+                  className="browse--filter--options-toggle"
+                >
+                  Hide filter options
+                </button>
+              </div>
             </div>
           )}
         </div>
