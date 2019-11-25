@@ -6,7 +6,7 @@
   @include container;
 
   @include for-tablet-large-up {
-    margin-top: space(120) !important;
+    margin-top: space(64) !important;
     padding: space(24) 0 space(40) 0 !important;
   }
 
@@ -23,5 +23,6 @@
     @include body-m;
     color: $medium-grey;
     text-align: center;
+    margin-bottom: space(32);
   }
 }
