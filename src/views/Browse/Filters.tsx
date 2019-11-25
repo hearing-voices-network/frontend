@@ -18,6 +18,7 @@ interface IFilterProps {
   tags: ITag[];
   handleTagSelect: (tag: ITag) => void;
   selectedTags: ITag[];
+  isTagSelected: (tag: ITag) => boolean | undefined;
 }
 
 const Filters: FunctionComponent<IProps> = ({ experienceStore }) => {
@@ -32,6 +33,7 @@ const Filters: FunctionComponent<IProps> = ({ experienceStore }) => {
           tags={experienceStore.getCategoryTags(category.id)}
           handleTagSelect={experienceStore.handleTagSelect}
           selectedTags={experienceStore.selectedTags}
+          isTagSelected={experienceStore.isTagSelected}
         />
       ))}
     </div>
@@ -39,28 +41,35 @@ const Filters: FunctionComponent<IProps> = ({ experienceStore }) => {
 };
 
 const Filter: FunctionComponent<IFilterProps> = observer(
-  ({ title, tags, handleTagSelect, selectedTags }) => {
+  ({ title, tags, handleTagSelect, isTagSelected }) => {
     const [open, toggleTagList] = useState(false);
 
     return (
       <Fragment>
-        <div
+        <button
           className="flex-col--12 filters--category"
           onClick={() => toggleTagList(!open)}
         >
           {title}
           <FontAwesomeIcon icon="chevron-down" />
-        </div>
+        </button>
 
         {open && (
-          <div className="flex-container flex-container--no-padding flex-container--no-space">
+          <div
+            className="flex-container flex-container--no-padding flex-container--no-space"
+            tabIndex={0}
+          >
             {tags.map((tag: ITag) => (
               <Tag
                 key={tag.id}
                 text={tag.name}
                 search={true}
                 onClick={() => handleTagSelect(tag)}
-                selected={selectedTags.includes(tag)}
+                onKeyPress={(e: any) =>
+                  e.key === "Enter" ? handleTagSelect(tag) : null
+                }
+                selected={isTagSelected(tag)}
+                tabIndex={0}
               />
             ))}
           </div>

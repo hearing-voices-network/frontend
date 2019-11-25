@@ -52,7 +52,7 @@ export default class ExperienceStore {
     this.tags.filter(tag => tag.parent_tag_id === id);
 
   handleTagSelect = (tag: ITag) => {
-    if (this.selectedTags.includes(tag)) {
+    if (this.selectedTags.some(tags => tags.id === tag.id)) {
       const indexOfTag = this.selectedTags.indexOf(tag);
       this.removeTag(indexOfTag);
     } else {
@@ -64,4 +64,8 @@ export default class ExperienceStore {
   get availableTags() {
     return this.tags.filter((tag: ITag) => !this.selectedTags.includes(tag));
   }
+
+  isTagSelected = (tag: ITag) => {
+    return this.selectedTags.some(tags => tags.id === tag.id);
+  };
 }

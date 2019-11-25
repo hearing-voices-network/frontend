@@ -31,7 +31,9 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
     removeTag,
     filterOptionsVisible,
     toggleFilterOptions,
-    availableTags
+    availableTags,
+    handleTagSelect,
+    isTagSelected
   } = experienceStore;
 
   return (
@@ -72,7 +74,7 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
               placeholder={selectedTags.length ? "" : "e.g. angel, whispering"}
             />
             <Button
-              onClick={() => console.log("hey")}
+              onClick={() => console.log("filter")}
               text="Filter"
               filter={true}
             />
@@ -80,14 +82,26 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
           <div className="flex-col--12 mobile-hide browse--filter--categories">
             <Filters />
           </div>
-          <div className="flex-col--12 browse--filter-no-tag--container">
+          <div className="flex-col--12 mobile-hide browse--filter-no-tag--container">
             <span className="browse--filter-no-tag--title">
               {cms("browse.filter.no-tag")}
             </span>
             <Tag
               text="No tag"
               search={true}
-              onClick={() => handleAddition({ id: "untagged", name: "No tag" })}
+              tabIndex={0}
+              selected={isTagSelected({
+                id: "untagged",
+                name: "No tag"
+              })}
+              onKeyPress={(e: any) =>
+                e.key === "Enter"
+                  ? handleTagSelect({ id: "untagged", name: "No tag" })
+                  : null
+              }
+              onClick={() =>
+                handleTagSelect({ id: "untagged", name: "No tag" })
+              }
             />
           </div>
         </div>
@@ -127,9 +141,19 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
                   <Tag
                     text="No tag"
                     search={true}
+                    tabIndex={0}
                     className="browse--filter-no-tag"
                     onClick={() =>
-                      handleAddition({ id: "untagged", name: "No tag" })
+                      handleTagSelect({ id: "untagged", name: "No tag" })
+                    }
+                    selected={isTagSelected({
+                      id: "untagged",
+                      name: "No tag"
+                    })}
+                    onKeyPress={(e: any) =>
+                      e.key === "Enter"
+                        ? handleTagSelect({ id: "untagged", name: "No tag" })
+                        : null
                     }
                   />
                 </div>

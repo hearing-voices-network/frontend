@@ -9,7 +9,9 @@ interface IProps {
   story?: boolean;
   className?: string;
   onClick?: any;
+  onKeyPress?: any;
   selected?: boolean;
+  tabIndex?: number;
 }
 
 const Tag: FunctionComponent<IProps> = ({
@@ -18,7 +20,9 @@ const Tag: FunctionComponent<IProps> = ({
   story,
   className,
   onClick,
-  selected
+  onKeyPress,
+  selected,
+  tabIndex
 }) => (
   <div
     className={cx("tag", {
@@ -28,6 +32,8 @@ const Tag: FunctionComponent<IProps> = ({
       [`${className}`]: className
     })}
     onClick={onClick}
+    onKeyPress={onKeyPress}
+    tabIndex={tabIndex}
   >
     <span>{text}</span>
   </div>
