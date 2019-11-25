@@ -26,7 +26,7 @@ const Story: FunctionComponent<IProps> = ({ story, tags }) => (
     <div className="story-card--tags">
       <span className="story-card--tags--title">Tags:</span>
       {take(tags, 3).map((tag: ITag) => (
-        <Tag text={tag.name} className="story-card--tags--tag" />
+        <Tag text={tag.name} className="story-card--tags--tag" key={tag.id} />
       ))}
       {tags.length > 3 && (
         <Tag text={`${tags.length - 3}+`} className="story-card--tags--tag" />

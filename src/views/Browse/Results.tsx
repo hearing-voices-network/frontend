@@ -35,7 +35,11 @@ const Results: FunctionComponent<IProps> = ({ experienceStore }) => {
           <div className="flex-col--12">
             <div className="flex-container flex-container--no-padding">
               {experiences.map((experience: IStory) => (
-                <Story story={experience.content} tags={experience.tags} />
+                <Story
+                  story={experience.content}
+                  tags={experience.tags}
+                  key={experience.id}
+                />
               ))}
             </div>
           </div>
