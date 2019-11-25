@@ -39,6 +39,7 @@ const Results: FunctionComponent<IProps> = ({ experienceStore }) => {
                   story={experience.content}
                   tags={experience.tags}
                   key={experience.id}
+                  id={experience.id}
                 />
               ))}
             </div>

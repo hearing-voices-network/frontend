@@ -7,14 +7,21 @@ import Tag from "../../Tag";
 import { ITag } from "../../../utils/types";
 import { inject, observer } from "mobx-react";
 import ExperienceStore from "../../../stores/experienceStore";
+import { Link } from "react-router-dom";
 
 interface IProps {
   experienceStore?: ExperienceStore;
   story: string;
   tags: ITag[];
+  id: string;
 }
 
-const Story: FunctionComponent<IProps> = ({ story, tags, experienceStore }) => {
+const Story: FunctionComponent<IProps> = ({
+  story,
+  tags,
+  experienceStore,
+  id
+}) => {
   if (!experienceStore) return null;
 
   const { isTagSelected, filteredResultsShowing } = experienceStore;
@@ -28,8 +35,10 @@ const Story: FunctionComponent<IProps> = ({ story, tags, experienceStore }) => {
         id="story"
         buttons={false}
       />
-      <div className="story-card--read-more">
-        <a href="/">Read whole story</a>
+      <div>
+        <Link to={`/story/${id}`} className="story-card--read-more">
+          Read whole story
+        </Link>
       </div>
       <div className="story-card--tags">
         <span className="story-card--tags--title">Tags:</span>
