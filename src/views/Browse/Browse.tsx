@@ -11,12 +11,15 @@ import Breadcrumb from "../../components/Breadcrumb";
 import AboutAccordian from "../../components/AboutAccordian";
 import Search from "./Search";
 import Results from "./Results";
+import Footer from "../../components/Footer";
+import Button from "../../components/Button";
+import { withRouter, RouteComponentProps } from "react-router";
 
-interface IProps {
+interface IProps extends RouteComponentProps {
   experienceStore: ExperienceStore;
 }
 
-const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
+const Browse: FunctionComponent<IProps> = ({ experienceStore, history }) => {
   useEffect(() => {
     experienceStore.getTags();
     experienceStore.getExperiences();
@@ -48,8 +51,32 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
       <Search />
 
       <Results />
+
+      <Footer purple={true}>
+        <div className="flex-container flex-container--center flex-container--no-padding flex-container--align-center browse--footer">
+          <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--8">
+            <h5 className="browse--footer--title">
+              {cms("about.footer.title")}
+            </h5>
+            <p className="browse--footer--content">
+              {cms("about.footer.content")}
+            </p>
+          </div>
+          <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--4 browse--footer--button">
+            <Button
+              text="Sign up and share"
+              onClick={() =>
+                history.push({
+                  pathname: "/register"
+                })
+              }
+              twoCol={true}
+            />
+          </div>
+        </div>
+      </Footer>
     </Layout>
   );
 };
 
-export default inject("experienceStore")(observer(Browse));
+export default inject("experienceStore")(observer(withRouter(Browse)));
