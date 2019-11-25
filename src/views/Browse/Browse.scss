@@ -175,6 +175,7 @@
   font-size: inherit;
   line-height: inherit;
   color: $grey;
+  width: 100%;
 
   &::placeholder {
     width: auto;
@@ -193,6 +194,7 @@
   padding: space(8) 0 0 space(8);
   border: 1px solid $ribienna;
   background: $white;
+  z-index: 10;
 }
 
 .react-tags__suggestions ul {

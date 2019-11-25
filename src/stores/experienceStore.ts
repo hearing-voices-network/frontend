@@ -3,13 +3,18 @@ import api from "../service/api";
 import get from "lodash/get";
 import remove from "lodash/remove";
 
-import { ITag } from "../utils/types";
+import experienceList from "./experiences.json";
+
+import { ITag, IStory } from "../utils/types";
 
 export default class ExperienceStore {
   @observable tags: ITag[] = [];
   @observable selectedTags: ITag[] = [];
-  @observable filterOptionsVisible: boolean = true;
+  @observable filterOptionsVisible: boolean = false;
   @observable categories: ITag[] = [];
+  @observable experiences: IStory[] = [];
+  @observable experiencesLoading: boolean = true;
+  @observable filteredResultsShowing: boolean = false;
 
   @action
   getTags() {
@@ -28,6 +33,21 @@ export default class ExperienceStore {
       })
       .catch(err => console.log("redirect to 500 page"));
   }
+
+  @action
+  getExperiences() {
+    api
+      .get("/contributions")
+      .then(resp => (this.experiences = get(resp, "data.data")))
+      .catch(err => console.log("redirect to 500 page"));
+  }
+
+  @action
+  filterResults = () => {
+    // server filtering will happen here
+
+    this.filteredResultsShowing = true;
+  };
 
   @action
   removeTag = (index: number) => {

@@ -1,18 +1,16 @@
-import React, { FunctionComponent, useEffect, Fragment } from "react";
+import React, { FunctionComponent, useEffect } from "react";
 import { inject, observer } from "mobx-react";
-import ReactTags from "react-tag-autocomplete";
 
 import "./Browse.scss";
 
 import { cms } from "../../utils/cms";
 import ExperienceStore from "../../stores/experienceStore";
 
-import Button from "../../components/Button";
 import Layout from "../../components/Layout";
 import Breadcrumb from "../../components/Breadcrumb";
 import AboutAccordian from "../../components/AboutAccordian";
-import Filters from "./Filters";
-import Tag from "../../components/Tag";
+import Search from "./Search";
+import Results from "./Results";
 
 interface IProps {
   experienceStore: ExperienceStore;
@@ -21,21 +19,10 @@ interface IProps {
 const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
   useEffect(() => {
     experienceStore.getTags();
+    experienceStore.getExperiences();
   }, [experienceStore]);
 
   if (!experienceStore) return null;
-
-  const {
-    selectedTags,
-    handleAddition,
-    removeTag,
-    filterOptionsVisible,
-    toggleFilterOptions,
-    availableTags,
-    handleTagSelect,
-    isTagSelected,
-    showFilters
-  } = experienceStore;
 
   return (
     <Layout>
@@ -58,133 +45,9 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
         </div>
       </div>
 
-      <div className="flex-container flex-container--no-padding flex-container--center browse--filter">
-        <div className="flex-col--12">
-          <h1 className="browse--filter--title">
-            {cms("browse.filter.title")}
-          </h1>
-        </div>
+      <Search />
 
-        <div className="flex-container flex-container--no-padding">
-          <div className="flex-col--12 browse--filter--input">
-            <ReactTags
-              tags={selectedTags}
-              suggestions={availableTags}
-              handleDelete={(index: number) => removeTag(index)}
-              handleAddition={(tag: any) => handleAddition(tag)}
-              placeholder={selectedTags.length ? "" : "e.g. angel, whispering"}
-            />
-            <Button
-              onClick={() => console.log("filter")}
-              text="Filter"
-              filter={true}
-            />
-          </div>
-          {showFilters && (
-            <Fragment>
-              <div className="flex-col--12 mobile-hide browse--filter--categories">
-                <Filters />
-              </div>
-              <div className="flex-col--12 mobile-hide browse--filter-no-tag--container">
-                <span className="browse--filter-no-tag--title">
-                  {cms("browse.filter.no-tag")}
-                </span>
-                <Tag
-                  text="No tag"
-                  search={true}
-                  tabIndex={0}
-                  selected={isTagSelected({
-                    id: "untagged",
-                    name: "No tag"
-                  })}
-                  onKeyPress={(e: any) =>
-                    e.key === "Enter"
-                      ? handleTagSelect({ id: "untagged", name: "No tag" })
-                      : null
-                  }
-                  onClick={() =>
-                    handleTagSelect({ id: "untagged", name: "No tag" })
-                  }
-                />
-              </div>
-            </Fragment>
-          )}
-        </div>
-
-        <div className="flex-col--12 mobile-show">
-          <div className="flex-container flex-container--no-padding flex-container--justify browse--filter--options">
-            <button
-              aria-expanded={filterOptionsVisible}
-              aria-controls="filter-content"
-              id="filter-header"
-              onClick={() => toggleFilterOptions()}
-              className="browse--filter--options-toggle"
-            >
-              {filterOptionsVisible
-                ? "Hide filter options"
-                : "Show all filter options"}
-            </button>
-          </div>
-
-          {filterOptionsVisible && (
-            <div
-              className="flex-col--12"
-              id="filter-content"
-              aria-labelledby="filter-header"
-            >
-              <p className="browse--filter--about">
-                {cms("browse.filter.about")}
-              </p>
-              {showFilters && (
-                <Fragment>
-                  <Filters />
-
-                  <div className="flex-container flex-container--no-padding flex-container--justify">
-                    <div className="flex-col--12">
-                      <p className="browse--filter-no-tag--title">
-                        {cms("browse.filter.no-tag")}
-                      </p>
-                      <Tag
-                        text="No tag"
-                        search={true}
-                        tabIndex={0}
-                        className="browse--filter-no-tag"
-                        onClick={() =>
-                          handleTagSelect({ id: "untagged", name: "No tag" })
-                        }
-                        selected={isTagSelected({
-                          id: "untagged",
-                          name: "No tag"
-                        })}
-                        onKeyPress={(e: any) =>
-                          e.key === "Enter"
-                            ? handleTagSelect({
-                                id: "untagged",
-                                name: "No tag"
-                              })
-                            : null
-                        }
-                      />
-                    </div>
-                  </div>
-
-                  <div className="flex-container flex-container--no-padding flex-container--justify browse--filter--options">
-                    <button
-                      aria-expanded={filterOptionsVisible}
-                      aria-controls="filter-content"
-                      id="filter-header"
-                      onClick={() => toggleFilterOptions()}
-                      className="browse--filter--options-toggle"
-                    >
-                      Hide filter options
-                    </button>
-                  </div>
-                </Fragment>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
+      <Results />
     </Layout>
   );
 };
