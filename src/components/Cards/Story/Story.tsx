@@ -4,10 +4,11 @@ import take from "lodash/take";
 
 import "./Story.scss";
 import Tag from "../../Tag";
+import { ITag } from "../../../utils/types";
 
 interface IProps {
   story: string;
-  tags: string[];
+  tags: ITag[];
 }
 
 const Story: FunctionComponent<IProps> = ({ story, tags }) => (
@@ -24,8 +25,8 @@ const Story: FunctionComponent<IProps> = ({ story, tags }) => (
     </div>
     <div className="story-card--tags">
       <span className="story-card--tags--title">Tags:</span>
-      {take(tags, 3).map(tag => (
-        <Tag text={tag} className="story-card--tags--tag" />
+      {take(tags, 3).map((tag: ITag) => (
+        <Tag text={tag.name} className="story-card--tags--tag" />
       ))}
       {tags.length > 3 && (
         <Tag text={`${tags.length - 3}+`} className="story-card--tags--tag" />
