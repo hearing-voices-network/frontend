@@ -12,6 +12,10 @@
       @include subtitle;
       color: $medium-grey;
 
+      @include for-tablet-large-down {
+        margin-top: space(16);
+      }
+
       @include for-tablet-large-up {
         text-align: right;
       }

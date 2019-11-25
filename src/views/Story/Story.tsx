@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 import get from "lodash/get";
+import { format } from "date-fns";
 
 import "./Story.scss";
 
@@ -34,7 +35,10 @@ const Story: FunctionComponent = () => {
               </Link>
             </div>
             <div className="flex-col--6 flex-col--tablet--12 story--info--date">
-              Date added
+              {`Date added ${format(
+                new Date(story.created_at),
+                "do MMMM yyyy"
+              )}`}
             </div>
           </div>
         </div>
