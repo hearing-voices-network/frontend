@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect } from "react";
+import React, { FunctionComponent, useEffect, Fragment } from "react";
 import { inject, observer } from "mobx-react";
 import ReactTags from "react-tag-autocomplete";
 
@@ -33,7 +33,8 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
     toggleFilterOptions,
     availableTags,
     handleTagSelect,
-    isTagSelected
+    isTagSelected,
+    showFilters
   } = experienceStore;
 
   return (
@@ -79,31 +80,35 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
               filter={true}
             />
           </div>
-          <div className="flex-col--12 mobile-hide browse--filter--categories">
-            <Filters />
-          </div>
-          <div className="flex-col--12 mobile-hide browse--filter-no-tag--container">
-            <span className="browse--filter-no-tag--title">
-              {cms("browse.filter.no-tag")}
-            </span>
-            <Tag
-              text="No tag"
-              search={true}
-              tabIndex={0}
-              selected={isTagSelected({
-                id: "untagged",
-                name: "No tag"
-              })}
-              onKeyPress={(e: any) =>
-                e.key === "Enter"
-                  ? handleTagSelect({ id: "untagged", name: "No tag" })
-                  : null
-              }
-              onClick={() =>
-                handleTagSelect({ id: "untagged", name: "No tag" })
-              }
-            />
-          </div>
+          {showFilters && (
+            <Fragment>
+              <div className="flex-col--12 mobile-hide browse--filter--categories">
+                <Filters />
+              </div>
+              <div className="flex-col--12 mobile-hide browse--filter-no-tag--container">
+                <span className="browse--filter-no-tag--title">
+                  {cms("browse.filter.no-tag")}
+                </span>
+                <Tag
+                  text="No tag"
+                  search={true}
+                  tabIndex={0}
+                  selected={isTagSelected({
+                    id: "untagged",
+                    name: "No tag"
+                  })}
+                  onKeyPress={(e: any) =>
+                    e.key === "Enter"
+                      ? handleTagSelect({ id: "untagged", name: "No tag" })
+                      : null
+                  }
+                  onClick={() =>
+                    handleTagSelect({ id: "untagged", name: "No tag" })
+                  }
+                />
+              </div>
+            </Fragment>
+          )}
         </div>
 
         <div className="flex-col--12 mobile-show">
@@ -130,46 +135,52 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore }) => {
               <p className="browse--filter--about">
                 {cms("browse.filter.about")}
               </p>
+              {showFilters && (
+                <Fragment>
+                  <Filters />
 
-              <Filters />
+                  <div className="flex-container flex-container--no-padding flex-container--justify">
+                    <div className="flex-col--12">
+                      <p className="browse--filter-no-tag--title">
+                        {cms("browse.filter.no-tag")}
+                      </p>
+                      <Tag
+                        text="No tag"
+                        search={true}
+                        tabIndex={0}
+                        className="browse--filter-no-tag"
+                        onClick={() =>
+                          handleTagSelect({ id: "untagged", name: "No tag" })
+                        }
+                        selected={isTagSelected({
+                          id: "untagged",
+                          name: "No tag"
+                        })}
+                        onKeyPress={(e: any) =>
+                          e.key === "Enter"
+                            ? handleTagSelect({
+                                id: "untagged",
+                                name: "No tag"
+                              })
+                            : null
+                        }
+                      />
+                    </div>
+                  </div>
 
-              <div className="flex-container flex-container--no-padding flex-container--justify">
-                <div className="flex-col--12">
-                  <p className="browse--filter-no-tag--title">
-                    {cms("browse.filter.no-tag")}
-                  </p>
-                  <Tag
-                    text="No tag"
-                    search={true}
-                    tabIndex={0}
-                    className="browse--filter-no-tag"
-                    onClick={() =>
-                      handleTagSelect({ id: "untagged", name: "No tag" })
-                    }
-                    selected={isTagSelected({
-                      id: "untagged",
-                      name: "No tag"
-                    })}
-                    onKeyPress={(e: any) =>
-                      e.key === "Enter"
-                        ? handleTagSelect({ id: "untagged", name: "No tag" })
-                        : null
-                    }
-                  />
-                </div>
-              </div>
-
-              <div className="flex-container flex-container--no-padding flex-container--justify browse--filter--options">
-                <button
-                  aria-expanded={filterOptionsVisible}
-                  aria-controls="filter-content"
-                  id="filter-header"
-                  onClick={() => toggleFilterOptions()}
-                  className="browse--filter--options-toggle"
-                >
-                  Hide filter options
-                </button>
-              </div>
+                  <div className="flex-container flex-container--no-padding flex-container--justify browse--filter--options">
+                    <button
+                      aria-expanded={filterOptionsVisible}
+                      aria-controls="filter-content"
+                      id="filter-header"
+                      onClick={() => toggleFilterOptions()}
+                      className="browse--filter--options-toggle"
+                    >
+                      Hide filter options
+                    </button>
+                  </div>
+                </Fragment>
+              )}
             </div>
           )}
         </div>

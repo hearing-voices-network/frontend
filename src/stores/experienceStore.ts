@@ -65,6 +65,11 @@ export default class ExperienceStore {
     return this.tags.filter((tag: ITag) => !this.selectedTags.includes(tag));
   }
 
+  @computed
+  get showFilters() {
+    return !!this.tags.length;
+  }
+
   isTagSelected = (tag: ITag) => {
     return this.selectedTags.some(tags => tags.id === tag.id);
   };
