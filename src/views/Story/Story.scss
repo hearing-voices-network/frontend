@@ -1,0 +1,26 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/colors.scss";
+
+.story {
+  @include container;
+
+  &--info {
+    margin-top: space(40);
+
+    &--date {
+      @include subtitle;
+      color: $medium-grey;
+
+      @include for-tablet-large-up {
+        text-align: right;
+      }
+    }
+
+    &--back {
+      @include subtitle;
+      color: $turqoise;
+      text-decoration: none;
+    }
+  }
+}
