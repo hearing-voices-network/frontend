@@ -1,13 +1,15 @@
 import React, { FunctionComponent } from "react";
 import ClampLines from "react-clamp-lines";
 import take from "lodash/take";
+import { inject, observer } from "mobx-react";
+import { Link } from "react-router-dom";
 
 import "./Story.scss";
-import Tag from "../../Tag";
-import { ITag } from "../../../utils/types";
-import { inject, observer } from "mobx-react";
+
 import ExperienceStore from "../../../stores/experienceStore";
-import { Link } from "react-router-dom";
+import { ITag } from "../../../utils/types";
+
+import Tag from "../../Tag";
 
 interface IProps {
   experienceStore?: ExperienceStore;
