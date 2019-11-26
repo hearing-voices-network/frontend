@@ -73,10 +73,10 @@
   }
 }
 
-.story {
-  @include story-text;
-  color: $grey;
-}
+// .story {
+//   @include story-text;
+//   color: $grey;
+// }
 
 .section {
   margin: space(20) 0;
