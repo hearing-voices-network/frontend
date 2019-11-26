@@ -1,5 +1,12 @@
 @import "../../../styles/mixins.scss";
+@import "../../../styles/fonts.scss";
+@import "../../../styles/colors.scss";
 
 .my-experiences {
-  @include container;
+  padding: space(24) space(8) space(40) space(8) !important;
+
+  &--back {
+    @include body-s;
+    color: $ribienna;
+  }
 }

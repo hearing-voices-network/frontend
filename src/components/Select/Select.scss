@@ -14,16 +14,20 @@ select {
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
+
+  @include for-phone-only {
+    padding: space(16) space(40) space(16) space(16);
+  }
 }
 
 .select {
   &--wrapper {
     position: relative;
-    width: 400px;
     overflow: hidden;
+    width: 300px;
 
-    @include for-phone-only {
-      width: 200px;
+    @include for-tablet-down {
+      width: auto;
     }
 
     &:after {
@@ -51,6 +55,7 @@ select {
       background: none;
       border: 1px solid $ribienna-dark;
       border-radius: 0;
+      margin-right: 40px;
     }
   }
 }
