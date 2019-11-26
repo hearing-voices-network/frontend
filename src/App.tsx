@@ -1,11 +1,14 @@
 import React, { FunctionComponent } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Provider, observer } from "mobx-react";
+import { createBrowserHistory } from "history";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 
 import "./styles/main.scss";
+
+import httpService from "./service/api";
 
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Home from "./views/Home";
@@ -27,6 +30,7 @@ import RegisterStore from "./stores/registerStore";
 import UserStore from "./stores/userStore";
 import ExperienceStore from "./stores/experienceStore";
 import Story from "./views/Story";
+import TryAgain from "./views/TryAgain";
 
 library.add(fas);
 
@@ -34,6 +38,9 @@ const cookieStore = new CookiesStore();
 const registerStore = new RegisterStore();
 const userStore = new UserStore();
 const experienceStore = new ExperienceStore();
+const history = createBrowserHistory();
+
+httpService.setupInterceptors(history);
 
 const App: FunctionComponent = () => (
   <Provider
@@ -67,6 +74,7 @@ const App: FunctionComponent = () => (
             component={ResetPassword}
             exact={true}
           />
+          <Route path="/try-again" component={TryAgain} exact={true} />
 
           {/* User Routes */}
 
