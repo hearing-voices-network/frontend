@@ -22,15 +22,16 @@ import ForgotPassword from "./views/ForgotPassword";
 import ResetPassword from "./views/ResetPassword";
 import Dashboard from "./views/Dashboard";
 import Browse from "./views/Browse";
+import MyExperiences from "./views/Experiences/MyExperiences";
+import ExperienceStore from "./stores/experienceStore";
+import Story from "./views/Story";
+import TryAgain from "./views/TryAgain";
 
 import PrivateRoute from "./components/PrivateRoute";
 
 import CookiesStore from "./stores/cookiesStore";
 import RegisterStore from "./stores/registerStore";
 import UserStore from "./stores/userStore";
-import ExperienceStore from "./stores/experienceStore";
-import Story from "./views/Story";
-import TryAgain from "./views/TryAgain";
 
 library.add(fas);
 
@@ -79,6 +80,11 @@ const App: FunctionComponent = () => (
           {/* User Routes */}
 
           <PrivateRoute path="/dashboard" component={Dashboard} exact={true} />
+          <PrivateRoute
+            path="/my-experiences"
+            component={MyExperiences}
+            exact={true}
+          />
 
           <Route component={NotFound} />
         </Switch>

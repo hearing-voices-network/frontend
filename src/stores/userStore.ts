@@ -1,7 +1,8 @@
 import { observable, action } from "mobx";
 
 export default class UserStore {
-  @observable loggedIn: boolean = false;
+  @observable loggedIn: boolean = true;
+  @observable experiences = [];
 
   @action
   logIn() {

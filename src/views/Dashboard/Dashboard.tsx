@@ -1,5 +1,10 @@
-import React from "react";
-import { Link as RouteLink } from "react-router-dom";
+import React, { FunctionComponent } from "react";
+import {
+  Link as RouteLink,
+  withRouter,
+  RouteComponentProps
+} from "react-router-dom";
+import { observer } from "mobx-react";
 
 import "./Dashboard.scss";
 
@@ -12,7 +17,7 @@ import Privacy from "../../components/Cards/Privacy";
 import Footer from "../../components/Footer";
 import Link from "../../components/Link";
 
-const Dashboard = () => (
+const Dashboard: FunctionComponent<RouteComponentProps> = ({ history }) => (
   <Layout>
     <div className="flex-container flex-container--no-padding flex-container--center dashboard">
       <div className="flex-col--8 flex-col--tablet-large--12">
@@ -24,7 +29,11 @@ const Dashboard = () => (
             <Button
               text="View my experiences"
               twoCol={true}
-              onClick={() => console.log("experiences")}
+              onClick={() =>
+                history.push({
+                  pathname: "/my-experiences"
+                })
+              }
             />
           }
           mobileLeftButton={
@@ -95,4 +104,4 @@ const Dashboard = () => (
   </Layout>
 );
 
-export default Dashboard;
+export default withRouter(observer(Dashboard));
