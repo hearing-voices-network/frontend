@@ -1,11 +1,14 @@
 import React, { FunctionComponent } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Provider, observer } from "mobx-react";
+import { createBrowserHistory } from "history";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 
 import "./styles/main.scss";
+
+import httpService from "./service/api";
 
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Home from "./views/Home";
@@ -35,6 +38,9 @@ const cookieStore = new CookiesStore();
 const registerStore = new RegisterStore();
 const userStore = new UserStore();
 const experienceStore = new ExperienceStore();
+const history = createBrowserHistory();
+
+httpService.setupInterceptors(history);
 
 const App: FunctionComponent = () => (
   <Provider

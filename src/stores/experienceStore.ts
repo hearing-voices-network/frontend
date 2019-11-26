@@ -1,5 +1,5 @@
 import { observable, action, computed } from "mobx";
-import api from "../service/api";
+import httpService from "../service/api";
 import get from "lodash/get";
 import remove from "lodash/remove";
 import reduce from "lodash/reduce";
@@ -20,33 +20,27 @@ export default class ExperienceStore {
 
   @action
   async getTags() {
-    await api
-      .get("/tags")
-      .then(resp => {
-        const unsortedTags = get(resp, "data.data", []);
+    await httpService.api.get("/tags").then(resp => {
+      const unsortedTags = get(resp, "data.data", []);
 
-        const categories = remove(
-          unsortedTags,
-          (tag: ITag) => tag.parent_tag_id === null
-        );
+      const categories = remove(
+        unsortedTags,
+        (tag: ITag) => tag.parent_tag_id === null
+      );
 
-        this.categories = categories;
-        this.tags = unsortedTags;
-      })
-      .catch(err => console.log("redirect to 500 page"));
+      this.categories = categories;
+      this.tags = unsortedTags;
+    });
   }
 
   @action
   getExperiences() {
-    api
-      .get("/contributions")
-      .then(resp => {
-        // this.experiences = get(resp, "data.data");
+    httpService.api.get("/contributions").then(resp => {
+      // this.experiences = get(resp, "data.data");
 
-        this.experiences = get(experienceList, "data");
-        this.experiencesLoading = false;
-      })
-      .catch(err => console.log("redirect to 500 page"));
+      this.experiences = get(experienceList, "data");
+      this.experiencesLoading = false;
+    });
   }
 
   @action
