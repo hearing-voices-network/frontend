@@ -10,3 +10,25 @@
     color: $ribienna;
   }
 }
+
+.no-experience {
+  text-align: center;
+
+  &--title {
+    @include heading-m;
+    color: $grey;
+    margin: space(20) 0;
+  }
+
+  &--about {
+    @include body-l;
+    color: $medium-grey;
+    margin: space(20) 0;
+  }
+
+  &--link {
+    @include heading-s;
+    color: $turqoise;
+    margin: space(20) 0;
+  }
+}

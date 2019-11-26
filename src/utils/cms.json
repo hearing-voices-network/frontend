@@ -134,5 +134,10 @@
     "footer": {
       "title": "Tags"
     }
+  },
+  "my-experiences": {
+    "title": "My experiences",
+    "about": "There is currently no stories in my experiences.",
+    "cta": "Start new story"
   }
 }
