@@ -27,6 +27,7 @@ import RegisterStore from "./stores/registerStore";
 import UserStore from "./stores/userStore";
 import ExperienceStore from "./stores/experienceStore";
 import Story from "./views/Story";
+import TryAgain from "./views/TryAgain";
 
 library.add(fas);
 
@@ -67,6 +68,7 @@ const App: FunctionComponent = () => (
             component={ResetPassword}
             exact={true}
           />
+          <Route path="/try-again" component={TryAgain} exact={true} />
 
           {/* User Routes */}
 
