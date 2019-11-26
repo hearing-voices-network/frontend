@@ -1,16 +1,17 @@
 import React, { FunctionComponent } from "react";
 import Helmet from "react-helmet";
+import ReactSVG from "react-svg";
+
 import TryAgainIconLarge from "../../assets/icons/try-later-large.svg";
 import TryAgainIcon from "../../assets/icons/try-later.svg";
 
 import "./TryAgain.scss";
 
 import Layout from "../../components/Layout";
-import ReactSVG from "react-svg";
 import { cms } from "../../utils/cms";
 import Footer from "../../components/Footer";
 
-const TryAgain: FunctionComponent<any> = () => (
+const TryAgain: FunctionComponent = () => (
   <Layout>
     <Helmet>
       <title>Connecting Voices | Try Again</title>
