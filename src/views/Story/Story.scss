@@ -37,4 +37,44 @@
       margin-top: space(56);
     }
   }
+
+  &--footer {
+    padding: space(120) space(24) space(120) !important;
+
+    @include for-phone-only {
+      padding-top: space(40) !important;
+      padding-bottom: space(56) !important;
+    }
+
+    &--title {
+      @include heading-m;
+      color: $turqoise;
+      margin-bottom: space(40);
+    }
+  }
+
+  &--tags {
+    &--list {
+      justify-content: start;
+    }
+
+    &--category {
+      margin: space(10) space(8) 0 space(8);
+
+      &--title {
+        @include body-s;
+        color: $grey;
+        margin-bottom: pxtorem(4px);
+      }
+    }
+
+    &--separator {
+      height: auto;
+      width: 2px;
+      transform: rotate(10deg);
+      border-radius: 4.5px;
+      background-color: #98d0c6;
+      margin: 0 space(10);
+    }
+  }
 }

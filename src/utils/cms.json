@@ -125,5 +125,10 @@
       "about": "Select by category to explore more tags",
       "no-tag": "You can also search for experiences with"
     }
+  },
+  "story": {
+    "footer": {
+      "title": "Tags"
+    }
   }
 }
