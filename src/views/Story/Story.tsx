@@ -22,7 +22,7 @@ interface IProps {
 }
 
 class Story extends Component<IProps> {
-  // TEMP UNTIL HOOKED UP
+  // TEMP UNTIL HOOKED UP. WILL NEED TO DO GET REQUEST FOR STORY
   story = get(experienceList, "data[0]");
 
   async componentDidMount() {
