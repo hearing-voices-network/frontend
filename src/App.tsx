@@ -26,6 +26,7 @@ import CookiesStore from "./stores/cookiesStore";
 import RegisterStore from "./stores/registerStore";
 import UserStore from "./stores/userStore";
 import ExperienceStore from "./stores/experienceStore";
+import Story from "./views/Story";
 
 library.add(fas);
 
@@ -46,6 +47,7 @@ const App: FunctionComponent = () => (
         <Switch>
           <Route path="/" component={Home} exact={true} />
           <Route path="/browse" component={Browse} exact={true} />
+          <Route path="/story/:storyId" component={Story} exact={true} />
           <Route path="/about" component={About} exact={true} />
           <Route path="/contribute" component={Contribute} exact={true} />
           <Route path="/login" component={Login} exact={true} />

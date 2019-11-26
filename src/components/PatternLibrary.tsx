@@ -236,6 +236,7 @@ const PatternLibrary = () => (
             { id: "2", name: "critical" },
             { id: "3", name: "male" }
           ]}
+          id={"1"}
         />
         <Story
           story="I was terrorized by three male voices who talked about me, narrating my movements and picking fault in everything I do and say"
@@ -248,6 +249,7 @@ const PatternLibrary = () => (
             { id: "2", name: "critical" },
             { id: "3", name: "male" }
           ]}
+          id={"2"}
         />
         <Story
           story="I was terrorized by three male voices who talked about me, narrating my movements and picking fault in everything I do and say"
@@ -259,6 +261,7 @@ const PatternLibrary = () => (
             { id: "2", name: "critical" },
             { id: "3", name: "male" }
           ]}
+          id={"3"}
         />
       </div>
     </div>

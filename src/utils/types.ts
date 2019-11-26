@@ -20,3 +20,9 @@ export interface IStory {
   updated_at: string;
   tags: ITag[];
 }
+
+export interface ICategorisedTag {
+  id: string;
+  name: string;
+  tags: ITag[];
+}
