@@ -12,6 +12,10 @@
   color: $grey;
   cursor: pointer;
 
+  &:nth-of-type(even) {
+    background-color: $light-grey;
+  }
+
   &:hover {
     transform: scale(1.1);
   }
@@ -29,13 +33,13 @@
 
   &--tags {
     margin: space(24) 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
 
     &--tag {
-      margin: 0 space(8);
-
-      &:last-of-type {
-        margin: 0 0 0 space(8);
-      }
+      margin: 0 pxtorem(4px);
     }
 
     &--title {

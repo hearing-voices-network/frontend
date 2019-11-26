@@ -228,15 +228,40 @@ const PatternLibrary = () => (
       <div className="flex-container flex-container--no-padding flex-container--justify">
         <Story
           story="I was terrorized by three male voices who talked about me, narrating my movements and picking fault in everything I do and say"
-          tags={["talking", "critical", "male", "text", "test", "test"]}
+          tags={[
+            {
+              id: "1",
+              name: "talking"
+            },
+            { id: "2", name: "critical" },
+            { id: "3", name: "male" }
+          ]}
+          id={"1"}
         />
         <Story
           story="I was terrorized by three male voices who talked about me, narrating my movements and picking fault in everything I do and say"
-          tags={["talking", "critical", "male"]}
+          tags={[
+            {
+              id: "1",
+              name: "talking"
+            },
+
+            { id: "2", name: "critical" },
+            { id: "3", name: "male" }
+          ]}
+          id={"2"}
         />
         <Story
           story="I was terrorized by three male voices who talked about me, narrating my movements and picking fault in everything I do and say"
-          tags={["talking", "critical", "male"]}
+          tags={[
+            {
+              id: "1",
+              name: "talking"
+            },
+            { id: "2", name: "critical" },
+            { id: "3", name: "male" }
+          ]}
+          id={"3"}
         />
       </div>
     </div>

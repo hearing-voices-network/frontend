@@ -1,0 +1,76 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/colors.scss";
+
+.try-again {
+  @include container;
+  position: relative;
+  margin-bottom: space(120);
+
+  @include for-phone-only {
+    margin-bottom: space(72);
+    text-align: center;
+  }
+
+  @include for-tablet-large-up {
+    &:after {
+      @include faded-background;
+    }
+  }
+
+  &--title {
+    @include heading-xl;
+    color: $grey;
+    line-height: 1 !important;
+  }
+
+  &--icon {
+    margin-left: space(8);
+    &--mobile {
+      svg {
+        width: 115px;
+      }
+    }
+  }
+
+  &--about {
+    @include about;
+  }
+
+  &--footer {
+    padding-top: space(120) !important;
+    padding-bottom: space(120) !important;
+
+    @include for-phone-only {
+      padding-top: space(40) !important;
+      padding-bottom: space(56) !important;
+    }
+
+    &--title {
+      @include heading-m;
+      color: $ribienna;
+      margin-bottom: space(40);
+    }
+
+    &--content {
+      @include body-l;
+      color: $grey;
+      margin-bottom: space(80);
+
+      @include for-phone-only {
+        margin-bottom: space(16);
+      }
+    }
+
+    &--contact {
+      @include heading-xs;
+      color: $ribienna;
+
+      a {
+        @include body-l;
+        color: $ribienna;
+        display: block;
+      }
+    }
+  }
+}

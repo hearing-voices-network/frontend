@@ -35,7 +35,11 @@ const Home: FunctionComponent<RouteComponentProps> = ({ history }) => (
             </p>
             <Button
               text="Browse experiences"
-              onClick={() => console.log("browse experiences")}
+              onClick={() =>
+                history.push({
+                  pathname: "/browse"
+                })
+              }
             />
           </div>
         </div>

@@ -1,0 +1,28 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/colors.scss";
+
+.results {
+  @include container;
+
+  @include for-tablet-large-up {
+    margin-top: space(64) !important;
+    padding: space(24) 0 space(40) 0 !important;
+  }
+
+  &--no-results {
+    text-align: center;
+
+    &--title {
+      @include heading-m;
+      color: $grey;
+    }
+  }
+
+  &--count {
+    @include body-m;
+    color: $medium-grey;
+    text-align: center;
+    margin-bottom: space(32);
+  }
+}
