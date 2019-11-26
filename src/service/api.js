@@ -12,7 +12,6 @@ export default {
   setupInterceptors: history => {
     http.interceptors.response.use(
       response => {
-        console.log(response);
         return response;
       },
       error => {
