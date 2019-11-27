@@ -53,13 +53,15 @@ const PaginationControl: FunctionComponent<IProps> = ({
         )
       }
       nextIcon={
-        <div className="pagination--label">
-          <span>Next page</span>
-          <FontAwesomeIcon
-            icon="chevron-right"
-            className="pagination--label--icon-right"
-          />
-        </div>
+        itemsPerPage / totalItems !== itemsPerPage && (
+          <div className="pagination--label">
+            <span>Next page</span>
+            <FontAwesomeIcon
+              icon="chevron-right"
+              className="pagination--label--icon-right"
+            />
+          </div>
+        )
       }
     />
   );
