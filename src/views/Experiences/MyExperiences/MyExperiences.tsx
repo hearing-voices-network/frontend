@@ -10,6 +10,11 @@ import Select from "../../../components/Select";
 import Button from "../../../components/Button";
 import UserStore from "../../../stores/userStore";
 import NoExperience from "./NoExperience";
+import PaginationControl from "../../../components/Pagination";
+import Footer from "../../../components/Footer";
+import Link from "../../../components/Link";
+
+import { cms } from "../../../utils/cms";
 
 interface IProps extends RouteComponentProps {
   userStore: UserStore;
@@ -50,6 +55,24 @@ const MyExperiences: FunctionComponent<IProps> = ({ history, userStore }) => {
         </div>
       </div>
       <Fragment>{!userStore.experiences.length && <NoExperience />}</Fragment>
+      <div className="flex-container flex-container--center flex-container--justify my-experiences--pagination">
+        <PaginationControl totalItems={1} itemsPerPage={10} currentPage={1} />
+      </div>
+
+      <Footer purple={true}>
+        <div className="flex-container flex-container--center flex-container--no-padding flex-container--align-center my-experiences--footer">
+          <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--8">
+            <Link
+              text={cms("my-experiences.footer.link")}
+              href="/browse"
+              size="medium"
+            />
+            <p className="my-experiences--footer--about">
+              {cms("my-experiences.footer.about")}
+            </p>
+          </div>
+        </div>
+      </Footer>
     </Layout>
   );
 };
