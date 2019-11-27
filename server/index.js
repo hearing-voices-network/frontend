@@ -1,40 +1,50 @@
 const Koa = require("koa");
 const Router = require("koa-router");
+const session = require('koa-session');
 const serve = require("koa-static");
 const path = require("path");
 const proxy = require("koa-proxies");
 
+const PORT = process.env.PORT || 3000;
 const FRONTEND_APP_BUILD_PATH = path.resolve(__dirname, "../build");
 
 const app = new Koa();
 const router = new Router();
 
-app.use(
-  proxy("/api", {
-    target: "http://localhost/v1",
-    rewrite: path => path.replace(/^\/api/, ""),
-    logs: true
+// Required for cookie signature generation.
+app.keys = [process.env.APP_KEY || "secret"];
+
+app
+  // Add session support.
+  .use(session({ sameSite: "Lax" }, app))
+  .use((ctx, next) => {
+    ctx.session.test = 'TEST';
+    console.log(ctx.session);
+    return next();
   })
-);
-
-app.use(router.routes()).use(router.allowedMethods());
-
-app.use(serve(FRONTEND_APP_BUILD_PATH));
-
-app.use(
-  async (ctx, next) =>
-    await serve(FRONTEND_APP_BUILD_PATH)(
+  .use(router.routes())
+  .use(router.allowedMethods())
+  // Proxy API calls to the API.
+  .use(
+    proxy("/api", {
+      target: "http://localhost/v1",
+      rewrite: path => path.replace(/^\/api/, ""),
+      logs: true
+    })
+  )
+  // Serve the static files in the build directory.
+  .use(serve(FRONTEND_APP_BUILD_PATH))
+  // Place all calls through index.html.
+  .use(async (ctx, next) => {
+    return await serve(FRONTEND_APP_BUILD_PATH)(
       Object.assign(ctx, { path: "index.html" }),
       next
     )
-);
-
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, function() {
-  console.log(
-    "==> 🌎  Listening on port %s. Visit http://localhost:%s/",
-    PORT,
-    PORT
-  );
-});
+  })
+  .listen(PORT, () => {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/",
+      PORT,
+      PORT
+    );
+  });
