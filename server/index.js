@@ -17,6 +17,7 @@ app.keys = [process.env.APP_KEY || "secret"];
 app
   // Add session support.
   .use(session({ sameSite: "Lax" }, app))
+  // Test middleware to set a test session variable. TODO: Delete
   .use((ctx, next) => {
     ctx.session.test = 'TEST';
     console.log(ctx.session);
