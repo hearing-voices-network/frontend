@@ -17,22 +17,26 @@ app.keys = [process.env.APP_KEY || "secret"];
 app
   // Add session support.
   .use(session({ sameSite: "Lax" }, app))
-  // Test middleware to set a test session variable. TODO: Delete
+  // Start the session.
   .use((ctx, next) => {
-    ctx.session.test = 'TEST';
-    console.log(ctx.session);
+    ctx.session.started = true;
     return next();
   })
   .use(router.routes())
   .use(router.allowedMethods())
   // Proxy API calls to the API.
-  .use(
-    proxy("/api", {
+  .use((ctx, next) => {
+    // Set the access token as the bearer token.
+    if (ctx.session.access_token) {
+      ctx.request.header['Authorization'] = `Bearer ${ctx.session.access_token}`;
+    }
+
+    return proxy("/api", {
       target: "http://localhost/v1",
       rewrite: path => path.replace(/^\/api/, ""),
       logs: true
-    })
-  )
+    })(ctx, next);
+  })
   // Serve the static files in the build directory.
   .use(serve(FRONTEND_APP_BUILD_PATH))
   // Place all calls through index.html.
