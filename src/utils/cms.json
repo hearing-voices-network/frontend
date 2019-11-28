@@ -138,6 +138,10 @@
   "my-experiences": {
     "title": "My experiences",
     "about": "There is currently no stories in my experiences.",
-    "cta": "Start new story"
+    "cta": "Start new story",
+    "footer": {
+      "link": "View other’s stories",
+      "about": "Browse through the experiences of others."
+    }
   }
 }

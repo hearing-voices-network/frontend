@@ -9,10 +9,40 @@
     @include body-s;
     color: $ribienna;
   }
+
+  &--pagination {
+    margin: space(56) 0 !important;
+  }
+
+  &--footer {
+    padding: space(120) space(24) space(120) !important;
+    justify-content: center !important;
+    text-align: center;
+
+    @include for-phone-only {
+      padding-top: space(40) !important;
+      padding-bottom: space(56) !important;
+    }
+
+    &--about {
+      @include body-s-alt;
+      color: $grey;
+
+      margin-top: space(32);
+
+      @include for-phone-only {
+        margin-top: space(16);
+      }
+    }
+  }
 }
 
 .no-experience {
   text-align: center;
+
+  @include for-tablet-large-up {
+    margin-top: space(32) !important;
+  }
 
   &--title {
     @include heading-m;
