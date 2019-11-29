@@ -36,7 +36,11 @@ class SubmitExperiences extends Component<IProps> {
     return (
       <Layout>
         <Fragment>
-          {contributionStore.showGuidance && this.displayGuidanceStep()}
+          {contributionStore.showGuidance ? (
+            this.displayGuidanceStep()
+          ) : (
+            <p>submission process</p>
+          )}
         </Fragment>
       </Layout>
     );
