@@ -35,7 +35,7 @@ class SubmitExperiences extends Component<IProps> {
 
     return (
       <Layout>
-        <div className="flex-container flex-container--no-padding flex-container--center submit-experiences">
+        <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify submit-experiences">
           {contributionStore.showGuidance && this.displayGuidanceStep()}
         </div>
       </Layout>
