@@ -32,6 +32,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import CookiesStore from "./stores/cookiesStore";
 import RegisterStore from "./stores/registerStore";
 import UserStore from "./stores/userStore";
+import SubmitExperiences from "./views/Experiences/SubmitExperiences";
 
 library.add(fas);
 
@@ -83,6 +84,11 @@ const App: FunctionComponent = () => (
           <PrivateRoute
             path="/my-experiences"
             component={MyExperiences}
+            exact={true}
+          />
+          <PrivateRoute
+            path="/submit-experience"
+            component={SubmitExperiences}
             exact={true}
           />
 
