@@ -58,4 +58,26 @@
       color: #9aa7af;
     }
   }
+
+  &--footer {
+    padding: space(120) space(24) space(120) !important;
+    justify-content: center !important;
+
+    @include for-phone-only {
+      padding-top: space(40) !important;
+      padding-bottom: space(56) !important;
+    }
+
+    &--content {
+      text-align: center;
+    }
+
+    &--skip {
+      @include body-m;
+      color: #62717a;
+      text-decoration: underline;
+      margin-top: space(24);
+      cursor: pointer;
+    }
+  }
 }

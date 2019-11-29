@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { inject, observer } from "mobx-react";
 
 import Layout from "../../../components/Layout";
@@ -35,9 +35,9 @@ class SubmitExperiences extends Component<IProps> {
 
     return (
       <Layout>
-        <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify submit-experiences">
+        <Fragment>
           {contributionStore.showGuidance && this.displayGuidanceStep()}
-        </div>
+        </Fragment>
       </Layout>
     );
   }
