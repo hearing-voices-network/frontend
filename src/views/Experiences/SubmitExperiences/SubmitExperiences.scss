@@ -34,4 +34,14 @@
       margin: space(24) 0;
     }
   }
+
+  &--icon {
+    height: 12px;
+    color: #f4f4f4;
+    margin: 0 pxtorem(3px);
+
+    &--active {
+      color: #9aa7af;
+    }
+  }
 }
