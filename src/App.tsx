@@ -23,16 +23,17 @@ import ResetPassword from "./views/ResetPassword";
 import Dashboard from "./views/Dashboard";
 import Browse from "./views/Browse";
 import MyExperiences from "./views/Experiences/MyExperiences";
-import ExperienceStore from "./stores/experienceStore";
 import Story from "./views/Story";
 import TryAgain from "./views/TryAgain";
+import SubmitExperiences from "./views/Experiences/SubmitExperiences";
 
 import PrivateRoute from "./components/PrivateRoute";
 
 import CookiesStore from "./stores/cookiesStore";
 import RegisterStore from "./stores/registerStore";
 import UserStore from "./stores/userStore";
-import SubmitExperiences from "./views/Experiences/SubmitExperiences";
+import ContributionStore from "./stores/contributionStore";
+import ExperienceStore from "./stores/experienceStore";
 
 library.add(fas);
 
@@ -40,6 +41,7 @@ const cookieStore = new CookiesStore();
 const registerStore = new RegisterStore();
 const userStore = new UserStore();
 const experienceStore = new ExperienceStore();
+const contributionStore = new ContributionStore();
 const history = createBrowserHistory();
 
 httpService.setupInterceptors(history);
@@ -50,6 +52,7 @@ const App: FunctionComponent = () => (
     registerStore={registerStore}
     userStore={userStore}
     experienceStore={experienceStore}
+    contributionStore={contributionStore}
   >
     <Router>
       <ScrollToTop>
