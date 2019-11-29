@@ -9,6 +9,19 @@
 
 .guidance {
   text-align: center;
+  margin-top: space(88);
+
+  @include for-phone-only {
+    margin-top: space(24);
+  }
+
+  &--image {
+    @include for-phone-only {
+      svg {
+        width: 115px;
+      }
+    }
+  }
 
   &--title {
     @include heading-m;
@@ -37,6 +50,7 @@
 
   &--icon {
     height: 12px;
+    width: 10px !important;
     color: #f4f4f4;
     margin: 0 pxtorem(3px);
 

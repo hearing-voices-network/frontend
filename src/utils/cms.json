@@ -144,10 +144,12 @@
       "about": "Browse through the experiences of others."
     }
   },
-
   "writing-guidance": {
-    "title": "Writing guidance",
+    "guidance-one-title": "Writing guidance",
     "guidance-one-1": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue.",
-    "guidance-one-2": "Lorem ipsum dolor sit amet, adipiscing elit. "
+    "guidance-one-2": "Lorem ipsum dolor sit amet, adipiscing elit.",
+    "guidance-two-title": "Guidelines",
+    "guidance-two-1": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue.",
+    "guidance-two-2": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue."
   }
 }
