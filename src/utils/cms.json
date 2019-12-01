@@ -151,5 +151,9 @@
     "guidance-two-title": "Guidelines",
     "guidance-two-1": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue.",
     "guidance-two-2": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue."
+  },
+  "submission": {
+    "title": "New experience",
+    "date": "Today"
   }
 }

@@ -7,6 +7,7 @@ import GuidanceOne from "./GuidanceOne";
 
 import "./SubmitExperiences.scss";
 import GuidanceTwo from "./GuidanceTwo";
+import ExperienceEntry from "./ExperienceEntry";
 
 interface IProps {
   contributionStore: ContributionStore;
@@ -39,7 +40,7 @@ class SubmitExperiences extends Component<IProps> {
           {contributionStore.showGuidance ? (
             this.displayGuidanceStep()
           ) : (
-            <p>submission process</p>
+            <ExperienceEntry />
           )}
         </Fragment>
       </Layout>

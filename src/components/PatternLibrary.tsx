@@ -211,9 +211,7 @@ const PatternLibrary = () => (
         id="example"
       />
     </div>
-    <div className="section flex-col--12">
-      <Editor />
-    </div>
+    <div className="section flex-col--12">{/* <Editor /> */}</div>
     <div className="section flex-col--12">
       <Loading input="selection" />
     </div>

@@ -1,8 +1,10 @@
-import { observable, action } from "mobx";
+import { observable, action, computed } from "mobx";
+import RichTextEditor, { EditorValue } from "react-rte";
 
 export default class ContributionStore {
-  @observable showGuidance: boolean = true;
+  @observable showGuidance: boolean = false;
   @observable guidanceStep: number = 0;
+  @observable contribution: EditorValue = RichTextEditor.createEmptyValue();
 
   @action
   skipGuidance = () => {
@@ -13,4 +15,16 @@ export default class ContributionStore {
   increaseStep = () => {
     this.guidanceStep = this.guidanceStep + 1;
   };
+
+  @action
+  onContributionChange = (text: EditorValue) => {
+    this.contribution = text;
+  };
+
+  @computed
+  get wordCount() {
+    const contributeInMarkdown = this.contribution.toString("markdown");
+
+    return contributeInMarkdown.split(" ").length;
+  }
 }

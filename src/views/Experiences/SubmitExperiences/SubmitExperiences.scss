@@ -81,3 +81,43 @@
     }
   }
 }
+
+.submission {
+  &--header {
+    text-align: center;
+  }
+
+  &--title {
+    @include heading-s;
+    color: $grey;
+  }
+
+  &--date {
+    @include body-m;
+    color: $grey;
+    margin-top: space(8);
+  }
+
+  &--editor {
+    margin-top: space(24);
+  }
+
+  &--word-count {
+    margin-top: space(40);
+    text-align: center;
+    color: $turqoise;
+
+    &--count {
+      @include body-s-alt;
+
+      &-max {
+        font-weight: bold;
+      }
+    }
+
+    &--max {
+      @include body-s-alt;
+      margin-bottom: space(20);
+    }
+  }
+}
