@@ -17,9 +17,23 @@ app.keys = [process.env.APP_KEY || "secret"];
 app
   // Add session support.
   .use(session({ sameSite: "Lax" }, app))
-  // Start the session.
+  // Manage the session.
   .use((ctx, next) => {
-    ctx.session.started = true;
+    // Start the session.
+    ctx.session.save();
+
+    // Check if the access token has expired.
+    if (ctx.session.expires_at) {
+      const expiresAt = new Date(ctx.session.expires_at);
+      const now = new Date();
+
+      // Unset the access token if it has expired.
+      if (expiresAt < now) {
+        ctx.session.access_token = null;
+        ctx.session.expires_at = null;
+      }
+    }
+
     return next();
   })
   .use(router.routes())
