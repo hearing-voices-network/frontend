@@ -15,7 +15,13 @@ const StepTwo: FunctionComponent = () => (
     </div>
 
     <div className="flex-col--10">
-      <Input label="Password" id="password" />
+      <Input
+        label="Password"
+        id="password"
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          console.log(e.target.value)
+        }
+      />
 
       <div className="register--hint">
         <ReactSVG src={Question} />

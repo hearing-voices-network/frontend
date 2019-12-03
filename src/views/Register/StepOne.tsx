@@ -15,7 +15,13 @@ const StepOne: FunctionComponent = () => (
     </div>
 
     <div className="flex-col--10">
-      <Input label="Email" id="email" />
+      <Input
+        label="Email"
+        id="email"
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          console.log(e.target.value)
+        }
+      />
 
       <div className="register--hint">
         <ReactSVG src={Question} />
