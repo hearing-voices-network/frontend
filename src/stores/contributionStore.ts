@@ -23,6 +23,14 @@ export default class ContributionStore {
 
   @computed
   get wordCount() {
+    if (
+      !this.contribution
+        .getEditorState()
+        .getCurrentContent()
+        .hasText()
+    )
+      return 0;
+
     const contributeInMarkdown = this.contribution.toString("markdown");
 
     return contributeInMarkdown.split(" ").length;
