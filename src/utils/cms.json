@@ -154,6 +154,10 @@
   },
   "submission": {
     "title": "New experience",
-    "date": "Today"
+    "date": "Today",
+    "footer": {
+      "title": "Next step",
+      "step-1-about": "You will select if you want this experience to be private or public"
+    }
   }
 }
