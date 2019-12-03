@@ -48,7 +48,7 @@ const GuidanceOne: FunctionComponent<IProps> = ({ contributionStore }) => {
           <div className="flex-col--8 flex-col--tablet-large--12 guidance--footer--content">
             <Button
               text="Continue"
-              onClick={() => contributionStore.increaseStep()}
+              onClick={() => contributionStore.increaseStep("guidance")}
             />
           </div>
           <div className="flex-col--8 flex-col--tablet-large--12 guidance--footer--content">

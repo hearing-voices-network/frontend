@@ -121,3 +121,34 @@
     }
   }
 }
+
+.experience-entry {
+  &--footer {
+    padding: space(120) space(24) space(120) !important;
+    justify-content: center !important;
+
+    @include for-phone-only {
+      padding-top: space(40) !important;
+      padding-bottom: space(56) !important;
+    }
+
+    &--title {
+      @include heading-xs;
+      color: $turqoise;
+      margin-bottom: space(12);
+    }
+
+    &--description {
+      @include body-m;
+      color: $grey;
+      margin-bottom: space(32);
+    }
+
+    &--cancel {
+      @include button-text-alt;
+      text-decoration: underline;
+      color: $grey;
+      margin-top: space(24);
+    }
+  }
+}

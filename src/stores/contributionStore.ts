@@ -4,6 +4,7 @@ import RichTextEditor, { EditorValue } from "react-rte";
 export default class ContributionStore {
   @observable showGuidance: boolean = false;
   @observable guidanceStep: number = 0;
+  @observable contributionStep: number = 0;
   @observable contribution: EditorValue = RichTextEditor.createEmptyValue();
 
   @action
@@ -12,8 +13,9 @@ export default class ContributionStore {
   };
 
   @observable
-  increaseStep = () => {
-    this.guidanceStep = this.guidanceStep + 1;
+  increaseStep = (type: string) => {
+    // @ts-ignore
+    this[`${type}Step`] = this[`${type}Step`] + 1;
   };
 
   @action

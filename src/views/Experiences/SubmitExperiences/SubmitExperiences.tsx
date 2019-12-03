@@ -31,17 +31,27 @@ class SubmitExperiences extends Component<IProps> {
     }
   }
 
+  displaySubmissionStep() {
+    const { contributionStore } = this.props;
+
+    switch (contributionStore.contributionStep) {
+      case 0:
+        return <ExperienceEntry />;
+
+      default:
+        break;
+    }
+  }
+
   render() {
     const { contributionStore } = this.props;
 
     return (
       <Layout>
         <Fragment>
-          {contributionStore.showGuidance ? (
-            this.displayGuidanceStep()
-          ) : (
-            <ExperienceEntry />
-          )}
+          {contributionStore.showGuidance
+            ? this.displayGuidanceStep()
+            : this.displaySubmissionStep()}
         </Fragment>
       </Layout>
     );
