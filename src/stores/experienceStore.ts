@@ -20,7 +20,7 @@ export default class ExperienceStore {
 
   @action
   async getTags() {
-    await httpService.api.get("/tags").then(resp => {
+    await httpService.api.get("/api/tags").then(resp => {
       const unsortedTags = get(resp, "data.data", []);
 
       const categories = remove(
@@ -35,7 +35,7 @@ export default class ExperienceStore {
 
   @action
   getExperiences() {
-    httpService.api.get("/contributions").then(resp => {
+    httpService.api.get("/api/contributions").then(resp => {
       // this.experiences = get(resp, "data.data");
 
       this.experiences = get(experienceList, "data");
