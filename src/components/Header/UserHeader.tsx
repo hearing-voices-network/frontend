@@ -82,7 +82,7 @@ const UserHeader: FunctionComponent = () => (
             </Link>
           </span>
           <span className="user-header--link">
-            <Link className="header--link" to="/dashboard">
+            <Link className="header--link" to="/account">
               My account
             </Link>
           </span>
