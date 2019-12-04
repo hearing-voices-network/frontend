@@ -4,11 +4,12 @@ import { inject, observer } from "mobx-react";
 import Layout from "../../../components/Layout";
 import ContributionStore from "../../../stores/contributionStore";
 import GuidanceOne from "./GuidanceOne";
+import GuidanceTwo from "./GuidanceTwo";
 import ExperiencePrivacy from "./ExperiencePrivacy";
+import ExperienceTags from "./ExperienceTags";
+import ExperienceEntry from "./ExperienceEntry";
 
 import "./SubmitExperiences.scss";
-import GuidanceTwo from "./GuidanceTwo";
-import ExperienceEntry from "./ExperienceEntry";
 
 interface IProps {
   contributionStore: ContributionStore;
@@ -40,6 +41,8 @@ class SubmitExperiences extends Component<IProps> {
         return <ExperienceEntry />;
       case 1:
         return <ExperiencePrivacy />;
+      case 2:
+        return <ExperienceTags />;
       default:
         break;
     }
