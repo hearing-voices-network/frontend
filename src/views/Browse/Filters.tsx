@@ -11,6 +11,9 @@ import "./Filters.scss";
 
 interface IProps {
   experienceStore?: ExperienceStore;
+  handleTagSelect: (tag: ITag) => void;
+  selectedTags: ITag[];
+  isTagSelected: (tag: ITag) => boolean | undefined;
 }
 
 interface IFilterProps {
@@ -21,7 +24,12 @@ interface IFilterProps {
   isTagSelected: (tag: ITag) => boolean | undefined;
 }
 
-const Filters: FunctionComponent<IProps> = ({ experienceStore }) => {
+const Filters: FunctionComponent<IProps> = ({
+  experienceStore,
+  handleTagSelect,
+  selectedTags,
+  isTagSelected
+}) => {
   if (!experienceStore) return null;
 
   return (
@@ -31,9 +39,9 @@ const Filters: FunctionComponent<IProps> = ({ experienceStore }) => {
           key={category.id}
           title={category.name}
           tags={experienceStore.getCategoryTags(category.id)}
-          handleTagSelect={experienceStore.handleTagSelect}
-          selectedTags={experienceStore.selectedTags}
-          isTagSelected={experienceStore.isTagSelected}
+          handleTagSelect={handleTagSelect}
+          selectedTags={selectedTags}
+          isTagSelected={isTagSelected}
         />
       ))}
     </div>

@@ -50,7 +50,11 @@ const Search: FunctionComponent<IProps> = ({ experienceStore }) => {
         {showFilters && (
           <Fragment>
             <div className="flex-col--12 mobile-hide browse--filter--categories">
-              <Filters />
+              <Filters
+                handleTagSelect={experienceStore.handleTagSelect}
+                selectedTags={experienceStore.selectedTags}
+                isTagSelected={experienceStore.isTagSelected}
+              />
             </div>
             <div className="flex-col--12 mobile-hide browse--filter-no-tag--container">
               <span className="browse--filter-no-tag--title">
@@ -104,7 +108,11 @@ const Search: FunctionComponent<IProps> = ({ experienceStore }) => {
             </p>
             {showFilters && (
               <Fragment>
-                <Filters />
+                <Filters
+                  handleTagSelect={experienceStore.handleTagSelect}
+                  selectedTags={experienceStore.selectedTags}
+                  isTagSelected={experienceStore.isTagSelected}
+                />
 
                 <div className="flex-container flex-container--no-padding flex-container--justify">
                   <div className="flex-col--12">
