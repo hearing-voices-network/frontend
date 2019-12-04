@@ -152,3 +152,44 @@
     }
   }
 }
+
+.experience-privacy {
+  text-align: center;
+
+  &--icon {
+    @include for-tablet-down {
+      svg {
+        height: 150px;
+      }
+    }
+  }
+
+  &--title {
+    @include heading-s;
+    color: $grey;
+    margin-bottom: space(32);
+  }
+
+  &--about {
+    @include body-l;
+    color: #62717a;
+    margin-bottom: space(32);
+  }
+
+  &--hint {
+    @include body-m;
+    display: flex;
+    background-color: #f4f4f4;
+    padding: space(8) space(16);
+    margin: space(32) space(8);
+    color: $grey;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      height: 20px;
+      width: auto;
+      margin-right: pxtorem(6px);
+    }
+  }
+}

@@ -4,6 +4,7 @@ import { inject, observer } from "mobx-react";
 import Layout from "../../../components/Layout";
 import ContributionStore from "../../../stores/contributionStore";
 import GuidanceOne from "./GuidanceOne";
+import ExperiencePrivacy from "./ExperiencePrivacy";
 
 import "./SubmitExperiences.scss";
 import GuidanceTwo from "./GuidanceTwo";
@@ -37,7 +38,8 @@ class SubmitExperiences extends Component<IProps> {
     switch (contributionStore.contributionStep) {
       case 0:
         return <ExperienceEntry />;
-
+      case 1:
+        return <ExperiencePrivacy />;
       default:
         break;
     }

@@ -159,5 +159,10 @@
       "title": "Next step",
       "step-1-about": "You will select if you want this experience to be private or public"
     }
+  },
+  "experience-privacy": {
+    "title": "Before you submit",
+    "about": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue.",
+    "hint": "Your experience will be sent to be reviewed"
   }
 }

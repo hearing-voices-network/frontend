@@ -4,8 +4,9 @@ import RichTextEditor, { EditorValue } from "react-rte";
 export default class ContributionStore {
   @observable showGuidance: boolean = false;
   @observable guidanceStep: number = 0;
-  @observable contributionStep: number = 0;
+  @observable contributionStep: number = 1;
   @observable contribution: EditorValue = RichTextEditor.createEmptyValue();
+  @observable privacy: "public" | "private" = "public";
 
   @action
   skipGuidance = () => {
@@ -21,6 +22,11 @@ export default class ContributionStore {
   @action
   onContributionChange = (text: EditorValue) => {
     this.contribution = text;
+  };
+
+  @action
+  setPrivacy = (privacy: "public" | "private") => {
+    this.privacy = privacy;
   };
 
   @computed
