@@ -170,5 +170,10 @@
   "experience-tags": {
     "title": "Your experience",
     "about": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue."
+  },
+  "submission-confirmation": {
+    "title": "Submitted",
+    "about": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue.",
+    "hint": "Your experience will be sent to be reviewed"
   }
 }

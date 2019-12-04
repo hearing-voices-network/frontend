@@ -8,6 +8,7 @@ import GuidanceTwo from "./GuidanceTwo";
 import ExperiencePrivacy from "./ExperiencePrivacy";
 import ExperienceTags from "./ExperienceTags";
 import ExperienceEntry from "./ExperienceEntry";
+import Confirmation from "./Confirmation";
 
 import "./SubmitExperiences.scss";
 
@@ -50,6 +51,8 @@ class SubmitExperiences extends Component<IProps> {
 
   render() {
     const { contributionStore } = this.props;
+
+    if (contributionStore.contributionSubmitted) return <Confirmation />;
 
     return (
       <Layout>

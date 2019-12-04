@@ -9,6 +9,7 @@ export default class ContributionStore {
   @observable contribution: EditorValue = RichTextEditor.createEmptyValue();
   @observable privacy: "public" | "private" = "public";
   @observable selectedTags: ITag[] = [];
+  @observable contributionSubmitted: boolean = false;
 
   @action
   skipGuidance = () => {
@@ -77,6 +78,12 @@ export default class ContributionStore {
   @action
   skipTags = () => {
     this.selectedTags = [];
-    this.increaseStep("contribution");
+    this.submitContribution();
+  };
+
+  @action
+  submitContribution = () => {
+    this.contributionSubmitted = true;
+    console.log("hello?");
   };
 }

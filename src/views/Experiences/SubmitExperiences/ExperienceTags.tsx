@@ -49,7 +49,7 @@ const ExperienceTags: FunctionComponent<IProps> = ({
         <div className="flex-col--12 experience-tags--continue">
           <Button
             text="Continue"
-            onClick={() => contributionStore.increaseStep("contribution")}
+            onClick={() => contributionStore.submitContribution()}
           />
         </div>
       </div>
