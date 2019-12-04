@@ -4,6 +4,7 @@ import Filters from "../../Browse/Filters";
 import ExperienceStore from "../../../stores/experienceStore";
 import { cms } from "../../../utils/cms";
 import ContributionStore from "../../../stores/contributionStore";
+import Button from "../../../components/Button";
 
 interface IProps {
   experienceStore?: ExperienceStore;
@@ -36,6 +37,13 @@ const ExperienceTags: FunctionComponent<IProps> = ({
           handleTagSelect={contributionStore.handleTagSelect}
           selectedTags={contributionStore.selectedTags}
           isTagSelected={contributionStore.isTagSelected}
+        />
+      </div>
+
+      <div className="flex-col--12 experience-tags--continue">
+        <Button
+          text="Continue"
+          onClick={() => contributionStore.increaseStep("contribution")}
         />
       </div>
     </div>

@@ -193,3 +193,21 @@
     }
   }
 }
+
+.experience-tags {
+  &--title {
+    @include heading-s;
+    color: $grey;
+    margin-bottom: space(32);
+  }
+
+  &--about {
+    @include body-l;
+    color: #62717a;
+    margin-bottom: space(32);
+  }
+
+  &--continue {
+    margin-top: space(32);
+  }
+}
