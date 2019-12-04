@@ -73,4 +73,10 @@ export default class ContributionStore {
   isTagSelected = (tag: ITag) => {
     return this.selectedTags.some(tags => tags.id === tag.id);
   };
+
+  @action
+  skipTags = () => {
+    this.selectedTags = [];
+    this.increaseStep("contribution");
+  };
 }
