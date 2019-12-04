@@ -84,6 +84,5 @@ export default class ContributionStore {
   @action
   submitContribution = () => {
     this.contributionSubmitted = true;
-    console.log("hello?");
   };
 }
