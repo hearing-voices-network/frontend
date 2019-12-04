@@ -1,13 +1,15 @@
-import React, { FunctionComponent } from "react";
-
-import Layout from "../../../components/Layout";
+import React, { FunctionComponent, Fragment } from "react";
 import ReactSVG from "react-svg";
-import Pencil from "../../../assets/icons/pencil-large.svg";
-import { cms } from "../../../utils/cms";
-import PrivacyButton from "../../../components/PrivacyButton";
-import Question from "../../../assets/icons/question-circle.svg";
 import { observer, inject } from "mobx-react";
+
+import { cms } from "../../../utils/cms";
 import ContributionStore from "../../../stores/contributionStore";
+import Pencil from "../../../assets/icons/pencil-large.svg";
+import Question from "../../../assets/icons/question-circle.svg";
+
+import PrivacyButton from "../../../components/PrivacyButton";
+import Footer from "../../../components/Footer";
+import Button from "../../../components/Button";
 
 interface IProps {
   contributionStore?: ContributionStore;
@@ -18,34 +20,52 @@ const ExperiencePrivacy: FunctionComponent<IProps> = ({
   if (!contributionStore) return null;
 
   return (
-    <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify submit-experiences experience-privacy">
-      <div className="flex-col--10">
-        <ReactSVG className="experience-privacy--icon" src={Pencil} />
-        <h1 className="experience-privacy--title">
-          {cms("experience-privacy.title")}
-        </h1>
-      </div>
-      <div className="flex-col--10">
-        <p className="experience-privacy--about">
-          {cms("experience-privacy.about")}
-        </p>
-      </div>
+    <Fragment>
+      <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify submit-experiences experience-privacy">
+        <div className="flex-col--10">
+          <ReactSVG className="experience-privacy--icon" src={Pencil} />
+          <h1 className="experience-privacy--title">
+            {cms("experience-privacy.title")}
+          </h1>
+        </div>
+        <div className="flex-col--10">
+          <p className="experience-privacy--about">
+            {cms("experience-privacy.about")}
+          </p>
+        </div>
 
-      <div className="flex-col--10">
-        <PrivacyButton
-          text={contributionStore.privacy}
-          onChange={(privacy: "public" | "private") =>
-            contributionStore.setPrivacy(privacy)
-          }
-        />
-      </div>
+        <div className="flex-col--10">
+          <PrivacyButton
+            text={contributionStore.privacy}
+            onChange={(privacy: "public" | "private") =>
+              contributionStore.setPrivacy(privacy)
+            }
+          />
+        </div>
 
-      <div className="flex-col--9 experience-privacy--hint">
-        <ReactSVG src={Question} />
+        <div className="flex-col--9 experience-privacy--hint">
+          <ReactSVG src={Question} />
 
-        <span>{cms("experience-privacy.hint")}</span>
+          <span>{cms("experience-privacy.hint")}</span>
+        </div>
       </div>
-    </div>
+      <Footer green={true}>
+        <div className="flex-container flex-container--center flex-container--justify experience-entry--footer">
+          <div className="flex-col--8 flex-col--tablet-large--10 guidance--footer--content">
+            <h5 className="experience-entry--footer--title">
+              {cms("submission.footer.title")}
+            </h5>
+            <p className="experience-entry--footer--description">
+              {cms("submission.footer.step-2-about")}
+            </p>
+            <Button
+              text="Continue"
+              onClick={() => contributionStore.increaseStep("contribution")}
+            />
+          </div>
+        </div>
+      </Footer>
+    </Fragment>
   );
 };
 

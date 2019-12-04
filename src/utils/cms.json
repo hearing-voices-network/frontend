@@ -157,7 +157,8 @@
     "date": "Today",
     "footer": {
       "title": "Next step",
-      "step-1-about": "You will select if you want this experience to be private or public"
+      "step-1-about": "You will select if you want this experience to be private or public",
+      "step-2-about": "Tag characteristics, tone and descriptions of your experience."
     }
   },
   "experience-privacy": {
