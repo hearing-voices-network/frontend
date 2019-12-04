@@ -39,7 +39,11 @@ const Dashboard: FunctionComponent<RouteComponentProps> = ({ history }) => (
           mobileLeftButton={
             <Button
               text="View my experiences"
-              onClick={() => console.log("experiences")}
+              onClick={() =>
+                history.push({
+                  pathname: "/my-experiences"
+                })
+              }
             />
           }
           leftTitle={cms("dashboard.experiences")}
@@ -48,14 +52,14 @@ const Dashboard: FunctionComponent<RouteComponentProps> = ({ history }) => (
             <Button
               text="Submit new experience"
               twoCol={true}
-              onClick={() => console.log("submit")}
+              onClick={() => history.push({ pathname: "/submit-experience" })}
             />
           }
           mobileRightButton={
             <Button
               text="Submit new experience"
               twoCol={true}
-              onClick={() => console.log("submit")}
+              onClick={() => history.push({ pathname: "/submit-experience" })}
             />
           }
           rightTitle={cms("dashboard.submit")}

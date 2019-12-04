@@ -1,0 +1,243 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/fonts.scss";
+@import "../../../styles/colors.scss";
+@import "../../../styles/breakpoints.scss";
+
+.submit-experiences {
+  @include container;
+}
+
+.guidance {
+  text-align: center;
+  margin-top: space(88);
+
+  @include for-phone-only {
+    margin-top: space(24);
+  }
+
+  &--image {
+    @include for-phone-only {
+      svg {
+        width: 115px;
+      }
+    }
+  }
+
+  &--title {
+    @include heading-m;
+    color: $grey;
+    margin-bottom: space(12);
+
+    @include for-tablet-large-up {
+      margin-bottom: space(24);
+    }
+  }
+
+  &--step {
+    @include heading-xs;
+    color: $medium-grey;
+  }
+
+  &--content {
+    @include body-l;
+    color: $medium-grey;
+    margin: space(12) 0;
+
+    @include for-tablet-large-up {
+      margin: space(24) 0;
+    }
+  }
+
+  &--icon {
+    height: 12px;
+    width: 10px !important;
+    color: #f4f4f4;
+    margin: 0 pxtorem(3px);
+
+    &--active {
+      color: #9aa7af;
+    }
+  }
+
+  &--footer {
+    padding: space(120) space(24) space(120) !important;
+    justify-content: center !important;
+
+    @include for-phone-only {
+      padding-top: space(40) !important;
+      padding-bottom: space(56) !important;
+    }
+
+    &--content {
+      text-align: center;
+    }
+
+    &--skip {
+      @include body-m;
+      color: #62717a;
+      text-decoration: underline;
+      margin-top: space(24);
+      cursor: pointer;
+    }
+  }
+}
+
+.submission {
+  &--header {
+    text-align: center;
+  }
+
+  &--title {
+    @include heading-s;
+    color: $grey;
+  }
+
+  &--date {
+    @include body-m;
+    color: $grey;
+    margin-top: space(8);
+  }
+
+  &--editor {
+    margin-top: space(24);
+  }
+
+  &--word-count {
+    margin-top: space(40);
+    text-align: center;
+    color: $turqoise;
+
+    &--count {
+      @include body-s-alt;
+
+      &-max {
+        font-weight: bold;
+      }
+    }
+
+    &--max {
+      @include body-s-alt;
+      margin-bottom: space(20);
+    }
+  }
+}
+
+.experience-entry {
+  &--footer {
+    padding: space(120) space(24) space(120) !important;
+    justify-content: center !important;
+
+    @include for-phone-only {
+      padding-top: space(40) !important;
+      padding-bottom: space(56) !important;
+    }
+
+    &--title {
+      @include heading-xs;
+      color: $turqoise;
+      margin-bottom: space(12);
+    }
+
+    &--description {
+      @include body-m;
+      color: $grey;
+      margin-bottom: space(32);
+    }
+
+    &--cancel {
+      @include button-text-alt;
+      text-decoration: underline;
+      color: $grey;
+      margin-top: space(24);
+    }
+  }
+}
+
+.experience-privacy {
+  text-align: center;
+
+  &--icon {
+    @include for-tablet-down {
+      svg {
+        height: 150px;
+      }
+    }
+  }
+
+  &--title {
+    @include heading-s;
+    color: $grey;
+    margin-bottom: space(32);
+  }
+
+  &--about {
+    @include body-l;
+    color: #62717a;
+    margin-bottom: space(32);
+  }
+
+  &--hint {
+    @include body-m;
+    display: flex;
+    background-color: #f4f4f4;
+    padding: space(8) space(16);
+    margin: space(32) space(8);
+    color: $grey;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      height: 20px;
+      width: auto;
+      margin-right: pxtorem(6px);
+    }
+  }
+}
+
+.experience-tags {
+  &--title {
+    @include heading-s;
+    color: $grey;
+    margin-bottom: space(32);
+  }
+
+  &--about {
+    @include body-l;
+    color: #62717a;
+    margin-bottom: space(32);
+  }
+
+  &--continue {
+    margin-top: space(32);
+  }
+
+  &--skip {
+    @include heading-xs;
+    color: $ribienna;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &--footer-about {
+    @include body-s-alt;
+    color: $grey;
+    margin-top: space(16);
+  }
+}
+
+.experience-confirmation {
+  @include container;
+  text-align: center;
+
+  &--title {
+    @include heading-s;
+    color: $grey;
+    margin-bottom: space(32);
+  }
+
+  &--about {
+    @include body-l;
+    color: #62717a;
+    margin-bottom: space(32);
+  }
+}

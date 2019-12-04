@@ -12,7 +12,7 @@ const NoExperience = () => (
       <h1 className="no-experience--title">{cms("my-experiences.title")}</h1>
       <p className="no-experience--about">{cms("my-experiences.about")}</p>
 
-      <Link to="/new-story" className="no-experience--link">
+      <Link to="/submit-experience" className="no-experience--link">
         {cms("my-experiences.cta")}
       </Link>
     </div>

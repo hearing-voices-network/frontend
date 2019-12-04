@@ -1,9 +1,12 @@
-import React, { FunctionComponent, useState } from "react";
-import RichTextEditor from "react-rte";
+import React, { FunctionComponent } from "react";
+import RichTextEditor, { EditorValue } from "react-rte";
 
 import "./Editor.scss";
 
-interface IProps {}
+interface IProps {
+  text: EditorValue;
+  onChange: (value: EditorValue) => any;
+}
 
 const toolbarConfig = {
   // Optionally specify the groups to display (displayed in the order listed).
@@ -25,18 +28,15 @@ const toolbarConfig = {
   ]
 };
 
-const Editor: FunctionComponent<IProps> = () => {
-  const [value, editValue] = useState(RichTextEditor.createEmptyValue());
+const Editor: FunctionComponent<IProps> = ({ text, onChange }) => (
+  <RichTextEditor
+    value={text}
+    onChange={text => onChange(text)}
+    // @ts-ignore
+    toolbarConfig={toolbarConfig}
+    toolbarClassName="editor--toolbar"
+    editorClassName="editor--content"
+  />
+);
 
-  return (
-    <RichTextEditor
-      value={value}
-      onChange={text => editValue(text)}
-      // @ts-ignore
-      toolbarConfig={toolbarConfig}
-      toolbarClassName="editor--toolbar"
-      editorClassName="editor--content"
-    />
-  );
-};
 export default Editor;

@@ -143,5 +143,37 @@
       "link": "View other’s stories",
       "about": "Browse through the experiences of others."
     }
+  },
+  "writing-guidance": {
+    "guidance-one-title": "Writing guidance",
+    "guidance-one-1": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue.",
+    "guidance-one-2": "Lorem ipsum dolor sit amet, adipiscing elit.",
+    "guidance-two-title": "Guidelines",
+    "guidance-two-1": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue.",
+    "guidance-two-2": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue."
+  },
+  "submission": {
+    "title": "New experience",
+    "date": "Today",
+    "footer": {
+      "title": "Next step",
+      "step-1-about": "You will select if you want this experience to be private or public",
+      "step-2-about": "Tag characteristics, tone and descriptions of your experience.",
+      "step-3-about": "If you don’t want to add tags you can skip this step."
+    }
+  },
+  "experience-privacy": {
+    "title": "Before you submit",
+    "about": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue.",
+    "hint": "Your experience will be sent to be reviewed"
+  },
+  "experience-tags": {
+    "title": "Your experience",
+    "about": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue."
+  },
+  "submission-confirmation": {
+    "title": "Submitted",
+    "about": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue.",
+    "hint": "Your experience will be sent to be reviewed"
   }
 }

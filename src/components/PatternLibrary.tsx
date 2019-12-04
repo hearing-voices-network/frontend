@@ -184,7 +184,7 @@ const PatternLibrary = () => (
       <ReviewButton text="in review" onClick={() => console.log("Click!")} />
     </div>
     <div className="section flex-col--12">
-      <PrivacyButton text="Private" />
+      <PrivacyButton text="Private" onChange={() => null} />
     </div>
     <div className="section flex-col--12">
       <Link href="/" text="View other's stories" size="large" />
@@ -211,9 +211,7 @@ const PatternLibrary = () => (
         id="example"
       />
     </div>
-    <div className="section flex-col--12">
-      <Editor />
-    </div>
+    <div className="section flex-col--12">{/* <Editor /> */}</div>
     <div className="section flex-col--12">
       <Loading input="selection" />
     </div>
