@@ -19,7 +19,12 @@ const ForgotPassword: FunctionComponent = () => (
         </p>
       </div>
       <form className="flex-col--8 flex-col--mobile--10">
-        <Input id="email" label="Enter email" placeholder="Type here" />
+        <Input
+          id="email"
+          label="Enter email"
+          placeholder="Type here"
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => console.log(e)}
+        />
         <div className="flex-container flex-container--no-padding flex-container--justify r">
           <div className="flex-col--10 forgot-password--button-container">
             <Button

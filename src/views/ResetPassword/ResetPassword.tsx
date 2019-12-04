@@ -15,7 +15,14 @@ const ResetPassword: FunctionComponent = () => (
         <h1 className="reset-password--title">{cms("reset-password.title")}</h1>
       </div>
       <form className="flex-col--8 flex-col--mobile--10">
-        <Input id="email" label="Enter password" placeholder="Type here" />
+        <Input
+          id="email"
+          label="Enter password"
+          placeholder="Type here"
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            console.log(e.target.value)
+          }
+        />
         <div className="flex-container flex-container--no-padding flex-container--justify r">
           <div className="flex-col--10 reset-password--button-container">
             <Button
