@@ -2,7 +2,6 @@
 @import "../../styles/colors.scss";
 
 .input {
-  @include body-m-alt;
   border: 1px solid #b7bbc0;
   width: 100%;
   margin-top: space(32);
@@ -12,6 +11,7 @@
 
   &::placeholder {
     color: #b7bbc0;
+    @include body-m-alt;
   }
 
   @include for-phone-only {
@@ -28,4 +28,8 @@
   @include heading-s;
   color: $grey;
   display: block;
+}
+
+input[type="text"] {
+  @include body-m-alt;
 }

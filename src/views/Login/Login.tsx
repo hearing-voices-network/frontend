@@ -47,6 +47,7 @@ const Login: FunctionComponent<IProps> = ({ userStore, history }) => {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               userStore.handleChange(e.target.value, "password")
             }
+            type="Password"
           />
           <div className="login--button-container">
             <Button
