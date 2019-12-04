@@ -1,11 +1,12 @@
 import { observable, action, computed } from "mobx";
 import RichTextEditor, { EditorValue } from "react-rte";
 import { ITag } from "../utils/types";
+import httpService from "../service/api";
 
 export default class ContributionStore {
   @observable showGuidance: boolean = false;
   @observable guidanceStep: number = 0;
-  @observable contributionStep: number = 2;
+  @observable contributionStep: number = 0;
   @observable contribution: EditorValue = RichTextEditor.createEmptyValue();
   @observable privacy: "public" | "private" = "public";
   @observable selectedTags: ITag[] = [];
@@ -82,7 +83,27 @@ export default class ContributionStore {
   };
 
   @action
-  submitContribution = () => {
-    this.contributionSubmitted = true;
+  submitContribution = async () => {
+    let tags: any[];
+
+    if (this.selectedTags) {
+      tags = this.selectedTags.map((tag: ITag) => ({
+        id: tag.id
+      }));
+    } else {
+      tags = [];
+    }
+
+    try {
+      const data = await httpService.api.post("/api/contributions", {
+        content: this.contribution.toString("markdown"),
+        status: "in_review",
+        tags
+      });
+
+      this.contributionSubmitted = true;
+    } catch ({ response }) {
+      console.error(response, "error response");
+    }
   };
 }
