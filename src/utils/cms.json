@@ -197,5 +197,10 @@
   "notification": {
     "title": "Notifcation Settings",
     "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies tincidunt congue."
+  },
+  "withdraw": {
+    "title": "Withdraw account",
+    "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies tincidunt congue.",
+    "hint": "You can’t undo withdrawl"
   }
 }

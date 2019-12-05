@@ -39,6 +39,7 @@ import ExperienceStore from "./stores/experienceStore";
 import ChangePassword from "./views/ChangePassword";
 import Problem from "./views/Problem";
 import NotifcationSettings from "./views/NotificationSettings";
+import Withdraw from "./views/Withdraw";
 
 library.add(fas);
 
@@ -110,6 +111,12 @@ const App: FunctionComponent = () => (
             component={Problem}
             exact={true}
           />
+          <PrivateRoute
+            path="/account/withdraw"
+            component={Withdraw}
+            exact={true}
+          />
+
           <PrivateRoute
             path="/my-experiences"
             component={MyExperiences}
