@@ -49,7 +49,10 @@ const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
               </div>
 
               <div className="flex-col--6 flex-col--tablet-large--8 flex-col--mobile--7">
-                <RouterLink to="/" className="my-account--row--link">
+                <RouterLink
+                  to="/account/change-password"
+                  className="my-account--row--link"
+                >
                   Change password
                 </RouterLink>
               </div>
