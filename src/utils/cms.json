@@ -175,5 +175,11 @@
     "title": "Submitted",
     "about": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue.",
     "hint": "Your experience will be sent to be reviewed"
+  },
+  "my-account": {
+    "title": "My account",
+    "footer": {
+      "about": "Find out what where your data is stored and how only the Hearing Voice Network will use it."
+    }
   }
 }

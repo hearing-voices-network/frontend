@@ -1,0 +1,94 @@
+import React, { FunctionComponent } from "react";
+import Layout from "../../components/Layout";
+import { observer } from "mobx-react";
+import { withRouter, RouteComponentProps } from "react-router";
+
+import "./MyAccount.scss";
+import { cms } from "../../utils/cms";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "../../components/Link";
+import Footer from "../../components/Footer";
+
+const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
+  <Layout>
+    <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account">
+      <div className="flex-col--12">
+        <div className="flex-col--12">
+          <button onClick={() => history.goBack()} className="my-account--back">
+            <FontAwesomeIcon icon="chevron-left" /> Back
+          </button>
+        </div>
+
+        <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--container">
+          <div className="flex-col--12">
+            <h1 className="my-account--title">{cms("my-account.title")}</h1>
+          </div>
+
+          <div className="flex-col--10 flex-col--tablet-large--12">
+            <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--row">
+              <div className="flex-col--3 flex-col--tablet-large--4 flex-col--mobile--5">
+                <p className="my-account--row--title">Email</p>
+              </div>
+
+              <div className="flex-col--6 flex-col--tablet-large--8 flex-col--mobile--7">
+                <a href="/" className="my-account--row--link">
+                  Change email
+                </a>
+                <a href="/" className="my-account--row--link">
+                  Notfication settings
+                </a>
+              </div>
+            </div>
+            <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--row">
+              <div className="flex-col--3 flex-col--tablet-large--4 flex-col--mobile--5">
+                <p className="my-account--row--title">Password</p>
+              </div>
+
+              <div className="flex-col--6 flex-col--tablet-large--8 flex-col--mobile--7">
+                <a href="/" className="my-account--row--link">
+                  Change password
+                </a>
+              </div>
+            </div>
+            <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--row">
+              <div className="flex-col--3 flex-col--tablet-large--4 flex-col--mobile--5">
+                <p className="my-account--row--title">Problem?</p>
+              </div>
+
+              <div className="flex-col--6 flex-col--tablet-large--8 flex-col--mobile--7">
+                <a href="/" className="my-account--row--link">
+                  Contact us
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="flex-col--10 flex-col--tablet-large--12 my-account--withdraw">
+            <Link
+              green={true}
+              text="I would like to withdraw"
+              href="/withdraw"
+              size="medium"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <Footer grey={true}>
+      <div className="flex-container flex-container--center flex-container--justify my-account--footer">
+        <div className="flex-col--8 flex-col--tablet-large--10 my-account--footer--content">
+          <Link
+            text="Privacy Policy"
+            href="/privacy-policy"
+            size="medium"
+            grey={true}
+          />
+          <p className="my-account--footer--about">
+            {cms("my-account.footer.about")}
+          </p>
+        </div>
+      </div>
+    </Footer>
+  </Layout>
+);
+
+export default withRouter(observer(MyAccount));

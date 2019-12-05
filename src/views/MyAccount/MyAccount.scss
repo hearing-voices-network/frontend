@@ -1,0 +1,84 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/colors.scss";
+
+.my-account {
+  @include container;
+
+  @include for-tablet-large-up {
+    margin-top: space(40);
+  }
+
+  &--back {
+    @include body-s;
+    color: $ribienna;
+    cursor: pointer;
+  }
+
+  &--title {
+    @include heading-l;
+    color: $grey;
+    margin: space(32) 0;
+
+    @include for-tablet-large-up {
+      text-align: center;
+    }
+  }
+
+  &--container {
+    @include for-phone-only {
+      padding: 0 space(32) !important;
+    }
+  }
+
+  &--withdraw {
+    a {
+      @include heading-xs;
+      margin-top: space(32);
+    }
+  }
+
+  &--row {
+    border-top: 1px solid #c4d0d9;
+    padding: space(32) space(8);
+
+    &:last-of-type {
+      border-bottom: 1px solid #c4d0d9;
+    }
+
+    a {
+      display: block;
+    }
+
+    &--title {
+      @include button-text-alt;
+      color: $grey;
+    }
+
+    &--link {
+      @include body-s-alt;
+      color: #62717a;
+    }
+  }
+
+  &--footer {
+    padding: space(120) space(24) space(120) !important;
+    justify-content: center !important;
+    text-align: center;
+
+    @include for-phone-only {
+      padding-top: space(40) !important;
+      padding-bottom: space(56) !important;
+    }
+
+    &--content {
+      text-align: center;
+    }
+
+    &--about {
+      @include body-s-alt;
+      color: $grey;
+      margin-top: space(24);
+    }
+  }
+}
