@@ -36,6 +36,7 @@ import RegisterStore from "./stores/registerStore";
 import UserStore from "./stores/userStore";
 import ContributionStore from "./stores/contributionStore";
 import ExperienceStore from "./stores/experienceStore";
+import ChangePassword from "./views/ChangePassword";
 
 library.add(fas);
 
@@ -90,6 +91,11 @@ const App: FunctionComponent = () => (
           <PrivateRoute
             path="/account/change-email"
             component={UpdateEmail}
+            exact={true}
+          />
+          <PrivateRoute
+            path="/account/change-password"
+            component={ChangePassword}
             exact={true}
           />
           <PrivateRoute
