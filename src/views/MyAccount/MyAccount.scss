@@ -82,3 +82,21 @@
     }
   }
 }
+
+.contact {
+  margin: space(32) 0;
+
+  p {
+    @include subtitle;
+    color: $grey;
+  }
+
+  @include for-tablet-large-up {
+    margin: space(40) 0;
+  }
+
+  &--email {
+    @include heading-s;
+    color: $ribienna;
+  }
+}
