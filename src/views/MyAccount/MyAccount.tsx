@@ -91,12 +91,14 @@ const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
     <Footer grey={true}>
       <div className="flex-container flex-container--center flex-container--justify my-account--footer">
         <div className="flex-col--8 flex-col--tablet-large--10 my-account--footer--content">
-          <Link
-            text="Privacy Policy"
-            href="/privacy-policy"
-            size="medium"
-            grey={true}
-          />
+          <RouterLink to="/privacy-policy">
+            <Link
+              text="Privacy Policy"
+              href="/privacy-policy"
+              size="medium"
+              grey={true}
+            />
+          </RouterLink>
           <p className="my-account--footer--about">
             {cms("my-account.footer.about")}
           </p>

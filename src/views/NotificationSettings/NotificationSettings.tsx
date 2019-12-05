@@ -2,6 +2,7 @@ import React, { FunctionComponent } from "react";
 import { observer } from "mobx-react";
 import { withRouter, RouteComponentProps } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link as RouterLink } from "react-router-dom";
 
 import Layout from "../../components/Layout";
 import { cms } from "../../utils/cms";
@@ -63,12 +64,14 @@ const NotificationSettings: FunctionComponent<RouteComponentProps> = ({
     <Footer grey={true}>
       <div className="flex-container flex-container--center flex-container--justify my-account--footer">
         <div className="flex-col--8 flex-col--tablet-large--10 my-account--footer--content">
-          <Link
-            text="Privacy Policy"
-            href="/privacy-policy"
-            size="medium"
-            grey={true}
-          />
+          <RouterLink to="/privacy-policy">
+            <Link
+              text="Privacy Policy"
+              href="/privacy-policy"
+              size="medium"
+              grey={true}
+            />
+          </RouterLink>
           <p className="my-account--footer--about">
             {cms("my-account.footer.about")}
           </p>
