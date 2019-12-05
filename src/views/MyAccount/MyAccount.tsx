@@ -2,6 +2,7 @@ import React, { FunctionComponent } from "react";
 import Layout from "../../components/Layout";
 import { observer } from "mobx-react";
 import { withRouter, RouteComponentProps } from "react-router";
+import { Link as RouterLink } from "react-router-dom";
 
 import "./MyAccount.scss";
 import { cms } from "../../utils/cms";
@@ -31,15 +32,15 @@ const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
               </div>
 
               <div className="flex-col--6 flex-col--tablet-large--8 flex-col--mobile--7">
-                <a
-                  href="/account/change-email"
+                <RouterLink
+                  to="/account/change-email"
                   className="my-account--row--link"
                 >
                   Change email
-                </a>
-                <a href="/" className="my-account--row--link">
+                </RouterLink>
+                <RouterLink to="/" className="my-account--row--link">
                   Notfication settings
-                </a>
+                </RouterLink>
               </div>
             </div>
             <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--row">
@@ -48,9 +49,9 @@ const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
               </div>
 
               <div className="flex-col--6 flex-col--tablet-large--8 flex-col--mobile--7">
-                <a href="/" className="my-account--row--link">
+                <RouterLink to="/" className="my-account--row--link">
                   Change password
-                </a>
+                </RouterLink>
               </div>
             </div>
             <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--row">
@@ -59,9 +60,9 @@ const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
               </div>
 
               <div className="flex-col--6 flex-col--tablet-large--8 flex-col--mobile--7">
-                <a href="/" className="my-account--row--link">
+                <RouterLink to="/" className="my-account--row--link">
                   Contact us
-                </a>
+                </RouterLink>
               </div>
             </div>
           </div>
