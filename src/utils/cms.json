@@ -181,5 +181,9 @@
     "footer": {
       "about": "Find out what where your data is stored and how only the Hearing Voice Network will use it."
     }
+  },
+  "update-email": {
+    "title": "Change email",
+    "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies tincidunt congue."
   }
 }

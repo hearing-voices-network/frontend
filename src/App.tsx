@@ -27,6 +27,7 @@ import Story from "./views/Story";
 import TryAgain from "./views/TryAgain";
 import SubmitExperiences from "./views/Experiences/SubmitExperiences";
 import MyAccount from "./views/MyAccount";
+import UpdateEmail from "./views/UpdateEmail";
 
 import PrivateRoute from "./components/PrivateRoute";
 
@@ -86,6 +87,11 @@ const App: FunctionComponent = () => (
 
           <PrivateRoute path="/dashboard" component={Dashboard} exact={true} />
           <PrivateRoute path="/account" component={MyAccount} exact={true} />
+          <PrivateRoute
+            path="/account/change-email"
+            component={UpdateEmail}
+            exact={true}
+          />
           <PrivateRoute
             path="/my-experiences"
             component={MyExperiences}
