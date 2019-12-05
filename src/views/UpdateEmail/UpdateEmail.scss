@@ -1,0 +1,37 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/colors.scss";
+
+.update-email {
+  @include container;
+
+  &--title {
+    @include heading-l;
+    color: $grey;
+    margin: space(16) 0;
+
+    @include for-tablet-large-up {
+      text-align: center;
+    }
+  }
+
+  &--about {
+    @include body-l;
+    color: $grey;
+  }
+
+  &--form {
+    margin: space(32) 0;
+    text-align: center;
+
+    @include for-tablet-large-up {
+      margin-bottom: space(40);
+    }
+
+    p {
+      @include body-m;
+      color: $grey;
+      margin-bottom: space(32);
+    }
+  }
+}

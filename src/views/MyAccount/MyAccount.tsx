@@ -31,7 +31,10 @@ const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
               </div>
 
               <div className="flex-col--6 flex-col--tablet-large--8 flex-col--mobile--7">
-                <a href="/" className="my-account--row--link">
+                <a
+                  href="/account/change-email"
+                  className="my-account--row--link"
+                >
                   Change email
                 </a>
                 <a href="/" className="my-account--row--link">
