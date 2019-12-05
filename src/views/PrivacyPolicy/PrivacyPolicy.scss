@@ -5,6 +5,18 @@
 .privacy-policy {
   @include container;
 
+  &--back {
+    @include body-s;
+    color: $ribienna;
+    cursor: pointer;
+  }
+
+  &--title {
+    @include heading-l;
+    color: $grey;
+    margin-top: space(32);
+  }
+
   &--content {
     @include about;
     color: $medium-grey;
@@ -20,6 +32,12 @@
 
       @include for-phone-only {
         margin: space(8) 0;
+      }
+    }
+
+    &--container {
+      @include for-phone-only {
+        padding: 0 space(32) !important;
       }
     }
   }
