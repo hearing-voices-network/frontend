@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from "react";
 import Layout from "../../components/Layout";
-
-import "./MyAccount.scss";
 import { observer } from "mobx-react";
 import { withRouter, RouteComponentProps } from "react-router";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import "./MyAccount.scss";
 import { cms } from "../../utils/cms";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "../../components/Link";
 import Footer from "../../components/Footer";
 
