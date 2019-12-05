@@ -76,12 +76,14 @@ const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
             </div>
           </div>
           <div className="flex-col--10 flex-col--tablet-large--12 my-account--withdraw">
-            <Link
-              green={true}
-              text="I would like to withdraw"
-              href="/withdraw"
-              size="medium"
-            />
+            <RouterLink to="/account/withdraw">
+              <Link
+                green={true}
+                text="I would like to withdraw"
+                href="/account/withdraw"
+                size="medium"
+              />
+            </RouterLink>
           </div>
         </div>
       </div>
