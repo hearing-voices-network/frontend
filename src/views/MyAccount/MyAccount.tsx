@@ -63,7 +63,10 @@ const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
               </div>
 
               <div className="flex-col--6 flex-col--tablet-large--8 flex-col--mobile--7">
-                <RouterLink to="/" className="my-account--row--link">
+                <RouterLink
+                  to="/account/problem"
+                  className="my-account--row--link"
+                >
                   Contact us
                 </RouterLink>
               </div>
