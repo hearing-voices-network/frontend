@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-
+import cx from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./Checkbox.scss";
@@ -18,9 +18,14 @@ const Checkbox: FunctionComponent<IProps> = ({
   checked,
   onChange,
   aria,
-  label
+  label,
+  className
 }) => (
-  <div className="checkbox">
+  <div
+    className={cx("checkbox", {
+      [`${className}`]: className
+    })}
+  >
     <input
       type="checkbox"
       id={id}
