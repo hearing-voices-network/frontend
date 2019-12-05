@@ -2,6 +2,7 @@ import React, { FunctionComponent } from "react";
 import { observer } from "mobx-react";
 import { withRouter, RouteComponentProps } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import Layout from "../../components/Layout";
 import { cms } from "../../utils/cms";
 import Checkbox from "../../components/Checkbox";
