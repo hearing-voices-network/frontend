@@ -81,6 +81,27 @@
       margin-top: space(24);
     }
   }
+
+  &--list {
+    margin: space(32) 0 !important;
+
+    @include for-tablet-large-up {
+      margin-bottom: space(40) !important;
+    }
+
+    &--title {
+      @include subtitle;
+      color: $grey;
+      margin-bottom: space(32);
+    }
+
+    &--checkbox {
+      &:first-of-type {
+        margin-top: space(16);
+      }
+      margin: space(8) 0;
+    }
+  }
 }
 
 .contact {
