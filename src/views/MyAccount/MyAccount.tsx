@@ -38,7 +38,10 @@ const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
                 >
                   Change email
                 </RouterLink>
-                <RouterLink to="/" className="my-account--row--link">
+                <RouterLink
+                  to="/account/notifications"
+                  className="my-account--row--link"
+                >
                   Notfication settings
                 </RouterLink>
               </div>

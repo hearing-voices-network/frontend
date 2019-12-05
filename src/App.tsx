@@ -38,6 +38,7 @@ import ContributionStore from "./stores/contributionStore";
 import ExperienceStore from "./stores/experienceStore";
 import ChangePassword from "./views/ChangePassword";
 import Problem from "./views/Problem";
+import NotifcationSettings from "./views/NotificationSettings";
 
 library.add(fas);
 
@@ -97,6 +98,11 @@ const App: FunctionComponent = () => (
           <PrivateRoute
             path="/account/change-password"
             component={ChangePassword}
+            exact={true}
+          />
+          <PrivateRoute
+            path="/account/notifications"
+            component={NotifcationSettings}
             exact={true}
           />
           <PrivateRoute
