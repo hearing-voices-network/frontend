@@ -6,7 +6,7 @@
   @include container;
 
   &--info {
-    margin-top: space(40);
+    margin-top: space(80);
 
     &--date {
       @include subtitle;
@@ -34,14 +34,14 @@
     margin-top: space(32);
 
     @include for-tablet-large-up {
-      margin-top: space(56);
+      margin-top: space(80);
     }
   }
 
   &--footer {
     padding: space(120) space(24) space(120) !important;
 
-    @include for-phone-only {
+    @include for-tablet-down {
       padding-top: space(40) !important;
       padding-bottom: space(56) !important;
     }
@@ -64,7 +64,11 @@
       &--title {
         @include body-s;
         color: $grey;
-        margin-bottom: pxtorem(4px);
+        margin-bottom: space(16);
+
+        @include for-phone-only {
+          margin-bottom: space(8);
+        }
       }
     }
 

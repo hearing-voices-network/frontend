@@ -48,7 +48,7 @@ class Story extends Component<IProps> {
 
     return (
       <Layout>
-        <div className="flex-container flex-container--no-padding flex-container--center story">
+        <div className="flex-container flex-container--no-padding flex-container--justify flex-container--center story">
           <div className="flex-col--12">
             <Breadcrumb
               crumbs={[
@@ -59,7 +59,7 @@ class Story extends Component<IProps> {
             />
           </div>
 
-          <div className="flex-col--12">
+          <div className="flex-col--11">
             <div className="flex-container flex-container--no-padding story--info">
               <div className="flex-col--6 flex-col--tablet-large--12">
                 <Link to="/browse" className="story--info--back">
@@ -75,7 +75,7 @@ class Story extends Component<IProps> {
             </div>
           </div>
 
-          <div className="flex-col--12">
+          <div className="flex-col--11">
             <p className="story--content">{this.story.content}</p>
           </div>
         </div>
