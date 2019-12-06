@@ -25,6 +25,12 @@
       padding-bottom: space(56) !important;
     }
 
+    &--logout {
+      @include heading-s;
+      color: $ribienna;
+      text-decoration: underline;
+    }
+
     &--description {
       @include body-s-alt;
       color: $grey;

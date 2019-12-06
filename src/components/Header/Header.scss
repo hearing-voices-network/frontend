@@ -63,6 +63,10 @@
       margin-top: space(32);
     }
 
+    button {
+      @include body-m-alt;
+    }
+
     &--outer {
       width: 100%;
     }
@@ -107,6 +111,10 @@
 
   &--link {
     color: $white;
+
+    button {
+      color: $white;
+    }
 
     svg {
       color: $white;
