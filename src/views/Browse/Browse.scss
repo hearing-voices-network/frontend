@@ -30,6 +30,14 @@
     padding: space(16) !important;
     position: relative;
 
+    @include for-tablet-large-down {
+      padding: space(24) !important;
+    }
+
+    @include for-tablet-down {
+      padding: space(16) !important;
+    }
+
     @include for-phone-only {
       &:before {
         position: absolute;
@@ -85,18 +93,9 @@
       margin-top: space(12) !important;
 
       &--title {
-        @include body-m;
+        @include body-s-alt;
         color: $grey;
         margin-top: space(20);
-        margin-right: space(8);
-
-        @include for-tablet-large-up {
-          margin-right: space(16);
-        }
-
-        @include for-phone-only {
-          margin-right: 0;
-        }
       }
 
       &--container {
