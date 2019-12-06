@@ -86,9 +86,7 @@ const App: FunctionComponent = () => (
             exact={true}
           />
           <Route path="/try-again" component={TryAgain} exact={true} />
-
           {/* User Routes */}
-
           <PrivateRoute path="/dashboard" component={Dashboard} exact={true} />
           <PrivateRoute path="/account" component={MyAccount} exact={true} />
           <PrivateRoute
@@ -102,11 +100,6 @@ const App: FunctionComponent = () => (
             exact={true}
           />
           <PrivateRoute
-            path="/account/notifications"
-            component={NotifcationSettings}
-            exact={true}
-          />
-          <PrivateRoute
             path="/account/problem"
             component={Problem}
             exact={true}
@@ -116,7 +109,6 @@ const App: FunctionComponent = () => (
             component={Withdraw}
             exact={true}
           />
-
           <PrivateRoute
             path="/my-experiences"
             component={MyExperiences}
@@ -127,7 +119,6 @@ const App: FunctionComponent = () => (
             component={SubmitExperiences}
             exact={true}
           />
-
           <Route component={NotFound} />
         </Switch>
       </ScrollToTop>

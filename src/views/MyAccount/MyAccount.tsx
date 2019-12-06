@@ -38,12 +38,6 @@ const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
                 >
                   Change email
                 </RouterLink>
-                <RouterLink
-                  to="/account/notifications"
-                  className="my-account--row--link"
-                >
-                  Notfication settings
-                </RouterLink>
               </div>
             </div>
             <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--row">
