@@ -60,6 +60,10 @@
 
 @mixin container {
   padding: space(24) space(24) space(40) !important;
+
+  @include for-tablet-large-up {
+    padding-bottom: space(112) !important;
+  }
 }
 
 @mixin faded-background {
