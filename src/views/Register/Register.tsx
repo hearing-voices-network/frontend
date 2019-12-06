@@ -56,6 +56,27 @@ class Register extends Component<IProps> {
     }
   }
 
+  disableButton() {
+    const { registerStore } = this.props;
+
+    switch (registerStore.step) {
+      case 0:
+        return false;
+
+      case 1:
+        return !registerStore.email;
+
+      case 2:
+        return !registerStore.password;
+
+      case 3:
+        return !registerStore.consent;
+
+      default:
+        break;
+    }
+  }
+
   render() {
     const { registerStore } = this.props;
 
@@ -84,6 +105,7 @@ class Register extends Component<IProps> {
                     : registerStore.nextStep()
                 }
                 ref={this.buttonRef}
+                disabled={this.disableButton()}
               />
             </div>
           </div>
