@@ -11,9 +11,13 @@ interface IProps {
 
 const Loading: FunctionComponent<IProps> = ({ input }) => (
   <div className="loading">
-    <div className="flex-container flex-container--justify flex-container--mobile-no-padding">
-      <ReactSVG src={LoadingSpinner} className="loading--spinner" />
-      <span className="loading--text">{`We are loading your ${input}`}</span>
+    <div className="flex-container flex-container--justify flex-container--align-center flex-container--mobile-no-padding">
+      <div className="flex-col--12">
+        <ReactSVG src={LoadingSpinner} className="loading--spinner" />
+      </div>
+      <div className="flex-col--12">
+        <span className="loading--text">{`We are loading your ${input}`}</span>
+      </div>
     </div>
   </div>
 );
