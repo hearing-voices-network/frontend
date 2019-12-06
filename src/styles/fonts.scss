@@ -191,12 +191,30 @@ $skippy-sharp: skippy-sharp, sans-serif;
   font-family: $kayak-sans;
   font-size: pxtorem(28px);
   line-height: 1.21;
+
+  @include for-tablet-down {
+    font-size: pxtorem(24px);
+  }
 }
 
 @mixin tag-text {
   font-family: $kayak-sans;
-  font-size: pxtorem(16px);
+  font-size: pxtorem(24px);
   line-height: 1.12;
+
+  @include for-tablet-down {
+    font-size: pxtorem(18px);
+  }
+}
+
+@mixin tag-text-s {
+  font-family: $kayak-sans;
+  font-size: pxtorem(18px);
+  line-height: 1.12;
+
+  @include for-tablet-down {
+    font-size: pxtorem(14px);
+  }
 }
 
 @mixin tag-text-l {

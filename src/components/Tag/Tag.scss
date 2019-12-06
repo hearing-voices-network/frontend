@@ -23,13 +23,21 @@
   &--search {
     color: $ribienna;
     border-color: $ribienna;
-    margin: pxtorem(2px) space(8) pxtorem(2px) 0;
+    margin: space(12) space(8) space(8) space(16);
     height: fit-content;
     cursor: pointer;
+
+    @include for-phone-only {
+      margin: pxtorem(6px) pxtorem(4px) pxtorem(4px) space(8);
+    }
 
     &--selected {
       background-color: $ribienna;
       color: $white;
+    }
+
+    &--small {
+      @include tag-text-s;
     }
   }
 

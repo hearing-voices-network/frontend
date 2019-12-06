@@ -50,10 +50,15 @@ const Story: FunctionComponent<IProps> = ({
             className="story-card--tags--tag"
             key={tag.id}
             selected={filteredResultsShowing ? isTagSelected(tag) : false}
+            small={true}
           />
         ))}
         {tags.length > 3 && (
-          <Tag text={`${tags.length - 3}+`} className="story-card--tags--tag" />
+          <Tag
+            text={`${tags.length - 3}+`}
+            className="story-card--tags--tag"
+            small={true}
+          />
         )}
       </div>
     </section>
