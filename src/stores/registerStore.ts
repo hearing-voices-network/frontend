@@ -4,6 +4,8 @@ export default class RegisterStore {
   @observable step: number = 0;
   @observable consent = false;
   @observable showConfirmation = false;
+  @observable email: string = "";
+  @observable password: string = "";
 
   @action
   nextStep() {
@@ -20,4 +22,10 @@ export default class RegisterStore {
   confirm() {
     this.showConfirmation = true;
   }
+
+  @action
+  handleChange = (value: string, field: string) => {
+    // @ts-ignore
+    this[field] = value;
+  };
 }
