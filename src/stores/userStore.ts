@@ -21,6 +21,15 @@ export default class UserStore {
     }
   }
 
+  async logOut() {
+    try {
+      await httpService.api.post("/logout", {});
+      this.loggedIn = false;
+    } catch ({ response }) {
+      console.error(response.status, response.statusText);
+    }
+  }
+
   @action
   handleChange = (value: string, field: string) => {
     // @ts-ignore
