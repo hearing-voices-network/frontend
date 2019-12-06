@@ -17,9 +17,11 @@
     @include heading-m;
     color: $turqoise;
     margin-top: space(24);
+    line-height: 1;
   }
 
   &--spinner {
     animation: rotation 2s infinite linear;
+    margin-bottom: space(12);
   }
 }
