@@ -101,7 +101,7 @@ class Register extends Component<IProps> {
                 text="Continue"
                 onClick={() =>
                   registerStore.step === 3
-                    ? registerStore.confirm()
+                    ? registerStore.register()
                     : registerStore.nextStep()
                 }
                 ref={this.buttonRef}
