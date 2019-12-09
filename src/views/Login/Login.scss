@@ -37,7 +37,7 @@
     }
 
     &--description {
-      @include body-s-alt;
+      @include tag-text;
       color: $grey;
       margin-top: space(24);
     }
