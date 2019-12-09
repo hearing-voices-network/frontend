@@ -17,6 +17,7 @@ export default class ExperienceStore {
   @observable categories: ITag[] = [];
   @observable experiences: IStory[] = [];
   @observable experiencesLoading: boolean = true;
+  @observable categoriesLoading: boolean = true;
   @observable filteredResultsShowing: boolean = false;
   @observable categorizedTags: ICategorisedTag[] = [];
 
@@ -31,6 +32,7 @@ export default class ExperienceStore {
       );
 
       this.categories = categories;
+      this.categoriesLoading = false;
       this.tags = unsortedTags;
     });
   }

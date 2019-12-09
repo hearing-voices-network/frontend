@@ -89,22 +89,27 @@ class Story extends Component<IProps> {
             </div>
             <div className="flex-col--11">
               <div className="flex-container flex-container--center flex-container--no-padding flex-container--align-center story--tags--list">
-                {experienceStore.categorizedTags.map(
-                  (category: ICategorisedTag, i: number) => {
-                    return (
-                      <div className="story--tags--category">
-                        <p className="story--tags--category--title">{`${category.name}:`}</p>
-                        <div style={{ display: "flex" }}>
-                          {category.tags.map((tag: ITag) => (
-                            <Tag story={true} text={tag.name}></Tag>
-                          ))}
-                          {i < experienceStore.categorizedTags.length - 1 && (
-                            <span className="story--tags--separator"></span>
-                          )}
+                {!experienceStore.categoriesLoading &&
+                experienceStore.categorizeTags.length ? (
+                  experienceStore.categorizedTags.map(
+                    (category: ICategorisedTag, i: number) => {
+                      return (
+                        <div className="story--tags--category">
+                          <p className="story--tags--category--title">{`${category.name}:`}</p>
+                          <div style={{ display: "flex" }}>
+                            {category.tags.map((tag: ITag) => (
+                              <Tag story={true} text={tag.name}></Tag>
+                            ))}
+                            {i < experienceStore.categorizedTags.length - 1 && (
+                              <span className="story--tags--separator"></span>
+                            )}
+                          </div>
                         </div>
-                      </div>
-                    );
-                  }
+                      );
+                    }
+                  )
+                ) : (
+                  <Tag story={true} text="No tag" />
                 )}
               </div>
             </div>
