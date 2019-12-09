@@ -39,6 +39,12 @@ class Register extends Component<IProps> {
     }
   }
 
+  componentWillUnmount() {
+    const { registerStore } = this.props;
+
+    registerStore.clear();
+  }
+
   displayStep() {
     const { registerStore } = this.props;
 
@@ -51,6 +57,27 @@ class Register extends Component<IProps> {
         return <StepTwo />;
       case 3:
         return <StepThree />;
+      default:
+        break;
+    }
+  }
+
+  disableButton() {
+    const { registerStore } = this.props;
+
+    switch (registerStore.step) {
+      case 0:
+        return false;
+
+      case 1:
+        return !registerStore.email;
+
+      case 2:
+        return !registerStore.password;
+
+      case 3:
+        return !registerStore.consent;
+
       default:
         break;
     }
@@ -80,10 +107,11 @@ class Register extends Component<IProps> {
                 text="Continue"
                 onClick={() =>
                   registerStore.step === 3
-                    ? registerStore.confirm()
+                    ? registerStore.register()
                     : registerStore.nextStep()
                 }
                 ref={this.buttonRef}
+                disabled={this.disableButton()}
               />
             </div>
           </div>

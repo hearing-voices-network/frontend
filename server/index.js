@@ -4,7 +4,7 @@ const bodyParser = require("koa-bodyparser");
 const session = require("koa-session");
 const serve = require("koa-static");
 const path = require("path");
-const proxy = require("koa-proxies");
+const proxy = require("koa-proxy");
 const axios = require("axios");
 require("dotenv").config();
 
@@ -61,6 +61,8 @@ router
     ctx.body = JSON.stringify({
       message: "Logged out successfully"
     });
+
+    return next();
   });
 
 // Required for cookie signature generation.
@@ -100,12 +102,12 @@ app
       ] = `Bearer ${ctx.session.access_token}`;
     }
 
-    return proxy("/api", {
-      target: `${process.env.API_URL}/v1`,
-      rewrite: path => {
-        return path.replace(/^\/api/, "");
-      },
-      logs: true
+    return proxy({
+      host: process.env.API_URL,
+      match: /^\/api/,
+      map: path => {
+        return path.replace(/^\/api/, "/v1");
+      }
     })(ctx, next);
   })
   // Serve the static files in the build directory.
