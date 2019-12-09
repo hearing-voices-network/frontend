@@ -8,6 +8,8 @@ import experienceList from "./experiences.json";
 
 import { ITag, IStory, ICategorisedTag } from "../utils/types";
 
+const UNTAGGED = { id: "untagged", name: "No tag" };
+
 export default class ExperienceStore {
   @observable tags: ITag[] = [];
   @observable selectedTags: ITag[] = [];
@@ -73,12 +75,26 @@ export default class ExperienceStore {
     this.tags.filter(tag => tag.parent_tag_id === id);
 
   handleTagSelect = (tag: ITag) => {
+    if (
+      tag.id !== "untagged" &&
+      this.selectedTags.some(tags => tags.id === "untagged")
+    ) {
+      const indexOfUntagged = this.selectedTags.indexOf(UNTAGGED);
+      this.removeTag(indexOfUntagged);
+    }
+
     if (this.selectedTags.some(tags => tags.id === tag.id)) {
       const indexOfTag = this.selectedTags.indexOf(tag);
       this.removeTag(indexOfTag);
     } else {
       this.handleAddition(tag);
     }
+  };
+
+  @action
+  selectNoTag = () => {
+    this.selectedTags = [];
+    this.handleTagSelect(UNTAGGED);
   };
 
   @computed

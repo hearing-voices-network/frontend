@@ -24,10 +24,10 @@ const Search: FunctionComponent<IProps> = ({ experienceStore }) => {
     handleAddition,
     showFilters,
     isTagSelected,
-    handleTagSelect,
     filterOptionsVisible,
     toggleFilterOptions,
-    filterResults
+    filterResults,
+    selectNoTag
   } = experienceStore;
 
   return (
@@ -69,13 +69,9 @@ const Search: FunctionComponent<IProps> = ({ experienceStore }) => {
                   name: "No tag"
                 })}
                 onKeyPress={(e: any) =>
-                  e.key === "Enter"
-                    ? handleTagSelect({ id: "untagged", name: "No tag" })
-                    : null
+                  e.key === "Enter" ? selectNoTag() : null
                 }
-                onClick={() =>
-                  handleTagSelect({ id: "untagged", name: "No tag" })
-                }
+                onClick={() => selectNoTag()}
               />
             </div>
           </Fragment>
@@ -124,20 +120,13 @@ const Search: FunctionComponent<IProps> = ({ experienceStore }) => {
                       search={true}
                       tabIndex={0}
                       className="browse--filter-no-tag"
-                      onClick={() =>
-                        handleTagSelect({ id: "untagged", name: "No tag" })
-                      }
+                      onClick={() => selectNoTag()}
                       selected={isTagSelected({
                         id: "untagged",
                         name: "No tag"
                       })}
                       onKeyPress={(e: any) =>
-                        e.key === "Enter"
-                          ? handleTagSelect({
-                              id: "untagged",
-                              name: "No tag"
-                            })
-                          : null
+                        e.key === "Enter" ? selectNoTag() : null
                       }
                     />
                   </div>
