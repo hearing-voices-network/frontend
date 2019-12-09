@@ -81,11 +81,13 @@ class Story extends Component<IProps> {
         </div>
 
         <Footer green={true}>
-          <div className="flex-container flex-container--center flex-container--no-padding flex-container--align-center story--footer">
-            <h5 className="story--footer--title">
-              {cms("story.footer.title")}
-            </h5>
-            <div className="flex-col--12">
+          <div className="flex-container flex-container--no-padding flex-container--justify flex-container--center story--footer">
+            <div className="flex-col--11">
+              <h5 className="story--footer--title">
+                {cms("story.footer.title")}
+              </h5>
+            </div>
+            <div className="flex-col--11">
               <div className="flex-container flex-container--center flex-container--no-padding flex-container--align-center story--tags--list">
                 {experienceStore.categorizedTags.map(
                   (category: ICategorisedTag, i: number) => {
