@@ -47,35 +47,6 @@ const Search: FunctionComponent<IProps> = ({ experienceStore }) => {
           />
           <Button onClick={() => filterResults()} text="Filter" filter={true} />
         </div>
-        {showFilters && (
-          <Fragment>
-            {/* <div className="flex-col--12 mobile-hide browse--filter--categories">
-              <Filters
-                handleTagSelect={experienceStore.handleTagSelect}
-                selectedTags={experienceStore.selectedTags}
-                isTagSelected={experienceStore.isTagSelected}
-              />
-            </div> */}
-            {/* <div className="flex-col--12 mobile-hide browse--filter-no-tag--container">
-              <span className="browse--filter-no-tag--title">
-                {cms("browse.filter.no-tag")}
-              </span>
-              <Tag
-                text="No tag"
-                search={true}
-                tabIndex={0}
-                selected={isTagSelected({
-                  id: "untagged",
-                  name: "No tag"
-                })}
-                onKeyPress={(e: any) =>
-                  e.key === "Enter" ? selectNoTag() : null
-                }
-                onClick={() => selectNoTag()}
-              />
-            </div> */}
-          </Fragment>
-        )}
       </div>
 
       <div
