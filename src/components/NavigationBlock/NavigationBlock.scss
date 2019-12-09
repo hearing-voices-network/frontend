@@ -38,7 +38,7 @@
     }
 
     &--description {
-      @include heading-xs;
+      @include heading-s;
       color: $grey;
       margin-bottom: space(32);
     }
