@@ -95,7 +95,7 @@ export default class ContributionStore {
     }
 
     try {
-      const data = await httpService.api.post("/api/contributions", {
+      await httpService.api.post("/api/contributions", {
         content: this.contribution.toString("markdown"),
         status: "in_review",
         tags
