@@ -4,10 +4,11 @@
 
 .results {
   @include container;
+  padding-bottom: space(112) !important;
 
   @include for-tablet-large-up {
     margin-top: space(64) !important;
-    padding: space(24) 0 space(40) 0 !important;
+    padding: space(24) 0 space(112) 0 !important;
   }
 
   &--no-results {
