@@ -13,6 +13,10 @@
     margin-bottom: 0;
     color: $grey;
 
+    @include for-phone-only {
+      font-size: pxtorem(18px);
+    }
+
     svg {
       display: none;
     }
@@ -36,11 +40,15 @@
     display: inline-block;
     width: 35px;
     height: 35px;
-    margin-right: 8px;
+    margin-right: space(20);
     vertical-align: middle;
     cursor: pointer;
     background-color: $light-grey;
     position: relative;
+
+    @include for-phone-only {
+      margin-right: space(20);
+    }
   }
 
   input[type="checkbox"] + label span:before,
