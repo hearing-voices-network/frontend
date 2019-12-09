@@ -49,14 +49,14 @@ const Search: FunctionComponent<IProps> = ({ experienceStore }) => {
         </div>
         {showFilters && (
           <Fragment>
-            <div className="flex-col--12 mobile-hide browse--filter--categories">
+            {/* <div className="flex-col--12 mobile-hide browse--filter--categories">
               <Filters
                 handleTagSelect={experienceStore.handleTagSelect}
                 selectedTags={experienceStore.selectedTags}
                 isTagSelected={experienceStore.isTagSelected}
               />
-            </div>
-            <div className="flex-col--12 mobile-hide browse--filter-no-tag--container">
+            </div> */}
+            {/* <div className="flex-col--12 mobile-hide browse--filter-no-tag--container">
               <span className="browse--filter-no-tag--title">
                 {cms("browse.filter.no-tag")}
               </span>
@@ -73,12 +73,15 @@ const Search: FunctionComponent<IProps> = ({ experienceStore }) => {
                 }
                 onClick={() => selectNoTag()}
               />
-            </div>
+            </div> */}
           </Fragment>
         )}
       </div>
 
-      <div className="flex-col--12 mobile-show">
+      <div
+        className="flex-col--12
+      "
+      >
         <div className="flex-container flex-container--no-padding flex-container--justify browse--filter--options">
           <button
             aria-expanded={filterOptionsVisible}

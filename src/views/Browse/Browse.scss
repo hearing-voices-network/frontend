@@ -74,8 +74,7 @@
 
     &--options {
       &-toggle {
-        font-size: pxtorem(20px);
-        font-family: $skippy-sharp;
+        @include heading-xs;
         text-decoration: underline;
         color: $ribienna;
         margin: space(16) 0;
@@ -86,6 +85,10 @@
       @include body-m;
       text-align: center;
       color: $grey;
+
+      @include for-tablet-large-up {
+        margin: space(16) 0;
+      }
     }
 
     &-no-tag {
@@ -96,15 +99,8 @@
         @include body-s-alt;
         color: $grey;
         margin-top: space(20);
+        display: inline;
       }
-
-      &--container {
-        margin: space(20) 0;
-      }
-    }
-
-    &--categories {
-      margin-top: space(32);
     }
   }
 
