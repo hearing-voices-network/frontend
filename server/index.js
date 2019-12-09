@@ -61,6 +61,8 @@ router
     ctx.body = JSON.stringify({
       message: "Logged out successfully"
     });
+
+    return next();
   });
 
 // Required for cookie signature generation.
