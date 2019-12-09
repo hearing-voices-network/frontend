@@ -1,5 +1,6 @@
 import { observable, action } from "mobx";
 import httpService from "../service/api";
+import UserStore from "./userStore";
 
 export default class RegisterStore {
   @observable step: number = 0;
@@ -7,6 +8,20 @@ export default class RegisterStore {
   @observable showConfirmation = false;
   @observable email: string = "";
   @observable password: string = "";
+  @observable userStore: UserStore | null = null;
+
+  constructor(userStore: UserStore) {
+    this.userStore = userStore;
+  }
+
+  @action
+  clear = () => {
+    this.step = 0;
+    this.consent = false;
+    this.showConfirmation = false;
+    this.email = "";
+    this.password = "";
+  };
 
   @action
   nextStep() {
@@ -27,10 +42,21 @@ export default class RegisterStore {
         password: this.password
       };
 
-      const data = await httpService.api.post("/api/end-users", params);
+      const {
+        data: {
+          data: { id }
+        }
+      } = await httpService.api.post("/api/end-users", params);
 
-      console.log(data);
-      // this.showConfirmation = true;
+      this.showConfirmation = true;
+
+      if (this.userStore) {
+        this.userStore.handleChange(this.email, "username");
+        this.userStore.handleChange(this.password, "password");
+        this.userStore.userId = id;
+
+        this.userStore.logIn();
+      }
     } catch ({ response }) {
       console.error("response", response);
     }

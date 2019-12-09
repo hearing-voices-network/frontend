@@ -6,6 +6,7 @@ export default class UserStore {
   @observable experiences = [];
   @observable username: string = "";
   @observable password: string = "";
+  @observable userId: string = "";
 
   @action
   async logIn() {

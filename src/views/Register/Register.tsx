@@ -39,6 +39,12 @@ class Register extends Component<IProps> {
     }
   }
 
+  componentWillUnmount() {
+    const { registerStore } = this.props;
+
+    registerStore.clear();
+  }
+
   displayStep() {
     const { registerStore } = this.props;
 
