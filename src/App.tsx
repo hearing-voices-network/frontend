@@ -38,7 +38,6 @@ import ContributionStore from "./stores/contributionStore";
 import ExperienceStore from "./stores/experienceStore";
 import ChangePassword from "./views/ChangePassword";
 import Problem from "./views/Problem";
-import NotifcationSettings from "./views/NotificationSettings";
 import Withdraw from "./views/Withdraw";
 
 library.add(fas);
