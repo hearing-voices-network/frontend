@@ -59,7 +59,7 @@
 
     &--inner {
       display: grid;
-      grid-auto-rows: 1fr;
+      grid-template-rows: auto 1fr;
     }
 
     &--title {
