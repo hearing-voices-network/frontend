@@ -31,6 +31,8 @@
   }
 
   &--container {
+    margin: space(8);
+
     button {
       cursor: pointer;
       padding: space(16);
