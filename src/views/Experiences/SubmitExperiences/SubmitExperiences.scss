@@ -177,20 +177,7 @@
   }
 
   &--hint {
-    @include body-m;
-    display: flex;
-    background-color: #f4f4f4;
-    padding: space(8) space(16);
-    margin: space(32) space(8);
-    color: $grey;
-    align-items: center;
-    justify-content: center;
-
-    svg {
-      height: 20px;
-      width: auto;
-      margin-right: pxtorem(6px);
-    }
+    @include hint;
   }
 }
 

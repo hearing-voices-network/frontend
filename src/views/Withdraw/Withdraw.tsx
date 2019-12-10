@@ -30,10 +30,12 @@ const Widthdraw: FunctionComponent<RouteComponentProps> = ({ history }) => (
             <p className="withdraw--about">{cms("withdraw.about")}</p>
           </div>
 
-          <div className="flex-col--mobile--11 flex-col--4 withdraw--hint">
-            <ReactSVG src={Question} />
+          <div className="flex-col--mobile--11 flex-col--4">
+            <div className="withdraw--hint">
+              <ReactSVG src={Question} />
 
-            <span>{cms("withdraw.hint")}</span>
+              <span>{cms("withdraw.hint")}</span>
+            </div>
           </div>
         </div>
       </div>
