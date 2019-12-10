@@ -1,10 +1,14 @@
-import { observable, action } from "mobx";
+import { observable, action, computed } from "mobx";
 import httpService from "../service/api";
 import get from "lodash/get";
+import groupBy from "lodash/groupBy";
+import { IStory } from "../utils/types";
+import { format } from "date-fns";
 
 export default class UserStore {
   @observable loggedIn: boolean = false;
   @observable experiences = [];
+  @observable experiencesLoading: boolean = true;
   @observable username: string = "";
   @observable password: string = "";
   @observable userId: string = "";
@@ -29,9 +33,31 @@ export default class UserStore {
     try {
       await httpService.api.post("/logout", {});
       this.loggedIn = false;
+      this.clear();
     } catch ({ response }) {
       console.error(response.status, response.statusText);
     }
+  }
+
+  @action
+  fetchUserExperiences = async () => {
+    try {
+      const {
+        data: { data }
+      } = await httpService.api.get("/api/contributions");
+
+      this.experiences = data;
+      this.experiencesLoading = false;
+    } catch ({ response }) {
+      console.error(response);
+    }
+  };
+
+  @computed
+  get experiencesGroupedByDate() {
+    return groupBy(this.experiences, (experiences: IStory) =>
+      format(new Date(experiences.created_at), "dd MMM yyyy")
+    );
   }
 
   @action
@@ -43,5 +69,6 @@ export default class UserStore {
   @action clear = () => {
     this.username = "";
     this.password = "";
+    this.experiences = [];
   };
 }
