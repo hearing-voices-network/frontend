@@ -4,7 +4,7 @@ const bodyParser = require("koa-bodyparser");
 const session = require("koa-session");
 const serve = require("koa-static");
 const path = require("path");
-const proxy = require("koa-proxies");
+const proxy = require("koa-proxy");
 const axios = require("axios");
 require("dotenv").config();
 
@@ -39,9 +39,19 @@ router
       ctx.session.access_token = access_token;
       ctx.session.expires_at = Date.now() + expires_in * 1000;
 
+      // Get the user data to put in the response.
+      const {
+        data: { data: endUser }
+      } = await axios.get(`${process.env.API_URL}/v1/end-users/me`, {
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
+      });
+
       // Set the response body to a success message.
       ctx.body = JSON.stringify({
-        message: "Logged in successfully"
+        message: "Logged in successfully",
+        data: endUser
       });
     } catch ({ response }) {
       // Set the response status and body to what was returned by the API.
@@ -61,6 +71,8 @@ router
     ctx.body = JSON.stringify({
       message: "Logged out successfully"
     });
+
+    return next();
   });
 
 // Required for cookie signature generation.
@@ -95,17 +107,15 @@ app
   .use((ctx, next) => {
     // Set the access token as the bearer token.
     if (ctx.session.access_token) {
-      ctx.request.header[
-        "Authorization"
-      ] = `Bearer ${ctx.session.access_token}`;
+      ctx.request.header.Authorization = `Bearer ${ctx.session.access_token}`;
     }
 
-    return proxy("/api", {
-      target: `${process.env.API_URL}/v1`,
-      rewrite: path => {
-        return path.replace(/^\/api/, "");
-      },
-      logs: true
+    return proxy({
+      host: process.env.API_URL,
+      match: /^\/api/,
+      map: path => {
+        return path.replace(/^\/api/, "/v1");
+      }
     })(ctx, next);
   })
   // Serve the static files in the build directory.

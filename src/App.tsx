@@ -43,9 +43,9 @@ import Withdraw from "./views/Withdraw";
 
 library.add(fas);
 
-const cookieStore = new CookiesStore();
-const registerStore = new RegisterStore();
 const userStore = new UserStore();
+const cookieStore = new CookiesStore();
+const registerStore = new RegisterStore(userStore);
 const experienceStore = new ExperienceStore();
 const contributionStore = new ContributionStore();
 const history = createBrowserHistory();
