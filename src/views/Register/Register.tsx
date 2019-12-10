@@ -104,7 +104,7 @@ class Register extends Component<IProps> {
                 {cms(`register.footer.step-${registerStore.step}-description`)}
               </p>
               <Button
-                text="Continue"
+                text={registerStore.step === 3 ? "Submit" : "Continue"}
                 onClick={() =>
                   registerStore.step === 3
                     ? registerStore.register()

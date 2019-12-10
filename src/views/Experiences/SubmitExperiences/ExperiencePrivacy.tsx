@@ -43,10 +43,16 @@ const ExperiencePrivacy: FunctionComponent<IProps> = ({
           />
         </div>
 
-        <div className="flex-col--9 experience-privacy--hint">
-          <ReactSVG src={Question} />
+        <div className="flex-col--10">
+          <div className="flex-container flex-container--justify flex-container--no-padding">
+            <div className="flex-col--mobile--11 flex-col--tablet--10 flex-col--8">
+              <div className="experience-privacy--hint">
+                <ReactSVG src={Question} />
 
-          <span>{cms("experience-privacy.hint")}</span>
+                <span>{cms("experience-privacy.hint")}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <Footer green={true}>

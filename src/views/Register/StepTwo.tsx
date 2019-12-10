@@ -34,9 +34,13 @@ const StepTwo: FunctionComponent<IProps> = ({ registerStore }) => {
           type="password"
         />
 
-        <div className="register--hint">
-          <ReactSVG src={Question} />
-          <span>{cms("register.step-2-hint")}</span>
+        <div className="flex-container flex-container--justify flex-container--no-padding">
+          <div className="flex-col--tablet--11 flex-col--8">
+            <div className="register--hint">
+              <ReactSVG src={Question} />
+              <span>{cms("register.step-2-hint")}</span>
+            </div>
+          </div>
         </div>
       </div>
     </Fragment>

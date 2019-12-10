@@ -7,7 +7,7 @@
   padding-bottom: space(112) !important;
 
   @include for-tablet-large-up {
-    margin-top: space(64) !important;
+    margin-top: space(48) !important;
     padding: space(24) 0 space(112) 0 !important;
   }
 
@@ -21,9 +21,13 @@
   }
 
   &--count {
-    @include body-m;
+    @include body-s;
     color: $medium-grey;
     text-align: center;
     margin-bottom: space(32);
+
+    @include for-phone-only {
+      margin-bottom: space(16);
+    }
   }
 }

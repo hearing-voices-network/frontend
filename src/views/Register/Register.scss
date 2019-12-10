@@ -21,6 +21,8 @@
     }
 
     &--tight {
+      @include body-l;
+      color: $medium-grey;
       margin-bottom: 0;
     }
   }
@@ -42,27 +44,15 @@
   }
 
   &--hint {
-    @include body-l;
-    display: flex;
-    background-color: #f4f4f4;
-    padding: space(8) space(16);
-    margin: space(32) space(8);
-    color: $grey;
-    align-items: center;
-    justify-content: center;
-
-    svg {
-      height: 30px;
-      width: auto;
-      margin-right: space(16);
-    }
+    @include hint;
   }
 
   &--checkbox {
-    margin-top: space(32);
+    margin-top: space(80);
+    text-align: center;
 
     @include for-phone-only {
-      margin-top: space(20);
+      margin-top: space(40);
     }
   }
 

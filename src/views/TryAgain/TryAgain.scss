@@ -40,6 +40,11 @@
   &--footer {
     padding-top: space(120) !important;
     padding-bottom: space(120) !important;
+    margin-top: space(120) !important;
+
+    @include for-phone-only {
+      margin-top: space(72) !important;
+    }
 
     @include for-phone-only {
       padding-top: space(40) !important;

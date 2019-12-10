@@ -26,11 +26,16 @@ const Confirmation: FunctionComponent<RouteComponentProps> = ({ history }) => (
         <p className="experience-confirmation--about">
           {cms("submission-confirmation.about")}
         </p>
-      </div>
-      <div className="flex-col--9 experience-privacy--hint">
-        <ReactSVG src={Question} />
 
-        <span>{cms("submission-confirmation.hint")}</span>
+        <div className="flex-container flex-container--justify flex-container--no-padding">
+          <div className="flex-col--tablet--11 flex-col--8">
+            <div className="experience-privacy--hint">
+              <ReactSVG src={Question} />
+
+              <span>{cms("submission-confirmation.hint")}</span>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="flex-col--12">
         <NavigationBlock

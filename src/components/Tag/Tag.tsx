@@ -12,6 +12,7 @@ interface IProps {
   onKeyPress?: any;
   selected?: boolean;
   tabIndex?: number;
+  small?: boolean;
 }
 
 const Tag: FunctionComponent<IProps> = ({
@@ -22,7 +23,8 @@ const Tag: FunctionComponent<IProps> = ({
   onClick,
   onKeyPress,
   selected,
-  tabIndex
+  tabIndex,
+  small
 }) => (
   <div
     className={cx("tag", {
@@ -30,6 +32,7 @@ const Tag: FunctionComponent<IProps> = ({
       "tag--search": search,
       "tag--story": story,
       "tag--search--selected": selected && search,
+      "tag--search--small": small,
       [`${className}`]: className
     })}
     onClick={onClick}

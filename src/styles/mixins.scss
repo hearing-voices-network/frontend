@@ -59,10 +59,10 @@
 }
 
 @mixin container {
-  padding: space(24) space(24) space(40) !important;
+  padding: space(24) space(24) space(112) !important;
 
-  @include for-tablet-large-up {
-    padding-bottom: space(112) !important;
+  @include for-tablet-down {
+    padding-bottom: space(40) !important;
   }
 }
 
@@ -84,5 +84,32 @@
 
   @include for-phone-only {
     margin-top: space(72);
+  }
+}
+
+@mixin hint {
+  @include body-m;
+  display: flex;
+  background-color: #f4f4f4;
+  padding: space(8) space(16);
+  margin: space(32) space(8);
+  color: $grey;
+  align-items: center;
+  justify-content: center;
+
+  @include for-tablet-large-up {
+    padding: space(32) space(16);
+    margin-top: space(40);
+  }
+
+  svg {
+    height: 30px;
+    width: auto;
+    margin-right: space(16);
+    vertical-align: middle;
+
+    @include for-phone-only {
+      height: 20px;
+    }
   }
 }

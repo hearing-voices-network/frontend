@@ -48,7 +48,7 @@ class Story extends Component<IProps> {
 
     return (
       <Layout>
-        <div className="flex-container flex-container--no-padding flex-container--center story">
+        <div className="flex-container flex-container--no-padding flex-container--justify flex-container--center story">
           <div className="flex-col--12">
             <Breadcrumb
               crumbs={[
@@ -59,7 +59,7 @@ class Story extends Component<IProps> {
             />
           </div>
 
-          <div className="flex-col--12">
+          <div className="flex-col--11">
             <div className="flex-container flex-container--no-padding story--info">
               <div className="flex-col--6 flex-col--tablet-large--12">
                 <Link to="/browse" className="story--info--back">
@@ -75,34 +75,41 @@ class Story extends Component<IProps> {
             </div>
           </div>
 
-          <div className="flex-col--12">
+          <div className="flex-col--11">
             <p className="story--content">{this.story.content}</p>
           </div>
         </div>
 
         <Footer green={true}>
-          <div className="flex-container flex-container--center flex-container--no-padding flex-container--align-center story--footer">
-            <h5 className="story--footer--title">
-              {cms("story.footer.title")}
-            </h5>
-            <div className="flex-col--12">
+          <div className="flex-container flex-container--no-padding flex-container--justify flex-container--center story--footer">
+            <div className="flex-col--11">
+              <h5 className="story--footer--title">
+                {cms("story.footer.title")}
+              </h5>
+            </div>
+            <div className="flex-col--11">
               <div className="flex-container flex-container--center flex-container--no-padding flex-container--align-center story--tags--list">
-                {experienceStore.categorizedTags.map(
-                  (category: ICategorisedTag, i: number) => {
-                    return (
-                      <div className="story--tags--category">
-                        <p className="story--tags--category--title">{`${category.name}:`}</p>
-                        <div style={{ display: "flex" }}>
-                          {category.tags.map((tag: ITag) => (
-                            <Tag story={true} text={tag.name}></Tag>
-                          ))}
-                          {i < experienceStore.categorizedTags.length - 1 && (
-                            <span className="story--tags--separator"></span>
-                          )}
+                {!experienceStore.categoriesLoading &&
+                experienceStore.categorizeTags.length ? (
+                  experienceStore.categorizedTags.map(
+                    (category: ICategorisedTag, i: number) => {
+                      return (
+                        <div className="story--tags--category">
+                          <p className="story--tags--category--title">{`${category.name}:`}</p>
+                          <div style={{ display: "flex" }}>
+                            {category.tags.map((tag: ITag) => (
+                              <Tag story={true} text={tag.name}></Tag>
+                            ))}
+                            {i < experienceStore.categorizedTags.length - 1 && (
+                              <span className="story--tags--separator"></span>
+                            )}
+                          </div>
                         </div>
-                      </div>
-                    );
-                  }
+                      );
+                    }
+                  )
+                ) : (
+                  <Tag story={true} text="No tag" />
                 )}
               </div>
             </div>

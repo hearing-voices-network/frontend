@@ -30,6 +30,14 @@
     padding: space(16) !important;
     position: relative;
 
+    @include for-tablet-large-down {
+      padding: space(24) !important;
+    }
+
+    @include for-tablet-down {
+      padding: space(16) !important;
+    }
+
     @include for-phone-only {
       &:before {
         position: absolute;
@@ -66,8 +74,7 @@
 
     &--options {
       &-toggle {
-        font-size: pxtorem(20px);
-        font-family: $skippy-sharp;
+        @include heading-xs;
         text-decoration: underline;
         color: $ribienna;
         margin: space(16) 0;
@@ -78,6 +85,10 @@
       @include body-m;
       text-align: center;
       color: $grey;
+
+      @include for-tablet-large-up {
+        margin: space(16) 0;
+      }
     }
 
     &-no-tag {
@@ -85,27 +96,11 @@
       margin-top: space(12) !important;
 
       &--title {
-        @include body-m;
+        @include body-s-alt;
         color: $grey;
         margin-top: space(20);
-        margin-right: space(8);
-
-        @include for-tablet-large-up {
-          margin-right: space(16);
-        }
-
-        @include for-phone-only {
-          margin-right: 0;
-        }
+        display: inline;
       }
-
-      &--container {
-        margin: space(20) 0;
-      }
-    }
-
-    &--categories {
-      margin-top: space(32);
     }
   }
 
