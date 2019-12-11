@@ -66,6 +66,29 @@ export default class UserStore {
     );
   }
 
+  totalInReview = (experiences: IStory[]) => {
+    const total = experiences.filter(
+      (experience: IStory) => experience.status === "in_review"
+    ).length;
+
+    return total ? `${total} in review` : null;
+  };
+
+  totalPublic = (experiences: IStory[]) => {
+    const total = experiences.filter(
+      (experience: IStory) => experience.status === "public"
+    ).length;
+
+    return total ? `${total} public` : null;
+  };
+
+  totalPrivate = (experiences: IStory[]) => {
+    const total = experiences.filter(
+      (experience: IStory) => experience.status === "private"
+    ).length;
+
+    return total ? `${total} private` : null;
+  };
   @action
   handleChange = (value: string, field: string) => {
     // @ts-ignore
