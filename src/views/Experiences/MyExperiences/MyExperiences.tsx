@@ -24,7 +24,7 @@ interface IProps extends RouteComponentProps {
 
 const MyExperiences: FunctionComponent<IProps> = ({ history, userStore }) => {
   useEffect(() => {
-    userStore.fetchUserExperiences();
+    userStore.fetchUserExperiences(1);
   }, []);
 
   if (!userStore) return null;
@@ -78,7 +78,12 @@ const MyExperiences: FunctionComponent<IProps> = ({ history, userStore }) => {
         )}
       </Fragment>
       <div className="flex-container flex-container--center flex-container--justify my-experiences--pagination">
-        <PaginationControl totalItems={1} itemsPerPage={10} currentPage={1} />
+        <PaginationControl
+          totalItems={userStore.totalItems}
+          itemsPerPage={userStore.itemsPerPage}
+          currentPage={userStore.currentPage}
+          onChange={userStore.fetchUserExperiences}
+        />
       </div>
 
       <Footer purple={true}>

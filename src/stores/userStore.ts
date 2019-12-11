@@ -12,6 +12,9 @@ export default class UserStore {
   @observable username: string = "";
   @observable password: string = "";
   @observable userId: string = "";
+  @observable currentPage: number = 1;
+  @observable totalItems: number = 1;
+  @observable itemsPerPage: number = 10;
 
   @action
   async logIn() {
@@ -40,13 +43,16 @@ export default class UserStore {
   }
 
   @action
-  fetchUserExperiences = async () => {
+  fetchUserExperiences = async (pageNum: number) => {
     try {
-      const {
-        data: { data }
-      } = await httpService.api.get("/api/contributions");
+      const { data } = await httpService.api.get(
+        `/api/contributions?page=${pageNum}`
+      );
 
-      this.experiences = data;
+      this.experiences = get(data, "data");
+      this.currentPage = get(data, "meta.current_page");
+      this.totalItems = get(data, "meta.total");
+      this.itemsPerPage = get(data, "meta.per_page");
       this.experiencesLoading = false;
     } catch ({ response }) {
       console.error(response);
@@ -70,5 +76,8 @@ export default class UserStore {
     this.username = "";
     this.password = "";
     this.experiences = [];
+    this.currentPage = 1;
+    this.totalItems = 1;
+    this.itemsPerPage = 10;
   };
 }

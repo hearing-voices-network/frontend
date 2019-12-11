@@ -146,7 +146,7 @@ const PatternLibrary = () => (
       />
     </div>
     <div className="section flex-col--12">
-      <PaginationControl totalItems={20} itemsPerPage={5} currentPage={1} />
+      {/* <PaginationControl totalItems={20} itemsPerPage={5} currentPage={1} /> */}
     </div>
 
     <div className="section flex-col--12">
