@@ -25,7 +25,7 @@ interface IProps extends RouteComponentProps {
 const MyExperiences: FunctionComponent<IProps> = ({ history, userStore }) => {
   useEffect(() => {
     userStore.fetchUserExperiences(1);
-  }, []);
+  });
 
   if (!userStore) return null;
 
