@@ -5,9 +5,9 @@ import { Dictionary } from "lodash";
 
 import { IStory, ITag } from "../../../utils/types";
 import Accordian from "../../../components/Accordian";
+import ReviewButton from "../../../components/ReviewButton";
 
 import "../../../styles/markdown.scss";
-import ReviewButton from "../../../components/ReviewButton";
 
 interface IProps {
   experiences: Dictionary<IStory[]>;
@@ -19,10 +19,10 @@ interface IDayProps {
 }
 
 const Day: FunctionComponent<IDayProps> = ({ date, experiences }) => (
-  <Accordian title={date} green={true} subtitle="1 private, 1 in public">
+  <Accordian title={date} subtitle="1 private, 1 in public">
     <div>
       {experiences.map((story: IStory) => (
-        <div className="flex-container flex-container--no-padding entry-summary">
+        <div className="flex-container flex-container--no-padding flex-container--align-center entry-summary">
           <div className="flex-col--mobile--7 flex-col--9">
             <ReactMarkdown className="markdown" source={story.excerpt} />
             {!!story.tags.length && (
