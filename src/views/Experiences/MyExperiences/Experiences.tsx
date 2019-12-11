@@ -35,7 +35,7 @@ const Day: FunctionComponent<IDayProps> = ({
     const summaryArray = [totalInReview, totalPrivate, totalPublic];
 
     setSummary(summaryArray.filter(summary => summary !== null).join(", "));
-  }, []);
+  }, [totalInReview, totalPrivate, totalPublic]);
 
   return (
     <Accordian title={date} subtitle={summary}>
