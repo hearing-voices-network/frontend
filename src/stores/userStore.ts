@@ -15,6 +15,7 @@ export default class UserStore {
   @observable currentPage: number = 1;
   @observable totalItems: number = 1;
   @observable itemsPerPage: number = 10;
+  @observable experienceFilter: string | null = null;
 
   @action
   async logIn() {
@@ -45,11 +46,22 @@ export default class UserStore {
   @action
   fetchUserExperiences = async (pageNum: number) => {
     try {
+      this.experiencesLoading = true;
+
       const { data } = await httpService.api.get(
         `/api/contributions?page=${pageNum}`
       );
 
-      this.experiences = get(data, "data");
+      if (this.experienceFilter) {
+        const experiences = get(data, "data");
+
+        experiences.filter(
+          (experience: IStory) => experience.status === this.experienceFilter
+        );
+      } else {
+        this.experiences = get(data, "data");
+      }
+
       this.currentPage = get(data, "meta.current_page");
       this.totalItems = get(data, "meta.total");
       this.itemsPerPage = get(data, "meta.per_page");
@@ -89,10 +101,28 @@ export default class UserStore {
 
     return total ? `${total} private` : null;
   };
+
   @action
   handleChange = (value: string, field: string) => {
     // @ts-ignore
     this[field] = value;
+  };
+
+  @action
+  filterResults = async (filter: string) => {
+    if (filter === "all") {
+      this.experienceFilter = null;
+    } else {
+      this.experienceFilter = filter;
+    }
+
+    await this.fetchUserExperiences(this.currentPage);
+
+    if (this.experienceFilter) {
+      this.experiences = this.experiences.filter(
+        (experience: IStory) => experience.status === this.experienceFilter
+      );
+    }
   };
 
   @action clear = () => {

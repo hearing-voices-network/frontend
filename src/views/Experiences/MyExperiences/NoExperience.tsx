@@ -1,6 +1,7 @@
 import React from "react";
 import ReactSVG from "react-svg";
 import { Link } from "react-router-dom";
+import { observer } from "mobx-react";
 
 import NoExperienceIcon from "../../../assets/icons/my-experiences.svg";
 import { cms } from "../../../utils/cms";
@@ -19,4 +20,4 @@ const NoExperience = () => (
   </div>
 );
 
-export default NoExperience;
+export default observer(NoExperience);

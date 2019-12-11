@@ -43,13 +43,29 @@ const MyExperiences: FunctionComponent<IProps> = ({ history, userStore }) => {
 
             <Select
               options={[
+                { value: "all", text: "See all" },
                 {
-                  value: "",
+                  value: "public",
                   text: "Public"
+                },
+                {
+                  value: "private",
+                  text: "Private"
+                },
+                {
+                  value: "in_review",
+                  text: "In review"
+                },
+                {
+                  value: "to_review",
+                  text: "To review"
                 }
               ]}
               placeholder="See all"
               id="type"
+              onChange={e => {
+                userStore.filterResults(e.target.value);
+              }}
             />
 
             <Button
