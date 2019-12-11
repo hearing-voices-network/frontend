@@ -9,6 +9,7 @@ import ReviewButton from "../../../components/ReviewButton";
 import UserStore from "../../../stores/userStore";
 
 import "../../../styles/markdown.scss";
+import PrivacyButton from "../../../components/PrivacyButton";
 
 interface IProps {
   userStore?: UserStore;
@@ -37,6 +38,35 @@ const Day: FunctionComponent<IDayProps> = ({
     setSummary(summaryArray.filter(summary => summary !== null).join(", "));
   }, [totalInReview, totalPrivate, totalPublic]);
 
+  const displayButton = (status: string) => {
+    switch (status) {
+      case "public":
+        return <PrivacyButton text={status} onChange={() => null} />;
+      case "private":
+        return <PrivacyButton text={status} onChange={() => null} />;
+
+      case "in_review":
+        return (
+          <ReviewButton
+            type="button"
+            text="in review"
+            onClick={() => console.log("review button")}
+          />
+        );
+
+      case "to_review":
+        return (
+          <ReviewButton
+            type="button"
+            text="to review"
+            onClick={() => console.log("review button")}
+          />
+        );
+      default:
+        break;
+    }
+  };
+
   return (
     <Accordian title={date} subtitle={summary}>
       <div>
@@ -56,11 +86,7 @@ const Day: FunctionComponent<IDayProps> = ({
             </div>
 
             <div className="flex-col--mobile--5 flex-col--3 entry-summary--button">
-              <ReviewButton
-                type="button"
-                text="In review"
-                onClick={() => console.log("review button")}
-              />
+              {displayButton(story.status)}
             </div>
           </div>
         ))}
