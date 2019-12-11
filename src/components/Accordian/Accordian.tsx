@@ -23,7 +23,7 @@ const Accordian: React.FunctionComponent<IProps> = ({
     <div className="accordian--container">
       <button
         className={cx(
-          "flex-container flex-container--no-padding flex-container--align-center accordian--header",
+          "flex-container flex-container--no-padding flex-container--align-center accordian--header accordian--button",
           {
             "accordian--header--green": green
           }
