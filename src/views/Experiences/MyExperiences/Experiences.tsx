@@ -7,6 +7,7 @@ import { IStory, ITag } from "../../../utils/types";
 import Accordian from "../../../components/Accordian";
 
 import "../../../styles/markdown.scss";
+import ReviewButton from "../../../components/ReviewButton";
 
 interface IProps {
   experiences: Dictionary<IStory[]>;
@@ -22,7 +23,7 @@ const Day: FunctionComponent<IDayProps> = ({ date, experiences }) => (
     <div>
       {experiences.map((story: IStory) => (
         <div className="flex-container flex-container--no-padding entry-summary">
-          <div className="flex-col--9">
+          <div className="flex-col--mobile--7 flex-col--9">
             <ReactMarkdown className="markdown" source={story.excerpt} />
             {!!story.tags.length && (
               <div className="entry-summary--tags">
@@ -35,8 +36,12 @@ const Day: FunctionComponent<IDayProps> = ({ date, experiences }) => (
             )}
           </div>
 
-          <div className="flex-col--3">
-            <p>{story.status}</p>
+          <div className="flex-col--mobile--5 flex-col--3 entry-summary--button">
+            <ReviewButton
+              type="button"
+              text="In review"
+              onClick={() => console.log("review button")}
+            />
           </div>
         </div>
       ))}
@@ -45,7 +50,7 @@ const Day: FunctionComponent<IDayProps> = ({ date, experiences }) => (
 );
 
 const Experiences: FunctionComponent<IProps> = ({ experiences }) => (
-  <div className="flex-flex-container flex-container--no-padding flex-container--centre flex-container--justify">
+  <div className="flex-flex-container flex-container--no-padding flex-container--center flex-container--align-center flex-container--justify">
     {map(experiences, (experiences: IStory[], date: string) => (
       <div className="flex-col--12">
         <Day date={date} experiences={experiences} />
