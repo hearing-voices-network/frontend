@@ -46,12 +46,11 @@ const Results: FunctionComponent<IProps> = ({ experienceStore }) => {
             </div>
           </div>
 
-          {/* <div className="flex-col--12"> */}
           <PaginationControl
             totalItems={experienceStore.totalItems}
             currentPage={experienceStore.currentPage}
             itemsPerPage={experienceStore.itemsPerPage}
-            onChange={() => console.log("change")}
+            onChange={(pageNum: number) => experienceStore.paginate(pageNum)}
             inputNum={1}
           />
           {/* </div> */}

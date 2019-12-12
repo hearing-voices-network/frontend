@@ -23,6 +23,7 @@ export default class ExperienceStore {
   @observable currentPage: number = 1;
   @observable totalItems: number = 1;
   @observable itemsPerPage: number = 10;
+  @observable filters: string[] = [];
 
   @action
   async getTags() {
@@ -43,7 +44,11 @@ export default class ExperienceStore {
   @action
   getExperiences = async () => {
     try {
-      const { data } = await httpService.api.get("/api/contributions");
+      const { data } = await httpService.api.get(
+        `/api/contributions?page=${this.currentPage}${
+          this.filters.length ? `&filter[tag_ids]=[${this.filters}]` : ""
+        }`
+      );
       this.experiences = get(data, "data");
 
       this.currentPage = get(data, "meta.current_page");
@@ -56,8 +61,20 @@ export default class ExperienceStore {
   };
 
   @action
+  paginate = (pageNum: number) => {
+    this.currentPage = pageNum;
+
+    this.experiencesLoading = true;
+
+    this.getExperiences();
+  };
+
+  @action
   filterResults = () => {
-    // server filtering will happen here
+    this.filters = this.selectedTags.map(tag => `${tag.id}`);
+
+    this.experiencesLoading = false;
+    this.getExperiences();
 
     this.filteredResultsShowing = true;
   };
