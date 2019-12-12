@@ -7,9 +7,9 @@ import { IStory, ITag } from "../../../utils/types";
 import Accordian from "../../../components/Accordian";
 import ReviewButton from "../../../components/ReviewButton";
 import UserStore from "../../../stores/userStore";
+import PrivacyButton from "../../../components/PrivacyButton";
 
 import "../../../styles/markdown.scss";
-import PrivacyButton from "../../../components/PrivacyButton";
 
 interface IProps {
   userStore?: UserStore;
