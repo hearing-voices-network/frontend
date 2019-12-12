@@ -95,6 +95,7 @@ const MyExperiences: FunctionComponent<IProps> = ({ history, userStore }) => {
           itemsPerPage={userStore.itemsPerPage}
           currentPage={userStore.currentPage}
           onChange={userStore.fetchUserExperiences}
+          inputNum={0}
         />
       </div>
 

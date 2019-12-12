@@ -9,6 +9,7 @@ import ExperienceStore from "../../stores/experienceStore";
 import NoExperiences from "./NoExperiences";
 import Loading from "../../components/Loading";
 import Story from "../../components/Cards/Story";
+import PaginationControl from "../../components/Pagination";
 
 interface IProps {
   experienceStore?: ExperienceStore;
@@ -44,6 +45,16 @@ const Results: FunctionComponent<IProps> = ({ experienceStore }) => {
               ))}
             </div>
           </div>
+
+          {/* <div className="flex-col--12"> */}
+          <PaginationControl
+            totalItems={experienceStore.totalItems}
+            currentPage={experienceStore.currentPage}
+            itemsPerPage={experienceStore.itemsPerPage}
+            onChange={() => console.log("change")}
+            inputNum={1}
+          />
+          {/* </div> */}
         </Fragment>
       )}
     </div>
