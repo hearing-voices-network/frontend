@@ -20,6 +20,9 @@ export default class ExperienceStore {
   @observable categoriesLoading: boolean = true;
   @observable filteredResultsShowing: boolean = false;
   @observable categorizedTags: ICategorisedTag[] = [];
+  @observable currentPage: number = 1;
+  @observable totalItems: number = 1;
+  @observable itemsPerPage: number = 10;
 
   @action
   async getTags() {
@@ -38,14 +41,19 @@ export default class ExperienceStore {
   }
 
   @action
-  getExperiences() {
-    httpService.api.get("/api/contributions").then(resp => {
-      // this.experiences = get(resp, "data.data");
+  getExperiences = async () => {
+    try {
+      const { data } = await httpService.api.get("/api/contributions");
+      this.experiences = get(data, "data");
 
-      this.experiences = get(experienceList, "data");
+      this.currentPage = get(data, "meta.current_page");
+      this.totalItems = get(data, "meta.total");
+      this.itemsPerPage = get(data, "meta.per_page");
       this.experiencesLoading = false;
-    });
-  }
+    } catch ({ response }) {
+      console.error(response);
+    }
+  };
 
   @action
   filterResults = () => {
