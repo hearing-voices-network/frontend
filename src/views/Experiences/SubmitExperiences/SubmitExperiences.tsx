@@ -21,6 +21,13 @@ class SubmitExperiences extends Component<IProps> {
     if (!this.props.contributionStore) return null;
   }
 
+  componentWillUnmount() {
+    const { contributionStore } = this.props;
+
+    contributionStore.clear();
+    contributionStore.contributionSubmitted = false;
+  }
+
   displayGuidanceStep() {
     const { contributionStore } = this.props;
 

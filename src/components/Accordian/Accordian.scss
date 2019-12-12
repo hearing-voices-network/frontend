@@ -8,6 +8,7 @@
     margin-right: space(8);
     font-size: pxtorem(24px);
     color: $medium-grey;
+    color: $tradewind;
 
     @include for-phone-only {
       font-size: pxtorem(18px);
@@ -16,10 +17,7 @@
 
     &--open {
       transform: rotate(180deg);
-    }
-
-    &--green {
-      color: $tradewind;
+      color: grey;
     }
   }
 
@@ -31,13 +29,15 @@
   }
 
   &--container {
-    button {
-      cursor: pointer;
-      padding: space(16);
+    margin: space(8);
+  }
 
-      @include for-phone-only {
-        padding: 0 space(16);
-      }
+  &--button {
+    cursor: pointer;
+    padding: space(16) !important;
+
+    @include for-phone-only {
+      padding: 0 space(16) !important;
     }
   }
 
@@ -45,11 +45,11 @@
     padding: 0;
     margin: 0;
     width: 100%;
-    background-color: $light-grey;
     border-radius: 11px;
+    background-color: $light-turqoise;
 
-    &--green {
-      background-color: $light-turqoise;
+    &--grey {
+      background-color: $light-grey;
     }
   }
 

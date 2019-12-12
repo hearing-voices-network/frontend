@@ -63,3 +63,24 @@
     margin: space(20) 0;
   }
 }
+
+.entry-summary {
+  @include body-s-alt;
+  color: $grey;
+  border-bottom: 2px solid $light-grey;
+  padding: space(16) !important;
+
+  &--tags {
+    @include body-s;
+    color: $medium-grey;
+    margin-top: space(8);
+
+    @include for-phone-only {
+      margin-top: pxtorem(4px);
+    }
+  }
+
+  &--button {
+    text-align: right;
+  }
+}

@@ -4,7 +4,7 @@ import { ITag } from "../utils/types";
 import httpService from "../service/api";
 
 export default class ContributionStore {
-  @observable showGuidance: boolean = false;
+  @observable showGuidance: boolean = true;
   @observable guidanceStep: number = 0;
   @observable contributionStep: number = 0;
   @observable contribution: EditorValue = RichTextEditor.createEmptyValue();
@@ -102,8 +102,19 @@ export default class ContributionStore {
       });
 
       this.contributionSubmitted = true;
+      this.clear();
     } catch ({ response }) {
       console.error(response, "error response");
     }
+  };
+
+  @action
+  clear = () => {
+    this.showGuidance = true;
+    this.guidanceStep = 0;
+    this.contributionStep = 0;
+    this.contribution = RichTextEditor.createEmptyValue();
+    this.privacy = "public";
+    this.selectedTags = [];
   };
 }

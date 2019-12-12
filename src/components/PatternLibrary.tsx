@@ -119,11 +119,7 @@ const PatternLibrary = () => (
     </div>
 
     <div className="section flex-col--12">
-      <Accordian
-        title="11 Jan 2019"
-        green={true}
-        subtitle="1 private, 1 in public"
-      >
+      <Accordian title="11 Jan 2019" subtitle="1 private, 1 in public">
         <p>Accordian content</p>
       </Accordian>
     </div>
@@ -146,7 +142,7 @@ const PatternLibrary = () => (
       />
     </div>
     <div className="section flex-col--12">
-      <PaginationControl totalItems={20} itemsPerPage={5} currentPage={1} />
+      {/* <PaginationControl totalItems={20} itemsPerPage={5} currentPage={1} /> */}
     </div>
 
     <div className="section flex-col--12">

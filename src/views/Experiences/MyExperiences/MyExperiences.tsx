@@ -1,4 +1,4 @@
-import React, { FunctionComponent, Fragment } from "react";
+import React, { FunctionComponent, Fragment, useEffect } from "react";
 import { observer, inject } from "mobx-react";
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,12 +15,18 @@ import Footer from "../../../components/Footer";
 import Link from "../../../components/Link";
 
 import { cms } from "../../../utils/cms";
+import Loading from "../../../components/Loading";
+import Experiences from "./Experiences";
 
 interface IProps extends RouteComponentProps {
   userStore: UserStore;
 }
 
 const MyExperiences: FunctionComponent<IProps> = ({ history, userStore }) => {
+  useEffect(() => {
+    userStore.fetchUserExperiences(1);
+  }, []);
+
   if (!userStore) return null;
 
   return (
@@ -37,26 +43,59 @@ const MyExperiences: FunctionComponent<IProps> = ({ history, userStore }) => {
 
             <Select
               options={[
+                { value: "all", text: "See all" },
                 {
-                  value: "",
+                  value: "public",
                   text: "Public"
+                },
+                {
+                  value: "private",
+                  text: "Private"
+                },
+                {
+                  value: "in_review",
+                  text: "In review"
+                },
+                {
+                  value: "to_review",
+                  text: "To review"
                 }
               ]}
               placeholder="See all"
               id="type"
+              onChange={e => {
+                userStore.filterResults(e.target.value);
+              }}
             />
 
             <Button
               text="New story"
-              onClick={() => console.log("add new story")}
+              onClick={() => history.push("/submit-experience")}
               small={true}
             />
           </div>
         </div>
       </div>
-      <Fragment>{!userStore.experiences.length && <NoExperience />}</Fragment>
+      <Fragment>
+        {userStore.experiencesLoading && (
+          <div className="flex-container flex-container--center flex-container--justify">
+            <Loading input="experiences" />
+          </div>
+        )}
+
+        {!userStore.experiencesLoading && (
+          <Fragment>
+            {!userStore.experiences.length ? <NoExperience /> : <Experiences />}
+          </Fragment>
+        )}
+      </Fragment>
       <div className="flex-container flex-container--center flex-container--justify my-experiences--pagination">
-        <PaginationControl totalItems={1} itemsPerPage={10} currentPage={1} />
+        <PaginationControl
+          totalItems={userStore.totalItems}
+          itemsPerPage={userStore.itemsPerPage}
+          currentPage={userStore.currentPage}
+          onChange={userStore.fetchUserExperiences}
+        />
       </div>
 
       <Footer purple={true}>

@@ -8,13 +8,11 @@ interface IProps {
   children: JSX.Element | JSX.Element[];
   title: string;
   subtitle?: string;
-  green?: boolean;
 }
 
 const Accordian: React.FunctionComponent<IProps> = ({
   children,
   title,
-  green,
   subtitle
 }) => {
   const [open, toggleAccordian] = useState(false);
@@ -23,9 +21,9 @@ const Accordian: React.FunctionComponent<IProps> = ({
     <div className="accordian--container">
       <button
         className={cx(
-          "flex-container flex-container--no-padding flex-container--align-center accordian--header",
+          "flex-container flex-container--no-padding flex-container--align-center accordian--header accordian--button",
           {
-            "accordian--header--green": green
+            "accordian--header--grey": open
           }
         )}
         onClick={() => toggleAccordian(!open)}
@@ -35,13 +33,14 @@ const Accordian: React.FunctionComponent<IProps> = ({
       >
         <div className="accordian--title-container flex-container flex-container--no-padding flex-container--no-space flex-container--align-center">
           <p className="accordian--title">{title}</p>
-          {subtitle && <p className="accordian--subtitle">{subtitle}</p>}
+          {subtitle && !open && (
+            <p className="accordian--subtitle">{subtitle}</p>
+          )}
         </div>
         <FontAwesomeIcon
           icon="chevron-down"
           className={cx("accordian--icon", {
-            "accordian--icon--open": open,
-            "accordian--icon--green": green
+            "accordian--icon--open": open
           })}
         />
       </button>

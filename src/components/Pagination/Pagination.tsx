@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { observer } from "mobx-react";
 import Pagination from "rc-pagination";
 import "rc-pagination/assets/index.css";
 // @ts-ignore
@@ -11,12 +12,14 @@ interface IProps {
   totalItems: number;
   itemsPerPage: number;
   currentPage: number;
+  onChange: (pageNum: number) => void;
 }
 
 const PaginationControl: FunctionComponent<IProps> = ({
   currentPage,
   totalItems,
-  itemsPerPage
+  itemsPerPage,
+  onChange
 }) => {
   useEffect(() => {
     // this package has an input for the current page with no way to override it, remove this on load and replace with a div for styling
@@ -26,7 +29,9 @@ const PaginationControl: FunctionComponent<IProps> = ({
     paginationCount.textContent = `${currentPage}`;
     paginationCount.className = "pagination--label--current";
 
-    input[0].replaceWith(paginationCount);
+    if (input.length) {
+      input[0].replaceWith(paginationCount);
+    }
   }, [currentPage]);
 
   return (
@@ -63,8 +68,9 @@ const PaginationControl: FunctionComponent<IProps> = ({
           </div>
         )
       }
+      onChange={currentPage => onChange(currentPage)}
     />
   );
 };
 
-export default PaginationControl;
+export default observer(PaginationControl);
