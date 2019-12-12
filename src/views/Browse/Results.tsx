@@ -34,7 +34,7 @@ const Results: FunctionComponent<IProps> = ({ experienceStore }) => {
             }`}</p>
           </div>
           <div className="flex-col--12">
-            <div className="flex-container flex-container--no-padding flex-container--justify">
+            <div className="flex-container flex-container--no-padding flex-container--justify results--stories">
               {experiences.map((experience: IStory) => (
                 <Story
                   story={experience.excerpt}
