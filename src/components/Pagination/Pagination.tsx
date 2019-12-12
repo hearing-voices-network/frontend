@@ -13,13 +13,15 @@ interface IProps {
   itemsPerPage: number;
   currentPage: number;
   onChange: (pageNum: number) => void;
+  inputNum: number;
 }
 
 const PaginationControl: FunctionComponent<IProps> = ({
   currentPage,
   totalItems,
   itemsPerPage,
-  onChange
+  onChange,
+  inputNum
 }) => {
   useEffect(() => {
     // this package has an input for the current page with no way to override it, remove this on load and replace with a div for styling
@@ -29,8 +31,9 @@ const PaginationControl: FunctionComponent<IProps> = ({
     paginationCount.textContent = `${currentPage}`;
     paginationCount.className = "pagination--label--current";
 
-    if (input.length) {
-      input[0].replaceWith(paginationCount);
+    if (input.length >= inputNum) {
+      // this is hacky as you need to know how many inputs on the page so you can target the right one. Starts at 0 index
+      input[inputNum].replaceWith(paginationCount);
     }
   }, [currentPage]);
 

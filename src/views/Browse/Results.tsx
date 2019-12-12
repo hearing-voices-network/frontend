@@ -9,6 +9,7 @@ import ExperienceStore from "../../stores/experienceStore";
 import NoExperiences from "./NoExperiences";
 import Loading from "../../components/Loading";
 import Story from "../../components/Cards/Story";
+import PaginationControl from "../../components/Pagination";
 
 interface IProps {
   experienceStore?: ExperienceStore;
@@ -33,10 +34,10 @@ const Results: FunctionComponent<IProps> = ({ experienceStore }) => {
             }`}</p>
           </div>
           <div className="flex-col--12">
-            <div className="flex-container flex-container--no-padding flex-container--justify">
+            <div className="flex-container flex-container--no-padding flex-container--justify results--stories">
               {experiences.map((experience: IStory) => (
                 <Story
-                  story={experience.content}
+                  story={experience.excerpt}
                   tags={experience.tags}
                   key={experience.id}
                   id={experience.id}
@@ -44,6 +45,15 @@ const Results: FunctionComponent<IProps> = ({ experienceStore }) => {
               ))}
             </div>
           </div>
+
+          <PaginationControl
+            totalItems={experienceStore.totalItems}
+            currentPage={experienceStore.currentPage}
+            itemsPerPage={experienceStore.itemsPerPage}
+            onChange={(pageNum: number) => experienceStore.paginate(pageNum)}
+            inputNum={1}
+          />
+          {/* </div> */}
         </Fragment>
       )}
     </div>
