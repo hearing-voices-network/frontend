@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import ClampLines from "react-clamp-lines";
 import take from "lodash/take";
+import removeMd from "remove-markdown";
 import { inject, observer } from "mobx-react";
 import { Link } from "react-router-dom";
 
@@ -31,7 +32,7 @@ const Story: FunctionComponent<IProps> = ({
   return (
     <section className="flex-col--mobile--12 flex-col--tablet--12 flex-col--tablet-large--5 story-card">
       <ClampLines
-        text={story}
+        text={removeMd(story)}
         lines={4}
         ellipsis="..."
         id="story"
