@@ -73,6 +73,21 @@ router
     });
 
     return next();
+  })
+  .post("/contributions", async (ctx, next) => {
+    const { page, tags } = ctx.request.body;
+
+    const { data } = await axios.get(
+      `${process.env.API_URL}/v1/contributions?page=${page}${
+        tags.length ? `&filter[tag_ids]=[${tags}]` : ""
+      }`
+    );
+
+    ctx.body = JSON.stringify({
+      data
+    });
+
+    return next();
   });
 
 // Required for cookie signature generation.
@@ -118,6 +133,7 @@ app
       }
     })(ctx, next);
   })
+
   // Serve the static files in the build directory.
   .use(serve(FRONTEND_APP_BUILD_PATH))
   // Place all calls through index.html.
