@@ -44,16 +44,15 @@ export default class ExperienceStore {
   @action
   getExperiences = async () => {
     try {
-      const { data } = await httpService.api.get(
-        `/api/contributions?page=${this.currentPage}${
-          this.filters.length ? `&filter[tag_ids]=[${this.filters}]` : ""
-        }`
-      );
-      this.experiences = get(data, "data");
+      const { data } = await httpService.api.post("/contributions", {
+        page: this.currentPage,
+        tags: this.filters
+      });
 
-      this.currentPage = get(data, "meta.current_page");
-      this.totalItems = get(data, "meta.total");
-      this.itemsPerPage = get(data, "meta.per_page");
+      this.experiences = get(data, "data.data");
+      this.currentPage = get(data, "data.meta.current_page");
+      this.totalItems = get(data, "data.meta.total");
+      this.itemsPerPage = get(data, "data.meta.per_page");
       this.experiencesLoading = false;
     } catch ({ response }) {
       console.error(response);
