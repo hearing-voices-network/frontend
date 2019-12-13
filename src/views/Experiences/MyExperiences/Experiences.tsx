@@ -2,6 +2,7 @@ import React, { FunctionComponent, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import map from "lodash/map";
 import { observer, inject } from "mobx-react";
+import removeMd from "remove-markdown";
 
 import { IStory, ITag } from "../../../utils/types";
 import Accordian from "../../../components/Accordian";
@@ -73,7 +74,7 @@ const Day: FunctionComponent<IDayProps> = ({
         {experiences.map((story: IStory) => (
           <div className="flex-container flex-container--no-padding flex-container--align-center entry-summary">
             <div className="flex-col--mobile--7 flex-col--9">
-              <ReactMarkdown className="markdown" source={story.excerpt} />
+              <p className="markdown">{removeMd(story.excerpt)}</p>
               {!!story.tags.length && (
                 <div className="entry-summary--tags">
                   {story.tags.map((tag: ITag, i: number) => (
