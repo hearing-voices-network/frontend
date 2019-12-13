@@ -139,7 +139,7 @@ export default class ExperienceStore {
 
   @action
   categorizeTags = (tags: ITag[]) => {
-    this.categorizedTags = reduce(
+    return reduce(
       tags,
       (acc: ICategorisedTag[], tag: ITag) => {
         // get parent category
