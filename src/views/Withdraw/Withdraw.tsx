@@ -29,8 +29,9 @@ const Widthdraw: FunctionComponent<RouteComponentProps> = ({ history }) => (
             <h1 className="withdraw--title">{cms("withdraw.title")}</h1>
             <p className="withdraw--about">{cms("withdraw.about")}</p>
           </div>
-
-          <div className="flex-col--mobile--11 flex-col--4">
+        </div>
+        <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--container">
+          <div className="flex-col--mobile--11 flex-col--5">
             <div className="withdraw--hint">
               <ReactSVG src={Question} />
 
