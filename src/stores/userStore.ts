@@ -174,7 +174,6 @@ export default class UserStore {
       this.changeEmailSuccess = true;
       this.newEmail = "";
     } catch ({ response }) {
-      console.error(response);
       this.changeEmailErrors = get(response, "data.errors.email");
     }
   };
