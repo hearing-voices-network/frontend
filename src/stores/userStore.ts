@@ -177,4 +177,16 @@ export default class UserStore {
       this.changeEmailErrors = get(response, "data.errors.email");
     }
   };
+
+  deleteAccount = async (deleteType: string) => {
+    try {
+      await httpService.api.delete(
+        `/api/end-users/${this.userId}?type=${deleteType}`
+      );
+
+      this.logOut();
+    } catch ({ response }) {
+      console.error(response);
+    }
+  };
 }
