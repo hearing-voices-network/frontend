@@ -141,6 +141,7 @@ export default class UserStore {
     this.itemsPerPage = 10;
   };
 
+  @action
   resetPassword = async () => {
     if (this.newPassword === this.confirmPassword) {
       this.changePasswordSuccess = false;
@@ -160,6 +161,7 @@ export default class UserStore {
     }
   };
 
+  @action
   resetEmail = async () => {
     this.changeEmailSuccess = false;
     this.changeEmailErrors = [];
