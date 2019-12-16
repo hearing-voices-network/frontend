@@ -20,6 +20,9 @@ export default class UserStore {
   @observable confirmPassword: string = "";
   @observable changePasswordSuccess: boolean = false;
   @observable changePasswordErrors: [] = [];
+  @observable newEmail: string = "";
+  @observable changeEmailSuccess: boolean = false;
+  @observable changeEmailErrors: [] = [];
 
   @action
   async logIn() {
@@ -140,6 +143,9 @@ export default class UserStore {
 
   resetPassword = async () => {
     if (this.newPassword === this.confirmPassword) {
+      this.changePasswordSuccess = false;
+      this.changePasswordErrors = [];
+
       try {
         await httpService.api.put(`/api/end-users/${this.userId}`, {
           password: this.newPassword
@@ -151,6 +157,23 @@ export default class UserStore {
       } catch ({ response }) {
         this.changePasswordErrors = get(response, "data.errors.password");
       }
+    }
+  };
+
+  resetEmail = async () => {
+    this.changeEmailSuccess = false;
+    this.changeEmailErrors = [];
+
+    try {
+      await httpService.api.put(`/api/end-users/${this.userId}`, {
+        email: this.newEmail
+      });
+
+      this.changeEmailSuccess = true;
+      this.newEmail = "";
+    } catch ({ response }) {
+      console.error(response);
+      this.changeEmailErrors = get(response, "data.errors.email");
     }
   };
 }
