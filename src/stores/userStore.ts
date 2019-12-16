@@ -16,6 +16,13 @@ export default class UserStore {
   @observable totalItems: number = 1;
   @observable itemsPerPage: number = 10;
   @observable experienceFilter: string | null = null;
+  @observable newPassword: string = "";
+  @observable confirmPassword: string = "";
+  @observable changePasswordSuccess: boolean = false;
+  @observable changePasswordErrors: [] = [];
+  @observable newEmail: string = "";
+  @observable changeEmailSuccess: boolean = false;
+  @observable changeEmailErrors: [] = [];
 
   @action
   async logIn() {
@@ -132,5 +139,54 @@ export default class UserStore {
     this.currentPage = 1;
     this.totalItems = 1;
     this.itemsPerPage = 10;
+  };
+
+  @action
+  resetPassword = async () => {
+    if (this.newPassword === this.confirmPassword) {
+      this.changePasswordSuccess = false;
+      this.changePasswordErrors = [];
+
+      try {
+        await httpService.api.put(`/api/end-users/${this.userId}`, {
+          password: this.newPassword
+        });
+
+        this.changePasswordSuccess = true;
+        this.newPassword = "";
+        this.confirmPassword = "";
+      } catch ({ response }) {
+        this.changePasswordErrors = get(response, "data.errors.password");
+      }
+    }
+  };
+
+  @action
+  resetEmail = async () => {
+    this.changeEmailSuccess = false;
+    this.changeEmailErrors = [];
+
+    try {
+      await httpService.api.put(`/api/end-users/${this.userId}`, {
+        email: this.newEmail
+      });
+
+      this.changeEmailSuccess = true;
+      this.newEmail = "";
+    } catch ({ response }) {
+      this.changeEmailErrors = get(response, "data.errors.email");
+    }
+  };
+
+  deleteAccount = async (deleteType: string) => {
+    try {
+      await httpService.api.delete(
+        `/api/end-users/${this.userId}?type=${deleteType}`
+      );
+
+      this.logOut();
+    } catch ({ response }) {
+      console.error(response);
+    }
   };
 }
