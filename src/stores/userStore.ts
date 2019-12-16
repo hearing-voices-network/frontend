@@ -16,6 +16,10 @@ export default class UserStore {
   @observable totalItems: number = 1;
   @observable itemsPerPage: number = 10;
   @observable experienceFilter: string | null = null;
+  @observable newPassword: string = "";
+  @observable confirmPassword: string = "";
+  @observable changePasswordSuccess: boolean = false;
+  @observable changePasswordErrors: [] = [];
 
   @action
   async logIn() {
@@ -132,5 +136,21 @@ export default class UserStore {
     this.currentPage = 1;
     this.totalItems = 1;
     this.itemsPerPage = 10;
+  };
+
+  resetPassword = async () => {
+    if (this.newPassword === this.confirmPassword) {
+      try {
+        await httpService.api.put(`/api/end-users/${this.userId}`, {
+          password: this.newPassword
+        });
+
+        this.changePasswordSuccess = true;
+        this.newPassword = "";
+        this.confirmPassword = "";
+      } catch ({ response }) {
+        this.changePasswordErrors = get(response, "data.errors.password");
+      }
+    }
   };
 }
