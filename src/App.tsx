@@ -41,6 +41,7 @@ import UserStore from "./stores/userStore";
 import ContributionStore from "./stores/contributionStore";
 import ExperienceStore from "./stores/experienceStore";
 import StoryStore from "./stores/storyStore";
+import ReviewStore from "./stores/reviewStore";
 
 library.add(fas);
 
@@ -50,6 +51,7 @@ const registerStore = new RegisterStore(userStore);
 const experienceStore = new ExperienceStore();
 const contributionStore = new ContributionStore();
 const storyStore = new StoryStore(experienceStore);
+const reviewStore = new ReviewStore();
 const history = createBrowserHistory();
 
 httpService.setupInterceptors(history);
@@ -62,6 +64,7 @@ const App: FunctionComponent = () => (
     experienceStore={experienceStore}
     contributionStore={contributionStore}
     storyStore={storyStore}
+    reviewStore={reviewStore}
   >
     <Router>
       <ScrollToTop>

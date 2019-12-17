@@ -202,5 +202,11 @@
     "title": "Withdraw account",
     "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies tincidunt congue.",
     "hint": "You can’t undo withdrawl"
+  },
+
+  "review": {
+    "title": "Review problems",
+    "subtitle": "Requested changes",
+    "about": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue."
   }
 }
