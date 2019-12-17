@@ -72,7 +72,7 @@ const Day: FunctionComponent<IDayProps> = ({
     <Accordian title={date} subtitle={summary}>
       <div>
         {experiences.map((story: IStory) => (
-          <div className="flex-container flex-container--no-padding flex-container--align-center entry-summary">
+          <div className="flex-container flex-container--no-padding flex-container--align-center flex-container--center entry-summary">
             <div className="flex-col--mobile--7 flex-col--9">
               <p className="markdown">{removeMd(story.excerpt)}</p>
               {!!story.tags.length && (
