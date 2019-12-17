@@ -93,6 +93,13 @@ export default class UserStore {
     return total ? `${total} in review` : null;
   };
 
+  totalToReview = (experiences: IStory[]) => {
+    const total = experiences.filter(
+      (experience: IStory) => experience.status === "changes_requested"
+    ).length;
+
+    return total ? `${total} to review` : null;
+  };
   totalPublic = (experiences: IStory[]) => {
     const total = experiences.filter(
       (experience: IStory) => experience.status === "public"
