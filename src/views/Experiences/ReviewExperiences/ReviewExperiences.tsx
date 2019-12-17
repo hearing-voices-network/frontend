@@ -29,63 +29,103 @@ const ReviewExperiences: FunctionComponent<IProps> = ({
   }, []);
 
   return (
-    <Layout>
-      <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify review-experiences">
-        {reviewStore.loading ? (
-          <Loading input="story to review" />
-        ) : (
-          <Fragment>
-            <div className="flex-col--8 flex-col--tablet-large--12">
-              <ReactSVG
-                src={ReviewIcon}
-                className="review-experiences--image"
-              />
-              <h1 className="review-experiences--title">
-                {cms("review.title")}
-              </h1>
-            </div>
-            <div className="flex-col--6 flex-col--mobile--9">
-              <p className="review-experiences--about">{cms("review.about")}</p>
-            </div>
+    <Layout className="review-experiences--layout">
+      <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify">
+        <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify review-experiences">
+          {reviewStore.loading ? (
+            <Loading input="story to review" />
+          ) : (
+            <Fragment>
+              {/* Mobile  */}
+              <div className="flex-col--8 flex-col--tablet-large--12 mobile-show">
+                <ReactSVG
+                  src={ReviewIcon}
+                  className="review-experiences--image"
+                />
+                <h1 className="review-experiences--title">
+                  {cms("review.title")}
+                </h1>
+              </div>
 
-            <div className="flex-col--5 flex-col--mobile--8 review-experiences--changes-container">
-              <h2 className="review-experiences--subtitle">
-                {cms("review.subtitle")}
-              </h2>
+              {/* Tablet-up */}
 
-              <p className="review-experiences--changes">
-                {get(reviewStore, "storyToReview.changes_requested")}
-              </p>
-            </div>
-
-            <div className="flex-container flex-container--justify flex-container--no-padding">
-              <div className="flex-col--6 flex-col--mobile--9">
-                <div className="review-experiences--hint">
-                  <ReactSVG src={Question} />
-                  <span>{cms("review.hint")}</span>
+              <div className="flex-col--8 mobile-hide">
+                <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify">
+                  <div className="flex-col--12">
+                    <h1 className="review-experiences--title">
+                      {cms("review.title")}
+                    </h1>
+                  </div>
+                  <div className="flex-col--12">
+                    <div className="flex-container flex-container--no-padding flex-container--center">
+                      <div className="flex-col--6">
+                        <p className="review-experiences--about">
+                          {cms("review.about")}
+                        </p>
+                      </div>
+                      <div className="flex-col--3">
+                        <ReactSVG
+                          src={ReviewIcon}
+                          className="review-experiences--image"
+                          wrapper="span"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Fragment>
-        )}
-      </div>
 
-      <Footer green={true}>
-        <div className="flex-container flex-container--center flex-container--justify guidance--footer">
-          <div className="flex-col--8 flex-col--tablet-large--12 guidance--footer--content">
-            <Button text="Amend changes" onClick={() => console.log("amend")} />
-          </div>
+              <div className="flex-col--6 flex-col--mobile--9 mobile-show">
+                <p className="review-experiences--about">
+                  {cms("review.about")}
+                </p>
+              </div>
 
-          <div className="flex-col--8 flex-col--tablet-large--12 guidance--footer--content">
-            <button
-              onClick={() => console.log("private")}
-              className="guidance--footer--skip"
-            >
-              Keep private
-            </button>
-          </div>
+              <div className="flex-col--8 flex-col--mobile--8 review-experiences--changes-container">
+                <h2 className="review-experiences--subtitle">
+                  {cms("review.subtitle")}
+                </h2>
+
+                <p className="review-experiences--changes">
+                  {get(reviewStore, "storyToReview.changes_requested")}
+                </p>
+              </div>
+
+              <div className="flex-col--12">
+                <div className="flex-container flex-container--justify flex-container--no-padding">
+                  <div className="flex-col--6 flex-col--tablet-large--7 flex-col--mobile--9">
+                    <div className="review-experiences--hint">
+                      <ReactSVG src={Question} />
+                      <span>{cms("review.hint")}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Fragment>
+          )}
         </div>
-      </Footer>
+        <div className="flex-col--12">
+          <Footer green={true}>
+            <div className="flex-container flex-container--center flex-container--justify guidance--footer">
+              <div className="flex-col--8 flex-col--tablet-large--12 guidance--footer--content">
+                <Button
+                  text="Amend changes"
+                  onClick={() => console.log("amend")}
+                />
+              </div>
+
+              <div className="flex-col--8 flex-col--tablet-large--12 guidance--footer--content">
+                <button
+                  onClick={() => console.log("private")}
+                  className="guidance--footer--skip"
+                >
+                  Keep private
+                </button>
+              </div>
+            </div>
+          </Footer>
+        </div>
+      </div>
     </Layout>
   );
 };

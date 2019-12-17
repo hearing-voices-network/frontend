@@ -4,7 +4,20 @@
 
 .review-experiences {
   @include container;
-  text-align: center;
+
+  @include for-phone-only {
+    text-align: center;
+  }
+
+  @include for-tablet-large-up {
+    background-color: $white;
+  }
+
+  &--layout {
+    @include for-tablet-large-up {
+      background-color: $aqua-haze;
+    }
+  }
 
   &--title {
     @include heading-m;
@@ -13,7 +26,7 @@
   }
 
   &--image {
-    @include for-phone-only {
+    @include for-tablet-down {
       svg {
         height: 115px;
       }
