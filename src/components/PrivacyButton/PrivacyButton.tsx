@@ -7,9 +7,14 @@ import cx from "classnames";
 interface IProps {
   text: string;
   onChange: (privacy: "public" | "private") => void;
+  disabled?: boolean;
 }
 
-const PrivacyButton: FunctionComponent<IProps> = ({ text, onChange }) => {
+const PrivacyButton: FunctionComponent<IProps> = ({
+  text,
+  onChange,
+  disabled
+}) => {
   const [open, toggleMenu] = useState(false);
   const [privacy, changePrivacy] = useState(false);
 
@@ -24,6 +29,7 @@ const PrivacyButton: FunctionComponent<IProps> = ({ text, onChange }) => {
         className={cx("privacy-button", {
           "privacy-button--open": open
         })}
+        disabled={disabled}
       >
         <span className={cx({ "privacy-button--open--title": open })}>
           {privacy ? "private" : "public"}

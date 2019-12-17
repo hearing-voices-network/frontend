@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
-import ReactMarkdown from "react-markdown";
 import map from "lodash/map";
 import { observer, inject } from "mobx-react";
 import removeMd from "remove-markdown";
@@ -42,9 +41,13 @@ const Day: FunctionComponent<IDayProps> = ({
   const displayButton = (status: string) => {
     switch (status) {
       case "public":
-        return <PrivacyButton text={status} onChange={() => null} />;
+        return (
+          <PrivacyButton text={status} onChange={() => null} disabled={true} />
+        );
       case "private":
-        return <PrivacyButton text={status} onChange={() => null} />;
+        return (
+          <PrivacyButton text={status} onChange={() => null} disabled={true} />
+        );
 
       case "in_review":
         return (
@@ -55,7 +58,7 @@ const Day: FunctionComponent<IDayProps> = ({
           />
         );
 
-      case "to_review":
+      case "changes_requested":
         return (
           <ReviewButton
             type="button"
