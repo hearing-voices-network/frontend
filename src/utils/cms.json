@@ -207,6 +207,7 @@
   "review": {
     "title": "Review problems",
     "subtitle": "Requested changes",
-    "about": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue."
+    "about": "Lorem ipsum dolor sit amet, adipiscing elit. Vivamus ultricies tincidunt congue.",
+    "hint": "Your experience will remain private until changes are made"
   }
 }

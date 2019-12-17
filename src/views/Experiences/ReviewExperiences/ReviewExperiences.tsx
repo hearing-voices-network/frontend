@@ -7,10 +7,13 @@ import ReactSVG from "react-svg";
 import ReviewStore from "../../../stores/reviewStore";
 import Layout from "../../../components/Layout";
 import ReviewIcon from "../../../assets/icons/my-experiences-alt.svg";
+import Question from "../../../assets/icons/question-circle.svg";
 import Loading from "../../../components/Loading";
 
 import "./ReviewExperiences.scss";
 import { cms } from "../../../utils/cms";
+import Footer from "../../../components/Footer";
+import Button from "../../../components/Button";
 
 interface IProps extends RouteComponentProps {
   reviewStore: ReviewStore;
@@ -45,7 +48,7 @@ const ReviewExperiences: FunctionComponent<IProps> = ({
               <p className="review-experiences--about">{cms("review.about")}</p>
             </div>
 
-            <div className="flex-col--5 flex-col--mobile--8">
+            <div className="flex-col--5 flex-col--mobile--8 review-experiences--changes-container">
               <h2 className="review-experiences--subtitle">
                 {cms("review.subtitle")}
               </h2>
@@ -54,10 +57,37 @@ const ReviewExperiences: FunctionComponent<IProps> = ({
                 {get(reviewStore, "storyToReview.changes_requested")}
               </p>
             </div>
+
+            <div className="flex-container flex-container--justify flex-container--no-padding">
+              <div className="flex-col--6 flex-col--mobile--9">
+                <div className="review-experiences--hint">
+                  <ReactSVG src={Question} />
+                  <span>{cms("review.hint")}</span>
+                </div>
+              </div>
+            </div>
           </Fragment>
         )}
       </div>
+
+      <Footer green={true}>
+        <div className="flex-container flex-container--center flex-container--justify guidance--footer">
+          <div className="flex-col--8 flex-col--tablet-large--12 guidance--footer--content">
+            <Button text="Amend changes" onClick={() => console.log("amend")} />
+          </div>
+
+          <div className="flex-col--8 flex-col--tablet-large--12 guidance--footer--content">
+            <button
+              onClick={() => console.log("private")}
+              className="guidance--footer--skip"
+            >
+              Keep private
+            </button>
+          </div>
+        </div>
+      </Footer>
     </Layout>
   );
 };
+
 export default inject("reviewStore")(observer(ReviewExperiences));
