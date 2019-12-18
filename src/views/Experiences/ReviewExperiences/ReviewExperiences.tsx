@@ -18,15 +18,21 @@ interface IProps extends RouteComponentProps {
 }
 
 class ReviewExperiences extends Component<IProps> {
-  componentDidMount() {
+  async componentDidMount() {
     if (!this.props.reviewStore) return null;
 
     const id = get(this.props.match, "params.storyId", null);
     const { reviewStore } = this.props;
 
     if (id) {
-      reviewStore.getReviewComments(id);
+      await reviewStore.getReviewComments(id);
     }
+  }
+
+  componentWillUnmount() {
+    const { reviewStore } = this.props;
+
+    reviewStore.clear();
   }
 
   displayStep = () => {

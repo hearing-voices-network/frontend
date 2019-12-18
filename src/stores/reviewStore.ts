@@ -106,4 +106,13 @@ export default class ReviewStore {
     this.selectedTags = [];
     this.submitChanges();
   };
+
+  @action
+  clear = () => {
+    this.reviewStep = 0;
+    this.editedStory = EditorValue.createEmpty();
+    this.selectedTags = [];
+    this.reviewSubmitted = false;
+    this.storyToReview = null;
+  };
 }
