@@ -79,7 +79,6 @@ const ResubmitConfirmation: FunctionComponent<IProps> = ({
                 twoCol={true}
                 onClick={() => {
                   history.push({ pathname: "/submit-experience" });
-                  reviewStore.reviewSubmitted = false;
                 }}
               />
             }
@@ -89,7 +88,6 @@ const ResubmitConfirmation: FunctionComponent<IProps> = ({
                 twoCol={true}
                 onClick={() => {
                   history.push({ pathname: "/submit-experience" });
-                  reviewStore.reviewSubmitted = false;
                 }}
               />
             }
