@@ -4,8 +4,6 @@ import get from "lodash/get";
 import remove from "lodash/remove";
 import reduce from "lodash/reduce";
 
-import experienceList from "./experiences.json";
-
 import { ITag, IStory, ICategorisedTag } from "../utils/types";
 
 const UNTAGGED = { id: "untagged", name: "No tag" };
