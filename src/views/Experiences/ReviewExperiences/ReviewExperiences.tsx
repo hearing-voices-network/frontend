@@ -7,9 +7,10 @@ import cx from "classnames";
 import ReviewStore from "../../../stores/reviewStore";
 import Layout from "../../../components/Layout";
 import Changes from "./Changes";
+import EditExperience from "./EditExperience";
+import ReviewTags from "./ReviewTags";
 
 import "./ReviewExperiences.scss";
-import EditExperience from "./EditExperience";
 
 interface IProps extends RouteComponentProps {
   reviewStore: ReviewStore;
@@ -49,6 +50,9 @@ class ReviewExperiences extends Component<IProps> {
             increaseStep={reviewStore.increaseStep}
           />
         );
+
+      case 2:
+        return <ReviewTags />;
       default:
         break;
     }
