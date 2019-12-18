@@ -54,7 +54,7 @@ const Day: FunctionComponent<IProps> = ({
           <ReviewButton
             type="button"
             text="in review"
-            onClick={() => console.log("review ")}
+            onClick={() => history.push(`/my-experiences/review/${id}`)}
           />
         );
 
