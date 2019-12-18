@@ -12,6 +12,7 @@ export default class ReviewStore {
   @observable editedStory: EditorValue = EditorValue.createEmpty();
   @observable selectedTags: ITag[] = [];
   @observable reviewSubmitted: boolean = false;
+  @observable privacy: "public" | "private" = "private";
 
   @action
   getReviewComments = async (id: string) => {
@@ -25,6 +26,10 @@ export default class ReviewStore {
         "markdown"
       );
       this.selectedTags = get(data, "data.tags");
+      this.privacy =
+        get(data, "data.status") === "in_review"
+          ? "public"
+          : get(data, "data.status");
       this.loading = false;
     } catch ({ response }) {
       console.error(response);
@@ -91,7 +96,8 @@ export default class ReviewStore {
         `/api/contributions/${get(this.storyToReview, "id")}`,
         {
           content: this.editedStory.toString("markdown"),
-          tags: this.selectedTags
+          tags: this.selectedTags,
+          status: this.privacy === "public" ? "in_review" : "private"
         }
       );
 
@@ -105,6 +111,11 @@ export default class ReviewStore {
   skipTags = () => {
     this.selectedTags = [];
     this.submitChanges();
+  };
+
+  @action
+  changePrivacy = (privacy: "public" | "private") => {
+    this.privacy = privacy;
   };
 
   @action

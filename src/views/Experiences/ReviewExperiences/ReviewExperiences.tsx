@@ -10,6 +10,7 @@ import Changes from "./Changes";
 import EditExperience from "./EditExperience";
 import ReviewTags from "./ReviewTags";
 import ResubmitConfirmation from "./ResubmitConfirmation";
+import EditPrivacy from "./EditPrivacy";
 
 import "./ReviewExperiences.scss";
 
@@ -59,6 +60,8 @@ class ReviewExperiences extends Component<IProps> {
         );
 
       case 2:
+        return <EditPrivacy />;
+      case 3:
         return <ReviewTags />;
       default:
         break;
