@@ -47,7 +47,7 @@ const ReviewTags: FunctionComponent<IProps> = ({
         </div>
 
         <div className="flex-col--12 experience-tags--continue">
-          <Button text="Continue" onClick={() => console.log("hello")} />
+          <Button text="Submit" onClick={() => reviewStore.submitChanges()} />
         </div>
       </div>
       <Footer purple={true}>
@@ -55,7 +55,7 @@ const ReviewTags: FunctionComponent<IProps> = ({
           <div className="flex-col--8 flex-col--tablet-large--10 guidance--footer--content">
             <button
               className="experience-tags--skip"
-              onClick={() => console.log("skip")}
+              onClick={() => reviewStore.skipTags()}
             >
               Skip this step
             </button>

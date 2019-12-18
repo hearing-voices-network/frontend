@@ -9,6 +9,7 @@ import Layout from "../../../components/Layout";
 import Changes from "./Changes";
 import EditExperience from "./EditExperience";
 import ReviewTags from "./ReviewTags";
+import ResubmitConfirmation from "./ResubmitConfirmation";
 
 import "./ReviewExperiences.scss";
 
@@ -60,6 +61,8 @@ class ReviewExperiences extends Component<IProps> {
 
   render() {
     const { reviewStore } = this.props;
+
+    if (reviewStore.reviewSubmitted) return <ResubmitConfirmation />;
 
     return (
       <Layout

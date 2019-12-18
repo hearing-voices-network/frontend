@@ -11,6 +11,7 @@ export default class ReviewStore {
   @observable reviewStep: number = 0;
   @observable editedStory: EditorValue = EditorValue.createEmpty();
   @observable selectedTags: ITag[] = [];
+  @observable reviewSubmitted: boolean = false;
 
   @action
   getReviewComments = async (id: string) => {
@@ -82,5 +83,27 @@ export default class ReviewStore {
 
   isTagSelected = (tag: ITag) => {
     return this.selectedTags.some(tags => tags.id === tag.id);
+  };
+
+  submitChanges = async () => {
+    try {
+      await httpService.api.put(
+        `/api/contributions/${get(this.storyToReview, "id")}`,
+        {
+          content: this.editedStory.toString("markdown"),
+          tags: this.selectedTags
+        }
+      );
+
+      this.reviewSubmitted = true;
+    } catch ({ response }) {
+      console.error(response);
+    }
+  };
+
+  @action
+  skipTags = () => {
+    this.selectedTags = [];
+    this.submitChanges();
   };
 }
