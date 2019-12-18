@@ -43,9 +43,11 @@ const EditExperience: FunctionComponent<IProps> = ({
 
       <div className="flex-col--12 submission--header">
         <h1 className="submission--title">Update experience</h1>
-        <p className="submission--date">
-          {format(new Date(date), "dd MMM yyyy")}
-        </p>
+        {date && (
+          <p className="submission--date">
+            {format(new Date(date), "dd MMM yyyy")}
+          </p>
+        )}
       </div>
 
       <div className="flex-col--12 submission--editor">
