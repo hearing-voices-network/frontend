@@ -32,6 +32,7 @@ export default class ReviewStore {
   @observable
   increaseStep = () => {
     this.reviewStep = this.reviewStep + 1;
+    window.scrollTo(0, 0);
   };
 
   @observable
