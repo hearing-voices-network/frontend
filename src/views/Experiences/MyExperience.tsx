@@ -7,9 +7,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import get from "lodash/get";
 import ReactMarkdown from "react-markdown";
 
+import Padlock from "../../assets/icons/security.svg";
+
 import StoryStore from "../../stores/storyStore";
 import Loading from "../../components/Loading";
 import Layout from "../../components/Layout";
+import ReactSVG from "react-svg";
+import { cms } from "../../utils/cms";
+import Button from "../../components/Button";
 
 interface IProps extends RouteComponentProps {
   storyStore?: StoryStore;
@@ -56,6 +61,26 @@ const MyExperience: FunctionComponent<IProps> = ({ storyStore, match }) => {
                 source={storyStore.story.content}
               />
             </div>
+
+            <div
+              className="flex-col--12"
+              style={{ textAlign: "center", marginTop: "32px" }}
+            >
+              <Link
+                to={`/my-experiences/review/${get(match, "params.storyId")}`}
+              >
+                <Button text="Edit" />
+              </Link>
+            </div>
+
+            {storyStore.story.status === "private" && (
+              <div className="flex-col--mobile--12 flex-col--5">
+                <div className="experience-privacy--hint">
+                  <ReactSVG src={Padlock} />
+                  <span>{cms("story.privacy")}</span>
+                </div>
+              </div>
+            )}
           </Fragment>
         ) : (
           <Loading input="selected story" />
