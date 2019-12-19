@@ -31,6 +31,7 @@ import ChangePassword from "./views/ChangePassword";
 import UpdateEmail from "./views/UpdateEmail";
 import Withdraw from "./views/Withdraw";
 import Problem from "./views/Problem";
+import ReviewExperiences from "./views/Experiences/ReviewExperiences";
 
 import PrivateRoute from "./components/PrivateRoute";
 
@@ -40,6 +41,7 @@ import UserStore from "./stores/userStore";
 import ContributionStore from "./stores/contributionStore";
 import ExperienceStore from "./stores/experienceStore";
 import StoryStore from "./stores/storyStore";
+import ReviewStore from "./stores/reviewStore";
 
 library.add(fas);
 
@@ -49,6 +51,7 @@ const registerStore = new RegisterStore(userStore);
 const experienceStore = new ExperienceStore();
 const contributionStore = new ContributionStore();
 const storyStore = new StoryStore(experienceStore);
+const reviewStore = new ReviewStore();
 const history = createBrowserHistory();
 
 httpService.setupInterceptors(history);
@@ -61,6 +64,7 @@ const App: FunctionComponent = () => (
     experienceStore={experienceStore}
     contributionStore={contributionStore}
     storyStore={storyStore}
+    reviewStore={reviewStore}
   >
     <Router>
       <ScrollToTop>
@@ -114,6 +118,11 @@ const App: FunctionComponent = () => (
           <PrivateRoute
             path="/my-experiences"
             component={MyExperiences}
+            exact={true}
+          />
+          <PrivateRoute
+            path="/my-experiences/review/:storyId"
+            component={ReviewExperiences}
             exact={true}
           />
           <PrivateRoute

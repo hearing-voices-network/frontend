@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect, Fragment } from "react";
+import React, { FunctionComponent, useEffect, Fragment } from "react";
 import get from "lodash/get";
 import { format } from "date-fns";
 import { Link, RouteComponentProps } from "react-router-dom";
@@ -11,8 +11,6 @@ import Layout from "../../components/Layout";
 import Breadcrumb from "../../components/Breadcrumb";
 import Footer from "../../components/Footer";
 import Tag from "../../components/Tag";
-
-import httpService from "../../service/api";
 
 import { cms } from "../../utils/cms";
 import { ICategorisedTag, ITag } from "../../utils/types";
@@ -34,7 +32,7 @@ const Story: FunctionComponent<IProps> = ({ storyStore, match }) => {
     };
 
     getStory();
-  }, [match.params]);
+  }, [match]);
 
   if (!storyStore) return null;
 

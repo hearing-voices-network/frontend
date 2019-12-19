@@ -1,0 +1,68 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/breakpoints.scss";
+@import "../../../styles//fonts.scss";
+
+.review-experiences {
+  @include container;
+
+  @include for-phone-only {
+    text-align: center;
+  }
+
+  @include for-tablet-large-up {
+    background-color: $white;
+  }
+
+  &--layout {
+    @include for-tablet-large-up {
+      background-color: $aqua-haze;
+    }
+  }
+
+  &--title {
+    @include heading-m;
+    color: $grey;
+    margin-bottom: space(12);
+  }
+
+  &--image {
+    @include for-tablet-down {
+      svg {
+        height: 115px;
+      }
+    }
+  }
+
+  &--about {
+    @include body-l;
+    color: $medium-grey;
+    margin: space(12) 0;
+
+    @include for-tablet-large-up {
+      margin: space(24) 0;
+    }
+  }
+
+  &--subtitle {
+    @include subtitle;
+    color: $grey;
+    text-align: left;
+    margin-top: space(32);
+  }
+
+  &--changes {
+    @include body-l;
+    font-family: $kayak-sans-bold;
+    color: $medium-grey;
+    text-align: left;
+    margin: space(12) 0;
+
+    &-container {
+      margin-bottom: space(40);
+    }
+  }
+
+  &--hint {
+    @include hint;
+  }
+}
