@@ -19,14 +19,14 @@ interface IProps extends RouteComponentProps {
 }
 
 class ReviewExperiences extends Component<IProps> {
-  async componentDidMount() {
+  componentDidMount() {
     if (!this.props.reviewStore) return null;
 
     const id = get(this.props.match, "params.storyId", null);
     const { reviewStore } = this.props;
 
     if (id) {
-      await reviewStore.getReviewComments(id);
+      reviewStore.getReviewComments(id);
     }
   }
 
@@ -43,7 +43,7 @@ class ReviewExperiences extends Component<IProps> {
       case 0:
         return (
           <Changes
-            changes={get(reviewStore, "storyToReview.changes_requested")}
+            story={reviewStore.storyToReview}
             loading={reviewStore.loading}
             increaseStep={reviewStore.increaseStep}
           />
