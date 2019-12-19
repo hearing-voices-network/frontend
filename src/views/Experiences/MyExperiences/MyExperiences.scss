@@ -84,3 +84,18 @@
     text-align: right;
   }
 }
+
+.experience-privacy {
+  @include button-text-alt;
+  color: $ribienna-dark;
+  background-color: $light-ribienna;
+  border-radius: 30px;
+  padding: pxtorem(2px) space(24);
+  height: 50px;
+  cursor: pointer;
+  width: 133px;
+
+  @include for-tablet-down {
+    width: 105px;
+  }
+}

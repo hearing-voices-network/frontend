@@ -6,6 +6,7 @@ import { IStory, ITag } from "../../../utils/types";
 import PrivacyButton from "../../../components/PrivacyButton";
 import ReviewButton from "../../../components/ReviewButton";
 import Accordian from "../../../components/Accordian";
+import ExperiencePrivacy from "./ExperiencePrivacy";
 
 interface IProps extends RouteComponentProps {
   date: string;
@@ -41,13 +42,9 @@ const Day: FunctionComponent<IProps> = ({
   const displayButton = (status: string, id: string) => {
     switch (status) {
       case "public":
-        return (
-          <PrivacyButton text={status} onChange={() => null} disabled={true} />
-        );
+        return <ExperiencePrivacy id={id} status={status} />;
       case "private":
-        return (
-          <PrivacyButton text={status} onChange={() => null} disabled={true} />
-        );
+        return <ExperiencePrivacy id={id} status={status} />;
 
       case "in_review":
         return (
