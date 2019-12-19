@@ -3,7 +3,6 @@ import { withRouter, RouteComponentProps } from "react-router";
 import removeMd from "remove-markdown";
 
 import { IStory, ITag } from "../../../utils/types";
-import PrivacyButton from "../../../components/PrivacyButton";
 import ReviewButton from "../../../components/ReviewButton";
 import Accordian from "../../../components/Accordian";
 import ExperiencePrivacy from "./ExperiencePrivacy";
