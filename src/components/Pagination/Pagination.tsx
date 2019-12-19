@@ -31,9 +31,17 @@ const PaginationControl: FunctionComponent<IProps> = ({
     paginationCount.textContent = `${currentPage}`;
     paginationCount.className = "pagination--label--current";
 
-    if (input.length >= inputNum) {
+    if (input.length) {
       // this is hacky as you need to know how many inputs on the page so you can target the right one. Starts at 0 index
       input[inputNum].replaceWith(paginationCount);
+    } else {
+      const currentPageNum = document.getElementsByClassName(
+        "pagination--label--current"
+      );
+
+      if (currentPageNum.length) {
+        currentPageNum[0].textContent = `${currentPage}`;
+      }
     }
   }, [currentPage]);
 
