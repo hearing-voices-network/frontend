@@ -9,6 +9,10 @@
     @include body-s;
     color: $ribienna;
     cursor: pointer;
+
+    &--container {
+      @include back;
+    }
   }
 
   &--pagination {
