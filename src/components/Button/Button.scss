@@ -17,7 +17,7 @@ $shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.5);
   border-radius: 6px;
 
   @include for-phone-only {
-    padding: space(24) space(32);
+    padding: space(16) space(32);
   }
 
   &:hover {
