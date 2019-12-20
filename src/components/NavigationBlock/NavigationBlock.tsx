@@ -1,4 +1,5 @@
 import React, { FunctionComponent, Fragment } from "react";
+import cx from "classnames";
 
 import "./NavigationBlock.scss";
 
@@ -32,7 +33,13 @@ const NavigationBlock: FunctionComponent<IProps> = ({
               {leftTitle}
             </h2>
           </div>
-          <div>{leftButton}</div>
+          <div
+            className={cx({
+              "navigation-block--button-container": !leftDescription
+            })}
+          >
+            {leftButton}
+          </div>
           {leftDescription && (
             <div>
               <p className="navigation-block__column--disclaimer">
@@ -47,7 +54,13 @@ const NavigationBlock: FunctionComponent<IProps> = ({
           <div>
             <h2 className="navigation-block__column--title">{rightTitle}</h2>
           </div>
-          <div>{rightButton}</div>
+          <div
+            className={cx({
+              "navigation-block--button-container": !rightDescription
+            })}
+          >
+            {rightButton}
+          </div>
           {rightDescription && (
             <div>
               <p className="navigation-block__column--disclaimer">

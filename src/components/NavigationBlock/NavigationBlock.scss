@@ -41,7 +41,15 @@
       @include heading-s;
       color: $grey;
       margin-bottom: space(32);
+
+      @include for-phone-only {
+        line-height: 1.1;
+      }
     }
+  }
+
+  &--button-container {
+    padding-bottom: space(16);
   }
 
   &__column {
@@ -78,6 +86,11 @@
       @include body-l;
       color: $grey;
       margin-top: space(16);
+
+      @include for-tablet-large-up {
+        font-size: pxtorem(26px);
+        padding: space(16);
+      }
     }
   }
 }
