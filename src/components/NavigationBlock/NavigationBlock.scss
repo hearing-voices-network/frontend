@@ -9,7 +9,7 @@
 
   @include for-tablet-down {
     margin-top: space(56) !important;
-    margin-bottom: space(56) !important;
+    margin-bottom: space(40) !important;
   }
 
   @include for-phone-only {
