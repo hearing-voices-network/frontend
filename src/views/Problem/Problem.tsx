@@ -12,7 +12,7 @@ import Link from "../../components/Link";
 const Problem: FunctionComponent<RouteComponentProps> = ({ history }) => (
   <Layout>
     <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify update-email">
-      <div className="flex-col--12">
+      <div className="flex-col--12 my-account--back--container">
         <button onClick={() => history.goBack()} className="my-account--back">
           <FontAwesomeIcon icon="chevron-left" /> Back
         </button>
@@ -21,7 +21,9 @@ const Problem: FunctionComponent<RouteComponentProps> = ({ history }) => (
       <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--container">
         <div className="flex-col--8 flex-col--tablet-large--12">
           <h1 className="my-account--title">{cms("problem.title")}</h1>
-          <p className="update-email--about">{cms("problem.about")}</p>
+          <p className="update-email--about" style={{ textAlign: "center" }}>
+            {cms("problem.about")}
+          </p>
         </div>
 
         <div className="flex-col--6 flex-col--tablet-large--11 contact">

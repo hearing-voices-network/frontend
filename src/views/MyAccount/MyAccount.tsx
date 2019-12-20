@@ -14,7 +14,7 @@ const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
   <Layout>
     <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account">
       <div className="flex-col--12">
-        <div className="flex-col--12">
+        <div className="flex-col--12 my-account--back--container">
           <button onClick={() => history.goBack()} className="my-account--back">
             <FontAwesomeIcon icon="chevron-left" /> Back
           </button>
@@ -25,7 +25,7 @@ const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
             <h1 className="my-account--title">{cms("my-account.title")}</h1>
           </div>
 
-          <div className="flex-col--10 flex-col--tablet-large--12">
+          <div className="flex-col--8 flex-col--tablet-large--12">
             <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--row">
               <div className="flex-col--3 flex-col--tablet-large--4 flex-col--mobile--5">
                 <p className="my-account--row--title">Email</p>
@@ -68,16 +68,18 @@ const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
                 </RouterLink>
               </div>
             </div>
-          </div>
-          <div className="flex-col--10 flex-col--tablet-large--12 my-account--withdraw">
-            <RouterLink to="/account/withdraw">
-              <Link
-                green={true}
-                text="I would like to withdraw"
-                href="/account/withdraw"
-                size="medium"
-              />
-            </RouterLink>
+            <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--row--withdraw my-account--withdraw">
+              <div className="flex-col--9 flex-col--tablet-large--12">
+                <RouterLink to="/account/withdraw">
+                  <Link
+                    green={true}
+                    text="I would like to withdraw"
+                    href="/account/withdraw"
+                    size="medium"
+                  />
+                </RouterLink>
+              </div>
+            </div>
           </div>
         </div>
       </div>

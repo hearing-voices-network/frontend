@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import ReactSVG from "react-svg";
-import { Link } from "react-router-dom";
+import { Link, withRouter, RouteComponentProps } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { observer, inject } from "mobx-react";
 
@@ -14,11 +14,11 @@ import Dashboard from "../../assets/icons/dashboard-light.svg";
 import "./Header.scss";
 import UserStore from "../../stores/userStore";
 
-interface IProps {
+interface IProps extends RouteComponentProps {
   userStore?: UserStore;
 }
 
-const UserHeader: FunctionComponent<IProps> = ({ userStore }) => {
+const UserHeader: FunctionComponent<IProps> = ({ userStore, match }) => {
   if (!userStore) return null;
 
   return (
@@ -81,8 +81,15 @@ const UserHeader: FunctionComponent<IProps> = ({ userStore }) => {
                 icon="chevron-left"
                 className="user-header--chevron"
               />
-              <Link className="header--link user-header--link" to="/">
-                Go back to Connecting Voices
+              <Link
+                className="header--link user-header--link"
+                to={match.path === "/dashboard" ? "/" : "/dashboard"}
+              >
+                {`Go back to ${
+                  match.path === "/dashboard"
+                    ? "Connecting Voices"
+                    : "dashboard"
+                }`}
               </Link>
             </span>
             <span className="user-header--link">
@@ -110,4 +117,4 @@ const UserHeader: FunctionComponent<IProps> = ({ userStore }) => {
   );
 };
 
-export default inject("userStore")(observer(UserHeader));
+export default inject("userStore")(withRouter(observer(UserHeader)));

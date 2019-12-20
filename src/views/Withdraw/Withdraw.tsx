@@ -25,20 +25,22 @@ const Widthdraw: FunctionComponent<IProps> = ({ history, userStore }) => {
   return (
     <Layout>
       <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account">
-        <div className="flex-col--12">
+        <div className="flex-col--12 my-account--back--container">
           <button onClick={() => history.goBack()} className="my-account--back">
             <FontAwesomeIcon icon="chevron-left" /> Back
           </button>
         </div>
 
         <div className="flex-col--12">
-          <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--container">
+          <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify">
             <div className="flex-col--8 flex-col--tablet-large--12">
               <h1 className="withdraw--title">{cms("withdraw.title")}</h1>
-              <p className="withdraw--about">{cms("withdraw.about")}</p>
+              <p className="withdraw--about withdraw--about--tight">
+                {cms("withdraw.about")}
+              </p>
             </div>
           </div>
-          <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--container">
+          <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify">
             <div className="flex-col--mobile--11 flex-col--5">
               <div className="withdraw--hint">
                 <ReactSVG src={Question} />
@@ -50,7 +52,7 @@ const Widthdraw: FunctionComponent<IProps> = ({ history, userStore }) => {
         </div>
 
         <div className="flex-col--12">
-          <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--container">
+          <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify">
             <div className="flex-col--8 flex-col--tablet-large--12">
               <h2 className="withdraw--subtitle">
                 Permanently delete account and data
@@ -71,7 +73,7 @@ const Widthdraw: FunctionComponent<IProps> = ({ history, userStore }) => {
         </div>
 
         <div className="flex-col--12">
-          <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--container">
+          <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify">
             <div className="flex-col--8 flex-col--tablet-large--12">
               <h2 className="withdraw--subtitle">
                 Withdraw from the study and don't delete my data
