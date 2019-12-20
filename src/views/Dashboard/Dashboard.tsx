@@ -27,7 +27,7 @@ const Dashboard: FunctionComponent<IProps> = ({ history, userStore }) => {
   return (
     <Layout>
       <div className="flex-container flex-container--no-padding flex-container--center dashboard">
-        <div className="flex-col--8 flex-col--tablet-large--12">
+        <div className="flex-col--12">
           <p className="dashboard--about">{cms("dashboard.about")}</p>
         </div>
         <div className="flex-col--12">

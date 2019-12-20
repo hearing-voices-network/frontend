@@ -9,9 +9,11 @@
   &--about {
     @include about;
     color: $medium-grey;
+    text-align: center;
 
     @include for-phone-only {
       margin-top: space(48);
+      margin-bottom: space(16);
     }
   }
 
