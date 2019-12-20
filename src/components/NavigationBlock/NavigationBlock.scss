@@ -41,6 +41,10 @@
       @include heading-s;
       color: $grey;
       margin-bottom: space(32);
+
+      @include for-phone-only {
+        line-height: 1.1;
+      }
     }
   }
 
