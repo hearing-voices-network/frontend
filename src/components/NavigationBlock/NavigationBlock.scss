@@ -78,6 +78,11 @@
       @include body-l;
       color: $grey;
       margin-top: space(16);
+
+      @include for-tablet-large-up {
+        font-size: pxtorem(26px);
+        padding: space(16);
+      }
     }
   }
 }
