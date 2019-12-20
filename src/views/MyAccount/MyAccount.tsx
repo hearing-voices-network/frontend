@@ -25,7 +25,7 @@ const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
             <h1 className="my-account--title">{cms("my-account.title")}</h1>
           </div>
 
-          <div className="flex-col--10 flex-col--tablet-large--12">
+          <div className="flex-col--8 flex-col--tablet-large--12">
             <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--row">
               <div className="flex-col--3 flex-col--tablet-large--4 flex-col--mobile--5">
                 <p className="my-account--row--title">Email</p>
