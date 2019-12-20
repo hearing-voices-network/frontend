@@ -79,7 +79,7 @@ router
 
     const { data } = await axios.get(
       `${process.env.API_URL}/v1/contributions?page=${page}${
-        tags.length ? `&filter[tag_ids]=[${tags}]` : ""
+        tags.length ? `&filter[tag_ids]=${tags}` : ""
       }`
     );
 
