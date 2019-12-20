@@ -48,6 +48,10 @@
     }
   }
 
+  &--button-container {
+    padding-bottom: space(16);
+  }
+
   &__column {
     background-color: $light-ribienna;
     text-align: center;
