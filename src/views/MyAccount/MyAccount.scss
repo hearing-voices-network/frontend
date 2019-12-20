@@ -63,6 +63,11 @@
       @include body-s-alt;
       color: #62717a;
     }
+
+    &--withdraw {
+      border-bottom: none;
+      border-top: 1px solid #c4d0d9;
+    }
   }
 
   &--footer {
