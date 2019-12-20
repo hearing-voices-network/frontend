@@ -22,6 +22,12 @@
   }
 
   &--content {
+    min-height: 300px;
+
+    @include for-phone-only {
+      min-height: 200px;
+    }
+
     div {
       @include body-m;
       color: $medium-grey;
