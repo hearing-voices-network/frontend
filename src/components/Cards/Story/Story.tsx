@@ -43,25 +43,42 @@ const Story: FunctionComponent<IProps> = ({
           Read whole story
         </Link>
       </div>
-      <div className="story-card--tags">
-        <span className="story-card--tags--title">Tags:</span>
-        {take(tags, 3).map((tag: ITag) => (
+      {!!tags.length ? (
+        <div className="story-card--tags">
+          <span className="story-card--tags--title">Tags:</span>
+          {take(tags, 3).map((tag: ITag) => (
+            <Tag
+              text={tag.name}
+              className="story-card--tags--tag"
+              key={tag.id}
+              selected={filteredResultsShowing ? isTagSelected(tag) : false}
+              small={true}
+            />
+          ))}
+          {tags.length > 3 && (
+            <Tag
+              text={`${tags.length - 3}+`}
+              className="story-card--tags--tag"
+              small={true}
+            />
+          )}
+        </div>
+      ) : (
+        <div className="story-card--tags">
+          <span className="story-card--tags--title">Tags:</span>
           <Tag
-            text={tag.name}
+            text="No tag"
             className="story-card--tags--tag"
-            key={tag.id}
-            selected={filteredResultsShowing ? isTagSelected(tag) : false}
+            key="untagged"
+            selected={
+              filteredResultsShowing
+                ? isTagSelected({ name: "No tag", id: "untagged" })
+                : false
+            }
             small={true}
           />
-        ))}
-        {tags.length > 3 && (
-          <Tag
-            text={`${tags.length - 3}+`}
-            className="story-card--tags--tag"
-            small={true}
-          />
-        )}
-      </div>
+        </div>
+      )}
     </section>
   );
 };

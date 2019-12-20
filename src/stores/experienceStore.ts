@@ -21,7 +21,7 @@ export default class ExperienceStore {
   @observable currentPage: number = 1;
   @observable totalItems: number = 1;
   @observable itemsPerPage: number = 10;
-  @observable filters: string[] = [];
+  @observable filters: string = "";
 
   @action
   async getTags() {
@@ -68,7 +68,7 @@ export default class ExperienceStore {
 
   @action
   filterResults = () => {
-    this.filters = this.selectedTags.map(tag => `${tag.id}`);
+    this.filters = this.selectedTags.map(tag => `${tag.id}`).join(",");
 
     this.experiencesLoading = false;
     this.getExperiences();
