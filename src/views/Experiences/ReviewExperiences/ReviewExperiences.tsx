@@ -57,6 +57,7 @@ class ReviewExperiences extends Component<IProps> {
             date={get(reviewStore, "storyToReview.created_at")}
             wordcount={reviewStore.wordCount}
             increaseStep={reviewStore.increaseStep}
+            changes={get(reviewStore, "storyToReview.changes_requested")}
           />
         );
 
@@ -77,12 +78,15 @@ class ReviewExperiences extends Component<IProps> {
     return (
       <Layout
         className={cx({
-          "review-experiences--layout": reviewStore.reviewStep === 0
+          "review-experiences--layout":
+            reviewStore.reviewStep === 0 && !reviewStore.loading
         })}
       >
         <Fragment>
           {reviewStore.loading ? (
-            <Loading input="your selected story" />
+            <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify results">
+              <Loading input="your selected story" />
+            </div>
           ) : (
             this.displayStep()
           )}

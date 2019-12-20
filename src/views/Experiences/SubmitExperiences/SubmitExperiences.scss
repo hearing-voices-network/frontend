@@ -102,6 +102,14 @@
     margin-top: space(24);
   }
 
+  &--changes {
+    @include hint;
+
+    @include for-phone-only {
+      margin-bottom: 0;
+    }
+  }
+
   &--word-count {
     margin-top: space(40);
     text-align: center;
@@ -225,6 +233,5 @@
   &--about {
     @include body-l;
     color: #62717a;
-    margin-bottom: space(32);
   }
 }

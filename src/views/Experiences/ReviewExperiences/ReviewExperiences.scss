@@ -11,6 +11,9 @@
 
   @include for-tablet-large-up {
     background-color: $white;
+    margin-top: space(64);
+
+    padding-top: space(48) !important;
   }
 
   &--layout {
@@ -44,10 +47,11 @@
   }
 
   &--subtitle {
-    @include subtitle;
+    @include heading-xs;
     color: $grey;
     text-align: left;
     margin-top: space(32);
+    font-family: $kayak-sans-bold;
   }
 
   &--changes {
@@ -58,7 +62,9 @@
     margin: space(12) 0;
 
     &-container {
-      margin-bottom: space(40);
+      @include for-tablet-large-up {
+        margin-bottom: space(40);
+      }
     }
   }
 

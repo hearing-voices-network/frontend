@@ -25,7 +25,7 @@ const ExperienceEntry: FunctionComponent<IProps> = ({
   return (
     <Fragment>
       <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify submit-experiences">
-        <div className="flex-col--12">
+        <div className="flex-col--12 my-experiences--back--container">
           <button
             onClick={() => history.goBack()}
             className="my-experiences--back"
