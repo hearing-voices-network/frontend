@@ -8,7 +8,7 @@ const proxy = require("koa-proxy");
 const axios = require("axios");
 require("dotenv").config();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 const FRONTEND_APP_BUILD_PATH = path.resolve(__dirname, "../build");
 
 const app = new Koa();

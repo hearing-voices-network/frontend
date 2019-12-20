@@ -69,6 +69,7 @@
   color: $grey;
   border-bottom: 2px solid $light-grey;
   padding: space(16) !important;
+  cursor: pointer;
 
   &--tags {
     @include body-s;
@@ -85,10 +86,11 @@
   }
 }
 
-.experience-privacy {
+.experience-privacy-button {
   @include button-text-alt;
   color: $ribienna-dark;
-  background-color: $light-ribienna;
+  border: 2px solid $ribienna-dark;
+  background-color: $white;
   border-radius: 30px;
   padding: pxtorem(2px) space(24);
   height: 50px;

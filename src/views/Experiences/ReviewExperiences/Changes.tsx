@@ -8,27 +8,30 @@ import Footer from "../../../components/Footer";
 import Button from "../../../components/Button";
 
 import { cms } from "../../../utils/cms";
+import { IStory } from "../../../utils/types";
 
 import ReviewIcon from "../../../assets/icons/my-experiences-alt.svg";
 import Question from "../../../assets/icons/question-circle.svg";
 
 interface IProps extends RouteComponentProps {
   loading: boolean;
-  changes: string;
+  story: IStory | null;
   increaseStep: () => void;
 }
 
 const Changes: FunctionComponent<IProps> = ({
   loading,
-  changes,
+  story,
   increaseStep,
   history
 }) => {
   useEffect(() => {
-    if (!changes) {
+    if (story && !story.changes_requested) {
       increaseStep();
     }
-  }, [changes]);
+  }, [story]);
+
+  if (!story) return null;
 
   return (
     <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify">
@@ -85,7 +88,9 @@ const Changes: FunctionComponent<IProps> = ({
                 {cms("review.subtitle")}
               </h2>
 
-              <p className="review-experiences--changes">{changes}</p>
+              <p className="review-experiences--changes">
+                {story.changes_requested}
+              </p>
             </div>
 
             <div className="flex-col--12">

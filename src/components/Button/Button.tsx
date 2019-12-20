@@ -7,7 +7,7 @@ interface IProps {
   text: string;
   type?: "submit" | "reset" | "button";
   disabled?: boolean;
-  onClick: (event?: any) => void;
+  onClick?: (event?: any) => void;
   twoCol?: boolean;
   small?: boolean;
   filter?: boolean;

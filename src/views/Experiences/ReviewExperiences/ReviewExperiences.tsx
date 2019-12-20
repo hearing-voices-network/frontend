@@ -13,20 +13,21 @@ import ResubmitConfirmation from "./ResubmitConfirmation";
 import EditPrivacy from "./EditPrivacy";
 
 import "./ReviewExperiences.scss";
+import Loading from "../../../components/Loading";
 
 interface IProps extends RouteComponentProps {
   reviewStore: ReviewStore;
 }
 
 class ReviewExperiences extends Component<IProps> {
-  async componentDidMount() {
+  componentDidMount() {
     if (!this.props.reviewStore) return null;
 
     const id = get(this.props.match, "params.storyId", null);
     const { reviewStore } = this.props;
 
     if (id) {
-      await reviewStore.getReviewComments(id);
+      reviewStore.getReviewComments(id);
     }
   }
 
@@ -43,7 +44,7 @@ class ReviewExperiences extends Component<IProps> {
       case 0:
         return (
           <Changes
-            changes={get(reviewStore, "storyToReview.changes_requested")}
+            story={reviewStore.storyToReview}
             loading={reviewStore.loading}
             increaseStep={reviewStore.increaseStep}
           />
@@ -79,7 +80,13 @@ class ReviewExperiences extends Component<IProps> {
           "review-experiences--layout": reviewStore.reviewStep === 0
         })}
       >
-        <Fragment>{this.displayStep()}</Fragment>
+        <Fragment>
+          {reviewStore.loading ? (
+            <Loading input="your selected story" />
+          ) : (
+            this.displayStep()
+          )}
+        </Fragment>
       </Layout>
     );
   }

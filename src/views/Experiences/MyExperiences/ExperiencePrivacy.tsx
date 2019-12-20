@@ -7,8 +7,8 @@ interface IProps {
 }
 
 const ExperiencePrivacy: FunctionComponent<IProps> = ({ id, status }) => (
-  <Link to={`/my-experiences/public/${id}`}>
-    <button className="experience-privacy">{status}</button>
+  <Link to={`/my-experiences/story/${id}`}>
+    <button className="experience-privacy-button">{status}</button>
   </Link>
 );
 

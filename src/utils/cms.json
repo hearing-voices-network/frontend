@@ -133,7 +133,8 @@
   "story": {
     "footer": {
       "title": "Tags"
-    }
+    },
+    "privacy": "This story is private"
   },
   "my-experiences": {
     "title": "My experiences",

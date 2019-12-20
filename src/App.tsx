@@ -32,6 +32,7 @@ import UpdateEmail from "./views/UpdateEmail";
 import Withdraw from "./views/Withdraw";
 import Problem from "./views/Problem";
 import ReviewExperiences from "./views/Experiences/ReviewExperiences";
+import MyExperience from "./views/Experiences/MyExperience";
 
 import PrivateRoute from "./components/PrivateRoute";
 
@@ -118,6 +119,11 @@ const App: FunctionComponent = () => (
           <PrivateRoute
             path="/my-experiences"
             component={MyExperiences}
+            exact={true}
+          />
+          <PrivateRoute
+            path="/my-experiences/story/:storyId"
+            component={MyExperience}
             exact={true}
           />
           <PrivateRoute
