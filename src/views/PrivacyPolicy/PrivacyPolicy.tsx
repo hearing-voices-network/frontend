@@ -22,7 +22,11 @@ const PrivacyPolicy: FunctionComponent<IProps> = ({ userStore, history }) => {
     <Layout>
       <div className="flex-container flex-container--no-padding flex-container--justify flex-container--center privacy-policy">
         <div className="flex-col--12">
-          <div className="flex-col--12">
+          <div
+            className={cx("flex-col--12", {
+              "my-account--back--container": userStore.loggedIn
+            })}
+          >
             {userStore.loggedIn ? (
               <button
                 onClick={() => history.goBack()}

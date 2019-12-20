@@ -25,7 +25,7 @@ const ChangePassword: FunctionComponent<IProps> = ({ history, userStore }) => {
   return (
     <Layout>
       <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify update-email">
-        <div className="flex-col--12">
+        <div className="flex-col--12 my-account--back--container">
           <button onClick={() => history.goBack()} className="my-account--back">
             <FontAwesomeIcon icon="chevron-left" /> Back
           </button>
