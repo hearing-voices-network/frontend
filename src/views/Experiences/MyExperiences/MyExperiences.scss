@@ -69,6 +69,7 @@
   color: $grey;
   border-bottom: 2px solid $light-grey;
   padding: space(16) !important;
+  cursor: pointer;
 
   &--tags {
     @include body-s;

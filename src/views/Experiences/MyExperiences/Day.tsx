@@ -50,7 +50,7 @@ const Day: FunctionComponent<IProps> = ({
           <ReviewButton
             type="button"
             text="in review"
-            onClick={() => history.push(`/my-experiences/review/${id}`)}
+            onClick={() => history.push(`/my-experiences/story/${id}`)}
           />
         );
 
@@ -59,7 +59,7 @@ const Day: FunctionComponent<IProps> = ({
           <ReviewButton
             type="button"
             text="to review"
-            onClick={() => history.push(`/my-experiences/review/${id}`)}
+            onClick={() => history.push(`/my-experiences/story/${id}`)}
           />
         );
       default:
@@ -71,7 +71,16 @@ const Day: FunctionComponent<IProps> = ({
     <Accordian title={date} subtitle={summary}>
       <div>
         {experiences.map((story: IStory) => (
-          <div className="flex-container flex-container--no-padding flex-container--align-center flex-container--center entry-summary">
+          <div
+            className="flex-container flex-container--no-padding flex-container--align-center flex-container--center entry-summary"
+            onClick={() => history.push(`/my-experiences/story/${story.id}`)}
+            onKeyDown={e =>
+              e.key === "Enter"
+                ? history.push(`/my-experiences/story/${story.id}`)
+                : null
+            }
+            tabIndex={0}
+          >
             <div className="flex-col--mobile--7 flex-col--9">
               <p className="markdown">{removeMd(story.excerpt)}</p>
               {!!story.tags.length && (
