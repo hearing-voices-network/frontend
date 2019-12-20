@@ -13,6 +13,7 @@ import ResubmitConfirmation from "./ResubmitConfirmation";
 import EditPrivacy from "./EditPrivacy";
 
 import "./ReviewExperiences.scss";
+import Loading from "../../../components/Loading";
 
 interface IProps extends RouteComponentProps {
   reviewStore: ReviewStore;
@@ -79,7 +80,13 @@ class ReviewExperiences extends Component<IProps> {
           "review-experiences--layout": reviewStore.reviewStep === 0
         })}
       >
-        <Fragment>{this.displayStep()}</Fragment>
+        <Fragment>
+          {reviewStore.loading ? (
+            <Loading input="your selected story" />
+          ) : (
+            this.displayStep()
+          )}
+        </Fragment>
       </Layout>
     );
   }
