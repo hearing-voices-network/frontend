@@ -12,13 +12,26 @@
   &--subtitle {
     @include heading-s;
     color: $grey;
-    margin-bottom: space(16);
+    line-height: 1.1;
+    margin-bottom: space(24);
+
+    @include for-tablet-large-up {
+      margin-top: space(32);
+    }
   }
 
   &--about {
     @include body-l;
     color: $grey;
     margin-bottom: space(20);
+
+    @include for-tablet-large-up {
+      margin-bottom: space(32);
+    }
+
+    &--tight {
+      margin-bottom: 0;
+    }
   }
 
   &--hint {
@@ -27,6 +40,7 @@
 
   &--button {
     text-align: center;
-    margin-bottom: space(32);
+    margin-bottom: space(48);
+    margin-top: space(12);
   }
 }
