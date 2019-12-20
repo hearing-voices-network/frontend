@@ -44,10 +44,11 @@
   }
 
   &--subtitle {
-    @include subtitle;
+    @include heading-xs;
     color: $grey;
     text-align: left;
     margin-top: space(32);
+    font-family: $kayak-sans-bold;
   }
 
   &--changes {
