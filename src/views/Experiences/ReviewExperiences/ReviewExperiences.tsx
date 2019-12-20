@@ -57,6 +57,7 @@ class ReviewExperiences extends Component<IProps> {
             date={get(reviewStore, "storyToReview.created_at")}
             wordcount={reviewStore.wordCount}
             increaseStep={reviewStore.increaseStep}
+            changes={get(reviewStore, "storyToReview.changes_requested")}
           />
         );
 

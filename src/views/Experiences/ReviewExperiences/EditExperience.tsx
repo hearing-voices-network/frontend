@@ -10,7 +10,9 @@ import Editor from "../../../components/Editor";
 import Footer from "../../../components/Footer";
 import Button from "../../../components/Button";
 
+import Pencil from "../../../assets/icons/pencil.svg";
 import { cms } from "../../../utils/cms";
+import ReactSVG from "react-svg";
 
 interface IProps extends RouteComponentProps {
   story: EditorValue;
@@ -18,6 +20,7 @@ interface IProps extends RouteComponentProps {
   date: string;
   wordcount: number;
   increaseStep: () => void;
+  changes?: string;
 }
 
 const MAX_WORD_COUNT = 700;
@@ -28,7 +31,8 @@ const EditExperience: FunctionComponent<IProps> = ({
   onEdit,
   date,
   wordcount,
-  increaseStep
+  increaseStep,
+  changes
 }) => (
   <Fragment>
     <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify submit-experiences">
@@ -49,6 +53,20 @@ const EditExperience: FunctionComponent<IProps> = ({
           </p>
         )}
       </div>
+
+      {changes && (
+        <div className="flex-col--12">
+          <div className="flex-container flex-container--justify flex-container--no-padding">
+            <div className="flex-col--mobile--11 flex-col--tablet--10 flex-col--8">
+              <div className="submission--changes">
+                <ReactSVG src={Pencil} className="mobile-hide" />
+
+                <span>{changes}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="flex-col--12 submission--editor">
         <Editor text={story} onChange={onEdit} />
