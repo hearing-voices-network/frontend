@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { format } from "date-fns";
 import { EditorValue } from "react-rte";
 import cx from "classnames";
+import ReactSVG from "react-svg";
 
 import Editor from "../../../components/Editor";
 import Footer from "../../../components/Footer";
@@ -12,7 +13,6 @@ import Button from "../../../components/Button";
 
 import Pencil from "../../../assets/icons/pencil.svg";
 import { cms } from "../../../utils/cms";
-import ReactSVG from "react-svg";
 
 interface IProps extends RouteComponentProps {
   story: EditorValue;
