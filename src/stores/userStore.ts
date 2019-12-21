@@ -7,6 +7,7 @@ import { format } from "date-fns";
 
 export default class UserStore {
   @observable loggedIn: boolean = false;
+  @observable loginErrors: string | null = null;
   @observable experiences = [];
   @observable experiencesLoading: boolean = true;
   @observable username: string = "";
@@ -26,6 +27,8 @@ export default class UserStore {
 
   @action
   async logIn() {
+    this.loginErrors = null;
+
     try {
       const data = await httpService.api.post("/login", {
         email: this.username,
@@ -36,7 +39,7 @@ export default class UserStore {
       this.loggedIn = true;
       this.clear();
     } catch ({ response }) {
-      console.error(response.status, response.statusText);
+      this.loginErrors = get(response, "data.message");
     }
   }
 
@@ -196,4 +199,9 @@ export default class UserStore {
       console.error(response);
     }
   };
+
+  @computed
+  get loginDisabled() {
+    return !this.username || !this.password;
+  }
 }
