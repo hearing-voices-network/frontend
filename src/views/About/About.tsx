@@ -62,15 +62,23 @@ const About: FunctionComponent<IProps> = ({ userStore, history }) => {
               {cms("about.footer.title")}
             </h5>
             <p className="about--footer--content">
-              {cms("about.footer.content")}
+              {userStore.loggedIn
+                ? cms("about.footer-loggedin")
+                : cms("about.footer.content")}
             </p>
           </div>
           <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--4 about--footer--button">
             <Button
-              text="Sign up and share"
+              text={
+                userStore.loggedIn
+                  ? "Submit new experience"
+                  : "Sign up and share"
+              }
               onClick={() =>
                 history.push({
-                  pathname: "/register"
+                  pathname: userStore.loggedIn
+                    ? "/submit-experience"
+                    : "/register"
                 })
               }
               twoCol={true}

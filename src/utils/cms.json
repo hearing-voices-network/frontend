@@ -41,7 +41,8 @@
     "footer": {
       "title": "Contribute to the project",
       "content": "Sign up with an email and password to submit your own stories, this link will take you to the sign up page."
-    }
+    },
+    "footer-loggedin": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies tincidunt congue."
   },
   "contribute": {
     "login": "Log in",
