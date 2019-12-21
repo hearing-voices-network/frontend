@@ -11,6 +11,20 @@
     margin-bottom: space(32);
   }
 
+  &--image {
+    svg {
+      @include for-phone-only {
+        width: 115px;
+        height: auto;
+      }
+    }
+  }
+
+  &--error {
+    @include error;
+    margin: space(16);
+  }
+
   &--description {
     @include body-l;
     color: $medium-grey;

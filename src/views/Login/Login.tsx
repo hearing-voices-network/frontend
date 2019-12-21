@@ -47,13 +47,18 @@ const Login: FunctionComponent<IProps> = ({ userStore, history }) => {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               userStore.handleChange(e.target.value, "password")
             }
-            type="Password"
+            type="password"
           />
+          {userStore.loginErrors && (
+            <p className="login--error">{userStore.loginErrors}</p>
+          )}
+
           <div className="login--button-container">
             <Button
               text="Submit"
               onClick={() => userStore.logIn()}
               purple={true}
+              disabled={userStore.loginDisabled}
             />
           </div>
         </form>

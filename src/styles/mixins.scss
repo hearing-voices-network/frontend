@@ -119,3 +119,8 @@
     margin-top: space(16);
   }
 }
+
+@mixin error {
+  color: $ribienna !important;
+  @include body-m;
+}

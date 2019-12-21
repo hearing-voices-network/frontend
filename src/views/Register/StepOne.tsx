@@ -33,7 +33,7 @@ const StepOne: FunctionComponent<IProps> = ({ registerStore }) => {
         />
 
         <div className="flex-container flex-container--justify flex-container--no-padding">
-          <div className="flex-col--tablet--11 flex-col--8">
+          <div className="flex-col--mobile--11 flex-col--tablet--6 flex-col--standard--8 flex-col--tablet-large--8 flex-col--8">
             <div className="register--hint">
               <ReactSVG src={Question} />
               <span>{cms("register.step-1-hint")}</span>

@@ -31,8 +31,12 @@
     p {
       @include body-m;
       color: $grey;
-      margin-bottom: space(32);
     }
+  }
+
+  &--hint {
+    @include hint;
+    margin-top: 0;
   }
 
   &--confirmation {
@@ -41,5 +45,6 @@
 
   &--error {
     color: $ribienna !important;
+    margin-bottom: space(24);
   }
 }

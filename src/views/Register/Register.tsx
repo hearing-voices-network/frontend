@@ -1,5 +1,6 @@
 import React, { Component, RefObject } from "react";
 import { observer, inject } from "mobx-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./Register.scss";
 
@@ -91,7 +92,21 @@ class Register extends Component<IProps> {
     return (
       <Layout>
         <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify register">
+          {registerStore.step > 0 && (
+            <div className="flex-col--12 my-account--back--container">
+              <button
+                onClick={() => registerStore.previousStep()}
+                className="privacy-policy--back"
+              >
+                <FontAwesomeIcon icon="chevron-left" /> Back
+              </button>
+            </div>
+          )}
           {this.displayStep()}
+
+          {registerStore.registerError && (
+            <p className="register--error">{cms("register.error")}</p>
+          )}
         </div>
 
         <Footer green={true}>

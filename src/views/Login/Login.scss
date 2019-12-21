@@ -26,6 +26,11 @@
     text-align: center;
   }
 
+  &--error {
+    @include error;
+    margin-top: space(32);
+  }
+
   &--footer {
     padding: space(120) space(24) space(120) !important;
     justify-content: center !important;
