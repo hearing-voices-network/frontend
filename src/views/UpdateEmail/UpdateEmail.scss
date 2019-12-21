@@ -34,11 +34,17 @@
     }
   }
 
+  &--hint {
+    @include hint;
+    margin-top: 0;
+  }
+
   &--confirmation {
     color: $turqoise !important;
   }
 
   &--error {
     color: $ribienna !important;
+    margin-bottom: space(24);
   }
 }

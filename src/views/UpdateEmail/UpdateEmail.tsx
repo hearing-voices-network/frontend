@@ -52,6 +52,15 @@ const UpdateEmail: FunctionComponent<IProps> = ({ history, userStore }) => {
               />
 
               <div className="update-email--form">
+                <div className="flex-container flex-container--justify flex-container--no-padding">
+                  <div className="flex-col--mobile--11 flex-col--tablet--6 flex-col--standard--8 flex-col--tablet-large--8 flex-col--8">
+                    <div className="update-email--hint">
+                      <ReactSVG src={Question} />
+                      <span> Send verifcation email</span>
+                    </div>
+                  </div>
+                </div>
+
                 {userStore.changeEmailSuccess && (
                   <p className="update-email--confirmation">
                     Email verification sent.
@@ -66,15 +75,6 @@ const UpdateEmail: FunctionComponent<IProps> = ({ history, userStore }) => {
                       ))}
                     </Fragment>
                   )}
-
-                <div className="flex-container flex-container--justify flex-container--no-padding">
-                  <div className="flex-col--mobile--11 flex-col--tablet--6 flex-col--standard--8 flex-col--tablet-large--8 flex-col--8">
-                    <div className="register--hint">
-                      <ReactSVG src={Question} />
-                      <span> Send verifcation email</span>
-                    </div>
-                  </div>
-                </div>
 
                 <Button
                   purple={true}
