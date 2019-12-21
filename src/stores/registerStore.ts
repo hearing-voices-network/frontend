@@ -9,6 +9,7 @@ export default class RegisterStore {
   @observable email: string = "";
   @observable password: string = "";
   @observable userStore: UserStore | null = null;
+  @observable registerError: boolean = false;
 
   constructor(userStore: UserStore) {
     this.userStore = userStore;
@@ -21,11 +22,19 @@ export default class RegisterStore {
     this.showConfirmation = false;
     this.email = "";
     this.password = "";
+    this.registerError = false;
   };
 
   @action
   nextStep() {
     this.step = this.step + 1;
+    window.scrollTo(0, 0);
+  }
+
+  @action
+  previousStep() {
+    this.step = this.step - 1;
+    this.registerError = false;
     window.scrollTo(0, 0);
   }
 
@@ -58,7 +67,7 @@ export default class RegisterStore {
         this.userStore.logIn();
       }
     } catch ({ response }) {
-      console.error("response", response);
+      this.registerError = true;
     }
   };
 
