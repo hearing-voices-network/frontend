@@ -11,6 +11,11 @@
     margin-bottom: space(32);
   }
 
+  &--error {
+    @include error;
+    margin: space(16);
+  }
+
   &--description {
     @include body-l;
     color: $medium-grey;
