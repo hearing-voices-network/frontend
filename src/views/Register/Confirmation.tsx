@@ -17,7 +17,7 @@ const Confirmation: FunctionComponent<RouteComponentProps> = ({ history }) => (
   <Layout>
     <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify register confirmation">
       <div className="flex-col--12">
-        <ReactSVG src={AccountCreated} />
+        <ReactSVG src={AccountCreated} className="register--image" />
 
         <h1 className="register--title">
           {cms("register.confirmation.title")}
