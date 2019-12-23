@@ -77,7 +77,10 @@ const MyExperience: FunctionComponent<IProps> = ({ storyStore, match }) => {
               </div>
             )}
 
-            <div className="flex-col--mobile--12 flex-col--11">
+            <div
+              className="flex-col--mobile--12 flex-col--11"
+              style={{ marginBottom: "32px" }}
+            >
               <ReactMarkdown
                 className="story--content markdown"
                 source={storyStore.story.content}
@@ -86,13 +89,14 @@ const MyExperience: FunctionComponent<IProps> = ({ storyStore, match }) => {
 
             <div className="flex-col--mobile--12 flex-col--11">
               <div className="flex-container flex-container--center flex-container--no-padding flex-container--align-center story--tags--list">
+                {/* <div className="flex-col--12"> */}
                 {storyStore.tags.length ? (
                   storyStore.tags.map(
                     (category: ICategorisedTag, i: number) => {
                       return (
                         <div className="story--tags--category">
                           <p className="story--tags--category--title">{`${category.name}:`}</p>
-                          <div style={{ display: "flex" }}>
+                          <div style={{ display: "flex", flexWrap: "wrap" }}>
                             {category.tags.map((tag: ITag) => (
                               <Tag story={true} text={tag.name}></Tag>
                             ))}
@@ -108,6 +112,7 @@ const MyExperience: FunctionComponent<IProps> = ({ storyStore, match }) => {
                   <Tag story={true} text="No tag" />
                 )}
               </div>
+              {/* </div> */}
             </div>
           </Fragment>
         ) : (
