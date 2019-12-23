@@ -4,6 +4,7 @@
 
 .my-experiences {
   padding: space(24) space(8) space(40) space(8) !important;
+  justify-content: space-between;
 
   &--back {
     @include body-s;
