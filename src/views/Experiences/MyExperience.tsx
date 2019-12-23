@@ -56,13 +56,6 @@ const MyExperience: FunctionComponent<IProps> = ({ storyStore, match }) => {
               </div>
             </div>
 
-            <div className="flex-col--mobile--12 flex-col--11">
-              <ReactMarkdown
-                className="story--content markdown"
-                source={storyStore.story.content}
-              />
-            </div>
-
             {storyStore.story.status === "private" && (
               <div className="flex-col--mobile--12 flex-col--5">
                 <div className="experience-privacy--hint">
@@ -71,6 +64,13 @@ const MyExperience: FunctionComponent<IProps> = ({ storyStore, match }) => {
                 </div>
               </div>
             )}
+
+            <div className="flex-col--mobile--12 flex-col--11">
+              <ReactMarkdown
+                className="story--content markdown"
+                source={storyStore.story.content}
+              />
+            </div>
           </Fragment>
         ) : (
           <Loading input="selected story" />
