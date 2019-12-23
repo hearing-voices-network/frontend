@@ -9,7 +9,7 @@ import Layout from "../../../components/Layout";
 import Select from "../../../components/Select";
 import Button from "../../../components/Button";
 import UserStore from "../../../stores/userStore";
-import NoExperience from "./NoExperience";
+import NoExperiences from "../../Browse/NoExperiences";
 import PaginationControl from "../../../components/Pagination";
 import Footer from "../../../components/Footer";
 import Link from "../../../components/Link";
@@ -85,7 +85,11 @@ const MyExperiences: FunctionComponent<IProps> = ({ history, userStore }) => {
 
         {!userStore.experiencesLoading && (
           <Fragment>
-            {!userStore.experiences.length ? <NoExperience /> : <Experiences />}
+            {!userStore.experiences.length ? (
+              <NoExperiences />
+            ) : (
+              <Experiences />
+            )}
           </Fragment>
         )}
       </Fragment>
