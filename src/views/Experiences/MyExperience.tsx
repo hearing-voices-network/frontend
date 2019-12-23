@@ -15,6 +15,7 @@ import Layout from "../../components/Layout";
 import ReactSVG from "react-svg";
 import { cms } from "../../utils/cms";
 import Button from "../../components/Button";
+import Footer from "../../components/Footer";
 
 interface IProps extends RouteComponentProps {
   storyStore?: StoryStore;
@@ -62,17 +63,6 @@ const MyExperience: FunctionComponent<IProps> = ({ storyStore, match }) => {
               />
             </div>
 
-            <div
-              className="flex-col--12"
-              style={{ textAlign: "center", marginTop: "32px" }}
-            >
-              <Link
-                to={`/my-experiences/review/${get(match, "params.storyId")}`}
-              >
-                <Button text="Edit" />
-              </Link>
-            </div>
-
             {storyStore.story.status === "private" && (
               <div className="flex-col--mobile--12 flex-col--5">
                 <div className="experience-privacy--hint">
@@ -86,6 +76,17 @@ const MyExperience: FunctionComponent<IProps> = ({ storyStore, match }) => {
           <Loading input="selected story" />
         )}
       </div>
+      <Footer green={true}>
+        <div className="flex-container flex-container--center flex-container--justify register--footer">
+          <div className="flex-col--8 flex-col--tablet-large--12">
+            <h3 className="register--footer--title">Edit this story</h3>
+
+            <Link to={`/my-experiences/review/${get(match, "params.storyId")}`}>
+              <Button text="Edit" />
+            </Link>
+          </div>
+        </div>
+      </Footer>
     </Layout>
   );
 };
