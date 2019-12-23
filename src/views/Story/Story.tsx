@@ -75,7 +75,9 @@ const Story: FunctionComponent<IProps> = ({ storyStore, match }) => {
             </div>
           </Fragment>
         ) : (
-          <Loading input="selected story" />
+          <div className="story--info">
+            <Loading input="selected story" />
+          </div>
         )}
       </div>
 
