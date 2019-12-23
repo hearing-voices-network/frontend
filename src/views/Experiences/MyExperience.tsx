@@ -8,6 +8,7 @@ import get from "lodash/get";
 import ReactMarkdown from "react-markdown";
 
 import Padlock from "../../assets/icons/security.svg";
+import Pencil from "../../assets/icons/pencil.svg";
 
 import StoryStore from "../../stores/storyStore";
 import Loading from "../../components/Loading";
@@ -61,6 +62,15 @@ const MyExperience: FunctionComponent<IProps> = ({ storyStore, match }) => {
                 <div className="experience-privacy--hint">
                   <ReactSVG src={Padlock} />
                   <span>{cms("story.privacy")}</span>
+                </div>
+              </div>
+            )}
+
+            {storyStore.story.status === "changes_requested" && (
+              <div className="flex-col--mobile--12 flex-col--5">
+                <div className="experience-privacy--hint">
+                  <ReactSVG src={Pencil} />
+                  <span>{cms("story.changes")}</span>
                 </div>
               </div>
             )}
