@@ -25,6 +25,10 @@
     margin: space(20) auto;
   }
 
+  @include for-tablet-large-up {
+    min-width: pxtorem(380px);
+  }
+
   &--read-more {
     @include pagination;
     margin-top: space(12);
@@ -45,5 +49,9 @@
     &--title {
       @include body-xs;
     }
+  }
+
+  &--excerpt {
+    min-height: pxtorem(99px);
   }
 }
