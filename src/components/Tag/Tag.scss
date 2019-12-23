@@ -49,11 +49,10 @@
   &--story {
     @include button-text-alt;
     padding: space(12) space(20);
-    margin: 0 space(8);
+    margin: space(8);
 
     &:first-of-type {
-      margin: 0;
-      margin-right: space(8);
+      margin: space(8);
     }
 
     @include for-phone-only {

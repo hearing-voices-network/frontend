@@ -37,6 +37,7 @@ const Story: FunctionComponent<IProps> = ({
         ellipsis="..."
         id="story"
         buttons={false}
+        className="story-card--excerpt"
       />
       <div>
         <Link to={`/story/${id}`} className="story-card--read-more">
