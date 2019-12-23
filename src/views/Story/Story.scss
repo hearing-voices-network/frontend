@@ -23,6 +23,10 @@
       @include for-tablet-large-up {
         text-align: right;
       }
+
+      @include for-phone-only {
+        font-size: pxtorem(16px);
+      }
     }
 
     &--back {
