@@ -33,7 +33,8 @@ const PaginationControl: FunctionComponent<IProps> = ({
 
     if (input.length) {
       // this is hacky as you need to know how many inputs on the page so you can target the right one. Starts at 0 index
-      input[inputNum].replaceWith(paginationCount);
+      // @ts-ignore
+      input[inputNum].parentNode.replaceChild(paginationCount, input[inputNum]);
     } else {
       const currentPageNum = document.getElementsByClassName(
         "pagination--label--current"
@@ -43,7 +44,7 @@ const PaginationControl: FunctionComponent<IProps> = ({
         currentPageNum[0].textContent = `${currentPage}`;
       }
     }
-  }, [currentPage]);
+  }, [currentPage, inputNum]);
 
   return (
     // the package does not recognise simple as a prop type so have to ts-ignore

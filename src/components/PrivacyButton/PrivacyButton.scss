@@ -14,6 +14,12 @@
     border: 1px solid $ribienna-dark;
   }
 
+  button {
+    @include button-text-alt;
+    padding: 0;
+    color: $ribienna-dark;
+  }
+
   &--open {
     padding: space(8) space(8);
     border-radius: 19px;

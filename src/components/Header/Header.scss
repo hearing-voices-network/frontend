@@ -77,12 +77,13 @@
       color: $grey;
       height: 30px;
       margin-left: space(16);
-      width: auto;
+      width: 30px;
       vertical-align: middle;
 
       @include for-tablet-down {
         height: 20px;
         margin-left: space(8);
+        width: 20px;
       }
     }
   }

@@ -29,6 +29,7 @@ const ResetPassword: FunctionComponent = () => (
               text="Save"
               onClick={() => console.log("resent password")}
               purple={true}
+              type="submit"
             />
           </div>
         </div>

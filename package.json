@@ -8,6 +8,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
     "axios": "^0.19.0",
+    "babel-polyfill": "^6.26.0",
     "breakpoint-sass": "^2.7.1",
     "classnames": "^2.2.6",
     "date-fns": "^2.8.1",
@@ -22,12 +23,12 @@
     "koa-session": "^5.12.3",
     "koa-static": "^5.0.0",
     "lodash": "^4.17.15",
-    "mobx": "^5.14.2",
+    "mobx": "^4.0.0",
     "mobx-react": "^6.1.4",
     "node-sass": "^4.12.0",
     "rc-pagination": "^1.20.9",
     "react": "^16.10.2",
-    "react-app-polyfill": "^1.0.4",
+    "react-app-polyfill": "^1.0.5",
     "react-clamp-lines": "^3.0.2",
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
@@ -42,7 +43,7 @@
   },
   "scripts": {
     "dev:server": "nodemon server/index.js",
-    "dev:client": "nodemon -e js,ts,tsx,jsx --watch src --exec \"yarn run build\"",
+    "dev:client": "nodemon -e js,ts,tsx,jsx,scss --watch src --exec \"yarn run build\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -53,11 +54,13 @@
   },
   "browserslist": {
     "production": [
+      "ie 11",
       ">0.2%",
       "not dead",
       "not op_mini all"
     ],
     "development": [
+      "ie 11",
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
