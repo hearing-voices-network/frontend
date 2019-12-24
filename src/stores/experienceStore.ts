@@ -86,8 +86,9 @@ export default class ExperienceStore {
 
   @action
   handleAddition = (tag: ITag) => {
-    const tags = ([] as ITag[]).concat(this.selectedTags, tag);
-    this.selectedTags = tags;
+    const tags = this.selectedTags.slice();
+    const newTags = ([] as ITag[]).concat(tags, tag);
+    this.selectedTags = newTags;
   };
 
   @action
