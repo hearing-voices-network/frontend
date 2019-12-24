@@ -18,7 +18,11 @@ interface IProps extends RouteComponentProps {
   userStore?: UserStore;
 }
 
-const UserHeader: FunctionComponent<IProps> = ({ userStore, match }) => {
+const UserHeader: FunctionComponent<IProps> = ({
+  userStore,
+  match,
+  history
+}) => {
   if (!userStore) return null;
 
   return (
@@ -105,7 +109,10 @@ const UserHeader: FunctionComponent<IProps> = ({ userStore, match }) => {
             <span className="user-header--link">
               <button
                 className="header--link"
-                onClick={() => userStore.logOut()}
+                onClick={() => {
+                  userStore.logOut();
+                  history.push("/");
+                }}
               >
                 Log out
               </button>
