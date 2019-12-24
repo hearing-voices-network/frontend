@@ -40,8 +40,8 @@ const PrivacyButton: FunctionComponent<IProps> = ({
         </span>
         {open && (
           <div className="privacy-button--dropdown">
-            <span
-              role="button"
+            <button
+              type="button"
               onClick={() => {
                 changePrivacy(!privacy);
                 onChange(privacy ? "public" : "private");
@@ -52,7 +52,7 @@ const PrivacyButton: FunctionComponent<IProps> = ({
               tabIndex={0}
             >
               {privacy ? "public" : "private"}
-            </span>
+            </button>
           </div>
         )}
       </button>
