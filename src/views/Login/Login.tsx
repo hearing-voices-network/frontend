@@ -31,7 +31,13 @@ const Login: FunctionComponent<IProps> = ({ userStore, history }) => {
           <h1 className="login--title">{cms("login.title")}</h1>
           <p className="login--description">{cms("login.description")}</p>
         </div>
-        <form className="flex-col--8 flex-col--mobile--10">
+        <form
+          className="flex-col--8 flex-col--mobile--10"
+          onSubmit={e => {
+            e.preventDefault();
+            userStore.logIn();
+          }}
+        >
           <Input
             id="email"
             label="Enter email"
@@ -59,6 +65,7 @@ const Login: FunctionComponent<IProps> = ({ userStore, history }) => {
               onClick={() => userStore.logIn()}
               purple={true}
               disabled={userStore.loginDisabled}
+              type="submit"
             />
           </div>
         </form>

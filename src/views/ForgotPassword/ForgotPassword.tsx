@@ -31,6 +31,7 @@ const ForgotPassword: FunctionComponent = () => (
               text="Send reset password link"
               onClick={() => console.log("resent password")}
               purple={true}
+              type="submit"
             />
           </div>
         </div>
