@@ -21,9 +21,11 @@ Install dependencies in the root of the project
 
 `yarn`
 
-Once dependancies are installed, run
+Once dependancies are installed you will ned to run the server and the client , run
 
-`yarn start`
+`yarn dev:client`
+
+`yarn dev:server`
 
 You should now be able to view the website by visiting [localhost:3000](http://localhost:3000).
 
