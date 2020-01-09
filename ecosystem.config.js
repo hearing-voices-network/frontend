@@ -2,8 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'prod',
-      script: 'yarn',
-      args: 'run dev:server',
+      script: 'server/index.js',
       instances: 'max',
       exec_mode: 'cluster',
       merge_logs: true,
