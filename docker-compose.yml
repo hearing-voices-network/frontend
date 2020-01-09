@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  app:
+    image: hearing-voices-network/frontend/app
+    build:
+      context: ./docker/app
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "${APP_PORT:-3000}:80"
+    command: pm2-dev start npm -- run dev:server
+    restart: on-failure
