@@ -8,7 +8,7 @@ LABEL maintainer="Ayup Digital"
 ENV PORT 80
 
 # Install PM2.
-RUN npm install pm2 -g
+RUN npm install yarn pm2 -g
 
 # Copy the packaged app (only used when deploying).
 RUN mkdir -p /var/www/html

@@ -21,12 +21,12 @@ services:
 before_script:
   - docker-compose build
   - docker-compose up -d
-  - docker-compose run --rm -T app npm ci
+  - docker-compose run --rm -T app yarn install
   - docker-compose run --rm -T app mv .env.example .env
 
 # Commands to run for the tests.
 script:
-  - docker-compose run --rm -T -e CI=true app npm run test -- --passWithNoTests
+  - docker-compose run --rm -T -e CI=true app yarn run test -- --passWithNoTests
 
 # Commands to run before deploying.
 before_deploy:

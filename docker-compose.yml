@@ -10,5 +10,5 @@ services:
       - .:/var/www/html
     ports:
       - "${APP_PORT:-3000}:80"
-    command: pm2-dev start npm -- run dev:server
+    command: pm2-dev start yarn -- run dev:server
     restart: on-failure

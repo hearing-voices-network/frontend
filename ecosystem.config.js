@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'prod',
-      script: 'npm',
+      script: 'yarn',
       args: 'run start',
       instances: 'max',
       exec_mode: 'cluster',
