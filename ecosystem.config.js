@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'prod',
       script: 'yarn',
-      args: 'run start',
+      args: 'run dev:server',
       instances: 'max',
       exec_mode: 'cluster',
       merge_logs: true,
