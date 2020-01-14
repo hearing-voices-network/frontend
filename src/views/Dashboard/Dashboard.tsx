@@ -5,6 +5,7 @@ import {
   RouteComponentProps
 } from "react-router-dom";
 import { observer, inject } from "mobx-react";
+import Helmet from "react-helmet";
 
 import "./Dashboard.scss";
 
@@ -26,6 +27,9 @@ const Dashboard: FunctionComponent<IProps> = ({ history, userStore }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Connecting Voices | Dashboard</title>
+      </Helmet>
       <div className="flex-container flex-container--no-padding flex-container--center dashboard">
         <div className="flex-col--12">
           <p className="dashboard--about">{cms("dashboard.about")}</p>

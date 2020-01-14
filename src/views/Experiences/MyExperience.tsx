@@ -42,7 +42,9 @@ const MyExperience: FunctionComponent<IProps> = ({ storyStore, match }) => {
     <Layout>
       <Helmet>
         <title>
-          {storyStore.story ? storyStore.story.excerpt : "Selected Story"}
+          {`Connecting Voices | ${
+            storyStore.story ? storyStore.story.excerpt : "Selected Story"
+          }`}
         </title>
       </Helmet>
 

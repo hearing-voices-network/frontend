@@ -2,6 +2,7 @@ import React, { FunctionComponent, Fragment, useEffect } from "react";
 import { observer, inject } from "mobx-react";
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Helmet from "react-helmet";
 
 import "./MyExperiences.scss";
 
@@ -31,6 +32,9 @@ const MyExperiences: FunctionComponent<IProps> = ({ history, userStore }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Connecting Voices | My Experiences</title>
+      </Helmet>
       <div className="flex-container flex-container--no-padding flex-container--center my-experiences">
         <div className="flex-col--12">
           <div className="flex-container flex-container--no-padding flex-container--center flex-container--align-center">

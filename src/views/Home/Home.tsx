@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import ReactSVG from "react-svg";
 import { withRouter, RouteComponentProps } from "react-router";
+import Helmet from "react-helmet";
 
 import { cms } from "../../utils/cms";
 
@@ -16,6 +17,9 @@ import Layout from "../../components/Layout";
 
 const Home: FunctionComponent<RouteComponentProps> = ({ history }) => (
   <Layout>
+    <Helmet>
+      <title>Connecting Voices</title>
+    </Helmet>
     <div className="flex-container flex-container--no-padding flex-container--center home--welcome">
       <div className="flex-col--8 flex-col--tablet-large--12">
         <h1 className="home--welcome--title">{cms("home.title")}</h1>

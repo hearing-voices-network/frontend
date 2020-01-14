@@ -3,6 +3,7 @@ import { withRouter, RouteComponentProps } from "react-router";
 import { inject } from "mobx-react";
 import cx from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Helmet from "react-helmet";
 
 import "./About.scss";
 import Breadcrumb from "../../components/Breadcrumb";
@@ -21,6 +22,9 @@ const About: FunctionComponent<IProps> = ({ userStore, history }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Connecting Voices | About</title>
+      </Helmet>
       <div className="flex-container flex-container--no-padding flex-container--center about">
         <div
           className={cx("flex-col--12", {

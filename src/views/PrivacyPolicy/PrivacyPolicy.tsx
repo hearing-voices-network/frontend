@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { observer, inject } from "mobx-react";
 import { withRouter, RouteComponentProps } from "react-router";
 import cx from "classnames";
+import Helmet from "react-helmet";
 
 import { cms } from "../../utils/cms";
 import UserStore from "../../stores/userStore";
@@ -20,6 +21,9 @@ const PrivacyPolicy: FunctionComponent<IProps> = ({ userStore, history }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Connecting Voices | Privacy Policy</title>
+      </Helmet>
       <div className="flex-container flex-container--no-padding flex-container--justify flex-container--center privacy-policy">
         <div className="flex-col--12">
           <div

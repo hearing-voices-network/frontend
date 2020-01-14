@@ -41,7 +41,9 @@ const Story: FunctionComponent<IProps> = ({ storyStore, match }) => {
     <Layout>
       <Helmet>
         <title>
-          {storyStore.story ? storyStore.story.excerpt : "Selected Story"}
+          {`Connecting Voices | ${
+            storyStore.story ? storyStore.story.excerpt : "Selected Story"
+          }`}
         </title>
       </Helmet>
       <div className="flex-container flex-container--no-padding flex-container--justify flex-container--center story">

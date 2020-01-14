@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useEffect } from "react";
 import { observer, inject } from "mobx-react";
 import { withRouter, RouteComponentProps } from "react-router";
+import Helmet from "react-helmet";
 
 import { cms } from "../../utils/cms";
 
@@ -26,6 +27,9 @@ const Login: FunctionComponent<IProps> = ({ userStore, history }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Connecting Voices | Login</title>
+      </Helmet>
       <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify login">
         <div className="flex-col--12 login--inner">
           <h1 className="login--title">{cms("login.title")}</h1>
