@@ -3,6 +3,7 @@ import { inject, observer } from "mobx-react";
 import { RouteComponentProps } from "react-router";
 import get from "lodash/get";
 import cx from "classnames";
+import Helmet from "react-helmet";
 
 import ReviewStore from "../../../stores/reviewStore";
 import Layout from "../../../components/Layout";
@@ -82,6 +83,9 @@ class ReviewExperiences extends Component<IProps> {
             reviewStore.reviewStep === 0 && !reviewStore.loading
         })}
       >
+        <Helmet>
+          <title>Connecting Voices | Review Experience</title>
+        </Helmet>
         <Fragment>
           {reviewStore.loading ? (
             <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify results">

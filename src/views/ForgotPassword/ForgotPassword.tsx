@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+import Helmet from "react-helmet";
 
 import "./ForgotPassword.scss";
 import { cms } from "../../utils/cms";
@@ -9,6 +10,9 @@ import Layout from "../../components/Layout";
 
 const ForgotPassword: FunctionComponent = () => (
   <Layout>
+    <Helmet>
+      <title>Connecting Voices | Forgot Password</title>
+    </Helmet>
     <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify forgot-password">
       <div className="flex-col--12 forgot-password--inner">
         <h1 className="forgot-password--title">

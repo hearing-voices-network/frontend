@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import get from "lodash/get";
 import ReactMarkdown from "react-markdown";
+import Helmet from "react-helmet";
 
 import Padlock from "../../assets/icons/security.svg";
 import Pencil from "../../assets/icons/pencil.svg";
@@ -39,6 +40,14 @@ const MyExperience: FunctionComponent<IProps> = ({ storyStore, match }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>
+          {`Connecting Voices | ${
+            storyStore.story ? storyStore.story.excerpt : "Selected Story"
+          }`}
+        </title>
+      </Helmet>
+
       <div className="flex-container flex-container--no-padding flex-container--justify flex-container--center story">
         {!storyStore.storyLoading && storyStore.story ? (
           <Fragment>

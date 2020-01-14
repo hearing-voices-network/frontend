@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { withRouter, RouteComponentProps } from "react-router-dom";
+import Helmet from "react-helmet";
 
 import { cms } from "../../utils/cms";
 
@@ -13,6 +14,9 @@ import Layout from "../../components/Layout";
 
 const Contribute: FunctionComponent<RouteComponentProps> = ({ history }) => (
   <Layout>
+    <Helmet>
+      <title>Connecting Voices | Contribute</title>
+    </Helmet>
     <div className="flex-container flex-container--no-padding flex-container--center contribute">
       <Breadcrumb
         crumbs={[
