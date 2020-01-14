@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
 import { Provider, observer } from "mobx-react";
 import { createBrowserHistory } from "history";
 
@@ -67,7 +67,7 @@ const App: FunctionComponent = () => (
     storyStore={storyStore}
     reviewStore={reviewStore}
   >
-    <Router>
+    <Router history={history}>
       <ScrollToTop>
         <Switch>
           <Route path="/" component={Home} exact={true} />
