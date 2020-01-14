@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import { Link, RouteComponentProps } from "react-router-dom";
 import { observer, inject } from "mobx-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Helmet from "react-helmet";
 
 import "./Story.scss";
 
@@ -38,6 +39,13 @@ const Story: FunctionComponent<IProps> = ({ storyStore, match }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>
+          {`Connecting Voices | ${
+            storyStore.story ? storyStore.story.excerpt : "Selected Story"
+          }`}
+        </title>
+      </Helmet>
       <div className="flex-container flex-container--no-padding flex-container--justify flex-container--center story">
         <div className="flex-col--12">
           <Breadcrumb

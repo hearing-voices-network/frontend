@@ -1,6 +1,7 @@
 import React, { Component, RefObject } from "react";
 import { observer, inject } from "mobx-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Helmet from "react-helmet";
 
 import "./Register.scss";
 
@@ -91,6 +92,9 @@ class Register extends Component<IProps> {
 
     return (
       <Layout>
+        <Helmet>
+          <title>Connecting Voices | Register</title>
+        </Helmet>
         <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify register">
           {registerStore.step > 0 && (
             <div className="flex-col--12 my-account--back--container">

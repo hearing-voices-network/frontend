@@ -3,6 +3,7 @@ import Layout from "../../components/Layout";
 import { observer } from "mobx-react";
 import { withRouter, RouteComponentProps } from "react-router";
 import { Link as RouterLink } from "react-router-dom";
+import Helmet from "react-helmet";
 
 import "./MyAccount.scss";
 import { cms } from "../../utils/cms";
@@ -12,6 +13,9 @@ import Footer from "../../components/Footer";
 
 const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
   <Layout>
+    <Helmet>
+      <title>Connecting Voices | My Account</title>
+    </Helmet>
     <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account">
       <div className="flex-col--12">
         <div className="flex-col--12 my-account--back--container">

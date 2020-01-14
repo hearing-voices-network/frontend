@@ -1,5 +1,7 @@
 import React, { FunctionComponent, useEffect } from "react";
 import { inject, observer } from "mobx-react";
+import Helmet from "react-helmet";
+import { withRouter, RouteComponentProps } from "react-router";
 
 import "./Browse.scss";
 
@@ -13,7 +15,6 @@ import Search from "./Search";
 import Results from "./Results";
 import Footer from "../../components/Footer";
 import Button from "../../components/Button";
-import { withRouter, RouteComponentProps } from "react-router";
 
 interface IProps extends RouteComponentProps {
   experienceStore: ExperienceStore;
@@ -29,6 +30,9 @@ const Browse: FunctionComponent<IProps> = ({ experienceStore, history }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Connecting Voices | Browse</title>
+      </Helmet>
       <div className="flex-container flex-container--no-padding flex-container--center browse">
         <div className="flex-col--12">
           <Breadcrumb

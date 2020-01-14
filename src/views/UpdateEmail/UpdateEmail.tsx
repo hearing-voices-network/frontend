@@ -4,6 +4,7 @@ import { withRouter, RouteComponentProps } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link as RouterLink } from "react-router-dom";
 import ReactSVG from "react-svg";
+import Helmet from "react-helmet";
 
 import Layout from "../../components/Layout";
 import { cms } from "../../utils/cms";
@@ -26,6 +27,9 @@ const UpdateEmail: FunctionComponent<IProps> = ({ history, userStore }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Connecting Voices | Update Email</title>
+      </Helmet>
       <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify update-email">
         <div className="flex-col--12 my-account--back--container">
           <button onClick={() => history.goBack()} className="my-account--back">

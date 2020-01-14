@@ -3,6 +3,7 @@ import { observer, inject } from "mobx-react";
 import { withRouter, RouteComponentProps } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link as RouterLink } from "react-router-dom";
+import Helmet from "react-helmet";
 
 import Layout from "../../components/Layout";
 import { cms } from "../../utils/cms";
@@ -24,6 +25,9 @@ const ChangePassword: FunctionComponent<IProps> = ({ history, userStore }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Connecting Voices | Change Password</title>
+      </Helmet>
       <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify update-email">
         <div className="flex-col--12 my-account--back--container">
           <button onClick={() => history.goBack()} className="my-account--back">
