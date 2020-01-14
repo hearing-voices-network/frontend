@@ -112,7 +112,10 @@ const Dashboard: FunctionComponent<IProps> = ({ history, userStore }) => {
             <RouteLink to="/privacy-policy" className="dashboard--footer--link">
               {cms("privacy-notice.policy")}
             </RouteLink>
-            <RouteLink to="/withdraw" className="dashboard--footer--link">
+            <RouteLink
+              to="/account/withdraw"
+              className="dashboard--footer--link"
+            >
               {cms("privacy-notice.withdraw")}
             </RouteLink>
           </div>
