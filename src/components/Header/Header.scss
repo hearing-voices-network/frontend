@@ -8,10 +8,12 @@
 
   &--link {
     text-decoration: none;
+    display: inline-block;
   }
 
   @include for-tablet-down {
     justify-content: center !important;
+    -ms-flex-pack: justify !important;
     background-color: $light-grey;
   }
 
