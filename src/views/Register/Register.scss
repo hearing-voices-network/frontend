@@ -22,7 +22,7 @@
 
   &--error {
     @include error;
-    margin: space(16);
+    margin: space(24) space(16);
   }
 
   &--description {
