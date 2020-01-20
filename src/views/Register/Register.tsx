@@ -6,6 +6,7 @@ import Helmet from "react-helmet";
 import "./Register.scss";
 
 import { cms } from "../../utils/cms";
+import { email } from "../../utils/regex";
 
 import Intro from "./Intro";
 import StepOne from "./StepOne";
@@ -72,7 +73,7 @@ class Register extends Component<IProps> {
         return false;
 
       case 1:
-        return !registerStore.email;
+        return !email.test(registerStore.email);
 
       case 2:
         return !registerStore.password;
@@ -95,7 +96,7 @@ class Register extends Component<IProps> {
         <Helmet>
           <title>Connecting Voices | Register</title>
         </Helmet>
-        <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify register">
+        <form className="flex-container flex-container--no-padding flex-container--center flex-container--justify register">
           {registerStore.step > 0 && (
             <div className="flex-col--12 my-account--back--container">
               <button
@@ -111,7 +112,7 @@ class Register extends Component<IProps> {
           {registerStore.registerError && (
             <p className="register--error">{cms("register.error")}</p>
           )}
-        </div>
+        </form>
 
         <Footer green={true}>
           <div className="flex-container flex-container--center flex-container--justify register--footer">
