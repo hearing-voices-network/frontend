@@ -33,7 +33,6 @@ const Story: FunctionComponent<IProps> = ({
     <section
       className="flex-col--mobile--12 flex-col--tablet--12 flex-col--tablet-large--5 story-card"
       tabIndex={0}
-      arial-label={removeMd(story)}
     >
       <ClampLines
         text={removeMd(story)}
