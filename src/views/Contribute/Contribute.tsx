@@ -84,7 +84,7 @@ const Contribute: FunctionComponent<RouteComponentProps> = ({ history }) => (
     <Footer purple={true}>
       <div className="flex-container flex-container--center flex-container--no-padding flex-container--align-center about--footer">
         <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--8">
-          <h5 className="about--footer--title">{cms("about.footer.title")}</h5>
+          <h3 className="about--footer--title">{cms("about.footer.title")}</h3>
           <p className="about--footer--content">
             {cms("about.footer.content")}
           </p>
