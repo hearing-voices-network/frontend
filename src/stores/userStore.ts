@@ -4,6 +4,7 @@ import get from "lodash/get";
 import groupBy from "lodash/groupBy";
 import { IStory } from "../utils/types";
 import { format } from "date-fns";
+import { email } from "../utils/regex";
 
 export default class UserStore {
   @observable loggedIn: boolean = false;
@@ -202,6 +203,6 @@ export default class UserStore {
 
   @computed
   get loginDisabled() {
-    return !this.username || !this.password;
+    return !email.test(this.username) || !this.password;
   }
 }

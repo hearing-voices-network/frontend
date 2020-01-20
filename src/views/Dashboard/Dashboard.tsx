@@ -32,7 +32,7 @@ const Dashboard: FunctionComponent<IProps> = ({ history, userStore }) => {
       </Helmet>
       <div className="flex-container flex-container--no-padding flex-container--center dashboard">
         <div className="flex-col--12">
-          <p className="dashboard--about">{cms("dashboard.about")}</p>
+          <h1 className="dashboard--about">{cms("dashboard.about")}</h1>
         </div>
         <div className="flex-col--12">
           <NavigationBlock

@@ -31,7 +31,7 @@ const Problem: FunctionComponent<RouteComponentProps> = ({ history }) => (
         </div>
 
         <div className="flex-col--6 flex-col--tablet-large--11 contact">
-          <p>{cms("home.footer.contact")}</p>
+          <h2>{cms("home.footer.contact")}</h2>
           <a className="contact--email" href={`mailto:${cms("global.email")}`}>
             {cms("global.email")}
           </a>

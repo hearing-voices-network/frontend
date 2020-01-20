@@ -30,7 +30,10 @@ const Story: FunctionComponent<IProps> = ({
   const { isTagSelected, filteredResultsShowing } = experienceStore;
 
   return (
-    <section className="flex-col--mobile--12 flex-col--tablet--12 flex-col--tablet-large--5 story-card">
+    <section
+      className="flex-col--mobile--12 flex-col--tablet--12 flex-col--tablet-large--5 story-card"
+      tabIndex={0}
+    >
       <ClampLines
         text={removeMd(story)}
         lines={4}
@@ -54,6 +57,7 @@ const Story: FunctionComponent<IProps> = ({
               key={tag.id}
               selected={filteredResultsShowing ? isTagSelected(tag) : false}
               small={true}
+              tabIndex={0}
             />
           ))}
           {tags.length > 3 && (
@@ -77,6 +81,7 @@ const Story: FunctionComponent<IProps> = ({
                 : false
             }
             small={true}
+            tabIndex={0}
           />
         </div>
       )}

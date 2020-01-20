@@ -25,6 +25,7 @@ const Input: FunctionComponent<IProps> = ({
       placeholder={placeholder}
       onChange={onChange}
       type={type}
+      id={id}
     />
   </div>
 );

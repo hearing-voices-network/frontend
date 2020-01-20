@@ -29,9 +29,9 @@ const Results: FunctionComponent<IProps> = ({ experienceStore }) => {
       {!experiencesLoading && !!experiences.length && (
         <Fragment>
           <div className="flex-col--12">
-            <p className="results--count">{`${experiences.length} ${
+            <h2 className="results--count">{`${experiences.length} ${
               experiences.length > 1 ? "stories" : "story"
-            }`}</p>
+            }`}</h2>
           </div>
           <div className="flex-col--12">
             <div className="flex-container flex-container--no-padding flex-container--justify results--stories">
@@ -53,7 +53,6 @@ const Results: FunctionComponent<IProps> = ({ experienceStore }) => {
             onChange={(pageNum: number) => experienceStore.paginate(pageNum)}
             inputNum={1}
           />
-          {/* </div> */}
         </Fragment>
       )}
     </div>
