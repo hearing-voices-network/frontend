@@ -62,9 +62,9 @@ const About: FunctionComponent<IProps> = ({ userStore, history }) => {
       <Footer purple={true}>
         <div className="flex-container flex-container--center flex-container--no-padding flex-container--align-center about--footer">
           <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--8">
-            <h5 className="about--footer--title">
+            <h4 className="about--footer--title">
               {cms("about.footer.title")}
-            </h5>
+            </h4>
             <p className="about--footer--content">
               {userStore.loggedIn
                 ? cms("about.footer-loggedin")
