@@ -71,13 +71,13 @@ const PaginationControl: FunctionComponent<IProps> = ({
       }
       nextIcon={
         itemsPerPage / totalItems !== itemsPerPage && (
-          <div className="pagination--label">
+          <button className="pagination--label">
             <span>Next page</span>
             <FontAwesomeIcon
               icon="chevron-right"
               className="pagination--label--icon-right"
             />
-          </div>
+          </button>
         )
       }
       onChange={currentPage => onChange(currentPage)}
