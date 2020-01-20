@@ -70,7 +70,7 @@ export default class ExperienceStore {
   filterResults = () => {
     this.filters = this.selectedTags.map(tag => `${tag.id}`).join(",");
 
-    this.experiencesLoading = false;
+    this.experiencesLoading = true;
     this.getExperiences();
 
     this.filteredResultsShowing = true;
