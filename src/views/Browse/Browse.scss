@@ -141,9 +141,11 @@
   padding: space(8) 0 0 space(8);
   border: 1px solid $ribienna;
   border-radius: 1px;
-  display: inline;
+  display: inline-block;
   background-color: $white;
-  width: 100%;
+
+  /* IE10 flexbox bug, children overlfow parent. Setting width minus button makes it correct. */
+  width: calc(100% - 120px);
 
   /* clicking anywhere will focus the input */
   cursor: text;

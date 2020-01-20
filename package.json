@@ -56,11 +56,12 @@
     "production": [
       "ie 11",
       ">0.2%",
-      "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "ie 10"
     ],
     "development": [
       "ie 11",
+      "ie 10",
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"

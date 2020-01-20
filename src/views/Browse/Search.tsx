@@ -73,10 +73,7 @@ class Search extends Component<IProps> {
           </div>
         </div>
 
-        <div
-          className="flex-col--12
-        "
-        >
+        <div className="flex-col--12">
           <div className="flex-container flex-container--no-padding flex-container--justify browse--filter--options">
             <button
               aria-expanded={filterOptionsVisible}
