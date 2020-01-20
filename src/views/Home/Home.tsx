@@ -55,17 +55,17 @@ const Home: FunctionComponent<RouteComponentProps> = ({ history }) => (
         <div className="flex-col--tablet--10 flex-col--mobile-small--12 home--share--description--container">
           <div className="home--share--description">
             <ReactSVG src={Pencil} />
-            <p> {cms("home.share.experiences")}</p>
+            <h5> {cms("home.share.experiences")}</h5>
           </div>
 
           <div className="home--share--description">
             <ReactSVG src={Community} />
-            <p>{cms("home.share.community")}</p>
+            <h5>{cms("home.share.community")}</h5>
           </div>
 
           <div className="home--share--description">
             <ReactSVG src={Security} />
-            <p>{cms("home.share.contributions")}</p>
+            <h5>{cms("home.share.contributions")}</h5>
           </div>
         </div>
       </div>
@@ -89,10 +89,10 @@ const Home: FunctionComponent<RouteComponentProps> = ({ history }) => (
           <p className="home--footer--content">{cms("home.footer.content")}</p>
         </div>
         <div className="flex-col--8 flex-col--tablet-large--12">
-          <p className="home--footer--contact">
+          <h6 className="home--footer--contact">
             {cms("home.footer.contact")}{" "}
             <a href={`mailto:${cms("global.email")}`}>{cms("global.email")}</a>
-          </p>
+          </h6>
         </div>
       </div>
     </Footer>
