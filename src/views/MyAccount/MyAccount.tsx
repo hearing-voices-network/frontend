@@ -32,7 +32,7 @@ const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
           <div className="flex-col--8 flex-col--tablet-large--12">
             <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--row">
               <div className="flex-col--3 flex-col--tablet-large--4 flex-col--mobile--5">
-                <p className="my-account--row--title">Email</p>
+                <h2 className="my-account--row--title">Email</h2>
               </div>
 
               <div className="flex-col--6 flex-col--tablet-large--8 flex-col--mobile--7">
@@ -46,7 +46,7 @@ const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
             </div>
             <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--row">
               <div className="flex-col--3 flex-col--tablet-large--4 flex-col--mobile--5">
-                <p className="my-account--row--title">Password</p>
+                <h2 className="my-account--row--title">Password</h2>
               </div>
 
               <div className="flex-col--6 flex-col--tablet-large--8 flex-col--mobile--7">
@@ -60,7 +60,7 @@ const MyAccount: FunctionComponent<RouteComponentProps> = ({ history }) => (
             </div>
             <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify my-account--row">
               <div className="flex-col--3 flex-col--tablet-large--4 flex-col--mobile--5">
-                <p className="my-account--row--title">Problem?</p>
+                <h2 className="my-account--row--title">Problem?</h2>
               </div>
 
               <div className="flex-col--6 flex-col--tablet-large--8 flex-col--mobile--7">
