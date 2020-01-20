@@ -55,7 +55,10 @@ class Search extends Component<IProps> {
           </h1>
         </div>
 
-        <div className="flex-container flex-container--no-padding">
+        <div
+          className="flex-container flex-container--no-padding"
+          aria-hidden={true}
+        >
           <div className="flex-col--12 browse--filter--input">
             <ReactTags
               tags={selectedTags}
