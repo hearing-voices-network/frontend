@@ -98,7 +98,7 @@ const EditExperience: FunctionComponent<IProps> = ({
           <p className="experience-entry--footer--description">
             {cms("submission.footer.step-1-about")}
           </p>
-          <Button text="Resubmit" onClick={() => increaseStep()} />
+          <Button text="Next" onClick={() => increaseStep()} />
         </div>
         <div className="flex-col--8 flex-col--tablet-large--12 guidance--footer--content">
           <button
