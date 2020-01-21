@@ -33,6 +33,7 @@
     @include pagination;
     margin-top: space(12);
     color: $turqoise;
+    text-decoration-color: $turqoise;
   }
 
   &--tags {
