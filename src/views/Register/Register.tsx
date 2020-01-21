@@ -90,13 +90,12 @@ class Register extends Component<IProps> {
     const { registerStore } = this.props;
 
     if (registerStore.showConfirmation) return <Confirmation />;
-
     return (
       <Layout>
         <Helmet>
           <title>Connecting Voices | Register</title>
         </Helmet>
-        <form className="flex-container flex-container--no-padding flex-container--center flex-container--justify register">
+        <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify register">
           {registerStore.step > 0 && (
             <div className="flex-col--12 my-account--back--container">
               <button
@@ -112,7 +111,7 @@ class Register extends Component<IProps> {
           {registerStore.registerError && (
             <p className="register--error">{cms("register.error")}</p>
           )}
-        </form>
+        </div>
 
         <Footer green={true}>
           <div className="flex-container flex-container--center flex-container--justify register--footer">

@@ -16,7 +16,13 @@ const StepTwo: FunctionComponent<IProps> = ({ registerStore }) => {
   if (!registerStore) return null;
 
   return (
-    <Fragment>
+    <form
+      onSubmit={e => {
+        e.preventDefault();
+        registerStore.nextStep();
+      }}
+      className="flex-container flex-container--no-padding flex-container--center flex-container--justify"
+    >
       <div className="flex-col--12">
         <h1 className="register--title">{cms("register.step-2-title")}</h1>
         <p className="register--description--tight">
@@ -43,7 +49,7 @@ const StepTwo: FunctionComponent<IProps> = ({ registerStore }) => {
           </div>
         </div>
       </div>
-    </Fragment>
+    </form>
   );
 };
 
