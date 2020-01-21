@@ -3,7 +3,7 @@
 
 .link {
   color: $ribienna;
-  display: block;
+  display: inline-block;
 
   &--large {
     @include heading-m;
