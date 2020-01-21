@@ -79,7 +79,7 @@ const ExperienceEntry: FunctionComponent<IProps> = ({
           </div>
           <div className="flex-col--8 flex-col--tablet-large--12 guidance--footer--content">
             <button
-              onClick={() => contributionStore.skipGuidance()}
+              onClick={() => history.push("/my-experiences")}
               className="experience-entry--footer--cancel"
             >
               Cancel
