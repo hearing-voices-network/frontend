@@ -103,6 +103,7 @@ export default class ReviewStore {
       );
 
       this.reviewSubmitted = true;
+      window.scrollTo(0, 0);
     } catch ({ response }) {
       console.error(response);
     }

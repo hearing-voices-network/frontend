@@ -80,7 +80,10 @@ const PaginationControl: FunctionComponent<IProps> = ({
           </button>
         )
       }
-      onChange={currentPage => onChange(currentPage)}
+      onChange={currentPage => {
+        onChange(currentPage);
+        window.scrollTo(0, 0);
+      }}
     />
   );
 };

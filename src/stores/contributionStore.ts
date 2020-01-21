@@ -103,6 +103,7 @@ export default class ContributionStore {
       });
 
       this.contributionSubmitted = true;
+      window.scrollTo(0, 0);
       this.clear();
     } catch ({ response }) {
       console.error(response, "error response");
