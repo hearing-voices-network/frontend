@@ -9,6 +9,10 @@
   &--link {
     text-decoration: none;
     display: inline-block;
+
+    &--active {
+      text-decoration: underline;
+    }
   }
 
   @include for-tablet-down {
