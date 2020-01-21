@@ -71,6 +71,7 @@ export default class ExperienceStore {
     this.filters = this.selectedTags.map(tag => `${tag.id}`).join(",");
 
     this.experiencesLoading = true;
+    this.currentPage = 1;
     this.getExperiences();
 
     this.filteredResultsShowing = true;
