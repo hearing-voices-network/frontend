@@ -51,6 +51,10 @@
     }
   }
 
+  input[type="checkbox"]:focus + label > span {
+    outline: 1px solid $medium-grey;
+  }
+
   input[type="checkbox"] + label span:before,
   input[type="checkbox"] + label:hover > span:before,
   input[type="checkbox"]:checked + label span:before {
