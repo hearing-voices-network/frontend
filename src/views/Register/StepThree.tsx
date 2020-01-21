@@ -25,8 +25,9 @@ const StepThree: FunctionComponent<IProps> = ({ registerStore }) => {
         <Link
           size="small"
           text="Link to privacy policy"
-          href="/"
+          href="/privacy-policy"
           green={true}
+          newWindow={true}
         />
       </div>
       <div className="flex-col--10 register--checkbox">
