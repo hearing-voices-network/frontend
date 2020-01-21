@@ -63,14 +63,17 @@ export default class UserStore {
         `/api/contributions?page=${pageNum}`
       );
 
-      if (this.experienceFilter) {
-        const experiences = get(data, "data");
+      const experiences = get(data, "data");
+      const usersExperiences = experiences.filter(
+        (experience: IStory) => experience.end_user_id === this.userId
+      );
 
-        experiences.filter(
+      if (this.experienceFilter) {
+        usersExperiences.filter(
           (experience: IStory) => experience.status === this.experienceFilter
         );
       } else {
-        this.experiences = get(data, "data");
+        this.experiences = usersExperiences;
       }
 
       this.currentPage = get(data, "meta.current_page");
