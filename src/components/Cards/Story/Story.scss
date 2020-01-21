@@ -38,12 +38,12 @@
   &--tags {
     margin: space(24) 0;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
 
     &--tag {
-      margin: 0 pxtorem(4px);
+      margin: pxtorem(4px);
     }
 
     &--title {
