@@ -21,6 +21,7 @@ export default class ContributionStore {
   increaseStep = (type: string) => {
     // @ts-ignore
     this[`${type}Step`] = this[`${type}Step`] + 1;
+    window.scrollTo(0, 0);
   };
 
   @action
