@@ -15,6 +15,7 @@ import HVN from "../../assets/logo/hvn-square.png";
 import Question from "../../assets/icons/question-circle-light.svg";
 import Account from "../../assets/icons/account-light.svg";
 import Dashboard from "../../assets/icons/dashboard-light.svg";
+import MainSite from "../../assets/icons/mainsite-icon-light.svg";
 
 import "./Header.scss";
 import UserStore from "../../stores/userStore";
@@ -48,7 +49,7 @@ const UserHeader: FunctionComponent<IProps> = ({
 
           {/* Mobile Links  */}
           <div className="mobile-show header--links--outer">
-            <div className="flex-container flex-container--no-padding header--links">
+            <div className="flex-container flex-container--no-padding flex-container--left header--links">
               <span className="user-header--link">
                 <NavLink
                   className="header--link user-header--link"
@@ -63,6 +64,29 @@ const UserHeader: FunctionComponent<IProps> = ({
                   />
                 </NavLink>
               </span>
+
+              <span className="user-header--link">
+                <NavLink
+                  className="header--link user-header--link"
+                  to="/"
+                  exact={true}
+                  activeClassName="header--link--active"
+                >
+                  Main site
+                  <ReactSVG
+                    src={MainSite}
+                    wrapper="span"
+                    className="header--icon"
+                  />
+                </NavLink>
+              </span>
+            </div>
+            <div
+              className="flex-container flex-container--no-padding flex-container--left header--links"
+              style={{
+                marginTop: "1rem"
+              }}
+            >
               <span className="user-header--link">
                 <NavLink
                   className="header--link"
