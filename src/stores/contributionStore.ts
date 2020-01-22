@@ -99,7 +99,7 @@ export default class ContributionStore {
     try {
       await httpService.api.post("/api/contributions", {
         content: this.contribution.toString("markdown"),
-        status: "in_review",
+        status: this.privacy === "public" ? "in_review" : "private",
         tags
       });
 
@@ -117,7 +117,6 @@ export default class ContributionStore {
     this.guidanceStep = 0;
     this.contributionStep = 0;
     this.contribution = RichTextEditor.createEmptyValue();
-    this.privacy = "public";
     this.selectedTags = [];
   };
 }

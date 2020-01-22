@@ -26,6 +26,7 @@ class SubmitExperiences extends Component<IProps> {
 
     contributionStore.clear();
     contributionStore.contributionSubmitted = false;
+    contributionStore.privacy = "public";
   }
 
   displayGuidanceStep() {
