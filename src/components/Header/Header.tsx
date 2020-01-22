@@ -31,7 +31,7 @@ const Header: FunctionComponent = () => (
         </NavLink>
       </div>
 
-      <div className="flex-container flex-container--no-padding header--links">
+      <div className="flex-container flex-container--no-padding header--links header--links--main">
         <NavLink
           className="header--link"
           to="/about"
@@ -49,7 +49,7 @@ const Header: FunctionComponent = () => (
           <ReactSVG src={Pencil} wrapper="span" className="header--icon" />
         </NavLink>
         <NavLink
-          className="header--link"
+          className="header--link header--link--login"
           to="/login"
           activeClassName="header--link--active"
         >
