@@ -3,7 +3,7 @@ import ClampLines from "react-clamp-lines";
 import take from "lodash/take";
 import removeMd from "remove-markdown";
 import { inject, observer } from "mobx-react";
-import { Link } from "react-router-dom";
+import { Link, withRouter, RouteComponentProps } from "react-router-dom";
 
 import "./Story.scss";
 
@@ -12,7 +12,7 @@ import { ITag } from "../../../utils/types";
 
 import Tag from "../../Tag";
 
-interface IProps {
+interface IProps extends RouteComponentProps {
   experienceStore?: ExperienceStore;
   story: string;
   tags: ITag[];
@@ -23,7 +23,8 @@ const Story: FunctionComponent<IProps> = ({
   story,
   tags,
   experienceStore,
-  id
+  id,
+  history
 }) => {
   if (!experienceStore) return null;
 
@@ -33,6 +34,8 @@ const Story: FunctionComponent<IProps> = ({
     <section
       className="flex-col--mobile--12 flex-col--tablet--12 flex-col--tablet-large--5 story-card"
       tabIndex={0}
+      onClick={() => history.push(`/story/${id}`)}
+      onKeyDown={e => (e.key === "Enter" ? history.push(`/story/${id}`) : null)}
     >
       <ClampLines
         text={removeMd(story)}
@@ -57,7 +60,6 @@ const Story: FunctionComponent<IProps> = ({
               key={tag.id}
               selected={filteredResultsShowing ? isTagSelected(tag) : false}
               small={true}
-              tabIndex={0}
             />
           ))}
           {tags.length > 3 && (
@@ -81,7 +83,6 @@ const Story: FunctionComponent<IProps> = ({
                 : false
             }
             small={true}
-            tabIndex={0}
           />
         </div>
       )}
@@ -89,4 +90,4 @@ const Story: FunctionComponent<IProps> = ({
   );
 };
 
-export default inject("experienceStore")(observer(Story));
+export default inject("experienceStore")(withRouter(observer(Story)));

@@ -21,6 +21,7 @@ export default class ContributionStore {
   increaseStep = (type: string) => {
     // @ts-ignore
     this[`${type}Step`] = this[`${type}Step`] + 1;
+    window.scrollTo(0, 0);
   };
 
   @action
@@ -98,11 +99,12 @@ export default class ContributionStore {
     try {
       await httpService.api.post("/api/contributions", {
         content: this.contribution.toString("markdown"),
-        status: "in_review",
+        status: this.privacy === "public" ? "in_review" : "private",
         tags
       });
 
       this.contributionSubmitted = true;
+      window.scrollTo(0, 0);
       this.clear();
     } catch ({ response }) {
       console.error(response, "error response");
@@ -115,7 +117,6 @@ export default class ContributionStore {
     this.guidanceStep = 0;
     this.contributionStep = 0;
     this.contribution = RichTextEditor.createEmptyValue();
-    this.privacy = "public";
     this.selectedTags = [];
   };
 }

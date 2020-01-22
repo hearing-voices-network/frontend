@@ -41,6 +41,8 @@ export default class ExperienceStore {
 
   @action
   getExperiences = async () => {
+    this.filterOptionsVisible = false;
+
     try {
       const { data } = await httpService.api.post("/contributions", {
         page: this.currentPage,
@@ -72,6 +74,7 @@ export default class ExperienceStore {
 
     this.experiencesLoading = true;
     this.currentPage = 1;
+
     this.getExperiences();
 
     this.filteredResultsShowing = true;

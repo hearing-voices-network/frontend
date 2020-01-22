@@ -9,6 +9,20 @@
   &--link {
     text-decoration: none;
     display: inline-block;
+
+    &--active {
+      text-decoration: underline;
+    }
+
+    @include for-tablet-down {
+      margin: 0 space(8);
+    }
+
+    &--login {
+      @include for-phone-only {
+        margin-top: space(8);
+      }
+    }
   }
 
   @include for-tablet-down {
@@ -71,6 +85,12 @@
 
     &--outer {
       width: 100%;
+    }
+
+    &--main {
+      @include for-phone-only {
+        justify-content: center !important;
+      }
     }
   }
 

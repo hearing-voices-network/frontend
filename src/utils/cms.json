@@ -136,7 +136,7 @@
     "footer": {
       "title": "Tags"
     },
-    "privacy": "This story is private",
+    "privacy": "This story is",
     "changes": "There are suggested changes for this story"
   },
   "my-experiences": {
@@ -205,7 +205,8 @@
   "withdraw": {
     "title": "Withdraw account",
     "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies tincidunt congue.",
-    "hint": "You can’t undo withdrawl"
+    "hint": "You can’t undo withdrawl",
+    "confirmation": "Are you sure you would like to withdraw your account?"
   },
 
   "review": {

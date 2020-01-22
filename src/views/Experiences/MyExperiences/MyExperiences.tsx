@@ -1,6 +1,10 @@
 import React, { FunctionComponent, Fragment, useEffect } from "react";
 import { observer, inject } from "mobx-react";
-import { withRouter, RouteComponentProps } from "react-router-dom";
+import {
+  withRouter,
+  Link as RouteLink,
+  RouteComponentProps
+} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Helmet from "react-helmet";
 
@@ -13,7 +17,6 @@ import UserStore from "../../../stores/userStore";
 import NoExperiences from "../../Browse/NoExperiences";
 import PaginationControl from "../../../components/Pagination";
 import Footer from "../../../components/Footer";
-import Link from "../../../components/Link";
 
 import { cms } from "../../../utils/cms";
 import Loading from "../../../components/Loading";
@@ -110,11 +113,10 @@ const MyExperiences: FunctionComponent<IProps> = ({ history, userStore }) => {
       <Footer purple={true}>
         <div className="flex-container flex-container--center flex-container--no-padding flex-container--align-center my-experiences--footer">
           <div className="flex-col--mobile--12 flex-col--tablet--12 flex-col--8">
-            <Link
-              text={cms("my-experiences.footer.link")}
-              href="/browse"
-              size="medium"
-            />
+            <RouteLink to="/browse" className="link link--medium">
+              {cms("my-experiences.footer.link")}
+            </RouteLink>
+
             <p className="my-experiences--footer--about">
               {cms("my-experiences.footer.about")}
             </p>
