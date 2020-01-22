@@ -38,15 +38,17 @@ const ResubmitConfirmation: FunctionComponent<IProps> = ({
             {cms("review.confirmation.description")}
           </p>
 
-          <div className="flex-container flex-container--justify flex-container--no-padding">
-            <div className="flex-col--tablet--11 flex-col--8">
-              <div className="experience-privacy--hint">
-                <ReactSVG src={Question} />
+          {reviewStore.privacy === "public" && (
+            <div className="flex-container flex-container--justify flex-container--no-padding">
+              <div className="flex-col--tablet--11 flex-col--8">
+                <div className="experience-privacy--hint">
+                  <ReactSVG src={Question} />
 
-                <span>{cms("review.confirmation.hint")}</span>
+                  <span>{cms("review.confirmation.hint")}</span>
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
         <div className="flex-col--12">
           <NavigationBlock
