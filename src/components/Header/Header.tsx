@@ -8,6 +8,8 @@ import HVN from "../../assets/logo/hvn-square.png";
 import Question from "../../assets/icons/question-circle.svg";
 import Pencil from "../../assets/icons/pencil.svg";
 
+import Account from "../../assets/icons/account-light.svg";
+
 import "./Header.scss";
 
 const Header: FunctionComponent = () => (
@@ -33,6 +35,10 @@ const Header: FunctionComponent = () => (
         <Link className="header--link" to="/contribute">
           Contribute
           <ReactSVG src={Pencil} wrapper="span" className="header--icon" />
+        </Link>
+        <Link className="header--link" to="/login">
+          Login
+          <ReactSVG src={Account} wrapper="span" className="header--icon" />
         </Link>
       </div>
     </div>

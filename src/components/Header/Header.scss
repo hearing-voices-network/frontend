@@ -91,6 +91,10 @@
         margin-left: space(8);
         width: 20px;
       }
+
+      @include for-small-phone {
+        display: none;
+      }
     }
   }
 }
