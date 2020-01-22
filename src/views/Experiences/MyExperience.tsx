@@ -68,11 +68,13 @@ const MyExperience: FunctionComponent<IProps> = ({ storyStore, match }) => {
               </div>
             </div>
 
-            {storyStore.story.status === "private" && (
+            {storyStore.story.status !== "changes_requested" && (
               <div className="flex-col--mobile--12 flex-col--5">
                 <div className="experience-privacy--hint">
                   <ReactSVG src={Padlock} />
-                  <span>{cms("story.privacy")}</span>
+                  <span>
+                    {`${cms("story.privacy")} ${storyStore.story.status}`}
+                  </span>
                 </div>
               </div>
             )}
