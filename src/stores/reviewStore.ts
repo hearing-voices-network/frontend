@@ -27,7 +27,8 @@ export default class ReviewStore {
       );
       this.selectedTags = get(data, "data.tags");
       this.privacy =
-        get(data, "data.status") === "in_review"
+        get(data, "data.status") === "in_review" ||
+        get(data, "data.status") === "changes_requested"
           ? "public"
           : get(data, "data.status");
       this.loading = false;
