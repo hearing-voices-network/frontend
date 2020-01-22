@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import ReactSVG from "react-svg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import Cookies from "../Cookies";
 import Logo from "../../assets/logo/logo_colour.svg";
@@ -17,29 +17,45 @@ const Header: FunctionComponent = () => (
     <Cookies />
     <div className="flex-container flex-container--no-padding flex-container--center header">
       <div className="flex-col--12 header--logo-container">
-        <Link to="/" className="header--link">
+        <NavLink
+          to="/"
+          className="header--link"
+          activeClassName="header--link--active"
+        >
           <img
             src={HVN}
             className="header--logo--square"
             alt="Hearing Voices Network logo"
           />
           <ReactSVG src={Logo} className="header--logo" wrapper="span" />
-        </Link>
+        </NavLink>
       </div>
 
       <div className="flex-container flex-container--no-padding header--links">
-        <Link className="header--link" to="/about">
+        <NavLink
+          className="header--link"
+          to="/about"
+          activeClassName="header--link--active"
+        >
           About this project
           <ReactSVG src={Question} wrapper="span" className="header--icon" />
-        </Link>
-        <Link className="header--link" to="/contribute">
+        </NavLink>
+        <NavLink
+          className="header--link"
+          to="/contribute"
+          activeClassName="header--link--active"
+        >
           Contribute
           <ReactSVG src={Pencil} wrapper="span" className="header--icon" />
-        </Link>
-        <Link className="header--link" to="/login">
+        </NavLink>
+        <NavLink
+          className="header--link"
+          to="/login"
+          activeClassName="header--link--active"
+        >
           Login
           <ReactSVG src={Account} wrapper="span" className="header--icon" />
-        </Link>
+        </NavLink>
       </div>
     </div>
   </header>
