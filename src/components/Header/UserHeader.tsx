@@ -122,20 +122,22 @@ const UserHeader: FunctionComponent<IProps> = ({
 
           <div className="flex-container flex-container--no-padding header--links mobile-hide">
             <span className="user-header--link">
-              <FontAwesomeIcon
-                icon="chevron-left"
-                className="user-header--chevron"
-              />
               <NavLink
                 className="header--link user-header--link"
-                to={match.path === "/dashboard" ? "/" : "/dashboard"}
+                to="/"
                 activeClassName="header--link--active"
+                exact={true}
               >
-                {`Go back to ${
-                  match.path === "/dashboard"
-                    ? "Connecting Voices"
-                    : "dashboard"
-                }`}
+                Main site
+              </NavLink>
+            </span>
+            <span className="user-header--link">
+              <NavLink
+                className="header--link user-header--link"
+                activeClassName="header--link--active"
+                to="/dashboard"
+              >
+                Dashboard
               </NavLink>
             </span>
             <span className="user-header--link">
