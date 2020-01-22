@@ -25,6 +25,8 @@ export default class UserStore {
   @observable newEmail: string = "";
   @observable changeEmailSuccess: boolean = false;
   @observable changeEmailErrors: [] = [];
+  @observable modalOpen: boolean = false;
+  @observable withdrawType: string = "undefined";
 
   @action
   async logIn() {
@@ -192,12 +194,24 @@ export default class UserStore {
     }
   };
 
-  deleteAccount = async (deleteType: string) => {
+  @action
+  setDeleteType = (deleteType: string) => {
+    this.withdrawType = deleteType;
+    this.toggleModal();
+  };
+
+  @action
+  toggleModal = () => {
+    this.modalOpen = !this.modalOpen;
+  };
+
+  deleteAccount = async () => {
     try {
       await httpService.api.delete(
-        `/api/end-users/${this.userId}?type=${deleteType}`
+        `/api/end-users/${this.userId}?type=${this.withdrawType}`
       );
 
+      this.toggleModal();
       this.logOut();
     } catch ({ response }) {
       console.error(response);

@@ -44,3 +44,47 @@
     margin-top: space(12);
   }
 }
+
+.modal {
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  right: 0px;
+  bottom: 40px;
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  width: 50%;
+  margin: auto;
+  max-height: 200px;
+  height: fit-content;
+
+  @include for-tablet-down {
+    width: 80%;
+  }
+
+  &--overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #85858580;
+  }
+
+  &--confirm {
+    color: $turqoise;
+  }
+
+  &--cancel {
+    color: $grey;
+  }
+
+  button {
+    @include button-text-alt;
+    padding: 0;
+  }
+}

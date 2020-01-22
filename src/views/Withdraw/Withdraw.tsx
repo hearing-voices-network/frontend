@@ -5,6 +5,7 @@ import { withRouter, RouteComponentProps } from "react-router";
 import { Link as RouterLink } from "react-router-dom";
 import ReactSVG from "react-svg";
 import Helmet from "react-helmet";
+import Modal from "react-modal";
 
 import Layout from "../../components/Layout";
 import { cms } from "../../utils/cms";
@@ -70,7 +71,7 @@ const Widthdraw: FunctionComponent<IProps> = ({ history, userStore }) => {
             <div className="flex-col--8 flex-col--tablet-large--11 withdraw--button">
               <Button
                 text="Withdraw account and data"
-                onClick={() => userStore.deleteAccount("force_delete")}
+                onClick={() => userStore.setDeleteType("force_delete")}
               />
             </div>
           </div>
@@ -91,7 +92,7 @@ const Widthdraw: FunctionComponent<IProps> = ({ history, userStore }) => {
             <div className="flex-col--8 flex-col--tablet-large--11 withdraw--button">
               <Button
                 text="Withdraw and don't delete my data"
-                onClick={() => userStore.deleteAccount("soft_delete")}
+                onClick={() => userStore.setDeleteType("soft_delete")}
                 purple={true}
               />
             </div>
@@ -115,6 +116,35 @@ const Widthdraw: FunctionComponent<IProps> = ({ history, userStore }) => {
           </div>
         </div>
       </Footer>
+
+      <Modal
+        isOpen={userStore.modalOpen}
+        className="modal"
+        overlayClassName="modal--overlay"
+      >
+        <div className="flex-container flex-container--no-padding flex-container--center flex-container--justify">
+          <div className="flex-col--12">
+            <p className="withdraw--about">{cms("withdraw.confirmation")}</p>
+          </div>
+          <div className="flex-col--12">
+            <div className="flex-container flex-container--no-padding flex-container--center">
+              <button
+                className="modal--confirm"
+                onClick={() => userStore.deleteAccount()}
+              >
+                Confirm
+              </button>
+
+              <button
+                className="modal--cancel"
+                onClick={() => userStore.toggleModal()}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </Modal>
     </Layout>
   );
 };

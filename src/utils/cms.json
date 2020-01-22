@@ -205,7 +205,8 @@
   "withdraw": {
     "title": "Withdraw account",
     "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies tincidunt congue.",
-    "hint": "You can’t undo withdrawl"
+    "hint": "You can’t undo withdrawl",
+    "confirmation": "Are you sure you would like to withdraw your account?"
   },
 
   "review": {
