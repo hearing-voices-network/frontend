@@ -41,17 +41,19 @@ const ExperiencePrivacy: FunctionComponent<IProps> = ({ reviewStore }) => {
           />
         </div>
 
-        <div className="flex-col--10">
-          <div className="flex-container flex-container--justify flex-container--no-padding">
-            <div className="flex-col--mobile--11 flex-col--tablet--10 flex-col--8">
-              <div className="experience-privacy--hint">
-                <ReactSVG src={Question} />
+        {reviewStore.privacy !== "private" && (
+          <div className="flex-col--10">
+            <div className="flex-container flex-container--justify flex-container--no-padding">
+              <div className="flex-col--mobile--11 flex-col--tablet--10 flex-col--8">
+                <div className="experience-privacy--hint">
+                  <ReactSVG src={Question} />
 
-                <span>{cms("experience-privacy.hint")}</span>
+                  <span>{cms("experience-privacy.hint")}</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
       <Footer green={true}>
         <div className="flex-container flex-container--center flex-container--justify experience-entry--footer">
