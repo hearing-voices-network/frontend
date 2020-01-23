@@ -95,7 +95,7 @@ const MyExperience: FunctionComponent<IProps> = ({ storyStore, match }) => {
                       "params.storyId"
                     )}`}
                   >
-                    <Button text="Edit" />
+                    <Button text="View changes" small={true} />
                   </Link>
                 </div>
               </Fragment>
