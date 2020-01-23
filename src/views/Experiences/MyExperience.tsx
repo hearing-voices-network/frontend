@@ -80,12 +80,25 @@ const MyExperience: FunctionComponent<IProps> = ({ storyStore, match }) => {
             )}
 
             {storyStore.story.status === "changes_requested" && (
-              <div className="flex-col--mobile--12 flex-col--5">
-                <div className="experience-privacy--hint">
-                  <ReactSVG src={Pencil} />
-                  <span>{cms("story.changes")}</span>
+              <Fragment>
+                <div className="flex-col--mobile--12 flex-col--5">
+                  <div className="experience-privacy--hint">
+                    <ReactSVG src={Pencil} />
+                    <span>{cms("story.changes")}</span>
+                  </div>
                 </div>
-              </div>
+
+                <div className="flex-col--12" style={{ textAlign: "center" }}>
+                  <Link
+                    to={`/my-experiences/review/${get(
+                      match,
+                      "params.storyId"
+                    )}`}
+                  >
+                    <Button text="Edit" />
+                  </Link>
+                </div>
+              </Fragment>
             )}
 
             <div
