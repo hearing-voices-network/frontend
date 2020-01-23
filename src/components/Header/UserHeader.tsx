@@ -84,7 +84,7 @@ const UserHeader: FunctionComponent<IProps> = ({
             <div
               className="flex-container flex-container--no-padding flex-container--left header--links"
               style={{
-                marginTop: "1rem"
+                marginTop: 0
               }}
             >
               <span className="user-header--link">
