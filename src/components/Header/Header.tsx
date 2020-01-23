@@ -7,6 +7,7 @@ import Logo from "../../assets/logo/logo_colour.svg";
 import HVN from "../../assets/logo/hvn-square.png";
 import Question from "../../assets/icons/question-circle.svg";
 import Pencil from "../../assets/icons/pencil.svg";
+import Community from "../../assets/icons/community.svg";
 
 import Account from "../../assets/icons/account-light.svg";
 
@@ -42,6 +43,14 @@ const Header: FunctionComponent = () => (
         </NavLink>
         <NavLink
           className="header--link"
+          to="/browse"
+          activeClassName="header--link--active"
+        >
+          Browse
+          <ReactSVG src={Community} wrapper="span" className="header--icon" />
+        </NavLink>
+        <NavLink
+          className="header--link"
           to="/contribute"
           activeClassName="header--link--active"
         >
@@ -49,7 +58,7 @@ const Header: FunctionComponent = () => (
           <ReactSVG src={Pencil} wrapper="span" className="header--icon" />
         </NavLink>
         <NavLink
-          className="header--link header--link--login"
+          className="header--link"
           to="/login"
           activeClassName="header--link--active"
         >
