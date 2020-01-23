@@ -9,19 +9,14 @@
   &--link {
     text-decoration: none;
     display: inline-block;
+    margin-top: space(8);
 
     &--active {
       text-decoration: underline;
     }
 
     @include for-tablet-down {
-      margin: 0 space(8);
-    }
-
-    &--login {
-      @include for-phone-only {
-        margin-top: space(8);
-      }
+      margin: space(8);
     }
   }
 
