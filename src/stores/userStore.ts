@@ -62,20 +62,20 @@ export default class UserStore {
       this.experiencesLoading = true;
 
       const { data } = await httpService.api.get(
-        `/api/contributions?page=${pageNum}`
+        `/api/contributions?page=${pageNum}&filter[end_user_id]=${this.userId}
+        `
       );
+
 
       const experiences = get(data, "data");
-      const usersExperiences = experiences.filter(
-        (experience: IStory) => experience.end_user_id === this.userId
-      );
+   
 
       if (this.experienceFilter) {
-        usersExperiences.filter(
+        experiences.filter(
           (experience: IStory) => experience.status === this.experienceFilter
         );
       } else {
-        this.experiences = usersExperiences;
+        this.experiences = experiences;
       }
 
       this.currentPage = get(data, "meta.current_page");
