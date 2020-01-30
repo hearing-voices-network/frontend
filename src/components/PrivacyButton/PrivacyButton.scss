@@ -59,4 +59,8 @@
       margin-top: pxtorem(6px);
     }
   }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
