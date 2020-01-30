@@ -30,7 +30,7 @@ const GuidanceOne: FunctionComponent<IProps> = ({ contributionStore }) => {
             {cms("writing-guidance.guidance-one-1")}
           </p>
 
-          <PrivacyButton text="Private" onChange={() => null} />
+          <PrivacyButton text="Private" onChange={() => null} disabled={true} />
 
           <p className="guidance--content">
             {cms("writing-guidance.guidance-one-2")}
