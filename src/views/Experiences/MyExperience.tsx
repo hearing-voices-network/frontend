@@ -5,6 +5,7 @@ import { format } from "date-fns";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import get from "lodash/get";
+import lowerCase from 'lodash/lowerCase'
 import ReactMarkdown from "react-markdown";
 import Helmet from "react-helmet";
 
@@ -73,7 +74,7 @@ const MyExperience: FunctionComponent<IProps> = ({ storyStore, match }) => {
                 <div className="experience-privacy--hint">
                   <ReactSVG src={Padlock} />
                   <span>
-                    {`${cms("story.privacy")} ${storyStore.story.status}`}
+                    {`${cms("story.privacy")} ${lowerCase(storyStore.story.status)}`}
                   </span>
                 </div>
               </div>
