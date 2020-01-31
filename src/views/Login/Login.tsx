@@ -8,11 +8,11 @@ import { cms } from "../../utils/cms";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import Footer from "../../components/Footer";
-import Link from "../../components/Link";
 import Layout from "../../components/Layout";
 
 import "./Login.scss";
 import UserStore from "../../stores/userStore";
+import { Link } from "react-router-dom";
 
 interface IProps extends RouteComponentProps {
   userStore: UserStore;
@@ -23,7 +23,7 @@ const Login: FunctionComponent<IProps> = ({ userStore, history }) => {
     if (userStore.loggedIn) {
       history.push("/dashboard");
     }
-  }, [userStore.loggedIn]);
+  }, [history, userStore.loggedIn]);
 
   return (
     <Layout>
@@ -77,12 +77,10 @@ const Login: FunctionComponent<IProps> = ({ userStore, history }) => {
       <Footer grey={true}>
         <div className="flex-container flex-container--center login--footer">
           <div className="flex-col--8 flex-col--tablet-large--12">
-            <Link
-              grey={true}
-              size="medium"
-              text="Forgotten password"
-              href="/forgot-password"
-            />
+          <Link to="/forgot-password" className="link link--medium link--grey">
+              Forgotten password
+            </Link>
+
             <p className="login--footer--description">{cms("login.footer")}</p>
           </div>
         </div>
