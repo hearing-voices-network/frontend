@@ -5,6 +5,7 @@ import { Link, RouteComponentProps } from "react-router-dom";
 import { observer, inject } from "mobx-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Helmet from "react-helmet";
+import removeMd from "remove-markdown";
 
 import "./Story.scss";
 
@@ -42,7 +43,7 @@ const Story: FunctionComponent<IProps> = ({ storyStore, match }) => {
       <Helmet>
         <title>
           {`Connecting Voices | ${
-            storyStore.story ? storyStore.story.excerpt : "Selected Story"
+            storyStore.story ? removeMd(storyStore.story.excerpt)  : "Selected Story"
           }`}
         </title>
       </Helmet>
